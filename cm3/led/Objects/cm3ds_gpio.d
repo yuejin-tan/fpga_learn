@@ -1,0 +1,9 @@
+.\objects\cm3ds_gpio.o: CMSIS\Device\StdPeriph_Driver\src\CM3DS_gpio.c
+.\objects\cm3ds_gpio.o: .\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_gpio.h
+.\objects\cm3ds_gpio.o: .\CMSIS\Device\Include\CM3DS_MPS2.h
+.\objects\cm3ds_gpio.o: .\CMSIS\Core\Include\core_cm3.h
+.\objects\cm3ds_gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\cm3ds_gpio.o: .\CMSIS\Core\Include\core_cmInstr.h
+.\objects\cm3ds_gpio.o: .\CMSIS\Core\Include\core_cmFunc.h
+.\objects\cm3ds_gpio.o: .\CMSIS\Device\Include\system_CM3DS.h
+.\objects\cm3ds_gpio.o: .\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_conf.h

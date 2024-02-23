@@ -1,0 +1,26 @@
+
+############################################################################
+#
+# FMAX Report
+#
+############################################################################
+#
+# NOTE: FMAX is only computed for register-to-register paths within SAME
+# clock domain. Multi-cycle paths, cross-clock-domain paths, including paths
+# between master and generated clocks, are ignored. For paths between a clock
+# and its inversion, FMAX is computed by scaling the path delay based on
+# clock duty cycle. For example, for a path with start point driven by a
+# rising clock edge and  with end  point driven by the the same  clock's
+# falling edge, if the clock duty cycle is 50%, the path delay is multi-
+# plied by 2 (divided by 50%) so as to compute FMAX.
+#
+
+############################################################################
+# FMAX Summary
+############################################################################
+Slowest clock     : 
+Minimum period    : --
+Maximum frequency : -0 MHz
+############################################################################
+
+

@@ -1,0 +1,24 @@
+--cpu Cortex-M3
+".\objects\startup_cm3ds.o"
+".\objects\system_cm3ds.o"
+".\objects\cm3ds_gpio.o"
+".\objects\cm3ds_rcc.o"
+".\objects\cm3ds_adc.o"
+".\objects\cm3ds_dma.o"
+".\objects\cm3ds_dualtimer.o"
+".\objects\cm3ds_exti.o"
+".\objects\cm3ds_i2c.o"
+".\objects\cm3ds_spi.o"
+".\objects\cm3ds_timer.o"
+".\objects\cm3ds_uart.o"
+".\objects\cm3ds_watchdog.o"
+".\objects\cm3ds_misc.o"
+".\objects\main.o"
+".\objects\delay.o"
+".\objects\scd.o"
+".\objects\scd_reg.o"
+".\objects\int_handlers.o"
+--strict --scatter ".\Objects\led.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\led.map" -o .\Objects\led.axf

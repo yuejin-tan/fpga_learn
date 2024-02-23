@@ -1,0 +1,9 @@
+.\objects\cm3ds_misc.o: CMSIS\Device\StdPeriph_Driver\src\CM3DS_misc.c
+.\objects\cm3ds_misc.o: .\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_misc.h
+.\objects\cm3ds_misc.o: .\CMSIS\Device\Include\CM3DS_MPS2.h
+.\objects\cm3ds_misc.o: .\CMSIS\Core\Include\core_cm3.h
+.\objects\cm3ds_misc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\cm3ds_misc.o: .\CMSIS\Core\Include\core_cmInstr.h
+.\objects\cm3ds_misc.o: .\CMSIS\Core\Include\core_cmFunc.h
+.\objects\cm3ds_misc.o: .\CMSIS\Device\Include\system_CM3DS.h
+.\objects\cm3ds_misc.o: .\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_conf.h

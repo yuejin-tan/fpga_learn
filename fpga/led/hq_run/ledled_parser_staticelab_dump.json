@@ -1,0 +1,1422 @@
+{
+"modules": [
+{
+"module": {
+"name": "cm3_sys",
+"file": "D:/fpga/ac208/workspace/fpga/led/cm3_sys.v",
+"level": "1",
+"first_line": "1",
+"last_line": "99",
+"inst_mod": [
+{
+"mod_name": "xsCM3",
+"mod_property": "blackbox",
+"inst_name": "inst",
+"first_line": "16",
+"last_line": "90"
+}
+]
+},
+"always": [
+],
+"params": [
+],
+"params_override": [
+{
+"name": "inst.PCLK_DIV",
+"first_line": "92",
+"last_line": "92",
+"first_col": "12",
+"last_col": "24"
+},
+{
+"name": "inst.CORECLK",
+"first_line": "93",
+"last_line": "93",
+"first_col": "12",
+"last_col": "23"
+},
+{
+"name": "inst.RSTN_ENABLE",
+"first_line": "94",
+"last_line": "94",
+"first_col": "12",
+"last_col": "27"
+},
+{
+"name": "inst.MTXCLK",
+"first_line": "95",
+"last_line": "95",
+"first_col": "12",
+"last_col": "22"
+},
+{
+"name": "inst.CORECLK_EN",
+"first_line": "96",
+"last_line": "96",
+"first_col": "12",
+"last_col": "26"
+},
+{
+"name": "inst.CORE_SET",
+"first_line": "97",
+"last_line": "97",
+"first_col": "12",
+"last_col": "24"
+}
+],
+"signals": [
+{
+"type": "Port",
+"name": "CLK_CM3",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "2",
+"col_num": "16"
+},
+{
+"row_num": "2",
+"col_num": "16"
+},
+{
+"row_num": "17",
+"col_num": "21"
+},
+{
+"row_num": "89",
+"col_num": "22"
+}
+]
+},
+{
+"type": "Port",
+"name": "SYS_RSTN",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "3",
+"col_num": "16"
+},
+{
+"row_num": "3",
+"col_num": "16"
+},
+{
+"row_num": "25",
+"col_num": "22"
+},
+{
+"row_num": "60",
+"col_num": "22"
+}
+]
+},
+{
+"type": "Port",
+"name": "SWCLK",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "4",
+"col_num": "16"
+},
+{
+"row_num": "4",
+"col_num": "16"
+},
+{
+"row_num": "24",
+"col_num": "21"
+}
+]
+},
+{
+"type": "Port",
+"name": "SWDIO",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "5",
+"col_num": "16"
+},
+{
+"row_num": "5",
+"col_num": "16"
+},
+{
+"row_num": "14",
+"col_num": "10"
+},
+{
+"row_num": "18",
+"col_num": "27"
+}
+]
+},
+{
+"type": "Port",
+"name": "INTSIG",
+"range": [
+{
+"start": "15",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "6",
+"col_num": "26"
+},
+{
+"row_num": "6",
+"col_num": "26"
+},
+{
+"row_num": "26",
+"col_num": "21"
+}
+]
+},
+{
+"type": "Port",
+"name": "GPIO_IN",
+"range": [
+{
+"start": "31",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "7",
+"col_num": "26"
+},
+{
+"row_num": "7",
+"col_num": "26"
+},
+{
+"row_num": "27",
+"col_num": "20"
+}
+]
+},
+{
+"type": "Port",
+"name": "GPIO_OUT",
+"range": [
+{
+"start": "31",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "8",
+"col_num": "26"
+},
+{
+"row_num": "8",
+"col_num": "26"
+},
+{
+"row_num": "28",
+"col_num": "20"
+}
+]
+},
+{
+"type": "Port",
+"name": "GPIO_OUT_EN",
+"range": [
+{
+"start": "31",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "9",
+"col_num": "26"
+},
+{
+"row_num": "9",
+"col_num": "26"
+},
+{
+"row_num": "29",
+"col_num": "22"
+}
+]
+},
+{
+"type": "Net",
+"name": "TMSOEN",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "12",
+"col_num": "8"
+},
+{
+"row_num": "14",
+"col_num": "18"
+},
+{
+"row_num": "20",
+"col_num": "26"
+}
+]
+},
+{
+"type": "Net",
+"name": "TMSO",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "13",
+"col_num": "8"
+},
+{
+"row_num": "14",
+"col_num": "34"
+},
+{
+"row_num": "19",
+"col_num": "23"
+}
+]
+}
+]
+},
+{
+"module": {
+"name": "top",
+"file": "D:/fpga/ac208/workspace/fpga/led/top.v",
+"level": "2",
+"first_line": "1",
+"last_line": "143",
+"inst_mod": [
+{
+"mod_name": "cm3_sys",
+"mod_property": "real_module",
+"inst_name": "cm3inst",
+"first_line": "131",
+"last_line": "140"
+}
+]
+},
+"always": [
+],
+"params": [
+],
+"params_override": [
+],
+"signals": [
+{
+"type": "Port",
+"name": "clk_27M",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "3",
+"col_num": "16"
+},
+{
+"row_num": "3",
+"col_num": "16"
+}
+]
+},
+{
+"type": "Port",
+"name": "clk_25M",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "4",
+"col_num": "16"
+},
+{
+"row_num": "4",
+"col_num": "16"
+},
+{
+"row_num": "132",
+"col_num": "23"
+}
+]
+},
+{
+"type": "Port",
+"name": "clk_p3",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "5",
+"col_num": "16"
+},
+{
+"row_num": "5",
+"col_num": "16"
+}
+]
+},
+{
+"type": "Port",
+"name": "clk_p4",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "6",
+"col_num": "16"
+},
+{
+"row_num": "6",
+"col_num": "16"
+}
+]
+},
+{
+"type": "Port",
+"name": "clk_p5",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "7",
+"col_num": "16"
+},
+{
+"row_num": "7",
+"col_num": "16"
+}
+]
+},
+{
+"type": "Port",
+"name": "led_core",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "10",
+"col_num": "17"
+},
+{
+"row_num": "10",
+"col_num": "17"
+},
+{
+"row_num": "95",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "pll_i2c_scl",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "13",
+"col_num": "17"
+},
+{
+"row_num": "13",
+"col_num": "17"
+},
+{
+"row_num": "79",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "pll_i2c_sda",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "14",
+"col_num": "16"
+},
+{
+"row_num": "14",
+"col_num": "16"
+}
+]
+},
+{
+"type": "Port",
+"name": "SRAM_ADDR",
+"range": [
+{
+"start": "18",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "17",
+"col_num": "22"
+},
+{
+"row_num": "17",
+"col_num": "22"
+},
+{
+"row_num": "82",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "SRAM_DQ",
+"range": [
+{
+"start": "15",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "18",
+"col_num": "21"
+},
+{
+"row_num": "18",
+"col_num": "21"
+}
+]
+},
+{
+"type": "Port",
+"name": "SRAM_nWE",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "19",
+"col_num": "12"
+},
+{
+"row_num": "19",
+"col_num": "12"
+},
+{
+"row_num": "83",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "SRAM_nOE",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "20",
+"col_num": "12"
+},
+{
+"row_num": "20",
+"col_num": "12"
+},
+{
+"row_num": "84",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "SRAM_nCE",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "21",
+"col_num": "12"
+},
+{
+"row_num": "21",
+"col_num": "12"
+},
+{
+"row_num": "85",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "SRAM_nLB",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "22",
+"col_num": "12"
+},
+{
+"row_num": "22",
+"col_num": "12"
+},
+{
+"row_num": "86",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "SRAM_nUB",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "23",
+"col_num": "12"
+},
+{
+"row_num": "23",
+"col_num": "12"
+},
+{
+"row_num": "87",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "flash_sclk",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "26",
+"col_num": "17"
+},
+{
+"row_num": "26",
+"col_num": "17"
+},
+{
+"row_num": "90",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "flash_cs",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "27",
+"col_num": "17"
+},
+{
+"row_num": "27",
+"col_num": "17"
+},
+{
+"row_num": "91",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "flash_mosi",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "28",
+"col_num": "17"
+},
+{
+"row_num": "28",
+"col_num": "17"
+},
+{
+"row_num": "92",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "flash_miso",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "29",
+"col_num": "16"
+},
+{
+"row_num": "29",
+"col_num": "16"
+}
+]
+},
+{
+"type": "Port",
+"name": "swdclk",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "32",
+"col_num": "16"
+},
+{
+"row_num": "32",
+"col_num": "16"
+},
+{
+"row_num": "134",
+"col_num": "21"
+}
+]
+},
+{
+"type": "Port",
+"name": "swddio",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "33",
+"col_num": "16"
+},
+{
+"row_num": "33",
+"col_num": "16"
+},
+{
+"row_num": "135",
+"col_num": "21"
+}
+]
+},
+{
+"type": "Port",
+"name": "key_pin",
+"range": [
+{
+"start": "2",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "36",
+"col_num": "24"
+},
+{
+"row_num": "36",
+"col_num": "24"
+},
+{
+"row_num": "133",
+"col_num": "24"
+}
+]
+},
+{
+"type": "Port",
+"name": "led_pin",
+"range": [
+{
+"start": "3",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "39",
+"col_num": "25"
+},
+{
+"row_num": "39",
+"col_num": "25"
+},
+{
+"row_num": "96",
+"col_num": "10"
+},
+{
+"row_num": "99",
+"col_num": "23"
+},
+{
+"row_num": "138",
+"col_num": "54"
+}
+]
+},
+{
+"type": "Port",
+"name": "beep_pin",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "42",
+"col_num": "17"
+},
+{
+"row_num": "42",
+"col_num": "17"
+},
+{
+"row_num": "102",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "uart_DAP_rx",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "45",
+"col_num": "16"
+},
+{
+"row_num": "45",
+"col_num": "16"
+},
+{
+"row_num": "137",
+"col_num": "32"
+}
+]
+},
+{
+"type": "Port",
+"name": "uart_DAP_tx",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "46",
+"col_num": "17"
+},
+{
+"row_num": "46",
+"col_num": "17"
+},
+{
+"row_num": "138",
+"col_num": "34"
+}
+]
+},
+{
+"type": "Port",
+"name": "uart_ch340_rx",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "48",
+"col_num": "16"
+},
+{
+"row_num": "48",
+"col_num": "16"
+}
+]
+},
+{
+"type": "Port",
+"name": "uart_ch340_tx",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "49",
+"col_num": "17"
+},
+{
+"row_num": "49",
+"col_num": "17"
+},
+{
+"row_num": "105",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "sd_sclk",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "52",
+"col_num": "17"
+},
+{
+"row_num": "52",
+"col_num": "17"
+},
+{
+"row_num": "108",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "sd_cs",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "53",
+"col_num": "17"
+},
+{
+"row_num": "53",
+"col_num": "17"
+},
+{
+"row_num": "109",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "sd_mosi",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "54",
+"col_num": "17"
+},
+{
+"row_num": "54",
+"col_num": "17"
+},
+{
+"row_num": "110",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "sd_miso",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "55",
+"col_num": "16"
+},
+{
+"row_num": "55",
+"col_num": "16"
+}
+]
+},
+{
+"type": "Port",
+"name": "w5500_rstn",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "58",
+"col_num": "16"
+},
+{
+"row_num": "58",
+"col_num": "16"
+}
+]
+},
+{
+"type": "Port",
+"name": "w5500_intn",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "59",
+"col_num": "16"
+},
+{
+"row_num": "59",
+"col_num": "16"
+}
+]
+},
+{
+"type": "Port",
+"name": "w5500_sclk",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "60",
+"col_num": "17"
+},
+{
+"row_num": "60",
+"col_num": "17"
+},
+{
+"row_num": "114",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "w5500_cs",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "61",
+"col_num": "17"
+},
+{
+"row_num": "61",
+"col_num": "17"
+},
+{
+"row_num": "115",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "w5500_mosi",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "62",
+"col_num": "17"
+},
+{
+"row_num": "62",
+"col_num": "17"
+},
+{
+"row_num": "116",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "w5500_miso",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "63",
+"col_num": "16"
+},
+{
+"row_num": "63",
+"col_num": "16"
+}
+]
+},
+{
+"type": "Port",
+"name": "seg7_SH_CP",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "66",
+"col_num": "17"
+},
+{
+"row_num": "66",
+"col_num": "17"
+},
+{
+"row_num": "119",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "seg7_ST_CP",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "67",
+"col_num": "17"
+},
+{
+"row_num": "67",
+"col_num": "17"
+},
+{
+"row_num": "120",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "seg7_DS",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "68",
+"col_num": "17"
+},
+{
+"row_num": "68",
+"col_num": "17"
+},
+{
+"row_num": "121",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "i2c_scl",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "71",
+"col_num": "17"
+},
+{
+"row_num": "71",
+"col_num": "17"
+},
+{
+"row_num": "124",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Port",
+"name": "i2c_sda",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "72",
+"col_num": "16"
+},
+{
+"row_num": "72",
+"col_num": "16"
+}
+]
+},
+{
+"type": "Port",
+"name": "osc_c6_pin",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "74",
+"col_num": "17"
+},
+{
+"row_num": "74",
+"col_num": "17"
+},
+{
+"row_num": "99",
+"col_num": "10"
+}
+]
+},
+{
+"type": "Net",
+"name": "fake1",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "127",
+"col_num": "8"
+},
+{
+"row_num": "138",
+"col_num": "47"
+}
+]
+},
+{
+"type": "Net",
+"name": "fake28",
+"range": [
+{
+"start": "27",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "128",
+"col_num": "18"
+},
+{
+"row_num": "138",
+"col_num": "26"
+}
+]
+},
+{
+"type": "Net",
+"name": "fake32",
+"range": [
+{
+"start": "31",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "129",
+"col_num": "18"
+},
+{
+"row_num": "139",
+"col_num": "27"
+}
+]
+}
+]
+}
+]
+}
