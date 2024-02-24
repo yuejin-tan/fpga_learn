@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpt>
+	<heads>
+		<h><![CDATA[HqFpga(TM) Release V2.14.4 (Winter 2023) Build 021824]]></h>
+		<h><![CDATA[[资源位置分配报告]]]></h>
+	</heads>
+	<subheads>
+		<sh name="日期">Sat Feb 24 15:30:19 2024</sh>
+		<sh name="器件">SA5Z-30-D1-8U213C</sh>
+	</subheads>
+	<sec title="IO端口位置" >
+		<tbl>
+			<cols>
+				<c>端口名</c>
+				<c>方向</c>
+				<c>位置</c>
+				<c>IO标准</c>
+				<c>Bank</c>
+				<c>VCCIO</c>
+				<c>DRIVE</c>
+				<c>SLEWRATE</c>
+				<c>PULLMODE</c>
+			</cols>
+
+			<r>
+				<v>clk_27M</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>clk_25M</v> <v>INPUT</v> <v>H13</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>clk_p3</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>clk_p4</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>clk_p5</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>flash_miso</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>swdclk</v> <v>INPUT</v> <v>H1</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>key_pin[2]</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>key_pin[1]</v> <v>INPUT</v> <v>E5</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>key_pin[0]</v> <v>INPUT</v> <v>D5</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>uart_DAP_rx</v> <v>INPUT</v> <v>C5</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v></v> <v></v> <v>UP</v>
+			</r>
+			<r>
+				<v>uart_ch340_rx</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>sd_miso</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>w5500_rstn</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>w5500_intn</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>w5500_miso</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>led_core</v> <v>OUTPUT</v> <v>B6</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>pll_i2c_scl</v> <v>OUTPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[18]</v> <v>OUTPUT</v> <v>R5</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[17]</v> <v>OUTPUT</v> <v>P15</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[16]</v> <v>OUTPUT</v> <v>R15</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[15]</v> <v>OUTPUT</v> <v>P14</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[14]</v> <v>OUTPUT</v> <v>P4</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[13]</v> <v>OUTPUT</v> <v>R4</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[12]</v> <v>OUTPUT</v> <v>P3</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[11]</v> <v>OUTPUT</v> <v>R3</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[10]</v> <v>OUTPUT</v> <v>R2</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[9]</v> <v>OUTPUT</v> <v>M3</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[8]</v> <v>OUTPUT</v> <v>N3</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[7]</v> <v>OUTPUT</v> <v>L5</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[6]</v> <v>OUTPUT</v> <v>M4</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[5]</v> <v>OUTPUT</v> <v>N5</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[4]</v> <v>OUTPUT</v> <v>M12</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[3]</v> <v>OUTPUT</v> <v>N14</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[2]</v> <v>OUTPUT</v> <v>N15</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[1]</v> <v>OUTPUT</v> <v>M13</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[0]</v> <v>OUTPUT</v> <v>L11</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_nWE</v> <v>OUTPUT</v> <v>L6</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_nOE</v> <v>OUTPUT</v> <v>R14</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_nCE</v> <v>OUTPUT</v> <v>N12</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_nLB</v> <v>OUTPUT</v> <v>R13</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_nUB</v> <v>OUTPUT</v> <v>P13</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>flash_sclk</v> <v>OUTPUT</v> <v>A1</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>flash_cs</v> <v>OUTPUT</v> <v>A8</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>flash_mosi</v> <v>OUTPUT</v> <v>G2</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>led_pin[3]</v> <v>OUTPUT</v> <v>E14</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>led_pin[2]</v> <v>OUTPUT</v> <v>F14</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>led_pin[1]</v> <v>OUTPUT</v> <v>G15</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>led_pin[0]</v> <v>OUTPUT</v> <v>D15</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>beep_pin</v> <v>OUTPUT</v> <v>E13</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>uart_DAP_tx</v> <v>OUTPUT</v> <v>C12</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v>UP</v>
+			</r>
+			<r>
+				<v>uart_ch340_tx</v> <v>OUTPUT</v> <v>E12</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v>UP</v>
+			</r>
+			<r>
+				<v>sd_sclk</v> <v>OUTPUT</v> <v>E11</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>sd_cs</v> <v>OUTPUT</v> <v>D11</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>sd_mosi</v> <v>OUTPUT</v> <v>D12</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>w5500_sclk</v> <v>OUTPUT</v> <v>L15</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>w5500_cs</v> <v>OUTPUT</v> <v>K9</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>w5500_mosi</v> <v>OUTPUT</v> <v>M15</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>seg7_SH_CP</v> <v>OUTPUT</v> <v>E4</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>seg7_ST_CP</v> <v>OUTPUT</v> <v>G6</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>seg7_DS</v> <v>OUTPUT</v> <v>H2</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>i2c_scl</v> <v>OUTPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>osc_c6_pin</v> <v>OUTPUT</v> <v>C6</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>pll_i2c_sda</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[15]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[14]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[13]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[12]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[11]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[10]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[9]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[8]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[7]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[6]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[5]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[4]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[3]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[2]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[1]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[0]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>swddio</v> <v>INOUT</v> <v>C1</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>i2c_sda</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+		</tbl>
+	</sec>
+	<sec title="单元位置" >
+		<tbl>
+			<cols>
+				<c>元件</c>
+				<c>元件类型</c>
+				<c>位置</c>
+			</cols>
+
+			<r>
+				<v>led_pin[3]_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T92D</v>
+			</r>
+			<r>
+				<v>led_pin[2]_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T92A</v>
+			</r>
+			<r>
+				<v>led_pin[1]_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T92B</v>
+			</r>
+			<r>
+				<v>led_pin[0]_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T95D</v>
+			</r>
+			<r>
+				<v>osc_c6_pin_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T43C</v>
+			</r>
+			<r>
+				<v>PLL_25to200_1/PLLInst_0</v> <v>PLL_25K</v> <v>LPLL1</v>
+			</r>
+			<r>
+				<v>cm3inst/inst</v> <v>CM3</v> <v>CM3</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[1]</v> <v>SLICEL</v> <v>R2C99M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[5]</v> <v>SLICEL</v> <v>R2C100M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[9]</v> <v>SLICEL</v> <v>R2C101M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[13]</v> <v>SLICEL</v> <v>R2C102M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[17]</v> <v>SLICEL</v> <v>R2C103M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[21]</v> <v>SLICEL</v> <v>R2C104M</v>
+			</r>
+			<r>
+				<v>led_wf1/cnt[6]</v> <v>SLICEL</v> <v>R2C99L</v>
+			</r>
+			<r>
+				<v>led_wf1/cnt[9]</v> <v>SLICEL</v> <v>R2C101L</v>
+			</r>
+			<r>
+				<v>led_wf1/cnt[16]</v> <v>SLICEL</v> <v>R2C102L</v>
+			</r>
+			<r>
+				<v>led_wf1/_i_2/_i_0_rkd_12</v> <v>SLICEL</v> <v>R2C100L</v>
+			</r>
+			<r>
+				<v>led_wf1/n_3</v> <v>SLICEL</v> <v>R2C103L</v>
+			</r>
+			<r>
+				<v>led_pin[3]_c</v> <v>SLICEL</v> <v>R2C98M</v>
+			</r>
+		</tbl>
+	</sec>
+</rpt>

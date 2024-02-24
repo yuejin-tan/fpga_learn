@@ -2,12 +2,12 @@ module led_wf
   #(
      parameter CLK_DIV = 25 * 1000 * 100 - 1,
      parameter LED_NUM = 4,
-     parameter INIT_STA = 4'b0001
+     parameter INIT_STA = 4'b1110
    )
    (
      input clk,
      input rst,
-     output reg [ LED_NUM - 1: 0] led_sig
+     output reg [ LED_NUM - 1: 0] led_sig = INIT_STA
    );
 
   reg [ 23: 0] cnt = 0;
