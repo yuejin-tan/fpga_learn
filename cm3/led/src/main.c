@@ -57,15 +57,20 @@ int main(void)
     SysTick_Config(SystemCoreClock / 1000ul - 1ul);
 
     uart0_init();
- 
+
     scd_init_1();
 
     while (1)
     {
-        if ((UART_GetFlagStatus(CM3DS_MPS2_UART0, 0x01)) == RESET)
-        {
-            UART_SendData(CM3DS_MPS2_UART0, scd_send1Byte(&scd_1));
-        }
+        // if ((UART_GetFlagStatus(CM3DS_MPS2_UART0, 0x01)) == RESET)
+        // {
+        //     UART_SendData(CM3DS_MPS2_UART0, scd_send1Byte(&scd_1));
+        // }
+
+        LED1_ON;
+        delay_ms(20);
+        LED1_OFF;
+        DELAY_TICK(200 * 1000 * 20);
     }
 }
 

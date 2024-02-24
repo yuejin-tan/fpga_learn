@@ -13,6 +13,8 @@ module cm3_sys (
   wire TMSO;
   assign SWDIO = TMSOEN ? 1'bz : TMSO;
 
+  //   wire AHB_CLK;
+
   xsCM3 inst (
           .CIBCLK ( CLK_CM3 ),
           .DBG_SWDI_TMS ( SWDIO ),
@@ -57,6 +59,7 @@ module cm3_sys (
           .INITEXP1HTRANS ( 2'b0 ),
           .INITEXP1HWDATA ( 32'b0 ),
           .INITEXP1HWRITE ( 1'b0 ),
+          //  .MTX_CLK ( AHB_CLK ), //AHB CLK
           .MTXRSTN ( SYS_RSTN ),
           .NSRST ( 1'b1 ),
           .NTRST ( 1'b1 ),
@@ -90,7 +93,7 @@ module cm3_sys (
         );
 
   defparam inst.PCLK_DIV = 0;
-  defparam inst.CORECLK = "CLK_TREE";
+  defparam inst.CORECLK = "CIB_CLK";
   defparam inst.RSTN_ENABLE = "TRUE";
   defparam inst.MTXCLK = "CORECLK";
   defparam inst.CORECLK_EN = "TRUE";

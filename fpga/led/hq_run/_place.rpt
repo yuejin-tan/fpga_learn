@@ -3,16 +3,19 @@
 #  HqFpga(TM) Release V3.0.3 (Winter 2023) Build 021824
 #  [Netlist Report]
 #####################################################################
-Date   : Sat Feb 24 01:11:25 2024
+Date   : Sat Feb 24 14:40:58 2024
 
 Library U_ARCH
 +-----------+-------+
 | Cell Name | Count |
 +-----------+-------+
-| PIO       |    50 |
+| PIO       |    51 |
+| IOLOGIC   |     5 |
+| PLL_25K   |     1 |
 | CM3       |     1 |
+| SLICEL    |    12 |
 +-----------+-------+
-| Sum       |    51 |
+| Sum       |    70 |
 +-----------+-------+
 
 Library work
@@ -28,7 +31,7 @@ Library work
 #  HqFpga(TM) Release V3.0.3 (Winter 2023) Build 021824
 #  [Resource Location Report]
 #####################################################################
-Date   : Sat Feb 24 01:11:25 2024
+Date   : Sat Feb 24 14:40:58 2024
 Device : SA5Z-30-D1-8U213C
 
 ** Bank Voltage Available **
@@ -53,7 +56,7 @@ Device : SA5Z-30-D1-8U213C
 | flash_miso    |   INPUT   |  -NOT USED-  | -NOT USED-  |      |       |       |          |          |
 | swdclk        |   INPUT   |      H1      |  LVCMOS33   |  1   |  3.3  |       |          |   DOWN   |
 | key_pin[2]    |   INPUT   |  -NOT USED-  | -NOT USED-  |      |       |       |          |          |
-| key_pin[1]    |   INPUT   |  -NOT USED-  | -NOT USED-  |      |       |       |          |          |
+| key_pin[1]    |   INPUT   |      E5      |  LVCMOS33   |  1   |  3.3  |       |          |   DOWN   |
 | key_pin[0]    |   INPUT   |      D5      |  LVCMOS33   |  1   |  3.3  |       |          |   DOWN   |
 | uart_DAP_rx   |   INPUT   |      C5      |  LVCMOS33   |  1   |  3.3  |       |          |    UP    |
 | uart_ch340_rx |   INPUT   |  -NOT USED-  | -NOT USED-  |      |       |       |          |          |
@@ -129,8 +132,26 @@ Device : SA5Z-30-D1-8U213C
 | i2c_sda       |   INOUT   |  -NOT USED-  | -NOT USED-  |      |       |       |          |          |
 +---------------+-----------+--------------+-------------+------+-------+-------+----------+----------+
 ** Instance Locations **
-+---------------+---------------+----------+
-| Instance Name | Instance Type | Location |
-+---------------+---------------+----------+
-| cm3inst/inst  |      CM3      |   CM3    |
-+---------------+---------------+----------+
++--------------------------+---------------+----------+
+| Instance Name            | Instance Type | Location |
++--------------------------+---------------+----------+
+| led_pin[3]_MGIOL         |    IOLOGIC    | IOL_T92D |
+| led_pin[2]_MGIOL         |    IOLOGIC    | IOL_T92A |
+| led_pin[1]_MGIOL         |    IOLOGIC    | IOL_T92B |
+| led_pin[0]_MGIOL         |    IOLOGIC    | IOL_T95D |
+| osc_c6_pin_MGIOL         |    IOLOGIC    | IOL_T43C |
+| PLL_25to200_1/PLLInst_0  |    PLL_25K    |  LPLL1   |
+| cm3inst/inst             |      CM3      |   CM3    |
+| led_wf1/n_35[1]          |    SLICEL     |  R2C99M  |
+| led_wf1/n_35[5]          |    SLICEL     | R2C100M  |
+| led_wf1/n_35[9]          |    SLICEL     | R2C101M  |
+| led_wf1/n_35[13]         |    SLICEL     | R2C102M  |
+| led_wf1/n_35[17]         |    SLICEL     | R2C103M  |
+| led_wf1/n_35[21]         |    SLICEL     | R2C104M  |
+| led_wf1/cnt[6]           |    SLICEL     |  R2C99L  |
+| led_wf1/cnt[9]           |    SLICEL     | R2C101L  |
+| led_wf1/cnt[16]          |    SLICEL     | R2C102L  |
+| led_wf1/_i_2/_i_0_rkd_12 |    SLICEL     | R2C100L  |
+| led_wf1/n_3              |    SLICEL     | R2C103L  |
+| led_pin[3]_c             |    SLICEL     |  R2C98L  |
++--------------------------+---------------+----------+

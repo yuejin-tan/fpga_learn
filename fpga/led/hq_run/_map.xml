@@ -5,7 +5,7 @@
 		<h><![CDATA[[资源利用率报告]]]></h>
 	</heads>
 	<subheads>
-		<sh name="日期">Sat Feb 24 01:11:25 2024</sh>
+		<sh name="日期">Sat Feb 24 14:40:57 2024</sh>
 		<sh name="器件">SA5Z-30-D1-8U213C</sh>
 	</subheads>
 	<sec title="** 资源利用情况  ** " >
@@ -18,7 +18,16 @@
 			</cols>
 
 			<r>
-				<v>PIO</v> <v>50</v> <v>175</v> <v>28 %</v>
+				<v>PIO</v> <v>51</v> <v>175</v> <v>29 %</v>
+			</r>
+			<r>
+				<v>SLICE</v> <v>12</v> <v>5104</v> <v>1 %</v>
+			</r>
+			<r>
+				<v>IOLOGIC</v> <v>5</v> <v>175</v> <v>2 %</v>
+			</r>
+			<r>
+				<v>PLL</v> <v>1</v> <v>2</v> <v>50 %</v>
 			</r>
 		</tbl>
 	</sec>

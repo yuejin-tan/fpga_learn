@@ -33,10 +33,10 @@ module top (
     inout wire swddio,
 
     // key
-    input wire [ 2: 0] key_pin,
+    input wire [ 2: 0 ] key_pin,
 
     //  led 0 on 1 off
-    output wire [ 3: 0] led_pin,
+    output wire [ 3: 0 ] led_pin,
 
     //  BEEP
     output wire beep_pin,
@@ -92,14 +92,14 @@ module top (
   assign flash_mosi = 0;
 
   // led
-  assign led_core = 0;
-  assign led_pin[ 3: 2] = 0;
+  //   assign led_core = 0;
+  //   assign led_pin[ 3: 2 ] = 0;
 
   //  OSC
   assign osc_c6_pin = led_pin[ 0 ];
 
   //  BEEP
-  assign beep_pin = 0;
+  //   assign beep_pin = 0;
 
   //  uart
   assign uart_ch340_tx = 0;
@@ -128,16 +128,26 @@ module top (
   wire [ 27: 0 ] fake28;
   wire [ 31: 0 ] fake32;
 
+  wire clk_200M;
+  wire PLL1_lock;
+
+  wire cm3rstn;
+
+  assign cm3rstn = key_pin[ 0 ] & PLL1_lock;
+
+  led_wf led_wf1( clk_25M, key_pin[ 1 ], led_pin );
+
   cm3_sys cm3inst (
-            .CLK_CM3( clk_25M ),
-            .SYS_RSTN( key_pin[ 0] ),
+            .CLK_CM3( clk_200M ),
+            .SYS_RSTN( key_pin[ 0 ] ),
             .SWCLK( swdclk ),
             .SWDIO( swddio ),
             .INTSIG( 16'b0 ),
             .GPIO_IN( { 29'b0, uart_DAP_rx, 2'b0} ),
-            .GPIO_OUT( { fake28, uart_DAP_tx, fake1, led_pin[ 1: 0 ] } ),
+            .GPIO_OUT( { fake28, uart_DAP_tx, fake1, beep_pin, led_core } ),
             .GPIO_OUT_EN( fake32 )
           );
 
+  PLL_25to200 PLL_25to200_1( clk_25M, clk_200M, PLL1_lock );
 
 endmodule

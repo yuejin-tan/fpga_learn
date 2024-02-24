@@ -6,14 +6,14 @@
 "file": "D:/fpga/ac208/workspace/fpga/led/cm3_sys.v",
 "level": "1",
 "first_line": "1",
-"last_line": "99",
+"last_line": "102",
 "inst_mod": [
 {
 "mod_name": "xsCM3",
 "mod_property": "blackbox",
 "inst_name": "inst",
-"first_line": "16",
-"last_line": "90"
+"first_line": "18",
+"last_line": "93"
 }
 ]
 },
@@ -24,43 +24,43 @@
 "params_override": [
 {
 "name": "inst.PCLK_DIV",
-"first_line": "92",
-"last_line": "92",
+"first_line": "95",
+"last_line": "95",
 "first_col": "12",
 "last_col": "24"
 },
 {
 "name": "inst.CORECLK",
-"first_line": "93",
-"last_line": "93",
+"first_line": "96",
+"last_line": "96",
 "first_col": "12",
 "last_col": "23"
 },
 {
 "name": "inst.RSTN_ENABLE",
-"first_line": "94",
-"last_line": "94",
+"first_line": "97",
+"last_line": "97",
 "first_col": "12",
 "last_col": "27"
 },
 {
 "name": "inst.MTXCLK",
-"first_line": "95",
-"last_line": "95",
+"first_line": "98",
+"last_line": "98",
 "first_col": "12",
 "last_col": "22"
 },
 {
 "name": "inst.CORECLK_EN",
-"first_line": "96",
-"last_line": "96",
+"first_line": "99",
+"last_line": "99",
 "first_col": "12",
 "last_col": "26"
 },
 {
 "name": "inst.CORE_SET",
-"first_line": "97",
-"last_line": "97",
+"first_line": "100",
+"last_line": "100",
 "first_col": "12",
 "last_col": "24"
 }
@@ -85,11 +85,11 @@
 "col_num": "16"
 },
 {
-"row_num": "17",
+"row_num": "19",
 "col_num": "21"
 },
 {
-"row_num": "89",
+"row_num": "92",
 "col_num": "22"
 }
 ]
@@ -113,11 +113,11 @@
 "col_num": "16"
 },
 {
-"row_num": "25",
+"row_num": "27",
 "col_num": "22"
 },
 {
-"row_num": "60",
+"row_num": "63",
 "col_num": "22"
 }
 ]
@@ -141,7 +141,7 @@
 "col_num": "16"
 },
 {
-"row_num": "24",
+"row_num": "26",
 "col_num": "21"
 }
 ]
@@ -169,7 +169,7 @@
 "col_num": "10"
 },
 {
-"row_num": "18",
+"row_num": "20",
 "col_num": "27"
 }
 ]
@@ -193,7 +193,7 @@
 "col_num": "26"
 },
 {
-"row_num": "26",
+"row_num": "28",
 "col_num": "21"
 }
 ]
@@ -217,7 +217,7 @@
 "col_num": "26"
 },
 {
-"row_num": "27",
+"row_num": "29",
 "col_num": "20"
 }
 ]
@@ -241,7 +241,7 @@
 "col_num": "26"
 },
 {
-"row_num": "28",
+"row_num": "30",
 "col_num": "20"
 }
 ]
@@ -265,7 +265,7 @@
 "col_num": "26"
 },
 {
-"row_num": "29",
+"row_num": "31",
 "col_num": "22"
 }
 ]
@@ -289,7 +289,7 @@
 "col_num": "18"
 },
 {
-"row_num": "20",
+"row_num": "22",
 "col_num": "26"
 }
 ]
@@ -313,7 +313,7 @@
 "col_num": "34"
 },
 {
-"row_num": "19",
+"row_num": "21",
 "col_num": "23"
 }
 ]
@@ -326,14 +326,28 @@
 "file": "D:/fpga/ac208/workspace/fpga/led/top.v",
 "level": "2",
 "first_line": "1",
-"last_line": "143",
+"last_line": "153",
 "inst_mod": [
+{
+"mod_name": "led_wf",
+"mod_property": "real_module",
+"inst_name": "led_wf1",
+"first_line": "138",
+"last_line": "138"
+},
 {
 "mod_name": "cm3_sys",
 "mod_property": "real_module",
 "inst_name": "cm3inst",
-"first_line": "131",
-"last_line": "140"
+"first_line": "140",
+"last_line": "149"
+},
+{
+"mod_name": "PLL_25to200",
+"mod_property": "real_module",
+"inst_name": "PLL_25to200_1",
+"first_line": "151",
+"last_line": "151"
 }
 ]
 },
@@ -383,8 +397,12 @@
 "col_num": "16"
 },
 {
-"row_num": "132",
-"col_num": "23"
+"row_num": "138",
+"col_num": "19"
+},
+{
+"row_num": "151",
+"col_num": "30"
 }
 ]
 },
@@ -469,6 +487,10 @@
 {
 "row_num": "95",
 "col_num": "10"
+},
+{
+"row_num": "147",
+"col_num": "64"
 }
 ]
 },
@@ -791,7 +813,7 @@
 "col_num": "16"
 },
 {
-"row_num": "134",
+"row_num": "143",
 "col_num": "21"
 }
 ]
@@ -815,7 +837,7 @@
 "col_num": "16"
 },
 {
-"row_num": "135",
+"row_num": "144",
 "col_num": "21"
 }
 ]
@@ -832,14 +854,22 @@
 "positions": [
 {
 "row_num": "36",
-"col_num": "24"
+"col_num": "25"
 },
 {
 "row_num": "36",
-"col_num": "24"
+"col_num": "25"
 },
 {
-"row_num": "133",
+"row_num": "136",
+"col_num": "20"
+},
+{
+"row_num": "138",
+"col_num": "28"
+},
+{
+"row_num": "142",
 "col_num": "24"
 }
 ]
@@ -856,11 +886,11 @@
 "positions": [
 {
 "row_num": "39",
-"col_num": "25"
+"col_num": "26"
 },
 {
 "row_num": "39",
-"col_num": "25"
+"col_num": "26"
 },
 {
 "row_num": "96",
@@ -872,7 +902,7 @@
 },
 {
 "row_num": "138",
-"col_num": "54"
+"col_num": "42"
 }
 ]
 },
@@ -897,6 +927,10 @@
 {
 "row_num": "102",
 "col_num": "10"
+},
+{
+"row_num": "147",
+"col_num": "54"
 }
 ]
 },
@@ -919,7 +953,7 @@
 "col_num": "16"
 },
 {
-"row_num": "137",
+"row_num": "146",
 "col_num": "32"
 }
 ]
@@ -943,7 +977,7 @@
 "col_num": "17"
 },
 {
-"row_num": "138",
+"row_num": "147",
 "col_num": "34"
 }
 ]
@@ -1371,7 +1405,7 @@
 "col_num": "8"
 },
 {
-"row_num": "138",
+"row_num": "147",
 "col_num": "47"
 }
 ]
@@ -1391,7 +1425,7 @@
 "col_num": "18"
 },
 {
-"row_num": "138",
+"row_num": "147",
 "col_num": "26"
 }
 ]
@@ -1411,8 +1445,1162 @@
 "col_num": "18"
 },
 {
-"row_num": "139",
+"row_num": "148",
 "col_num": "27"
+}
+]
+},
+{
+"type": "Net",
+"name": "clk_200M",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "131",
+"col_num": "8"
+},
+{
+"row_num": "141",
+"col_num": "23"
+},
+{
+"row_num": "151",
+"col_num": "39"
+}
+]
+},
+{
+"type": "Net",
+"name": "PLL1_lock",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "132",
+"col_num": "8"
+},
+{
+"row_num": "136",
+"col_num": "35"
+},
+{
+"row_num": "151",
+"col_num": "49"
+}
+]
+},
+{
+"type": "Net",
+"name": "cm3rstn",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "134",
+"col_num": "8"
+},
+{
+"row_num": "136",
+"col_num": "10"
+}
+]
+}
+]
+},
+{
+"module": {
+"name": "PLL_25to200",
+"file": "D:/fpga/ac208/workspace/fpga/led/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.v",
+"level": "3",
+"first_line": "5",
+"last_line": "120",
+"inst_mod": [
+{
+"mod_name": "xsPLLSA",
+"mod_property": "blackbox",
+"inst_name": "PLLInst_0",
+"first_line": "87",
+"last_line": "100"
+}
+]
+},
+"always": [
+],
+"params": [
+],
+"params_override": [
+{
+"name": "PLLInst_0.CLKO5_SEL",
+"first_line": "31",
+"last_line": "31",
+"first_col": "14",
+"last_col": "32"
+},
+{
+"name": "PLLInst_0.CLKOPD_DLY",
+"first_line": "32",
+"last_line": "32",
+"first_col": "14",
+"last_col": "33"
+},
+{
+"name": "PLLInst_0.DDRST_ENA",
+"first_line": "33",
+"last_line": "33",
+"first_col": "14",
+"last_col": "32"
+},
+{
+"name": "PLLInst_0.DCRST_ENA",
+"first_line": "34",
+"last_line": "34",
+"first_col": "14",
+"last_col": "32"
+},
+{
+"name": "PLLInst_0.MRST_ENA",
+"first_line": "35",
+"last_line": "35",
+"first_col": "14",
+"last_col": "31"
+},
+{
+"name": "PLLInst_0.PLLRST_ENA",
+"first_line": "36",
+"last_line": "36",
+"first_col": "14",
+"last_col": "33"
+},
+{
+"name": "PLLInst_0.INTFB_WAKE",
+"first_line": "37",
+"last_line": "37",
+"first_col": "14",
+"last_col": "33"
+},
+{
+"name": "PLLInst_0.STDBY_ENABLE",
+"first_line": "38",
+"last_line": "38",
+"first_col": "14",
+"last_col": "35"
+},
+{
+"name": "PLLInst_0.DPHASE_SOURCE",
+"first_line": "39",
+"last_line": "39",
+"first_col": "14",
+"last_col": "36"
+},
+{
+"name": "PLLInst_0.PLL_USE_WB",
+"first_line": "40",
+"last_line": "40",
+"first_col": "14",
+"last_col": "33"
+},
+{
+"name": "PLLInst_0.PLL_LOCK_MODE",
+"first_line": "41",
+"last_line": "41",
+"first_col": "14",
+"last_col": "36"
+},
+{
+"name": "PLLInst_0.CLKOS_TRIM_DELAY",
+"first_line": "42",
+"last_line": "42",
+"first_col": "14",
+"last_col": "39"
+},
+{
+"name": "PLLInst_0.CLKOS_TRIM_POL",
+"first_line": "43",
+"last_line": "43",
+"first_col": "14",
+"last_col": "37"
+},
+{
+"name": "PLLInst_0.CLKOP_TRIM_DELAY",
+"first_line": "44",
+"last_line": "44",
+"first_col": "14",
+"last_col": "39"
+},
+{
+"name": "PLLInst_0.CLKOP_TRIM_POL",
+"first_line": "45",
+"last_line": "45",
+"first_col": "14",
+"last_col": "37"
+},
+{
+"name": "PLLInst_0.FRACN_DIV",
+"first_line": "46",
+"last_line": "46",
+"first_col": "14",
+"last_col": "32"
+},
+{
+"name": "PLLInst_0.FRACN_ENABLE",
+"first_line": "47",
+"last_line": "47",
+"first_col": "14",
+"last_col": "35"
+},
+{
+"name": "PLLInst_0.CLKO5_FPHASE",
+"first_line": "48",
+"last_line": "48",
+"first_col": "14",
+"last_col": "35"
+},
+{
+"name": "PLLInst_0.CLKO5_CPHASE",
+"first_line": "49",
+"last_line": "49",
+"first_col": "14",
+"last_col": "35"
+},
+{
+"name": "PLLInst_0.OUTDIVIDER_MUXE2",
+"first_line": "50",
+"last_line": "50",
+"first_col": "14",
+"last_col": "39"
+},
+{
+"name": "PLLInst_0.VCO_BYPASS_E0",
+"first_line": "52",
+"last_line": "52",
+"first_col": "14",
+"last_col": "36"
+},
+{
+"name": "PLLInst_0.CLKO5_ENABLE",
+"first_line": "53",
+"last_line": "53",
+"first_col": "14",
+"last_col": "35"
+},
+{
+"name": "PLLInst_0.CLKO5_DIV",
+"first_line": "54",
+"last_line": "54",
+"first_col": "14",
+"last_col": "32"
+},
+{
+"name": "PLLInst_0.CLKOS3_FPHASE",
+"first_line": "55",
+"last_line": "55",
+"first_col": "14",
+"last_col": "36"
+},
+{
+"name": "PLLInst_0.CLKOS3_CPHASE",
+"first_line": "56",
+"last_line": "56",
+"first_col": "14",
+"last_col": "36"
+},
+{
+"name": "PLLInst_0.CLKOS2_FPHASE",
+"first_line": "57",
+"last_line": "57",
+"first_col": "14",
+"last_col": "36"
+},
+{
+"name": "PLLInst_0.CLKOS2_CPHASE",
+"first_line": "58",
+"last_line": "58",
+"first_col": "14",
+"last_col": "36"
+},
+{
+"name": "PLLInst_0.CLKOS_FPHASE",
+"first_line": "59",
+"last_line": "59",
+"first_col": "14",
+"last_col": "35"
+},
+{
+"name": "PLLInst_0.CLKOS_CPHASE",
+"first_line": "60",
+"last_line": "60",
+"first_col": "14",
+"last_col": "35"
+},
+{
+"name": "PLLInst_0.CLKOP_FPHASE",
+"first_line": "61",
+"last_line": "61",
+"first_col": "14",
+"last_col": "35"
+},
+{
+"name": "PLLInst_0.CLKOP_CPHASE",
+"first_line": "62",
+"last_line": "62",
+"first_col": "14",
+"last_col": "35"
+},
+{
+"name": "PLLInst_0.OUTDIVIDER_MUXD2",
+"first_line": "63",
+"last_line": "63",
+"first_col": "14",
+"last_col": "39"
+},
+{
+"name": "PLLInst_0.PREDIVIDER_MUXD1",
+"first_line": "64",
+"last_line": "64",
+"first_col": "14",
+"last_col": "39"
+},
+{
+"name": "PLLInst_0.VCO_BYPASS_D0",
+"first_line": "65",
+"last_line": "65",
+"first_col": "14",
+"last_col": "36"
+},
+{
+"name": "PLLInst_0.CLKOS3_ENABLE",
+"first_line": "66",
+"last_line": "66",
+"first_col": "14",
+"last_col": "36"
+},
+{
+"name": "PLLInst_0.OUTDIVIDER_MUXC2",
+"first_line": "67",
+"last_line": "67",
+"first_col": "14",
+"last_col": "39"
+},
+{
+"name": "PLLInst_0.PREDIVIDER_MUXC1",
+"first_line": "68",
+"last_line": "68",
+"first_col": "14",
+"last_col": "39"
+},
+{
+"name": "PLLInst_0.VCO_BYPASS_C0",
+"first_line": "69",
+"last_line": "69",
+"first_col": "14",
+"last_col": "36"
+},
+{
+"name": "PLLInst_0.CLKOS2_ENABLE",
+"first_line": "70",
+"last_line": "70",
+"first_col": "14",
+"last_col": "36"
+},
+{
+"name": "PLLInst_0.OUTDIVIDER_MUXB2",
+"first_line": "71",
+"last_line": "71",
+"first_col": "14",
+"last_col": "39"
+},
+{
+"name": "PLLInst_0.PREDIVIDER_MUXB1",
+"first_line": "72",
+"last_line": "72",
+"first_col": "14",
+"last_col": "39"
+},
+{
+"name": "PLLInst_0.VCO_BYPASS_B0",
+"first_line": "73",
+"last_line": "73",
+"first_col": "14",
+"last_col": "36"
+},
+{
+"name": "PLLInst_0.CLKOS_ENABLE",
+"first_line": "74",
+"last_line": "74",
+"first_col": "14",
+"last_col": "35"
+},
+{
+"name": "PLLInst_0.OUTDIVIDER_MUXA2",
+"first_line": "75",
+"last_line": "75",
+"first_col": "14",
+"last_col": "39"
+},
+{
+"name": "PLLInst_0.PREDIVIDER_MUXA1",
+"first_line": "76",
+"last_line": "76",
+"first_col": "14",
+"last_col": "39"
+},
+{
+"name": "PLLInst_0.VCO_BYPASS_A0",
+"first_line": "77",
+"last_line": "77",
+"first_col": "14",
+"last_col": "36"
+},
+{
+"name": "PLLInst_0.CLKOP_ENABLE",
+"first_line": "78",
+"last_line": "78",
+"first_col": "14",
+"last_col": "35"
+},
+{
+"name": "PLLInst_0.CLKOS3_DIV",
+"first_line": "79",
+"last_line": "79",
+"first_col": "14",
+"last_col": "33"
+},
+{
+"name": "PLLInst_0.CLKOS2_DIV",
+"first_line": "80",
+"last_line": "80",
+"first_col": "14",
+"last_col": "33"
+},
+{
+"name": "PLLInst_0.CLKOS_DIV",
+"first_line": "81",
+"last_line": "81",
+"first_col": "14",
+"last_col": "32"
+},
+{
+"name": "PLLInst_0.CLKOP_DIV",
+"first_line": "82",
+"last_line": "82",
+"first_col": "14",
+"last_col": "32"
+},
+{
+"name": "PLLInst_0.CLKFB_DIV",
+"first_line": "83",
+"last_line": "83",
+"first_col": "14",
+"last_col": "32"
+},
+{
+"name": "PLLInst_0.CLKI_DIV",
+"first_line": "84",
+"last_line": "84",
+"first_col": "14",
+"last_col": "31"
+},
+{
+"name": "PLLInst_0.FEEDBK_PATH",
+"first_line": "85",
+"last_line": "85",
+"first_col": "14",
+"last_col": "34"
+},
+{
+"name": "PLLInst_0.EN_PHI",
+"first_line": "86",
+"last_line": "86",
+"first_col": "14",
+"last_col": "29"
+}
+],
+"signals": [
+{
+"type": "Port",
+"name": "CLKI",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "5",
+"col_num": "21"
+},
+{
+"row_num": "6",
+"col_num": "16"
+},
+{
+"row_num": "29",
+"col_num": "21"
+}
+]
+},
+{
+"type": "Port",
+"name": "CLKOP",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "5",
+"col_num": "27"
+},
+{
+"row_num": "7",
+"col_num": "17"
+},
+{
+"row_num": "107",
+"col_num": "12"
+}
+]
+},
+{
+"type": "Port",
+"name": "LOCK",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "5",
+"col_num": "34"
+},
+{
+"row_num": "8",
+"col_num": "17"
+},
+{
+"row_num": "98",
+"col_num": "34"
+}
+]
+},
+{
+"type": "Net",
+"name": "RST",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "10",
+"col_num": "13"
+},
+{
+"row_num": "90",
+"col_num": "14"
+}
+]
+},
+{
+"type": "Net",
+"name": "RESETM",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "11",
+"col_num": "13"
+},
+{
+"row_num": "90",
+"col_num": "28"
+}
+]
+},
+{
+"type": "Net",
+"name": "RESETC",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "12",
+"col_num": "13"
+},
+{
+"row_num": "90",
+"col_num": "45"
+}
+]
+},
+{
+"type": "Net",
+"name": "RESETD",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "13",
+"col_num": "13"
+},
+{
+"row_num": "90",
+"col_num": "62"
+}
+]
+},
+{
+"type": "Net",
+"name": "STDBY",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "14",
+"col_num": "13"
+},
+{
+"row_num": "89",
+"col_num": "37"
+}
+]
+},
+{
+"type": "Net",
+"name": "PHASESEL",
+"range": [
+{
+"start": "1",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "15",
+"col_num": "19"
+},
+{
+"row_num": "87",
+"col_num": "70"
+},
+{
+"row_num": "88",
+"col_num": "20"
+}
+]
+},
+{
+"type": "Net",
+"name": "PHASEDIR",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "16",
+"col_num": "13"
+},
+{
+"row_num": "88",
+"col_num": "44"
+}
+]
+},
+{
+"type": "Net",
+"name": "PHASESTEP",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "17",
+"col_num": "13"
+},
+{
+"row_num": "88",
+"col_num": "66"
+}
+]
+},
+{
+"type": "Net",
+"name": "DPHSRC",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "18",
+"col_num": "10"
+},
+{
+"row_num": "99",
+"col_num": "17"
+}
+]
+},
+{
+"type": "Net",
+"name": "CLKO5_t",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "19",
+"col_num": "10"
+},
+{
+"row_num": "100",
+"col_num": "68"
+}
+]
+},
+{
+"type": "Net",
+"name": "CLKOS3_t",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "20",
+"col_num": "10"
+},
+{
+"row_num": "98",
+"col_num": "17"
+}
+]
+},
+{
+"type": "Net",
+"name": "CLKOS2_t",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "21",
+"col_num": "10"
+},
+{
+"row_num": "97",
+"col_num": "73"
+}
+]
+},
+{
+"type": "Net",
+"name": "CLKOP_t",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "22",
+"col_num": "10"
+},
+{
+"row_num": "97",
+"col_num": "38"
+},
+{
+"row_num": "107",
+"col_num": "20"
+}
+]
+},
+{
+"type": "Net",
+"name": "CLKOS_t",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "23",
+"col_num": "10"
+},
+{
+"row_num": "97",
+"col_num": "55"
+}
+]
+},
+{
+"type": "Net",
+"name": "ipgen_GND",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "25",
+"col_num": "13"
+},
+{
+"row_num": "89",
+"col_num": "18"
+},
+{
+"row_num": "89",
+"col_num": "58"
+},
+{
+"row_num": "91",
+"col_num": "18"
+},
+{
+"row_num": "91",
+"col_num": "39"
+},
+{
+"row_num": "91",
+"col_num": "61"
+},
+{
+"row_num": "92",
+"col_num": "19"
+},
+{
+"row_num": "92",
+"col_num": "39"
+},
+{
+"row_num": "92",
+"col_num": "59"
+},
+{
+"row_num": "92",
+"col_num": "79"
+},
+{
+"row_num": "93",
+"col_num": "16"
+},
+{
+"row_num": "93",
+"col_num": "38"
+},
+{
+"row_num": "93",
+"col_num": "60"
+},
+{
+"row_num": "93",
+"col_num": "82"
+},
+{
+"row_num": "94",
+"col_num": "19"
+},
+{
+"row_num": "94",
+"col_num": "41"
+},
+{
+"row_num": "94",
+"col_num": "63"
+},
+{
+"row_num": "95",
+"col_num": "19"
+},
+{
+"row_num": "95",
+"col_num": "41"
+},
+{
+"row_num": "95",
+"col_num": "63"
+},
+{
+"row_num": "96",
+"col_num": "19"
+},
+{
+"row_num": "96",
+"col_num": "41"
+},
+{
+"row_num": "96",
+"col_num": "63"
+},
+{
+"row_num": "97",
+"col_num": "19"
+}
+]
+},
+{
+"type": "Net",
+"name": "CLKINTFB_t",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "27",
+"col_num": "10"
+},
+{
+"row_num": "87",
+"col_num": "46"
+},
+{
+"row_num": "98",
+"col_num": "74"
+}
+]
+},
+{
+"type": "Net",
+"name": "CLKI_t",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "28",
+"col_num": "10"
+},
+{
+"row_num": "29",
+"col_num": "12"
+},
+{
+"row_num": "87",
+"col_num": "30"
+}
+]
+}
+]
+},
+{
+"module": {
+"name": "led_wf",
+"file": "D:/fpga/ac208/workspace/fpga/led/led_wf.v",
+"level": "5",
+"first_line": "1",
+"last_line": "37",
+"inst_mod": [
+]
+},
+"always": [
+{
+"start_line": "15",
+"end_line": "35"
+}
+],
+"params": [
+{
+"name": " CLK_DIV",
+"value": "32'Sb00000000001001100010010110011111"
+},
+{
+"name": " LED_NUM",
+"value": "32'Sb00000000000000000000000000000100"
+},
+{
+"name": " INIT_STA",
+"value": "4'b0001"
+}
+],
+"params_override": [
+],
+"signals": [
+{
+"type": "Port",
+"name": "clk",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "8",
+"col_num": "12"
+},
+{
+"row_num": "8",
+"col_num": "12"
+},
+{
+"row_num": "15",
+"col_num": "21"
+}
+]
+},
+{
+"type": "Port",
+"name": "rst",
+"range": [
+{
+"start": "",
+"end": ""
+}
+],
+"positions": [
+{
+"row_num": "9",
+"col_num": "12"
+},
+{
+"row_num": "9",
+"col_num": "12"
+},
+{
+"row_num": "15",
+"col_num": "36"
+},
+{
+"row_num": "17",
+"col_num": "13"
+}
+]
+},
+{
+"type": "Port",
+"name": "led_sig",
+"range": [
+{
+"start": "3",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "10",
+"col_num": "35"
+},
+{
+"row_num": "10",
+"col_num": "35"
+},
+{
+"row_num": "20",
+"col_num": "11"
+},
+{
+"row_num": "27",
+"col_num": "15"
+},
+{
+"row_num": "27",
+"col_num": "28"
+},
+{
+"row_num": "27",
+"col_num": "42"
+}
+]
+},
+{
+"type": "Reg",
+"name": "cnt",
+"range": [
+{
+"start": "23",
+"end": "0"
+}
+],
+"positions": [
+{
+"row_num": "13",
+"col_num": "16"
+},
+{
+"row_num": "19",
+"col_num": "11"
+},
+{
+"row_num": "24",
+"col_num": "16"
+},
+{
+"row_num": "26",
+"col_num": "15"
+},
+{
+"row_num": "31",
+"col_num": "15"
+},
+{
+"row_num": "31",
+"col_num": "22"
 }
 ]
 }

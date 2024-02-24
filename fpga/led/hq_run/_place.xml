@@ -5,7 +5,7 @@
 		<h><![CDATA[[Resource Location Report]]]></h>
 	</heads>
 	<subheads>
-		<sh name="Date">Sat Feb 24 01:11:25 2024</sh>
+		<sh name="Date">Sat Feb 24 14:40:58 2024</sh>
 		<sh name="Device">SA5Z-30-D1-8U213C</sh>
 	</subheads>
 	<sec title="IO端口位置" >
@@ -47,7 +47,7 @@
 				<v>key_pin[2]</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
 			</r>
 			<r>
-				<v>key_pin[1]</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+				<v>key_pin[1]</v> <v>INPUT</v> <v>E5</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
 			</r>
 			<r>
 				<v>key_pin[0]</v> <v>INPUT</v> <v>D5</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
@@ -279,7 +279,61 @@
 			</cols>
 
 			<r>
+				<v>led_pin[3]_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T92D</v>
+			</r>
+			<r>
+				<v>led_pin[2]_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T92A</v>
+			</r>
+			<r>
+				<v>led_pin[1]_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T92B</v>
+			</r>
+			<r>
+				<v>led_pin[0]_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T95D</v>
+			</r>
+			<r>
+				<v>osc_c6_pin_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T43C</v>
+			</r>
+			<r>
+				<v>PLL_25to200_1/PLLInst_0</v> <v>PLL_25K</v> <v>LPLL1</v>
+			</r>
+			<r>
 				<v>cm3inst/inst</v> <v>CM3</v> <v>CM3</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[1]</v> <v>SLICEL</v> <v>R2C99M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[5]</v> <v>SLICEL</v> <v>R2C100M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[9]</v> <v>SLICEL</v> <v>R2C101M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[13]</v> <v>SLICEL</v> <v>R2C102M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[17]</v> <v>SLICEL</v> <v>R2C103M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[21]</v> <v>SLICEL</v> <v>R2C104M</v>
+			</r>
+			<r>
+				<v>led_wf1/cnt[6]</v> <v>SLICEL</v> <v>R2C99L</v>
+			</r>
+			<r>
+				<v>led_wf1/cnt[9]</v> <v>SLICEL</v> <v>R2C101L</v>
+			</r>
+			<r>
+				<v>led_wf1/cnt[16]</v> <v>SLICEL</v> <v>R2C102L</v>
+			</r>
+			<r>
+				<v>led_wf1/_i_2/_i_0_rkd_12</v> <v>SLICEL</v> <v>R2C100L</v>
+			</r>
+			<r>
+				<v>led_wf1/n_3</v> <v>SLICEL</v> <v>R2C103L</v>
+			</r>
+			<r>
+				<v>led_pin[3]_c</v> <v>SLICEL</v> <v>R2C98L</v>
 			</r>
 		</tbl>
 	</sec>

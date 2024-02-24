@@ -3,19 +3,30 @@
 #  HqFpga(TM) Release V3.0.3 (Winter 2023) Build 021824
 #  [Netlist Report]
 #####################################################################
-Date   : Sat Feb 24 01:11:20 2024
+Date   : Sat Feb 24 14:40:53 2024
 
 Library U_SYN
-+-----------+-------+
-| Cell Name | Count |
-+-----------+-------+
-| xsCM3     |     1 |
-| xsIOBI    |     4 |
-| xsIOBO    |    45 |
-| xsIOBB    |     1 |
-+-----------+-------+
-| Sum       |    51 |
-+-----------+-------+
++----------------+-------+
+| Cell Name      | Count |
++----------------+-------+
+| xsCM3          |     1 |
+| xsPLLSA        |     1 |
+| xsXORCY        |    23 |
+| xsMUXCY        |    22 |
+| xsIOBI         |     5 |
+| xsIOBO         |    45 |
+| xsIOBB         |     1 |
+| xsDFFSA_K1P1E1 |     1 |
+| xsDFFSA_K1C1E1 |     3 |
+| xsDFFSA_K1C1   |    24 |
+| xsLUTSA2       |    24 |
+| xsLUTSA6       |     2 |
+| xsLUTSA4       |     3 |
+| xsLUTSA5       |     1 |
+| xsINVSA        |     1 |
++----------------+-------+
+| Sum            |   157 |
++----------------+-------+
 
 Library work
 +-----------+-------+
@@ -30,12 +41,15 @@ Library work
 #  HqFpga(TM) Release V3.0.3 (Winter 2023) Build 021824
 #  [Resource Utilization Report]
 #############################################
-Date   : Sat Feb 24 01:11:20 2024
+Date   : Sat Feb 24 14:40:53 2024
 Device : SA5Z-30-D1-8U213C
 
 ** Device Utilization Summary  ** 
 +---------------+------+-----------+----------+
 | Resource Type | Used | Available | Ratio(%) |
 +---------------+------+-----------+----------+
-| PIO           |   50 |       175 |     28 % |
+| PIO           |   51 |       175 |     29 % |
+| LUT           |   30 |     20416 |      1 % |
+| FF/LATCH      |   28 |     40832 |      1 % |
+| PLL           |    1 |         2 |     50 % |
 +---------------+------+-----------+----------+

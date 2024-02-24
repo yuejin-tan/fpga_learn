@@ -3,16 +3,19 @@
 #  HqFpga(TM) Release V3.0.3 (Winter 2023) Build 021824
 #  [Netlist Report]
 #####################################################################
-Date   : Sat Feb 24 01:11:25 2024
+Date   : Sat Feb 24 14:40:58 2024
 
 Library U_ARCH
 +-----------+-------+
 | Cell Name | Count |
 +-----------+-------+
-| PIO       |    50 |
+| PIO       |    51 |
+| IOLOGIC   |     5 |
+| PLL_25K   |     1 |
 | CM3       |     1 |
+| SLICEL    |    12 |
 +-----------+-------+
-| Sum       |    51 |
+| Sum       |    70 |
 +-----------+-------+
 
 Library work
@@ -28,12 +31,15 @@ Library work
 #  HqFpga(TM) Release V3.0.3 (Winter 2023) Build 021824
 #  [Resource Utilization Report]
 #############################################
-Date   : Sat Feb 24 01:11:25 2024
+Date   : Sat Feb 24 14:40:58 2024
 Device : SA5Z-30-D1-8U213C
 
 ** Device Utilization Summary  ** 
 +---------------+------+-----------+----------+
 | Resource Type | Used | Available | Ratio(%) |
 +---------------+------+-----------+----------+
-| PIO           |   50 |       175 |     28 % |
+| PIO           |   51 |       175 |     29 % |
+| SLICE         |   12 |      5104 |      1 % |
+| IOLOGIC       |    5 |       175 |      2 % |
+| PLL           |    1 |         2 |     50 % |
 +---------------+------+-----------+----------+

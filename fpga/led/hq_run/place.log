@@ -7,19 +7,42 @@ Info: 网表整理(nl.sweep) 结束.
 # 组装(Packing)
 #====================================================
 Info: 开始组装(packing).
+Info: 将 led_wf1/led_sig_reg[3]_dup1 吸收到 OREG.
+Info: 将 led_wf1/led_sig_reg[2]_dup1 吸收到 OREG.
+Info: 将 led_wf1/led_sig_reg[1]_dup1 吸收到 OREG.
+Info: 将 led_wf1/led_sig_reg[0]_dup1 吸收到 OREG.
+Info: 将 led_wf1/led_sig_reg[0]_dup2 吸收到 OREG.
 Info: 开始组装预处理.
 Info: 完成组装预处理.
 Info: CM3                         1.
-Info: PIO                        50.
+Info: IOLOGIC                     5.
+Info:     IREG_OREG               5.
+Info: PIO                        51.
+Info: PLL_25K                     1.
+Info: SLICEL                      6.
+Info:     CARRY                   6.
+Info: SLICEL(LE)                 35.
+Info:     LUT                     7.
+Info:     LUT REG                24.
+Info:     REG                     4.
 Info: 完成组装.
 Info: Start gpack.
 Info: Done gpack.
 Info: 开始建立物理网表.
-Info:   为 50   个 PIO        建立了物理网表 .
+Info:   为 51   个 PIO        建立了物理网表 .
+Info:   为 5    个 IOLOGIC    建立了物理网表 .
+Info:   为 1    个 PLL_25K    建立了物理网表 .
 Info:   为 1    个 CM3        建立了物理网表 .
+Info:   为 12   个 SLICEL     建立了物理网表 .
 Info: 完成建立物理网表.
 Info: CM3                         1.
-Info: PIO                        50.
+Info: IOLOGIC                     5.
+Info:     IREG_OREG               5.
+Info: PIO                        51.
+Info: PLL_25K                     1.
+Info: SLICEL                     12.
+Info:     CARRY                   6.
+Info:     LOGIC                   6.
 ####
 Info: 组装执行时间 : 4 秒.
 Info: 输出网表报告到文件D:\fpga\ac208\workspace\fpga\led\hq_run\_map.rpt中.
@@ -30,12 +53,13 @@ Info: 开始布局(placement).
 Info: 布局模式: 无时序约束.
 Info: CE/SR NET max fanout = 2000.
 Info: Best achievable WNS = 10000
-[V]PL-STAT-SLICE:  0 = 0 / 5104
+[V]PL-STAT-SLICE:  0.23511 = 12 / 5104
 Info: 设置延迟系数: 1.33333.
 [V]: Identify CE/SR net...
 Info: 元件实例 swddio 已固定于 C1.
 Info: 元件实例 clk_25M 已固定于 H13.
 Info: 元件实例 swdclk 已固定于 H1.
+Info: 元件实例 key_pin[1] 已固定于 E5.
 Info: 元件实例 key_pin[0] 已固定于 D5.
 Info: 元件实例 uart_DAP_rx 已固定于 C5.
 Info: 元件实例 led_core 已固定于 B6.
@@ -83,11 +107,67 @@ Info: 元件实例 seg7_SH_CP 已固定于 E4.
 Info: 元件实例 seg7_ST_CP 已固定于 G6.
 Info: 元件实例 seg7_DS 已固定于 H2.
 Info: 元件实例 osc_c6_pin 已固定于 C6.
+----
+Info: 布局第1阶段(总共3阶段) (签名=2226,60,1).
+----
+Info: 进度   3%, 阶段造价 = 3054.
+Info: 进度   7%, 阶段造价 = 2481.
+Info: 进度  10%, 阶段造价 = 2467.
+Info: 进度  13%, 阶段造价 = 2335.
+Info: 进度  17%, 阶段造价 = 1306.
+Info: 进度  20%, 阶段造价 = 1199.
+Info: 进度  22%, 阶段造价 = 1045.
+Info: 进度  23%, 阶段造价 = 797.
+Info: 进度  27%, 阶段造价 = 803.
+Info: 进度  30%, 阶段造价 = 738.
+Info: 进度  32%, 阶段造价 = 707.
+Info: 进度  33%, 阶段造价 = 748.
+Info: 进度  37%, 阶段造价 = 763.
+Info: 进度  40%, 阶段造价 = 802.
+Info: 进度  43%, 阶段造价 = 772.
+Info: 进度  47%, 阶段造价 = 747.
+Info: 进度  50%, 阶段造价 = 707.
+Info: 进度  52%, 阶段造价 = 692.
+Info: 进度  53%, 阶段造价 = 693.
+Info: 进度  57%, 阶段造价 = 683.
+Info: 进度  58%, 阶段造价 = 681.
+Info: 进度  60%, 阶段造价 = 681.
+Info: 进度  63%, 阶段造价 = 682.
+Info: 进度  67%, 阶段造价 = 681.
+Info: 进度  70%, 阶段造价 = 693.
+Info: 进度  73%, 阶段造价 = 683.
+Info: 进度  77%, 阶段造价 = 681.
+Info: 进度  80%, 阶段造价 = 681.
+Info: 进度  83%, 阶段造价 = 681.
+Info: 进度  87%, 阶段造价 = 681.
+Info: 进度  90%, 阶段造价 = 681.
+Info: 进度  93%, 阶段造价 = 681.
+Info: 进度  97%, 阶段造价 = 682.
+Info: 进度  99%, 阶段造价 = 681.
+Info: 进度 100%, 阶段造价 = 681.
+----
+Info: 布局第2阶段(总共3阶段) (签名=1442,10,1).
+----
+Info: 进度  10%, 阶段造价 = 681.
+Info: 进度  30%, 阶段造价 = 681.
+Info: 进度  50%, 阶段造价 = 681.
+Info: 进度  70%, 阶段造价 = 681.
+Info: 进度  90%, 阶段造价 = 681.
+Info: 进度 100%, 阶段造价 = 681.
+----
+Info: 布局第3阶段(总共3阶段) (签名=477,10,1).
+----
+Info: 进度  10%, 阶段造价 = 681.
+Info: 进度  30%, 阶段造价 = 681.
+Info: 进度  50%, 阶段造价 = 681.
+Info: 进度  70%, 阶段造价 = 681.
+Info: 进度  90%, 阶段造价 = 681.
+Info: 进度 100%, 阶段造价 = 681.
 Info: 完成布局.
 Info: 开始网表校正.
 Info: 完成网表校正.
 ####
-Info: 布局执行时间 : 0 秒.
+Info: 布局执行时间 : 1 秒.
 ####
 Info: 输出网表报告到文件D:\fpga\ac208\workspace\fpga\led\hq_run\ratio.rpt_chs中.
 Info: 输出网表报告到文件D:\fpga\ac208\workspace\fpga\led\hq_run\_place.rpt_chs中.

@@ -15,12 +15,800 @@
 #
 
 
+# ***********************************************************************
+# 时钟         : clk_25M
+# 最小时钟周期 : 6030.8 ps
+# ***********************************************************************
+
+********************
+* 路径 1
+********************
+起点     : led_wf1/cnt[16]/BMUX [激发时钟: clk_25M, 上升沿1]
+终点     : osc_c6_pin_MGIOL/CE  [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+=================================================================================================================================
+|                  节点                   |     单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+=================================================================================================================================
+| CLOCK'clk_25M                           |      N/A      |      0 |               |          | N/A                      |      |
+| clk_25M                                 |      top      |      0 | clock_latency |          | clk_25M                  | 1    |
+| clk_25M/PAD#bidir_in                    |      PIO      |      0 |      net      | PT79A    | clk_25M                  | 1    |
+|    clk_25M_pad/I                        |    xsIOBI     |        |               |          |                          |      |
+|    clk_25M_pad/O                        |    xsIOBI     |        |               |          |                          |      |
+| clk_25M/PADDI                           |      PIO      |   1091 |   PADI_DEL    |          | clk_25M_c                | 12   |
+| led_wf1/cnt[16]/CLK                     |    SLICEL     | 1735.4 |      net      | R2C102L  | clk_25M_c                |      |
+| --                                      |      --       |     -- |      --       | --       | --                       | --   |
+|    led_wf1/cnt_reg[11]/C                | xsDFFSA_K1C1  |        |               |          |                          |      |
+|    led_wf1/cnt_reg[11]/Q                | xsDFFSA_K1C1  |        |               |          |                          |      |
+| led_wf1/cnt[16]/BMUX                    |    SLICEL     |   47.7 |    Tshcko     |          | led_wf1/cnt[11]          | 2    |
+| led_wf1/cnt[9]/C2                       |    SLICEL     |  736.4 |      net      | R2C101L  | led_wf1/cnt[11]          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/I1          |   xsLUTSA6    |        |               |          |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/O           |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/cnt[9]/C                        |    SLICEL     |   75.1 |     Tilo      |          | led_wf1/_i_2/_i_0_rkd_14 | 1    |
+| led_wf1/cnt[9]/D4                       |    SLICEL     |  209.9 |      net      | R2C101L  | led_wf1/_i_2/_i_0_rkd_14 |      |
+|    led_wf1/_i_2/_i_0_rkd_19/I3          |   xsLUTSA6    |        |               |          |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_19/O           |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/cnt[9]/D                        |    SLICEL     |   75.1 |     Tilo      |          | led_wf1/_i_2/_i_0_rkd_19 | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/B1             |    SLICEL     |  738.8 |      net      | R2C100L  | led_wf1/_i_2/_i_0_rkd_19 |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/I0 |   xsLUTSA6    |        |               |          |                          |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/O  |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/B              |    SLICEL     |   75.1 |     Tilo      |          | _n_141                   | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/D1             |    SLICEL     |  736.2 |      net      | R2C100L  | _n_141                   |      |
+|    inverted_led_wf1/_i_2/_i_0/I0        |   xsLUTSA6    |        |               |          |                          |      |
+|    inverted_led_wf1/_i_2/_i_0/O         |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/D              |    SLICEL     |   75.1 |     Tilo      |          | _n_140                   | 21   |
+| osc_c6_pin_MGIOL/CE                     |    IOLOGIC    | 3177.5 |      net      | IOL_T43C | _n_140                   |      |
+|    led_wf1/led_sig_reg[0]_dup2/SP       | xsODFF_K1P1E1 |        |               |          |                          |      |
+=================================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 5946.8     (Tdatp)
+     clock-to-q 延迟 = 47.7 
+        总的单元延迟 = 300.4 
+        总的连线延迟 = 5598.7 
+        逻辑级数     = 4 
+
+[数据捕获路径]
+==============================================================================================================
+|                节点                 |     单元      |  延迟  |     类型      |   位置   |   连线    | 扇出 |
+==============================================================================================================
+| CLOCK'clk_25M                       |      N/A      |      0 |               |          | N/A       |      |
+| clk_25M                             |      top      |      0 | clock_latency |          | clk_25M   | 1    |
+| clk_25M/PAD#bidir_in                |      PIO      |      0 |      net      | PT79A    | clk_25M   | 1    |
+|    /U_ARCH/IOLOGIC/IOLOGIC:6/CE     |    IOLOGIC    |        |               |          |           |      |
+|    led_wf1/led_sig_reg[0]_dup2/SP   | xsODFF_K1P1E1 |        |               |          |           |      |
+|    clk_25M_pad/I                    |    xsIOBI     |        |               |          |           |      |
+|    clk_25M_pad/O                    |    xsIOBI     |        |               |          |           |      |
+| clk_25M/PADDI                       |      PIO      |   1091 |   PADI_DEL    |          | clk_25M_c | 12   |
+| osc_c6_pin_MGIOL/CLK                |    IOLOGIC    | 1672.4 |      net      | IOL_T43C | clk_25M_c |      |
+|    led_wf1/led_sig_reg[0]_dup2/SP   | xsODFF_K1P1E1 |        |               |          |           |      |
+|    led_wf1/led_sig_reg[0]_dup2/SCLK | xsODFF_K1P1E1 |        |               |          |           |      |
+==============================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 5946.8     + 21         - 0          - -63        
+       = 6030.8
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 2
+********************
+起点     : led_wf1/cnt[16]/BMUX [激发时钟: clk_25M, 上升沿1]
+终点     : led_pin[1]_MGIOL/CE  [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+=================================================================================================================================
+|                  节点                   |     单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+=================================================================================================================================
+| CLOCK'clk_25M                           |      N/A      |      0 |               |          | N/A                      |      |
+| clk_25M                                 |      top      |      0 | clock_latency |          | clk_25M                  | 1    |
+| clk_25M/PAD#bidir_in                    |      PIO      |      0 |      net      | PT79A    | clk_25M                  | 1    |
+|    clk_25M_pad/I                        |    xsIOBI     |        |               |          |                          |      |
+|    clk_25M_pad/O                        |    xsIOBI     |        |               |          |                          |      |
+| clk_25M/PADDI                           |      PIO      |   1091 |   PADI_DEL    |          | clk_25M_c                | 12   |
+| led_wf1/cnt[16]/CLK                     |    SLICEL     | 1735.4 |      net      | R2C102L  | clk_25M_c                |      |
+| --                                      |      --       |     -- |      --       | --       | --                       | --   |
+|    led_wf1/cnt_reg[11]/C                | xsDFFSA_K1C1  |        |               |          |                          |      |
+|    led_wf1/cnt_reg[11]/Q                | xsDFFSA_K1C1  |        |               |          |                          |      |
+| led_wf1/cnt[16]/BMUX                    |    SLICEL     |   47.7 |    Tshcko     |          | led_wf1/cnt[11]          | 2    |
+| led_wf1/cnt[9]/C2                       |    SLICEL     |  736.4 |      net      | R2C101L  | led_wf1/cnt[11]          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/I1          |   xsLUTSA6    |        |               |          |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/O           |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/cnt[9]/C                        |    SLICEL     |   75.1 |     Tilo      |          | led_wf1/_i_2/_i_0_rkd_14 | 1    |
+| led_wf1/cnt[9]/D4                       |    SLICEL     |  209.9 |      net      | R2C101L  | led_wf1/_i_2/_i_0_rkd_14 |      |
+|    led_wf1/_i_2/_i_0_rkd_19/I3          |   xsLUTSA6    |        |               |          |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_19/O           |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/cnt[9]/D                        |    SLICEL     |   75.1 |     Tilo      |          | led_wf1/_i_2/_i_0_rkd_19 | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/B1             |    SLICEL     |  738.8 |      net      | R2C100L  | led_wf1/_i_2/_i_0_rkd_19 |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/I0 |   xsLUTSA6    |        |               |          |                          |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/O  |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/B              |    SLICEL     |   75.1 |     Tilo      |          | _n_141                   | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/D1             |    SLICEL     |  736.2 |      net      | R2C100L  | _n_141                   |      |
+|    inverted_led_wf1/_i_2/_i_0/I0        |   xsLUTSA6    |        |               |          |                          |      |
+|    inverted_led_wf1/_i_2/_i_0/O         |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/D              |    SLICEL     |   75.1 |     Tilo      |          | _n_140                   | 21   |
+| led_pin[1]_MGIOL/CE                     |    IOLOGIC    | 2404.9 |      net      | IOL_T92B | _n_140                   |      |
+|    led_wf1/led_sig_reg[1]_dup1/SP       | xsODFF_K1C1E1 |        |               |          |                          |      |
+=================================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 5174.2     (Tdatp)
+     clock-to-q 延迟 = 47.7 
+        总的单元延迟 = 300.4 
+        总的连线延迟 = 4826.1 
+        逻辑级数     = 4 
+
+[数据捕获路径]
+==============================================================================================================
+|                节点                 |     单元      |  延迟  |     类型      |   位置   |   连线    | 扇出 |
+==============================================================================================================
+| CLOCK'clk_25M                       |      N/A      |      0 |               |          | N/A       |      |
+| clk_25M                             |      top      |      0 | clock_latency |          | clk_25M   | 1    |
+| clk_25M/PAD#bidir_in                |      PIO      |      0 |      net      | PT79A    | clk_25M   | 1    |
+|    /U_ARCH/IOLOGIC/IOLOGIC:4/CE     |    IOLOGIC    |        |               |          |           |      |
+|    led_wf1/led_sig_reg[1]_dup1/SP   | xsODFF_K1C1E1 |        |               |          |           |      |
+|    clk_25M_pad/I                    |    xsIOBI     |        |               |          |           |      |
+|    clk_25M_pad/O                    |    xsIOBI     |        |               |          |           |      |
+| clk_25M/PADDI                       |      PIO      |   1091 |   PADI_DEL    |          | clk_25M_c | 12   |
+| led_pin[1]_MGIOL/CLK                |    IOLOGIC    | 1672.4 |      net      | IOL_T92B | clk_25M_c |      |
+|    led_wf1/led_sig_reg[1]_dup1/SP   | xsODFF_K1C1E1 |        |               |          |           |      |
+|    led_wf1/led_sig_reg[1]_dup1/SCLK | xsODFF_K1C1E1 |        |               |          |           |      |
+==============================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 5174.2     + 21         - 0          - -63        
+       = 5258.2
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 3
+********************
+起点     : led_wf1/cnt[16]/BMUX [激发时钟: clk_25M, 上升沿1]
+终点     : led_pin[2]_MGIOL/CE  [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+=================================================================================================================================
+|                  节点                   |     单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+=================================================================================================================================
+| CLOCK'clk_25M                           |      N/A      |      0 |               |          | N/A                      |      |
+| clk_25M                                 |      top      |      0 | clock_latency |          | clk_25M                  | 1    |
+| clk_25M/PAD#bidir_in                    |      PIO      |      0 |      net      | PT79A    | clk_25M                  | 1    |
+|    clk_25M_pad/I                        |    xsIOBI     |        |               |          |                          |      |
+|    clk_25M_pad/O                        |    xsIOBI     |        |               |          |                          |      |
+| clk_25M/PADDI                           |      PIO      |   1091 |   PADI_DEL    |          | clk_25M_c                | 12   |
+| led_wf1/cnt[16]/CLK                     |    SLICEL     | 1735.4 |      net      | R2C102L  | clk_25M_c                |      |
+| --                                      |      --       |     -- |      --       | --       | --                       | --   |
+|    led_wf1/cnt_reg[11]/C                | xsDFFSA_K1C1  |        |               |          |                          |      |
+|    led_wf1/cnt_reg[11]/Q                | xsDFFSA_K1C1  |        |               |          |                          |      |
+| led_wf1/cnt[16]/BMUX                    |    SLICEL     |   47.7 |    Tshcko     |          | led_wf1/cnt[11]          | 2    |
+| led_wf1/cnt[9]/C2                       |    SLICEL     |  736.4 |      net      | R2C101L  | led_wf1/cnt[11]          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/I1          |   xsLUTSA6    |        |               |          |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/O           |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/cnt[9]/C                        |    SLICEL     |   75.1 |     Tilo      |          | led_wf1/_i_2/_i_0_rkd_14 | 1    |
+| led_wf1/cnt[9]/D4                       |    SLICEL     |  209.9 |      net      | R2C101L  | led_wf1/_i_2/_i_0_rkd_14 |      |
+|    led_wf1/_i_2/_i_0_rkd_19/I3          |   xsLUTSA6    |        |               |          |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_19/O           |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/cnt[9]/D                        |    SLICEL     |   75.1 |     Tilo      |          | led_wf1/_i_2/_i_0_rkd_19 | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/B1             |    SLICEL     |  738.8 |      net      | R2C100L  | led_wf1/_i_2/_i_0_rkd_19 |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/I0 |   xsLUTSA6    |        |               |          |                          |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/O  |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/B              |    SLICEL     |   75.1 |     Tilo      |          | _n_141                   | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/D1             |    SLICEL     |  736.2 |      net      | R2C100L  | _n_141                   |      |
+|    inverted_led_wf1/_i_2/_i_0/I0        |   xsLUTSA6    |        |               |          |                          |      |
+|    inverted_led_wf1/_i_2/_i_0/O         |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/D              |    SLICEL     |   75.1 |     Tilo      |          | _n_140                   | 21   |
+| led_pin[2]_MGIOL/CE                     |    IOLOGIC    | 1981.6 |      net      | IOL_T92A | _n_140                   |      |
+|    led_wf1/led_sig_reg[2]_dup1/SP       | xsODFF_K1C1E1 |        |               |          |                          |      |
+=================================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 4750.9     (Tdatp)
+     clock-to-q 延迟 = 47.7 
+        总的单元延迟 = 300.4 
+        总的连线延迟 = 4402.8 
+        逻辑级数     = 4 
+
+[数据捕获路径]
+==============================================================================================================
+|                节点                 |     单元      |  延迟  |     类型      |   位置   |   连线    | 扇出 |
+==============================================================================================================
+| CLOCK'clk_25M                       |      N/A      |      0 |               |          | N/A       |      |
+| clk_25M                             |      top      |      0 | clock_latency |          | clk_25M   | 1    |
+| clk_25M/PAD#bidir_in                |      PIO      |      0 |      net      | PT79A    | clk_25M   | 1    |
+|    /U_ARCH/IOLOGIC/IOLOGIC:3/CE     |    IOLOGIC    |        |               |          |           |      |
+|    led_wf1/led_sig_reg[2]_dup1/SP   | xsODFF_K1C1E1 |        |               |          |           |      |
+|    clk_25M_pad/I                    |    xsIOBI     |        |               |          |           |      |
+|    clk_25M_pad/O                    |    xsIOBI     |        |               |          |           |      |
+| clk_25M/PADDI                       |      PIO      |   1091 |   PADI_DEL    |          | clk_25M_c | 12   |
+| led_pin[2]_MGIOL/CLK                |    IOLOGIC    | 1672.4 |      net      | IOL_T92A | clk_25M_c |      |
+|    led_wf1/led_sig_reg[2]_dup1/SP   | xsODFF_K1C1E1 |        |               |          |           |      |
+|    led_wf1/led_sig_reg[2]_dup1/SCLK | xsODFF_K1C1E1 |        |               |          |           |      |
+==============================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 4750.9     + 21         - 0          - -63        
+       = 4834.9
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 4
+********************
+起点     : led_wf1/_i_2/_i_0_rkd_12/AQ [激发时钟: clk_25M, 上升沿1]
+终点     : osc_c6_pin_MGIOL/TXDATA0    [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+===============================================================================================================
+|               节点               |      单元      |  延迟  |     类型      |   位置   |     连线     | 扇出 |
+===============================================================================================================
+| CLOCK'clk_25M                    |      N/A       |      0 |               |          | N/A          |      |
+| clk_25M                          |      top       |      0 | clock_latency |          | clk_25M      | 1    |
+| clk_25M/PAD#bidir_in             |      PIO       |      0 |      net      | PT79A    | clk_25M      | 1    |
+|    clk_25M_pad/I                 |     xsIOBI     |        |               |          |              |      |
+|    clk_25M_pad/O                 |     xsIOBI     |        |               |          |              |      |
+| clk_25M/PADDI                    |      PIO       |   1091 |   PADI_DEL    |          | clk_25M_c    | 12   |
+| led_wf1/_i_2/_i_0_rkd_12/CLK     |     SLICEL     | 1735.4 |      net      | R2C100L  | clk_25M_c    |      |
+| --                               |       --       |     -- |      --       | --       | --           | --   |
+|    led_wf1/led_sig_reg[1]/C      | xsDFFSA_K1C1E1 |        |               |          |              |      |
+|    led_wf1/led_sig_reg[1]/Q      | xsDFFSA_K1C1E1 |        |               |          |              |      |
+| led_wf1/_i_2/_i_0_rkd_12/AQ      |     SLICEL     |   30.5 |     Tcko      |          | led_pin[1]_c | 3    |
+| osc_c6_pin_MGIOL/TXDATA0         |    IOLOGIC     | 4239.8 |      net      | IOL_T43C | led_pin[1]_c |      |
+|    led_wf1/led_sig_reg[0]_dup2/D | xsODFF_K1P1E1  |        |               |          |              |      |
+===============================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 4270.3     (Tdatp)
+     clock-to-q 延迟 = 30.5 
+        总的单元延迟 = 0 
+        总的连线延迟 = 4239.8 
+        逻辑级数     = 0 
+
+[数据捕获路径]
+===============================================================================================================
+|                 节点                 |     单元      |  延迟  |     类型      |   位置   |   连线    | 扇出 |
+===============================================================================================================
+| CLOCK'clk_25M                        |      N/A      |      0 |               |          | N/A       |      |
+| clk_25M                              |      top      |      0 | clock_latency |          | clk_25M   | 1    |
+| clk_25M/PAD#bidir_in                 |      PIO      |      0 |      net      | PT79A    | clk_25M   | 1    |
+|    /U_ARCH/IOLOGIC/IOLOGIC:6/TXDATA0 |    IOLOGIC    |        |               |          |           |      |
+|    led_wf1/led_sig_reg[0]_dup2/D     | xsODFF_K1P1E1 |        |               |          |           |      |
+|    clk_25M_pad/I                     |    xsIOBI     |        |               |          |           |      |
+|    clk_25M_pad/O                     |    xsIOBI     |        |               |          |           |      |
+| clk_25M/PADDI                        |      PIO      |   1091 |   PADI_DEL    |          | clk_25M_c | 12   |
+| osc_c6_pin_MGIOL/CLK                 |    IOLOGIC    | 1672.4 |      net      | IOL_T43C | clk_25M_c |      |
+|    led_wf1/led_sig_reg[0]_dup2/D     | xsODFF_K1P1E1 |        |               |          |           |      |
+|    led_wf1/led_sig_reg[0]_dup2/SCLK  | xsODFF_K1P1E1 |        |               |          |           |      |
+===============================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 4270.3     + 284        - 0          - -63        
+       = 4617.3
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 5
+********************
+起点     : led_wf1/cnt[16]/BMUX [激发时钟: clk_25M, 上升沿1]
+终点     : led_pin[0]_MGIOL/CE  [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+=================================================================================================================================
+|                  节点                   |     单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+=================================================================================================================================
+| CLOCK'clk_25M                           |      N/A      |      0 |               |          | N/A                      |      |
+| clk_25M                                 |      top      |      0 | clock_latency |          | clk_25M                  | 1    |
+| clk_25M/PAD#bidir_in                    |      PIO      |      0 |      net      | PT79A    | clk_25M                  | 1    |
+|    clk_25M_pad/I                        |    xsIOBI     |        |               |          |                          |      |
+|    clk_25M_pad/O                        |    xsIOBI     |        |               |          |                          |      |
+| clk_25M/PADDI                           |      PIO      |   1091 |   PADI_DEL    |          | clk_25M_c                | 12   |
+| led_wf1/cnt[16]/CLK                     |    SLICEL     | 1735.4 |      net      | R2C102L  | clk_25M_c                |      |
+| --                                      |      --       |     -- |      --       | --       | --                       | --   |
+|    led_wf1/cnt_reg[11]/C                | xsDFFSA_K1C1  |        |               |          |                          |      |
+|    led_wf1/cnt_reg[11]/Q                | xsDFFSA_K1C1  |        |               |          |                          |      |
+| led_wf1/cnt[16]/BMUX                    |    SLICEL     |   47.7 |    Tshcko     |          | led_wf1/cnt[11]          | 2    |
+| led_wf1/cnt[9]/C2                       |    SLICEL     |  736.4 |      net      | R2C101L  | led_wf1/cnt[11]          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/I1          |   xsLUTSA6    |        |               |          |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/O           |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/cnt[9]/C                        |    SLICEL     |   75.1 |     Tilo      |          | led_wf1/_i_2/_i_0_rkd_14 | 1    |
+| led_wf1/cnt[9]/D4                       |    SLICEL     |  209.9 |      net      | R2C101L  | led_wf1/_i_2/_i_0_rkd_14 |      |
+|    led_wf1/_i_2/_i_0_rkd_19/I3          |   xsLUTSA6    |        |               |          |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_19/O           |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/cnt[9]/D                        |    SLICEL     |   75.1 |     Tilo      |          | led_wf1/_i_2/_i_0_rkd_19 | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/B1             |    SLICEL     |  738.8 |      net      | R2C100L  | led_wf1/_i_2/_i_0_rkd_19 |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/I0 |   xsLUTSA6    |        |               |          |                          |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/O  |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/B              |    SLICEL     |   75.1 |     Tilo      |          | _n_141                   | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/D1             |    SLICEL     |  736.2 |      net      | R2C100L  | _n_141                   |      |
+|    inverted_led_wf1/_i_2/_i_0/I0        |   xsLUTSA6    |        |               |          |                          |      |
+|    inverted_led_wf1/_i_2/_i_0/O         |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/D              |    SLICEL     |   75.1 |     Tilo      |          | _n_140                   | 21   |
+| led_pin[0]_MGIOL/CE                     |    IOLOGIC    |   1474 |      net      | IOL_T95D | _n_140                   |      |
+|    led_wf1/led_sig_reg[0]_dup1/SP       | xsODFF_K1P1E1 |        |               |          |                          |      |
+=================================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 4243.4     (Tdatp)
+     clock-to-q 延迟 = 47.7 
+        总的单元延迟 = 300.4 
+        总的连线延迟 = 3895.3 
+        逻辑级数     = 4 
+
+[数据捕获路径]
+==============================================================================================================
+|                节点                 |     单元      |  延迟  |     类型      |   位置   |   连线    | 扇出 |
+==============================================================================================================
+| CLOCK'clk_25M                       |      N/A      |      0 |               |          | N/A       |      |
+| clk_25M                             |      top      |      0 | clock_latency |          | clk_25M   | 1    |
+| clk_25M/PAD#bidir_in                |      PIO      |      0 |      net      | PT79A    | clk_25M   | 1    |
+|    /U_ARCH/IOLOGIC/IOLOGIC:5/CE     |    IOLOGIC    |        |               |          |           |      |
+|    led_wf1/led_sig_reg[0]_dup1/SP   | xsODFF_K1P1E1 |        |               |          |           |      |
+|    clk_25M_pad/I                    |    xsIOBI     |        |               |          |           |      |
+|    clk_25M_pad/O                    |    xsIOBI     |        |               |          |           |      |
+| clk_25M/PADDI                       |      PIO      |   1091 |   PADI_DEL    |          | clk_25M_c | 12   |
+| led_pin[0]_MGIOL/CLK                |    IOLOGIC    | 1672.4 |      net      | IOL_T95D | clk_25M_c |      |
+|    led_wf1/led_sig_reg[0]_dup1/SP   | xsODFF_K1P1E1 |        |               |          |           |      |
+|    led_wf1/led_sig_reg[0]_dup1/SCLK | xsODFF_K1P1E1 |        |               |          |           |      |
+==============================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 4243.4     + 21         - 0          - -63        
+       = 4327.4
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 6
+********************
+起点     : led_wf1/cnt[16]/BMUX [激发时钟: clk_25M, 上升沿1]
+终点     : led_pin[3]_MGIOL/CE  [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+=================================================================================================================================
+|                  节点                   |     单元      |  延迟  |     类型      |   位置   |           连线           | 扇出 |
+=================================================================================================================================
+| CLOCK'clk_25M                           |      N/A      |      0 |               |          | N/A                      |      |
+| clk_25M                                 |      top      |      0 | clock_latency |          | clk_25M                  | 1    |
+| clk_25M/PAD#bidir_in                    |      PIO      |      0 |      net      | PT79A    | clk_25M                  | 1    |
+|    clk_25M_pad/I                        |    xsIOBI     |        |               |          |                          |      |
+|    clk_25M_pad/O                        |    xsIOBI     |        |               |          |                          |      |
+| clk_25M/PADDI                           |      PIO      |   1091 |   PADI_DEL    |          | clk_25M_c                | 12   |
+| led_wf1/cnt[16]/CLK                     |    SLICEL     | 1735.4 |      net      | R2C102L  | clk_25M_c                |      |
+| --                                      |      --       |     -- |      --       | --       | --                       | --   |
+|    led_wf1/cnt_reg[11]/C                | xsDFFSA_K1C1  |        |               |          |                          |      |
+|    led_wf1/cnt_reg[11]/Q                | xsDFFSA_K1C1  |        |               |          |                          |      |
+| led_wf1/cnt[16]/BMUX                    |    SLICEL     |   47.7 |    Tshcko     |          | led_wf1/cnt[11]          | 2    |
+| led_wf1/cnt[9]/C2                       |    SLICEL     |  736.4 |      net      | R2C101L  | led_wf1/cnt[11]          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/I1          |   xsLUTSA6    |        |               |          |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/O           |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/cnt[9]/C                        |    SLICEL     |   75.1 |     Tilo      |          | led_wf1/_i_2/_i_0_rkd_14 | 1    |
+| led_wf1/cnt[9]/D4                       |    SLICEL     |  209.9 |      net      | R2C101L  | led_wf1/_i_2/_i_0_rkd_14 |      |
+|    led_wf1/_i_2/_i_0_rkd_19/I3          |   xsLUTSA6    |        |               |          |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_19/O           |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/cnt[9]/D                        |    SLICEL     |   75.1 |     Tilo      |          | led_wf1/_i_2/_i_0_rkd_19 | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/B1             |    SLICEL     |  738.8 |      net      | R2C100L  | led_wf1/_i_2/_i_0_rkd_19 |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/I0 |   xsLUTSA6    |        |               |          |                          |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/O  |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/B              |    SLICEL     |   75.1 |     Tilo      |          | _n_141                   | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/D1             |    SLICEL     |  736.2 |      net      | R2C100L  | _n_141                   |      |
+|    inverted_led_wf1/_i_2/_i_0/I0        |   xsLUTSA6    |        |               |          |                          |      |
+|    inverted_led_wf1/_i_2/_i_0/O         |   xsLUTSA6    |        |               |          |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/D              |    SLICEL     |   75.1 |     Tilo      |          | _n_140                   | 21   |
+| led_pin[3]_MGIOL/CE                     |    IOLOGIC    | 1171.9 |      net      | IOL_T92D | _n_140                   |      |
+|    led_wf1/led_sig_reg[3]_dup1/SP       | xsODFF_K1C1E1 |        |               |          |                          |      |
+=================================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 3941.3     (Tdatp)
+     clock-to-q 延迟 = 47.7 
+        总的单元延迟 = 300.4 
+        总的连线延迟 = 3593.2 
+        逻辑级数     = 4 
+
+[数据捕获路径]
+==============================================================================================================
+|                节点                 |     单元      |  延迟  |     类型      |   位置   |   连线    | 扇出 |
+==============================================================================================================
+| CLOCK'clk_25M                       |      N/A      |      0 |               |          | N/A       |      |
+| clk_25M                             |      top      |      0 | clock_latency |          | clk_25M   | 1    |
+| clk_25M/PAD#bidir_in                |      PIO      |      0 |      net      | PT79A    | clk_25M   | 1    |
+|    /U_ARCH/IOLOGIC/IOLOGIC:2/CE     |    IOLOGIC    |        |               |          |           |      |
+|    led_wf1/led_sig_reg[3]_dup1/SP   | xsODFF_K1C1E1 |        |               |          |           |      |
+|    clk_25M_pad/I                    |    xsIOBI     |        |               |          |           |      |
+|    clk_25M_pad/O                    |    xsIOBI     |        |               |          |           |      |
+| clk_25M/PADDI                       |      PIO      |   1091 |   PADI_DEL    |          | clk_25M_c | 12   |
+| led_pin[3]_MGIOL/CLK                |    IOLOGIC    | 1672.4 |      net      | IOL_T92D | clk_25M_c |      |
+|    led_wf1/led_sig_reg[3]_dup1/SP   | xsODFF_K1C1E1 |        |               |          |           |      |
+|    led_wf1/led_sig_reg[3]_dup1/SCLK | xsODFF_K1C1E1 |        |               |          |           |      |
+==============================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 3941.3     + 21         - 0          - -63        
+       = 4025.3
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 7
+********************
+起点     : led_wf1/cnt[16]/BMUX [激发时钟: clk_25M, 上升沿1]
+终点     : led_pin[3]_c/CE      [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+=================================================================================================================================
+|                  节点                   |      单元      |  延迟  |     类型      |  位置   |           连线           | 扇出 |
+=================================================================================================================================
+| CLOCK'clk_25M                           |      N/A       |      0 |               |         | N/A                      |      |
+| clk_25M                                 |      top       |      0 | clock_latency |         | clk_25M                  | 1    |
+| clk_25M/PAD#bidir_in                    |      PIO       |      0 |      net      | PT79A   | clk_25M                  | 1    |
+|    clk_25M_pad/I                        |     xsIOBI     |        |               |         |                          |      |
+|    clk_25M_pad/O                        |     xsIOBI     |        |               |         |                          |      |
+| clk_25M/PADDI                           |      PIO       |   1091 |   PADI_DEL    |         | clk_25M_c                | 12   |
+| led_wf1/cnt[16]/CLK                     |     SLICEL     | 1735.4 |      net      | R2C102L | clk_25M_c                |      |
+| --                                      |       --       |     -- |      --       | --      | --                       | --   |
+|    led_wf1/cnt_reg[11]/C                |  xsDFFSA_K1C1  |        |               |         |                          |      |
+|    led_wf1/cnt_reg[11]/Q                |  xsDFFSA_K1C1  |        |               |         |                          |      |
+| led_wf1/cnt[16]/BMUX                    |     SLICEL     |   47.7 |    Tshcko     |         | led_wf1/cnt[11]          | 2    |
+| led_wf1/cnt[9]/C2                       |     SLICEL     |  736.4 |      net      | R2C101L | led_wf1/cnt[11]          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/I1          |    xsLUTSA6    |        |               |         |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/O           |    xsLUTSA6    |        |               |         |                          |      |
+| led_wf1/cnt[9]/C                        |     SLICEL     |   75.1 |     Tilo      |         | led_wf1/_i_2/_i_0_rkd_14 | 1    |
+| led_wf1/cnt[9]/D4                       |     SLICEL     |  209.9 |      net      | R2C101L | led_wf1/_i_2/_i_0_rkd_14 |      |
+|    led_wf1/_i_2/_i_0_rkd_19/I3          |    xsLUTSA6    |        |               |         |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_19/O           |    xsLUTSA6    |        |               |         |                          |      |
+| led_wf1/cnt[9]/D                        |     SLICEL     |   75.1 |     Tilo      |         | led_wf1/_i_2/_i_0_rkd_19 | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/B1             |     SLICEL     |  738.8 |      net      | R2C100L | led_wf1/_i_2/_i_0_rkd_19 |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/I0 |    xsLUTSA6    |        |               |         |                          |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/O  |    xsLUTSA6    |        |               |         |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/B              |     SLICEL     |   75.1 |     Tilo      |         | _n_141                   | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/D1             |     SLICEL     |  736.2 |      net      | R2C100L | _n_141                   |      |
+|    inverted_led_wf1/_i_2/_i_0/I0        |    xsLUTSA6    |        |               |         |                          |      |
+|    inverted_led_wf1/_i_2/_i_0/O         |    xsLUTSA6    |        |               |         |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/D              |     SLICEL     |   75.1 |     Tilo      |         | _n_140                   | 21   |
+| led_pin[3]_c/CE                         |     SLICEL     | 1139.6 |      net      | R2C98L  | _n_140                   |      |
+|    led_wf1/led_sig_reg[2]/CE            | xsDFFSA_K1C1E1 |        |               |         |                          |      |
+=================================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 3909       (Tdatp)
+     clock-to-q 延迟 = 47.7 
+        总的单元延迟 = 300.4 
+        总的连线延迟 = 3560.9 
+        逻辑级数     = 4 
+
+[数据捕获路径]
+========================================================================================================
+|              节点              |      单元      |  延迟  |     类型      |  位置  |   连线    | 扇出 |
+========================================================================================================
+| CLOCK'clk_25M                  |      N/A       |      0 |               |        | N/A       |      |
+| clk_25M                        |      top       |      0 | clock_latency |        | clk_25M   | 1    |
+| clk_25M/PAD#bidir_in           |      PIO       |      0 |      net      | PT79A  | clk_25M   | 1    |
+|    /U_ARCH/SLICEL/SLICEL:13/CE |     SLICEL     |        |               |        |           |      |
+|    led_wf1/led_sig_reg[2]/CE   | xsDFFSA_K1C1E1 |        |               |        |           |      |
+|    clk_25M_pad/I               |     xsIOBI     |        |               |        |           |      |
+|    clk_25M_pad/O               |     xsIOBI     |        |               |        |           |      |
+| clk_25M/PADDI                  |      PIO       |   1091 |   PADI_DEL    |        | clk_25M_c | 12   |
+| led_pin[3]_c/CLK               |     SLICEL     | 1672.4 |      net      | R2C98L | clk_25M_c |      |
+|    led_wf1/led_sig_reg[2]/CE   | xsDFFSA_K1C1E1 |        |               |        |           |      |
+|    led_wf1/led_sig_reg[2]/C    | xsDFFSA_K1C1E1 |        |               |        |           |      |
+========================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 3909       + 47.5       - 0          - -63        
+       = 4019.5
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 8
+********************
+起点     : led_wf1/cnt[16]/BMUX [激发时钟: clk_25M, 上升沿1]
+终点     : led_wf1/n_3/A1       [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+===============================================================================================================================
+|                  节点                   |     单元     |  延迟  |     类型      |  位置   |           连线           | 扇出 |
+===============================================================================================================================
+| CLOCK'clk_25M                           |     N/A      |      0 |               |         | N/A                      |      |
+| clk_25M                                 |     top      |      0 | clock_latency |         | clk_25M                  | 1    |
+| clk_25M/PAD#bidir_in                    |     PIO      |      0 |      net      | PT79A   | clk_25M                  | 1    |
+|    clk_25M_pad/I                        |    xsIOBI    |        |               |         |                          |      |
+|    clk_25M_pad/O                        |    xsIOBI    |        |               |         |                          |      |
+| clk_25M/PADDI                           |     PIO      |   1091 |   PADI_DEL    |         | clk_25M_c                | 12   |
+| led_wf1/cnt[16]/CLK                     |    SLICEL    | 1735.4 |      net      | R2C102L | clk_25M_c                |      |
+| --                                      |      --      |     -- |      --       | --      | --                       | --   |
+|    led_wf1/cnt_reg[11]/C                | xsDFFSA_K1C1 |        |               |         |                          |      |
+|    led_wf1/cnt_reg[11]/Q                | xsDFFSA_K1C1 |        |               |         |                          |      |
+| led_wf1/cnt[16]/BMUX                    |    SLICEL    |   47.7 |    Tshcko     |         | led_wf1/cnt[11]          | 2    |
+| led_wf1/cnt[9]/C2                       |    SLICEL    |  736.4 |      net      | R2C101L | led_wf1/cnt[11]          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/I1          |   xsLUTSA6   |        |               |         |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/O           |   xsLUTSA6   |        |               |         |                          |      |
+| led_wf1/cnt[9]/C                        |    SLICEL    |   75.1 |     Tilo      |         | led_wf1/_i_2/_i_0_rkd_14 | 1    |
+| led_wf1/cnt[9]/D4                       |    SLICEL    |  209.9 |      net      | R2C101L | led_wf1/_i_2/_i_0_rkd_14 |      |
+|    led_wf1/_i_2/_i_0_rkd_19/I3          |   xsLUTSA6   |        |               |         |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_19/O           |   xsLUTSA6   |        |               |         |                          |      |
+| led_wf1/cnt[9]/D                        |    SLICEL    |   75.1 |     Tilo      |         | led_wf1/_i_2/_i_0_rkd_19 | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/B1             |    SLICEL    |  738.8 |      net      | R2C100L | led_wf1/_i_2/_i_0_rkd_19 |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/I0 |   xsLUTSA6   |        |               |         |                          |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/O  |   xsLUTSA6   |        |               |         |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/B              |    SLICEL    |   75.1 |     Tilo      |         | _n_141                   | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/D1             |    SLICEL    |  736.2 |      net      | R2C100L | _n_141                   |      |
+|    inverted_led_wf1/_i_2/_i_0/I0        |   xsLUTSA6   |        |               |         |                          |      |
+|    inverted_led_wf1/_i_2/_i_0/O         |   xsLUTSA6   |        |               |         |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/D              |    SLICEL    |   75.1 |     Tilo      |         | _n_140                   | 21   |
+| led_wf1/n_3/A1                          |    SLICEL    |  936.4 |      net      | R2C103L | _n_140                   |      |
+|    led_wf1/_i_0/I0                      |  xsLUTSA6_2  |        |               |         |                          |      |
+|    led_wf1/_i_0/O5                      |  xsLUTSA6_2  |        |               |         |                          |      |
+|    led_wf1/cnt_reg[20]/D                | xsDFFSA_K1C1 |        |               |         |                          |      |
+===============================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 3705.8     (Tdatp)
+     clock-to-q 延迟 = 47.7 
+        总的单元延迟 = 300.4 
+        总的连线延迟 = 3357.7 
+        逻辑级数     = 4 
+
+[数据捕获路径]
+=======================================================================================================
+|              节点              |     单元     |  延迟  |     类型      |  位置   |   连线    | 扇出 |
+=======================================================================================================
+| CLOCK'clk_25M                  |     N/A      |      0 |               |         | N/A       |      |
+| clk_25M                        |     top      |      0 | clock_latency |         | clk_25M   | 1    |
+| clk_25M/PAD#bidir_in           |     PIO      |      0 |      net      | PT79A   | clk_25M   | 1    |
+|    /U_ARCH/SLICEL/SLICEL:12/A1 |    SLICEL    |        |               |         |           |      |
+|    led_wf1/_i_0/I0             |  xsLUTSA6_2  |        |               |         |           |      |
+|    led_wf1/_i_0/O5             |  xsLUTSA6_2  |        |               |         |           |      |
+|    led_wf1/cnt_reg[20]/D       | xsDFFSA_K1C1 |        |               |         |           |      |
+|    clk_25M_pad/I               |    xsIOBI    |        |               |         |           |      |
+|    clk_25M_pad/O               |    xsIOBI    |        |               |         |           |      |
+| clk_25M/PADDI                  |     PIO      |   1091 |   PADI_DEL    |         | clk_25M_c | 12   |
+| led_wf1/n_3/CLK                |    SLICEL    | 1672.4 |      net      | R2C103L | clk_25M_c |      |
+|    led_wf1/_i_0/I0             |  xsLUTSA6_2  |        |               |         |           |      |
+|    led_wf1/_i_0/O5             |  xsLUTSA6_2  |        |               |         |           |      |
+|    led_wf1/cnt_reg[20]/D       | xsDFFSA_K1C1 |        |               |         |           |      |
+|    led_wf1/cnt_reg[20]/C       | xsDFFSA_K1C1 |        |               |         |           |      |
+=======================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 3705.8     + 144        - 0          - -63        
+       = 3912.8
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 9
+********************
+起点     : led_wf1/cnt[16]/BMUX [激发时钟: clk_25M, 上升沿1]
+终点     : led_wf1/n_3/B1       [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+===============================================================================================================================
+|                  节点                   |     单元     |  延迟  |     类型      |  位置   |           连线           | 扇出 |
+===============================================================================================================================
+| CLOCK'clk_25M                           |     N/A      |      0 |               |         | N/A                      |      |
+| clk_25M                                 |     top      |      0 | clock_latency |         | clk_25M                  | 1    |
+| clk_25M/PAD#bidir_in                    |     PIO      |      0 |      net      | PT79A   | clk_25M                  | 1    |
+|    clk_25M_pad/I                        |    xsIOBI    |        |               |         |                          |      |
+|    clk_25M_pad/O                        |    xsIOBI    |        |               |         |                          |      |
+| clk_25M/PADDI                           |     PIO      |   1091 |   PADI_DEL    |         | clk_25M_c                | 12   |
+| led_wf1/cnt[16]/CLK                     |    SLICEL    | 1735.4 |      net      | R2C102L | clk_25M_c                |      |
+| --                                      |      --      |     -- |      --       | --      | --                       | --   |
+|    led_wf1/cnt_reg[11]/C                | xsDFFSA_K1C1 |        |               |         |                          |      |
+|    led_wf1/cnt_reg[11]/Q                | xsDFFSA_K1C1 |        |               |         |                          |      |
+| led_wf1/cnt[16]/BMUX                    |    SLICEL    |   47.7 |    Tshcko     |         | led_wf1/cnt[11]          | 2    |
+| led_wf1/cnt[9]/C2                       |    SLICEL    |  736.4 |      net      | R2C101L | led_wf1/cnt[11]          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/I1          |   xsLUTSA6   |        |               |         |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/O           |   xsLUTSA6   |        |               |         |                          |      |
+| led_wf1/cnt[9]/C                        |    SLICEL    |   75.1 |     Tilo      |         | led_wf1/_i_2/_i_0_rkd_14 | 1    |
+| led_wf1/cnt[9]/D4                       |    SLICEL    |  209.9 |      net      | R2C101L | led_wf1/_i_2/_i_0_rkd_14 |      |
+|    led_wf1/_i_2/_i_0_rkd_19/I3          |   xsLUTSA6   |        |               |         |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_19/O           |   xsLUTSA6   |        |               |         |                          |      |
+| led_wf1/cnt[9]/D                        |    SLICEL    |   75.1 |     Tilo      |         | led_wf1/_i_2/_i_0_rkd_19 | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/B1             |    SLICEL    |  738.8 |      net      | R2C100L | led_wf1/_i_2/_i_0_rkd_19 |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/I0 |   xsLUTSA6   |        |               |         |                          |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/O  |   xsLUTSA6   |        |               |         |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/B              |    SLICEL    |   75.1 |     Tilo      |         | _n_141                   | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/D1             |    SLICEL    |  736.2 |      net      | R2C100L | _n_141                   |      |
+|    inverted_led_wf1/_i_2/_i_0/I0        |   xsLUTSA6   |        |               |         |                          |      |
+|    inverted_led_wf1/_i_2/_i_0/O         |   xsLUTSA6   |        |               |         |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/D              |    SLICEL    |   75.1 |     Tilo      |         | _n_140                   | 21   |
+| led_wf1/n_3/B1                          |    SLICEL    |  936.4 |      net      | R2C103L | _n_140                   |      |
+|    led_wf1/_i_31/I0                     |   xsLUTSA6   |        |               |         |                          |      |
+|    led_wf1/_i_31/O                      |   xsLUTSA6   |        |               |         |                          |      |
+|    led_wf1/cnt_reg[23]/D                | xsDFFSA_K1C1 |        |               |         |                          |      |
+===============================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 3705.8     (Tdatp)
+     clock-to-q 延迟 = 47.7 
+        总的单元延迟 = 300.4 
+        总的连线延迟 = 3357.7 
+        逻辑级数     = 4 
+
+[数据捕获路径]
+=======================================================================================================
+|              节点              |     单元     |  延迟  |     类型      |  位置   |   连线    | 扇出 |
+=======================================================================================================
+| CLOCK'clk_25M                  |     N/A      |      0 |               |         | N/A       |      |
+| clk_25M                        |     top      |      0 | clock_latency |         | clk_25M   | 1    |
+| clk_25M/PAD#bidir_in           |     PIO      |      0 |      net      | PT79A   | clk_25M   | 1    |
+|    /U_ARCH/SLICEL/SLICEL:12/B1 |    SLICEL    |        |               |         |           |      |
+|    led_wf1/_i_31/I0            |   xsLUTSA6   |        |               |         |           |      |
+|    led_wf1/_i_31/O             |   xsLUTSA6   |        |               |         |           |      |
+|    led_wf1/cnt_reg[23]/D       | xsDFFSA_K1C1 |        |               |         |           |      |
+|    clk_25M_pad/I               |    xsIOBI    |        |               |         |           |      |
+|    clk_25M_pad/O               |    xsIOBI    |        |               |         |           |      |
+| clk_25M/PADDI                  |     PIO      |   1091 |   PADI_DEL    |         | clk_25M_c | 12   |
+| led_wf1/n_3/CLK                |    SLICEL    | 1672.4 |      net      | R2C103L | clk_25M_c |      |
+|    led_wf1/_i_31/I0            |   xsLUTSA6   |        |               |         |           |      |
+|    led_wf1/_i_31/O             |   xsLUTSA6   |        |               |         |           |      |
+|    led_wf1/cnt_reg[23]/D       | xsDFFSA_K1C1 |        |               |         |           |      |
+|    led_wf1/cnt_reg[23]/C       | xsDFFSA_K1C1 |        |               |         |           |      |
+=======================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 3705.8     + 122.8      - 0          - -63        
+       = 3891.6
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 10
+********************
+起点     : led_wf1/cnt[16]/BMUX [激发时钟: clk_25M, 上升沿1]
+终点     : led_wf1/cnt[6]/D3    [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+===============================================================================================================================
+|                  节点                   |     单元     |  延迟  |     类型      |  位置   |           连线           | 扇出 |
+===============================================================================================================================
+| CLOCK'clk_25M                           |     N/A      |      0 |               |         | N/A                      |      |
+| clk_25M                                 |     top      |      0 | clock_latency |         | clk_25M                  | 1    |
+| clk_25M/PAD#bidir_in                    |     PIO      |      0 |      net      | PT79A   | clk_25M                  | 1    |
+|    clk_25M_pad/I                        |    xsIOBI    |        |               |         |                          |      |
+|    clk_25M_pad/O                        |    xsIOBI    |        |               |         |                          |      |
+| clk_25M/PADDI                           |     PIO      |   1091 |   PADI_DEL    |         | clk_25M_c                | 12   |
+| led_wf1/cnt[16]/CLK                     |    SLICEL    | 1735.4 |      net      | R2C102L | clk_25M_c                |      |
+| --                                      |      --      |     -- |      --       | --      | --                       | --   |
+|    led_wf1/cnt_reg[11]/C                | xsDFFSA_K1C1 |        |               |         |                          |      |
+|    led_wf1/cnt_reg[11]/Q                | xsDFFSA_K1C1 |        |               |         |                          |      |
+| led_wf1/cnt[16]/BMUX                    |    SLICEL    |   47.7 |    Tshcko     |         | led_wf1/cnt[11]          | 2    |
+| led_wf1/cnt[9]/C2                       |    SLICEL    |  736.4 |      net      | R2C101L | led_wf1/cnt[11]          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/I1          |   xsLUTSA6   |        |               |         |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_14/O           |   xsLUTSA6   |        |               |         |                          |      |
+| led_wf1/cnt[9]/C                        |    SLICEL    |   75.1 |     Tilo      |         | led_wf1/_i_2/_i_0_rkd_14 | 1    |
+| led_wf1/cnt[9]/D4                       |    SLICEL    |  209.9 |      net      | R2C101L | led_wf1/_i_2/_i_0_rkd_14 |      |
+|    led_wf1/_i_2/_i_0_rkd_19/I3          |   xsLUTSA6   |        |               |         |                          |      |
+|    led_wf1/_i_2/_i_0_rkd_19/O           |   xsLUTSA6   |        |               |         |                          |      |
+| led_wf1/cnt[9]/D                        |    SLICEL    |   75.1 |     Tilo      |         | led_wf1/_i_2/_i_0_rkd_19 | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/B1             |    SLICEL    |  738.8 |      net      | R2C100L | led_wf1/_i_2/_i_0_rkd_19 |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/I0 |   xsLUTSA6   |        |               |         |                          |      |
+|    dec_of_inverted_led_wf1/_i_2/_i_0/O  |   xsLUTSA6   |        |               |         |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/B              |    SLICEL    |   75.1 |     Tilo      |         | _n_141                   | 1    |
+| led_wf1/_i_2/_i_0_rkd_12/D1             |    SLICEL    |  736.2 |      net      | R2C100L | _n_141                   |      |
+|    inverted_led_wf1/_i_2/_i_0/I0        |   xsLUTSA6   |        |               |         |                          |      |
+|    inverted_led_wf1/_i_2/_i_0/O         |   xsLUTSA6   |        |               |         |                          |      |
+| led_wf1/_i_2/_i_0_rkd_12/D              |    SLICEL    |   75.1 |     Tilo      |         | _n_140                   | 21   |
+| led_wf1/cnt[6]/D3                       |    SLICEL    |  914.7 |      net      | R2C99L  | _n_140                   |      |
+|    led_wf1/_i_11/I2                     |  xsLUTSA6_2  |        |               |         |                          |      |
+|    led_wf1/_i_11/O5                     |  xsLUTSA6_2  |        |               |         |                          |      |
+|    led_wf1/cnt_reg[0]/D                 | xsDFFSA_K1C1 |        |               |         |                          |      |
+===============================================================================================================================
+时钟路径延迟         = 2826.4    
+数据路径延迟         = 3684.1     (Tdatp)
+     clock-to-q 延迟 = 47.7 
+        总的单元延迟 = 300.4 
+        总的连线延迟 = 3336 
+        逻辑级数     = 4 
+
+[数据捕获路径]
+=====================================================================================================
+|             节点              |     单元     |  延迟  |     类型      |  位置  |   连线    | 扇出 |
+=====================================================================================================
+| CLOCK'clk_25M                 |     N/A      |      0 |               |        | N/A       |      |
+| clk_25M                       |     top      |      0 | clock_latency |        | clk_25M   | 1    |
+| clk_25M/PAD#bidir_in          |     PIO      |      0 |      net      | PT79A  | clk_25M   | 1    |
+|    /U_ARCH/SLICEL/SLICEL:8/D3 |    SLICEL    |        |               |        |           |      |
+|    led_wf1/_i_11/I2           |  xsLUTSA6_2  |        |               |        |           |      |
+|    led_wf1/_i_11/O5           |  xsLUTSA6_2  |        |               |        |           |      |
+|    led_wf1/cnt_reg[0]/D       | xsDFFSA_K1C1 |        |               |        |           |      |
+|    clk_25M_pad/I              |    xsIOBI    |        |               |        |           |      |
+|    clk_25M_pad/O              |    xsIOBI    |        |               |        |           |      |
+| clk_25M/PADDI                 |     PIO      |   1091 |   PADI_DEL    |        | clk_25M_c | 12   |
+| led_wf1/cnt[6]/CLK            |    SLICEL    | 1672.4 |      net      | R2C99L | clk_25M_c |      |
+|    led_wf1/_i_11/I2           |  xsLUTSA6_2  |        |               |        |           |      |
+|    led_wf1/_i_11/O5           |  xsLUTSA6_2  |        |               |        |           |      |
+|    led_wf1/cnt_reg[0]/D       | xsDFFSA_K1C1 |        |               |        |           |      |
+|    led_wf1/cnt_reg[0]/C       | xsDFFSA_K1C1 |        |               |        |           |      |
+=====================================================================================================
+
+时钟路径延迟         = 2763.4    
+    时钟偏差         = -63 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 3684.1     + 144        - 0          - -63        
+       = 3891.1
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
 #########################################################################
 # 时钟频率总结
 #########################################################################
-最慢时钟     : 
-最小时钟周期 : --
-最大时钟频率 : -0 MHz
+最慢时钟     : clk_25M
+最小时钟周期 : 6030.8 ps
+最大时钟频率 : 165.8 MHz
 #########################################################################
+clk_25M : 165.8 Mhz
 
 
