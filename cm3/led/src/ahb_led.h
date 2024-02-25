@@ -5,13 +5,19 @@
 
 typedef struct
 {
-    __IO   uint32_t  A;
-    __I    uint32_t  B;
-}DMA_AHB_TypeDef;
+    __IO   uint8_t  seg0;
+    __IO   uint8_t  seg1;
+    __IO   uint8_t  seg2;
+    __IO   uint8_t  seg3;
+    __IO   uint8_t  seg4;
+    __IO   uint8_t  seg5;
+    __IO   uint8_t  seg6;
+    __IO   uint8_t  seg7;
+}AHB_LED_TypeDef;
 
 //base address
-#define DMA_AHB_BASE   (CM3DS_MPS2_TARGEXP0_BASE + 0x0000)
+#define AHB_LED_BASE   (CM3DS_MPS2_TARGEXP1_BASE + 0x0000)
 
 //mapping
-#define DMA_AHB        ((DMA_AHB_TypeDef   *) DMA_AHB_BASE)
+#define AHB_LED        ((AHB_LED_TypeDef   *) AHB_LED_BASE)
 

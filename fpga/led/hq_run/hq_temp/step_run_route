@@ -6,9 +6,10 @@ Info: 已完成.
 Info: 布线模式 : timing.
 Info: 优化强度 : std.
 Info: 读入布线资源并检查网表 ....
-Info: 当前网表中有 141 个元件例示(instance).
-Info: 总共需要对 272 条连线 (1009 连接点) 进行布线.
+Info: 当前网表中有 231 个元件例示(instance).
+Info: 总共需要对 543 条连线 (1812 连接点) 进行布线.
 Info: 连线 clk_100M 指定为 PCLK (由 placer).
+Info: 连线 cm3inst/seg_inst/clk_DRV 指定为 PCLK (由 placer).
 Info: 连线 clk_25M_c 指定为 PCLK (由 placer).
 Info: 开始布线(routing).
 Info: set customeized options 
@@ -16,28 +17,28 @@ Info: set customeized options
 |   5   |   5 |   5  |   2   |   3 |   6 |   6 |   6 |   6 |   6  |  50  |   3   |   4   |   7   
 | MALL | MLONG | MX0  | X12RAM | X46RAM | X12VIQ | X46VIQ | X12CLKV | PLO | CLO | X-LOCAL | CLKV+ | GFANn | GNDfo | GNDlut 
 |   1  |   1   |   1  |    2   |    2   |    3   |    2   |     5   |  10 |   5 |    0    |   1   |   2   |    0  |    0   
-Info: 第  0 轮 : 还需要对 189   条连线 (732   连接点)进行布线.
-Info: 第  1 轮 : 还需要对 16    条连线 (10    连接点)进行布线.
-Info: 第  2 轮 : 还需要对 2     条连线 (1     连接点)进行布线.
+Info: 第  0 轮 : 还需要对 403   条连线 (1139  连接点)进行布线.
+Info: 第  1 轮 : 还需要对 18    条连线 (14    连接点)进行布线.
+Info: 第  2 轮 : 还需要对 7     条连线 (5     连接点)进行布线.
 Info: 第  3 轮 : 还需要对 0     条连线 (0     连接点)进行布线.
 Info: 完成布线.
 Info: 开始更新物理网表.
-Info:   为 24   个 SLICEL     建立了物理网表 .
-Info:   为 29   个 TIEOFF     建立了物理网表 .
+Info:   为 84   个 SLICEL     建立了物理网表 .
+Info:   为 53   个 TIEOFF     建立了物理网表 .
 Info: 完成更新物理网表.
 ####
-Info: 布线执行时间 : 1 秒.
+Info: 布线执行时间 : 2 秒.
 ####
 Info: 生成最差时序余量(WNS)报告 ...
 =============================================
 Clock Name   Req Period  Setup WNS   Hold WNS
 ---------------------------------------------
-clk1              40000      34608        358
-clk3              10000       1747        347
+clk1              40000      34815        375
+clk3              10000       2220        320
 =============================================
 【汇总】
-Info(wns-ok): Setup WNS = 1747, 满足时序目标.
-Info(wns-ok): Hold  WNS = 347, 满足时序目标.
+Info(wns-ok): Setup WNS = 2220, 满足时序目标.
+Info(wns-ok): Hold  WNS = 320, 满足时序目标.
 ====
 Info: 完成WNS报告.
 Info:   (可在文件 "D:/fpga/ac208/workspace/fpga/led/hq_run/top_slack.rpt" 中检查更详细信息).

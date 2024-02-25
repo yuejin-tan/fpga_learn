@@ -1,13 +1,14 @@
+#include "string.h"
+
 #include "CM3DS_gpio.h"
 #include "CM3DS_rcc.h"
 #include "CM3DS_misc.h"
 #include "CM3DS_uart.h"
 
 #include "delay.h"
+#include "ahb_led.h"
 
 #include "scd_inc.h"
-
-#include "string.h"
 
 void nvicInit(void)
 {
@@ -60,7 +61,7 @@ uint32_t mem_addr16b_test()
     uint32_t sram_wd32;
     volatile uint32_t* XMEM_p32;
 
-    memset(CM3DS_MPS2_TARGEXP0_BASE, 0, 1000ul * 1000ul);
+    memset((void*)CM3DS_MPS2_TARGEXP0_BASE, 0, 1000ul * 1000ul);
 
     //Write loop 8
     xshift = 0x00000001ul << addr_size;
@@ -173,12 +174,26 @@ uint32_t mem_addr16b_test()
 #define LED1_OFF GPIO_SetBit( CM3DS_MPS2_GPIO0, GPIO_Pin_0)
 #define LED2_OFF GPIO_SetBit( CM3DS_MPS2_GPIO0, GPIO_Pin_1)
 
+enum rwWay {
+    rw_8bit = 0,
+    rw_16bit,
+    rw_32bit,
+    rw_clock,
+};
 
 uint32_t ms_cnt = 0;
-uint16_t initOk = 0;
 
-uint32_t test1 = 0;
-uint32_t test2 = 0;
+uint16_t rwWay = 3;
+
+uint16_t test1 = 0;
+uint16_t test2 = 0;
+uint16_t test3 = 0;
+uint16_t test4 = 0;
+
+uint16_t test1r = 0;
+uint16_t test2r = 0;
+uint16_t test3r = 0;
+uint16_t test4r = 0;
 
 int main(void)
 {
@@ -196,15 +211,77 @@ int main(void)
 
     while (1)
     {
-        // if ((UART_GetFlagStatus(CM3DS_MPS2_UART0, 0x01)) == RESET)
-        // {
-        //     UART_SendData(CM3DS_MPS2_UART0, scd_send1Byte(&scd_1));
-        // }
+        if ((UART_GetFlagStatus(CM3DS_MPS2_UART0, 0x01)) == RESET)
+        {
+            UART_SendData(CM3DS_MPS2_UART0, scd_send1Byte(&scd_1));
+        }
 
-        LED1_ON;
-        delay_ms(50);
-        LED1_OFF;
-        DELAY_TICK(200 * 1000 * 50);
+        // led seg test
+        switch (rwWay)
+        {
+        case rw_8bit:
+            test1r = AHB_LED->seg1;
+            test1r <<= 8;
+            test1r |= AHB_LED->seg0;
+            test2r = AHB_LED->seg3;
+            test2r <<= 8;
+            test2r |= AHB_LED->seg2;
+            test3r = AHB_LED->seg5;
+            test3r <<= 8;
+            test3r |= AHB_LED->seg4;
+            test4r = AHB_LED->seg7;
+            test4r <<= 8;
+            test4r |= AHB_LED->seg6;
+
+            AHB_LED->seg0 = test1;
+            AHB_LED->seg1 = test1 >> 8;
+            AHB_LED->seg2 = test2;
+            AHB_LED->seg3 = test2 >> 8;
+            AHB_LED->seg4 = test3;
+            AHB_LED->seg5 = test3 >> 8;
+            AHB_LED->seg6 = test4;
+            AHB_LED->seg7 = test4 >> 8;
+            break;
+
+        case rw_16bit:
+            test1r = *(volatile uint16_t*)(CM3DS_MPS2_TARGEXP1_BASE + 0);
+            test2r = *(volatile uint16_t*)(CM3DS_MPS2_TARGEXP1_BASE + 2);
+            test3r = *(volatile uint16_t*)(CM3DS_MPS2_TARGEXP1_BASE + 4);
+            test4r = *(volatile uint16_t*)(CM3DS_MPS2_TARGEXP1_BASE + 6);
+
+            *(volatile uint16_t*)(CM3DS_MPS2_TARGEXP1_BASE + 0) = test1;
+            *(volatile uint16_t*)(CM3DS_MPS2_TARGEXP1_BASE + 2) = test2;
+            *(volatile uint16_t*)(CM3DS_MPS2_TARGEXP1_BASE + 4) = test3;
+            *(volatile uint16_t*)(CM3DS_MPS2_TARGEXP1_BASE + 6) = test4;
+            break;
+
+        case rw_32bit:
+            test1r = *(volatile uint32_t*)(CM3DS_MPS2_TARGEXP1_BASE + 0);
+            test2r = *(volatile uint32_t*)(CM3DS_MPS2_TARGEXP1_BASE + 0) >> 16;
+            test3r = *(volatile uint32_t*)(CM3DS_MPS2_TARGEXP1_BASE + 4);
+            test4r = *(volatile uint32_t*)(CM3DS_MPS2_TARGEXP1_BASE + 4) >> 16;
+
+            *(volatile uint32_t*)(CM3DS_MPS2_TARGEXP1_BASE + 0) = (((uint32_t)test2) << 16) | test1;
+            *(volatile uint32_t*)(CM3DS_MPS2_TARGEXP1_BASE + 4) = (((uint32_t)test4) << 16) | test3;
+            break;
+
+        default:
+            AHB_LED->seg0 = (ms_cnt >> 0) & 0xful;
+            AHB_LED->seg1 = (ms_cnt >> 4) & 0xful;
+            AHB_LED->seg2 = (ms_cnt >> 8) & 0xful;
+            AHB_LED->seg3 = (ms_cnt >> 12) & 0xful;
+            AHB_LED->seg4 = (ms_cnt >> 16) & 0xful;
+            AHB_LED->seg5 = (ms_cnt >> 20) & 0xful;
+            AHB_LED->seg6 = (ms_cnt >> 24) & 0xful;
+            AHB_LED->seg7 = (ms_cnt >> 28) & 0xful;
+            break;
+        }
+
+
+        // LED1_ON;
+        // delay_ms(50);
+        // LED1_OFF;
+        // DELAY_TICK(200 * 1000 * 50);
     }
 }
 

@@ -10,10 +10,17 @@ extern "C" {
 
     extern uint32_t ms_cnt;
 
-    extern uint16_t initOk;
+    extern uint16_t test1;
+    extern uint16_t test2;
+    extern uint16_t test3;
+    extern uint16_t test4;
 
-    extern uint32_t test1;
-    extern uint32_t test2;
+    extern uint16_t test1r;
+    extern uint16_t test2r;
+    extern uint16_t test3r;
+    extern uint16_t test4r;
+
+    extern uint16_t rwWay;
 
 #ifdef __cplusplus
 }

@@ -3,5 +3,6 @@
 -module PLL_25to200
 -module led_wf
 -module ahb_sram
+-module ahb_seg7x8
 -topmoduleNum 1
 topmodule top

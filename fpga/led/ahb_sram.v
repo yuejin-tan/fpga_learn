@@ -33,17 +33,17 @@ module ahb_sram
    );
 
 
-  reg RDREQ;   // Read request to memory i/f FSM
-  reg WRREQ;   // Write request to memory i/f FSM
+  reg RDREQ = 0;   // Read request to memory i/f FSM
+  reg WRREQ = 0;   // Write request to memory i/f FSM
   wire DONE;    // memory i/f FSM done
-  reg [ 1: 0] NXTBYTEMASK; // Early byte mask from AHB FSM to memory i/f FSM
+  reg [ 1: 0] NXTBYTEMASK = 0; // Early byte mask from AHB FSM to memory i/f FSM
   wire [ 2: 0] MEMFSMSTATE; // Memory Interface Finite State Machine
   wire [ 2: 0] BUSFSMSTATE; // Bus Interface Finite State Machine
 
   wire DATAOEn; // Tristate buffer output enable
   wire [ 15: 0] DATAIN = SRAM_DQ;  // Data input
   wire [ AW - 1: 0] ADDR;    // Address output
-  reg [ 15: 0] DATAOUT; // Data output
+  reg [ 15: 0] DATAOUT = 0; // Data output
 
   assign SRAM_ADDR = CFGSIZE? ADDR[ AW - 1: 1 ] : ADDR;
   assign SRAM_DQ = DATAOEn ? 16'hzzzz : DATAOUT;
@@ -59,8 +59,8 @@ module ahb_sram
   assign HRESP = 1'b0;
 
   // AHB bus FSM state
-  reg [ 2: 0] reg_bstate;
-  reg [ 2: 0] nxt_bstate;
+  reg [ 2: 0] reg_bstate = 0;
+  reg [ 2: 0] nxt_bstate = 0;
 
   localparam BUSCNV_FSM_DEF = 3'b000;
   localparam BUSCNV_FSM_32BIT_8A = 3'b001;
@@ -82,29 +82,29 @@ module ahb_sram
   //                                                    \-> BUSCNV_FSM_DEF
 
   wire trans_valid;    // Transfer valid
-  reg reg_write;      // HWRITE in data phase
-  reg reg_active;     // Active transfer
-  reg [ 1: 0] reg_size;       // HSIZE in data phase
+  reg reg_write = 0;      // HWRITE in data phase
+  reg reg_active = 0;     // Active transfer
+  reg [ 1: 0] reg_size = 0;       // HSIZE in data phase
 
-  reg [ 1: 0] reg_addr_low;   // Address bit [1:0] output
-  reg [ 1: 0] nxt_addr_low;
-  reg [ AW - 3: 0] reg_addr_high;  // Higher address bits output
-  reg [ AW - 3: 0] nxt_addr_high;
-  reg [ 1: 0] reg_lb_mux;     // Lower byte output multiplexer control
-  reg [ 1: 0] nxt_lb_mux;
-  reg [ 1: 0] reg_ub_mux;     // Upper byte output multiplexer control
-  reg [ 1: 0] nxt_ub_mux;
-  reg [ 1: 0] reg_byte_mask;  // Registered  NXTBYTEMASK (byte strobe)
-  reg reg_rd_req;     // Registered RDREQ
-  reg reg_wr_req;     // Registered WRREQ
+  reg [ 1: 0] reg_addr_low = 0;   // Address bit [1:0] output
+  reg [ 1: 0] nxt_addr_low = 0;
+  reg [ AW - 3: 0] reg_addr_high = 0;  // Higher address bits output
+  reg [ AW - 3: 0] nxt_addr_high = 0;
+  reg [ 1: 0] reg_lb_mux = 0;     // Lower byte output multiplexer control
+  reg [ 1: 0] nxt_lb_mux = 0;
+  reg [ 1: 0] reg_ub_mux = 0;     // Upper byte output multiplexer control
+  reg [ 1: 0] nxt_ub_mux = 0;
+  reg [ 1: 0] reg_byte_mask = 0;  // Registered  NXTBYTEMASK (byte strobe)
+  reg reg_rd_req = 0;     // Registered RDREQ
+  reg reg_wr_req = 0;     // Registered WRREQ
   wire [ 2: 0] merged_cfgsize_hsize;  // Merged CFGSIZE and HSIZE information (for case statement)
   wire [ 2: 0] merged_cfgsize_reg_size; // Merged CFGSIZE and HSIZE (data phase) information (for case statement)
   wire [ 15: 0] i_dataout;      // Write data output mux
-  reg [ 7: 0] read_buffer_0;  // Data buffer to hold read data
-  reg [ 7: 0] read_buffer_1;  // Data buffer to hold read data
-  reg [ 7: 0] read_buffer_2;  // Data buffer to hold read data
+  reg [ 7: 0] read_buffer_0 = 0;  // Data buffer to hold read data
+  reg [ 7: 0] read_buffer_1 = 0;  // Data buffer to hold read data
+  reg [ 7: 0] read_buffer_2 = 0;  // Data buffer to hold read data
 
-  reg [ 31: 0] i_hrdata;       // Read data mux
+  reg [ 31: 0] i_hrdata = 0;       // Read data mux
 
   // Detect if there is an active transfer
   assign trans_valid = HSEL & HREADY & HTRANS[ 1 ];
@@ -517,8 +517,8 @@ module ahb_sram
   // This module generates memory control for each memory access.
   // --------------------------------------------------------------------------
 
-  reg [ 2: 0] reg_mstate;
-  reg [ 2: 0] nxt_mstate;
+  reg [ 2: 0] reg_mstate = 0;
+  reg [ 2: 0] nxt_mstate = 0;
 
   localparam EXTMEM_FSM_IDLE = 3'b000;
   localparam EXTMEM_FSM_WRITE1 = 3'b001;
@@ -526,29 +526,28 @@ module ahb_sram
   localparam EXTMEM_FSM_WRITE3 = 3'b010;
   localparam EXTMEM_FSM_READ1 = 3'b100;
 
-  reg reg_dataoe_n;
-  reg nxt_dataoe_n;
-  reg reg_we_n;
-  reg nxt_we_n;
-  reg reg_oe_n;
-  reg nxt_oe_n;
-  reg reg_ce_n;
-  reg nxt_ce_n;
-  reg [ 1:
-        0] reg_bs_n;
-  reg [ 1:
-        0] nxt_bs_n;
+  reg reg_dataoe_n = 0;
+  reg nxt_dataoe_n = 0;
+  reg reg_we_n = 1;
+  reg nxt_we_n = 0;
+  reg reg_oe_n = 1;
+  reg nxt_oe_n = 0;
+  reg reg_ce_n = 1;
+  reg nxt_ce_n = 0;
+  reg [ 1: 0] reg_bs_n = 2'b11;
+  reg [ 1: 0] nxt_bs_n = 0;
 
-  reg [ 2:
-        0] reg_mcount;     // Counter for wait state
-  reg [ 2:
-        0] nxt_mcount;
-  reg last_operation; // Record last operation (1=write, 0=read)
+  // Counter for wait state
+  reg [ 2: 0] reg_mcount = 0;
+  reg [ 2: 0] nxt_mcount = 0;
+  // Record last operation (1=write, 0=read)
+  reg last_operation = 0;
   wire nxt_last_operation;
-  wire [ 2:
-         0] dec_mcount;     // Decrement of reg_mcount
+  // Decrement of reg_mcount
+  wire [ 2: 0] dec_mcount;
 
-  assign dec_mcount = reg_mcount - 1'b1; // Decrement wait state counter
+  // Decrement wait state counter
+  assign dec_mcount = reg_mcount - 1'b1;
 
   // Memory interface FSM
   always @( * )

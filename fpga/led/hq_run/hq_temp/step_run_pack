@@ -5,6 +5,13 @@ Info: 已完成.
 Info: 网表整理(nl.sweep) 开始 ....
 Info: 共有 0 个节点被 nl.sweep 删除.
 Info: 网表整理(nl.sweep) 结束.
+WARN(NCHK-CLK001): 连线 cm3inst/seg_inst/clk_DRV 混合了时钟和数据连接.
+-- 非时钟引脚 --
+   cm3inst/seg_inst/clk_DRV_reg_ctrlmux.I0
+[说明]上述情况通常源自生成时钟，例如通过计数进行分频的逻辑。
+如果确实是这种情况而且是必须的(例如不能用PLL/DCM分频替代)，
+请别忘为相关连线显式地指定时钟约束。否则，这种时钟和数据混
+合的描述方式是不推荐使用的，请复查并修改。
 #=============oOOOo================oOOOo=============
 # 组装(Packing)
 #====================================================
@@ -53,38 +60,43 @@ Info: 将 led_wf1/led_sig_reg[3]_dup1 吸收到 OREG.
 Info: 将 led_wf1/led_sig_reg[2]_dup1 吸收到 OREG.
 Info: 将 led_wf1/led_sig_reg[1]_dup1 吸收到 OREG.
 Info: 将 led_wf1/led_sig_reg[0]_dup1 吸收到 OREG.
+Info: 将 cm3inst/seg_inst/SH_CLK_reg 吸收到 OREG.
+Info: 将 cm3inst/seg_inst/LD_CLK_reg 吸收到 OREG.
+Info: 将 cm3inst/seg_inst/HC_DAT_reg_dup1 吸收到 OREG.
 Info: 将 led_wf1/led_sig_reg[0]_dup2 吸收到 OREG.
 Info: 开始组装预处理.
 Info: 完成组装预处理.
 Info: CM3                         1.
-Info: IOLOGIC                    45.
-Info:     IREG_OREG              45.
-Info: PIO                        67.
+Info: IOLOGIC                    48.
+Info:     IREG_OREG              48.
+Info: PIO                        68.
 Info: PLL_25K                     1.
-Info: SLICEL                      6.
-Info:     CARRY                   6.
-Info: SLICEL(LE)                106.
-Info:     LUT                    43.
-Info:     LUT REG                57.
-Info:     REG                     6.
+Info: SLICEL                     48.
+Info:     CARRY                  11.
+Info:     MUXF7                  37.
+Info: SLICEL(LE)                263.
+Info:     LUT                    79.
+Info:     LUT REG               100.
+Info:     REG                    84.
 Info: 完成组装.
 Info: Start gpack.
 Info: Done gpack.
 Info: 开始建立物理网表.
-Info:   为 67   个 PIO        建立了物理网表 .
-Info:   为 45   个 IOLOGIC    建立了物理网表 .
+Info:   为 68   个 PIO        建立了物理网表 .
+Info:   为 48   个 IOLOGIC    建立了物理网表 .
 Info:   为 1    个 PLL_25K    建立了物理网表 .
 Info:   为 1    个 CM3        建立了物理网表 .
-Info:   为 25   个 SLICEL     建立了物理网表 .
+Info:   为 111  个 SLICEL     建立了物理网表 .
 Info: 完成建立物理网表.
 Info: CM3                         1.
-Info: IOLOGIC                    45.
-Info:     IREG_OREG              45.
-Info: PIO                        67.
+Info: IOLOGIC                    48.
+Info:     IREG_OREG              48.
+Info: PIO                        68.
 Info: PLL_25K                     1.
-Info: SLICEL                     25.
-Info:     CARRY                   6.
-Info:     LOGIC                  19.
+Info: SLICEL                    111.
+Info:     CARRY                  11.
+Info:     LOGIC                  63.
+Info:     MUXF7                  37.
 ####
-Info: 组装执行时间 : 4 秒.
+Info: 组装执行时间 : 5 秒.
 Info: 输出网表报告到文件D:\fpga\ac208\workspace\fpga\led\hq_run\top_map.rpt中.

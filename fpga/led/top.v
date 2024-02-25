@@ -85,7 +85,7 @@ module top (
 
   // led
   //   assign led_core = 0;
-  //   assign led_pin[ 3: 2 ] = 0;
+  //   assign led_pin = 0;
 
   //  OSC
   assign osc_c6_pin = led_pin[ 0 ];
@@ -108,9 +108,9 @@ module top (
   assign w5500_mosi = 0;
 
   //数码管接口
-  assign seg7_SH_CP = 0;
-  assign seg7_ST_CP = 1;
-  assign seg7_DS = 0;
+  //   assign seg7_SH_CP = 0;
+  //   assign seg7_ST_CP = 1;
+  //   assign seg7_DS = 0;
 
   //  iic 4 eeprom, rtc etc.
   assign i2c_scl = 1'bz;
@@ -138,7 +138,7 @@ module top (
             .SWCLK( swdclk ),
             .SWDIO( swddio ),
             .INTSIG( 16'b0 ),
-            .GPIO_IN( { 29'b0, uart_DAP_rx, 2'b0} ),
+            .GPIO_IN( { 29'b0, uart_DAP_rx, key_pin[ 2: 1 ] } ),
             .GPIO_OUT( { fake28, uart_DAP_tx, fake1, beep_pin, led_core } ),
             .GPIO_OUT_EN( fake32 ),
 
@@ -149,7 +149,12 @@ module top (
             .SRAM_nOE( SRAM_nOE ),
             .SRAM_nCE( SRAM_nCE ),
             .SRAM_nLB( SRAM_nLB ),
-            .SRAM_nUB( SRAM_nUB)
+            .SRAM_nUB( SRAM_nUB ),
+
+            // seg7x8
+            .SH_CLK( seg7_SH_CP ),
+            .LD_CLK( seg7_ST_CP ),
+            .HC_DAT( seg7_DS)
           );
 
   PLL_25to200 PLL_25to200_1( clk_25M, clk_200M, clk_100M, clk_50M, PLL1_lock );

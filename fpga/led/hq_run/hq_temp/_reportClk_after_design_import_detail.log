@@ -110,68 +110,135 @@ Tdatp -- 数据路径延迟
 Tsu   -- 库单元建立时间 
 Tckpm -- 时钟悲观补偿 
 # ***********************************************************************
-# 时钟         : PLL_25to200_1/PLLInst_0/CLKOS
-# 最小时钟周期 : 729 ps
+# 时钟         : cm3inst/seg_inst/clk_DRV_reg/Q
+# 最小时钟周期 : 1769 ps
 # ***********************************************************************
 ********************
 * 路径 1
 ********************
-起点     : cm3inst/ahb_sram1/reg_bstate_reg_2/Q [激发时钟: PLL_25to200_1/PLLInst_0/CLKOS, 上升沿1]
-终点     : cm3inst/ahb_sram1/reg_bs_n_reg[1]/D  [捕获时钟: PLL_25to200_1/PLLInst_0/CLKOS, 上升沿2] 
+起点     : cm3inst/seg_inst/HC595_CLK_CNT_reg[1]/Q [激发时钟: cm3inst/seg_inst/clk_DRV_reg/Q, 上升沿1]
+终点     : cm3inst/seg_inst/HC595_CLK_CNT_reg[7]/D [捕获时钟: cm3inst/seg_inst/clk_DRV_reg/Q, 上升沿2] 
 数据产生路径
-=========================================================================================================================================
-|                 节点                 |     单元     | 延迟 |      类型      | 位置 |                   连线                    | 扇出 |
-=========================================================================================================================================
-| CLOCK'clk_25M                        |     N/A      |    0 |                |      | N/A                                       |      |
-| clk_25M                              |     top      |    0 | clock_latency  |      | clk_25M                                   | 1    |
-| clk_25M_pad/I                        |    xsIOBI    |    0 |      net       |      | clk_25M                                   |      |
-| clk_25M_pad/O                        |    xsIOBI    |  990 |      cell      |      | clk_25M_c                                 | 29   |
-| PLL_25to200_1/PLLInst_0/CLKI         |   xsPLLSA    |    0 |      net       |      | clk_25M_c                                 |      |
-| --                                   |      --      |   -- |       --       | --   | --                                        | --   |
-| CLOCK'PLL_25to200_1/PLLInst_0/CLKOS  |     N/A      |    0 | tcst_gen_clock |      | N/A                                       |      |
-| PLL_25to200_1/PLLInst_0/CLKOS        |   xsPLLSA    |  990 | clock_latency  |      | clk_100M                                  | 76   |
-| cm3inst/ahb_sram1/reg_bstate_reg_2/C | xsDFFSA_K1P1 |    0 |      net       |      | clk_100M                                  |      |
-| --                                   |      --      |   -- |       --       | --   | --                                        | --   |
-| cm3inst/ahb_sram1/reg_bstate_reg_2/Q | xsDFFSA_K1P1 |  347 |  rising_edge   |      | cm3inst/ahb_sram1/n_162                   | 9    |
-| _i_13/I3                             |   xsLUTSA4   |    0 |      net       |      | cm3inst/ahb_sram1/n_162                   |      |
-| _i_13/O                              |   xsLUTSA4   |   81 |      cell      |      | cm3inst/ahb_sram1/n_246_CE_AND_O_CE_AND_O | 27   |
-| cm3inst/ahb_sram1/_i_214/_i_0/I5     |   xsLUTSA6   |    0 |      net       |      | cm3inst/ahb_sram1/n_246_CE_AND_O_CE_AND_O |      |
-| cm3inst/ahb_sram1/_i_214/_i_0/O      |   xsLUTSA6   |   81 |      cell      |      | cm3inst/ahb_sram1/WRREQ                   | 7    |
-| cm3inst/ahb_sram1/_i_182_decomp/I5   |   xsLUTSA6   |    0 |      net       |      | cm3inst/ahb_sram1/WRREQ                   |      |
-| cm3inst/ahb_sram1/_i_182_decomp/O    |   xsLUTSA6   |   81 |      cell      |      | cm3inst/ahb_sram1/_i_182_decomp           | 1    |
-| cm3inst/ahb_sram1/_i_182/I4          |   xsLUTSA6   |    0 |      net       |      | cm3inst/ahb_sram1/_i_182_decomp           |      |
-| cm3inst/ahb_sram1/_i_182/O           |   xsLUTSA6   |   81 |      cell      |      | cm3inst/ahb_sram1/nxt_ce_n                | 3    |
-| cm3inst/ahb_sram1/_i_198/I5          |   xsLUTSA6   |    0 |      net       |      | cm3inst/ahb_sram1/nxt_ce_n                |      |
-| cm3inst/ahb_sram1/_i_198/O           |   xsLUTSA6   |   81 |      cell      |      | cm3inst/ahb_sram1/nxt_bs_n[1]             | 1    |
-| cm3inst/ahb_sram1/reg_bs_n_reg[1]/D  | xsDFFSA_K1P1 |    0 |      net       |      | cm3inst/ahb_sram1/nxt_bs_n[1]             |      |
-=========================================================================================================================================
-时钟路径延迟         = 990       
-数据路径延迟         = 752        (Tdatp)
+====================================================================================================================================
+|                   节点                   |     单元     | 延迟 |     类型      | 位置 |               连线                | 扇出 |
+====================================================================================================================================
+| CLOCK'cm3inst/seg_inst/clk_DRV_reg/Q     |     N/A      |    0 |               |      | N/A                               |      |
+| cm3inst/seg_inst/clk_DRV_reg/Q           | xsDFFSA_K1C1 |    0 | clock_latency |      | cm3inst/seg_inst/clk_DRV          | 31   |
+| cm3inst/seg_inst/HC595_CLK_CNT_reg[1]/C  | xsDFFSA_K1C1 |    0 |      net      |      | cm3inst/seg_inst/clk_DRV          |      |
+| --                                       |      --      |   -- |      --       | --   | --                                | --   |
+| cm3inst/seg_inst/HC595_CLK_CNT_reg[1]/Q  | xsDFFSA_K1C1 |  347 |  rising_edge  |      | cm3inst/seg_inst/HC595_CLK_CNT[1] | 3    |
+| cm3inst/seg_inst/_i_56/bitAdd_1/muxcy/S  |   xsMUXCY    |    0 |      net      |      | cm3inst/seg_inst/HC595_CLK_CNT[1] |      |
+| cm3inst/seg_inst/_i_56/bitAdd_1/muxcy/O  |   xsMUXCY    |  261 |     cell      |      | cm3inst/seg_inst/_i_56/_n_1       | 2    |
+| cm3inst/seg_inst/_i_56/bitAdd_2/muxcy/CI |   xsMUXCY    |    0 |      net      |      | cm3inst/seg_inst/_i_56/_n_1       |      |
+| cm3inst/seg_inst/_i_56/bitAdd_2/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | cm3inst/seg_inst/_i_56/_n_3       | 2    |
+| cm3inst/seg_inst/_i_56/bitAdd_3/muxcy/CI |   xsMUXCY    |    0 |      net      |      | cm3inst/seg_inst/_i_56/_n_3       |      |
+| cm3inst/seg_inst/_i_56/bitAdd_3/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | cm3inst/seg_inst/_i_56/_n_5       | 2    |
+| cm3inst/seg_inst/_i_56/bitAdd_4/muxcy/CI |   xsMUXCY    |    0 |      net      |      | cm3inst/seg_inst/_i_56/_n_5       |      |
+| cm3inst/seg_inst/_i_56/bitAdd_4/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | cm3inst/seg_inst/_i_56/_n_7       | 2    |
+| cm3inst/seg_inst/_i_56/bitAdd_5/muxcy/CI |   xsMUXCY    |    0 |      net      |      | cm3inst/seg_inst/_i_56/_n_7       |      |
+| cm3inst/seg_inst/_i_56/bitAdd_5/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | cm3inst/seg_inst/_i_56/_n_9       | 2    |
+| cm3inst/seg_inst/_i_56/bitAdd_6/muxcy/CI |   xsMUXCY    |    0 |      net      |      | cm3inst/seg_inst/_i_56/_n_9       |      |
+| cm3inst/seg_inst/_i_56/bitAdd_6/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | cm3inst/seg_inst/_i_56/_n_11      | 1    |
+| cm3inst/seg_inst/_i_56/bitAdd_7/xorcy/CI |   xsXORCY    |    0 |      net      |      | cm3inst/seg_inst/_i_56/_n_11      |      |
+| cm3inst/seg_inst/_i_56/bitAdd_7/xorcy/O  |   xsXORCY    |  263 |     cell      |      | cm3inst/seg_inst/n_468[7]         | 1    |
+| cm3inst/seg_inst/_i_214/I2               |   xsLUTSA3   |    0 |      net      |      | cm3inst/seg_inst/n_468[7]         |      |
+| cm3inst/seg_inst/_i_214/O                |   xsLUTSA3   |   81 |     cell      |      | cm3inst/seg_inst/n_421            | 1    |
+| cm3inst/seg_inst/HC595_CLK_CNT_reg[7]/D  | xsDFFSA_K1C1 |    0 |      net      |      | cm3inst/seg_inst/n_421            |      |
+====================================================================================================================================
+时钟路径延迟         = 0         
+数据路径延迟         = 1792       (Tdatp)
      clock-to-q 延迟 = 347 
-        总的单元延迟 = 405 
+        总的单元延迟 = 1445 
         总的连线延迟 = 0 
-        逻辑级数     = 5 
+        逻辑级数     = 8 
 [数据捕获路径]
-========================================================================================================
-|                节点                 |     单元     | 延迟 |      类型      | 位置 |   连线    | 扇出 |
-========================================================================================================
-| CLOCK'clk_25M                       |     N/A      |    0 |                |      | N/A       |      |
-| clk_25M                             |     top      |    0 | clock_latency  |      | clk_25M   | 1    |
-| clk_25M_pad/I                       |    xsIOBI    |    0 |      net       |      | clk_25M   |      |
-| clk_25M_pad/O                       |    xsIOBI    |  990 |      cell      |      | clk_25M_c | 29   |
-| PLL_25to200_1/PLLInst_0/CLKI        |   xsPLLSA    |    0 |      net       |      | clk_25M_c |      |
-| --                                  |      --      |   -- |       --       | --   | --        | --   |
-| CLOCK'PLL_25to200_1/PLLInst_0/CLKOS |     N/A      |    0 | tcst_gen_clock |      | N/A       |      |
-| PLL_25to200_1/PLLInst_0/CLKOS       |   xsPLLSA    |  990 | clock_latency  |      | clk_100M  | 76   |
-| cm3inst/ahb_sram1/reg_bs_n_reg[1]/C | xsDFFSA_K1P1 |    0 |      net       |      | clk_100M  |      |
-========================================================================================================
+==========================================================================================================================
+|                  节点                   |     单元     | 延迟 |     类型      | 位置 |           连线           | 扇出 |
+==========================================================================================================================
+| CLOCK'cm3inst/seg_inst/clk_DRV_reg/Q    |     N/A      |    0 |               |      | N/A                      |      |
+| cm3inst/seg_inst/clk_DRV_reg/Q          | xsDFFSA_K1C1 |    0 | clock_latency |      | cm3inst/seg_inst/clk_DRV | 31   |
+| cm3inst/seg_inst/HC595_CLK_CNT_reg[7]/C | xsDFFSA_K1C1 |    0 |      net      |      | cm3inst/seg_inst/clk_DRV |      |
+==========================================================================================================================
+时钟路径延迟         = 0         
+    时钟偏差         = 0 (Tcksw)
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 1792       + -23        - 0          - 0          
+       = 1769
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+# ***********************************************************************
+# 时钟         : PLL_25to200_1/PLLInst_0/CLKOS
+# 最小时钟周期 : 1769 ps
+# ***********************************************************************
+********************
+* 路径 1
+********************
+起点     : cm3inst/seg_inst/clk_1M_cnt_reg[1]/Q [激发时钟: PLL_25to200_1/PLLInst_0/CLKOS, 上升沿1]
+终点     : cm3inst/seg_inst/clk_1M_cnt_reg[7]/D [捕获时钟: PLL_25to200_1/PLLInst_0/CLKOS, 上升沿2] 
+数据产生路径
+==================================================================================================================================
+|                   节点                   |     单元     | 延迟 |      类型      | 位置 |              连线              | 扇出 |
+==================================================================================================================================
+| CLOCK'clk_25M                            |     N/A      |    0 |                |      | N/A                            |      |
+| clk_25M                                  |     top      |    0 | clock_latency  |      | clk_25M                        | 1    |
+| clk_25M_pad/I                            |    xsIOBI    |    0 |      net       |      | clk_25M                        |      |
+| clk_25M_pad/O                            |    xsIOBI    |  990 |      cell      |      | clk_25M_c                      | 29   |
+| PLL_25to200_1/PLLInst_0/CLKI             |   xsPLLSA    |    0 |      net       |      | clk_25M_c                      |      |
+| --                                       |      --      |   -- |       --       | --   | --                             | --   |
+| CLOCK'PLL_25to200_1/PLLInst_0/CLKOS      |     N/A      |    0 | tcst_gen_clock |      | N/A                            |      |
+| PLL_25to200_1/PLLInst_0/CLKOS            |   xsPLLSA    |  990 | clock_latency  |      | clk_100M                       | 178  |
+| cm3inst/seg_inst/clk_1M_cnt_reg[1]/C     | xsDFFSA_K1C1 |    0 |      net       |      | clk_100M                       |      |
+| --                                       |      --      |   -- |       --       | --   | --                             | --   |
+| cm3inst/seg_inst/clk_1M_cnt_reg[1]/Q     | xsDFFSA_K1C1 |  347 |  rising_edge   |      | cm3inst/seg_inst/clk_1M_cnt[1] | 10   |
+| cm3inst/seg_inst/_i_50/bitAdd_1/muxcy/S  |   xsMUXCY    |    0 |      net       |      | cm3inst/seg_inst/clk_1M_cnt[1] |      |
+| cm3inst/seg_inst/_i_50/bitAdd_1/muxcy/O  |   xsMUXCY    |  261 |      cell      |      | cm3inst/seg_inst/_i_50/_n_1    | 2    |
+| cm3inst/seg_inst/_i_50/bitAdd_2/muxcy/CI |   xsMUXCY    |    0 |      net       |      | cm3inst/seg_inst/_i_50/_n_1    |      |
+| cm3inst/seg_inst/_i_50/bitAdd_2/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | cm3inst/seg_inst/_i_50/_n_3    | 2    |
+| cm3inst/seg_inst/_i_50/bitAdd_3/muxcy/CI |   xsMUXCY    |    0 |      net       |      | cm3inst/seg_inst/_i_50/_n_3    |      |
+| cm3inst/seg_inst/_i_50/bitAdd_3/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | cm3inst/seg_inst/_i_50/_n_5    | 2    |
+| cm3inst/seg_inst/_i_50/bitAdd_4/muxcy/CI |   xsMUXCY    |    0 |      net       |      | cm3inst/seg_inst/_i_50/_n_5    |      |
+| cm3inst/seg_inst/_i_50/bitAdd_4/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | cm3inst/seg_inst/_i_50/_n_7    | 2    |
+| cm3inst/seg_inst/_i_50/bitAdd_5/muxcy/CI |   xsMUXCY    |    0 |      net       |      | cm3inst/seg_inst/_i_50/_n_7    |      |
+| cm3inst/seg_inst/_i_50/bitAdd_5/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | cm3inst/seg_inst/_i_50/_n_9    | 2    |
+| cm3inst/seg_inst/_i_50/bitAdd_6/muxcy/CI |   xsMUXCY    |    0 |      net       |      | cm3inst/seg_inst/_i_50/_n_9    |      |
+| cm3inst/seg_inst/_i_50/bitAdd_6/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | cm3inst/seg_inst/_i_50/_n_11   | 1    |
+| cm3inst/seg_inst/_i_50/bitAdd_7/xorcy/CI |   xsXORCY    |    0 |      net       |      | cm3inst/seg_inst/_i_50/_n_11   |      |
+| cm3inst/seg_inst/_i_50/bitAdd_7/xorcy/O  |   xsXORCY    |  263 |      cell      |      | cm3inst/seg_inst/n_462[7]      | 1    |
+| cm3inst/seg_inst/_i_130/I0               |   xsLUTSA6   |    0 |      net       |      | cm3inst/seg_inst/n_462[7]      |      |
+| cm3inst/seg_inst/_i_130/O                |   xsLUTSA6   |   81 |      cell      |      | cm3inst/seg_inst/n_450         | 1    |
+| cm3inst/seg_inst/clk_1M_cnt_reg[7]/D     | xsDFFSA_K1C1 |    0 |      net       |      | cm3inst/seg_inst/n_450         |      |
+==================================================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 1792       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 1445 
+        总的连线延迟 = 0 
+        逻辑级数     = 8 
+[数据捕获路径]
+=========================================================================================================
+|                 节点                 |     单元     | 延迟 |      类型      | 位置 |   连线    | 扇出 |
+=========================================================================================================
+| CLOCK'clk_25M                        |     N/A      |    0 |                |      | N/A       |      |
+| clk_25M                              |     top      |    0 | clock_latency  |      | clk_25M   | 1    |
+| clk_25M_pad/I                        |    xsIOBI    |    0 |      net       |      | clk_25M   |      |
+| clk_25M_pad/O                        |    xsIOBI    |  990 |      cell      |      | clk_25M_c | 29   |
+| PLL_25to200_1/PLLInst_0/CLKI         |   xsPLLSA    |    0 |      net       |      | clk_25M_c |      |
+| --                                   |      --      |   -- |       --       | --   | --        | --   |
+| CLOCK'PLL_25to200_1/PLLInst_0/CLKOS  |     N/A      |    0 | tcst_gen_clock |      | N/A       |      |
+| PLL_25to200_1/PLLInst_0/CLKOS        |   xsPLLSA    |  990 | clock_latency  |      | clk_100M  | 178  |
+| cm3inst/seg_inst/clk_1M_cnt_reg[7]/C | xsDFFSA_K1C1 |    0 |      net       |      | clk_100M  |      |
+=========================================================================================================
 时钟路径延迟         = 990       
     时钟偏差         = 0 (Tcksw)
 [延迟计算]
 ======================================================================
 总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
-       = 752        + -23        - 0          - 0          
-       = 729
+       = 1792       + -23        - 0          - 0          
+       = 1769
 ======================================================================
 Tdatp -- 数据路径延迟 
 Tsu   -- 库单元建立时间 
@@ -183,5 +250,6 @@ Tckpm -- 时钟悲观补偿
 最小时钟周期 : 4457 ps
 最大时钟频率 : 224.4 MHz
 #########################################################################
-clk_25M                       : 224.4 Mhz
-PLL_25to200_1/PLLInst_0/CLKOS : 1371.7 Mhz
+clk_25M                        : 224.4 Mhz
+cm3inst/seg_inst/clk_DRV_reg/Q : 565.3 Mhz
+PLL_25to200_1/PLLInst_0/CLKOS  : 565.3 Mhz

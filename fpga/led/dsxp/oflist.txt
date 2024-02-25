@@ -1,2 +1,3 @@
-1 $WORK_DIR$hq_run/top_rtl.v
+1 $WORK_DIR$hq_run/top.bit
+166 $WORK_DIR$ahb_seg7x8.v
 12 $WORK_DIR$cm3_sys.v

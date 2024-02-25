@@ -35,7 +35,8 @@
         "cm3ds_uart.h": "c",
         "cm3ds_mps2.h": "c",
         "cm3ds_rcc.h": "c",
-        "cm3ds_gpio.h": "c"
+        "cm3ds_gpio.h": "c",
+        "ahb_led.h": "c"
     },
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#1073cf2d",

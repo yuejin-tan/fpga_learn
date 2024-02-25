@@ -15,7 +15,12 @@ module cm3_sys (
     output wire SRAM_nOE,
     output wire SRAM_nCE,
     output wire SRAM_nLB,
-    output wire SRAM_nUB
+    output wire SRAM_nUB,
+
+    // seg7x8
+    output wire SH_CLK,
+    output wire LD_CLK,
+    output wire HC_DAT
   );
 
   wire TMSOEN;
@@ -38,10 +43,10 @@ module cm3_sys (
 
   wire [ 31: 0] TARGEXP1HADDR;
   wire [ 3: 0] TARGEXP1HPROT;
-  wire [ 31: 0] TARGEXP1HRDATA = 0;
+  wire [ 31: 0] TARGEXP1HRDATA;
   wire TARGEXP1HREADYMUX;
-  wire TARGEXP1HREADYOUT = 1;
-  wire TARGEXP1HRESP = 0;
+  wire TARGEXP1HREADYOUT ;
+  wire TARGEXP1HRESP;
   wire TARGEXP1HSEL;
   wire [ 2: 0] TARGEXP1HSIZE;
   wire [ 1: 0] TARGEXP1HTRANS;
@@ -161,5 +166,26 @@ module cm3_sys (
              .SRAM_nLB( SRAM_nLB ),
              .SRAM_nUB( SRAM_nUB)
            );
+
+  ahb_seg7x8 seg_inst(
+               .HCLK ( CLK_CM3 ), //时钟
+               .HRESETn ( SYS_RSTN ), //复位
+
+               .HSEL ( TARGEXP1HSEL ), // AHB inputs，设备选择
+               .HADDR ( TARGEXP1HADDR[ 15: 0 ] ), //地址
+               .HTRANS ( TARGEXP1HTRANS ), //传输控制信号
+               .HSIZE ( TARGEXP1HSIZE ),  //传输大小
+               .HWRITE ( TARGEXP1HWRITE ), //写控制
+               .HWDATA ( TARGEXP1HWDATA ), //写数据
+               .HREADY ( TARGEXP1HREADYMUX ), //传输完成
+
+               .HREADYOUT ( TARGEXP1HREADYOUT ), // AHB Outputs，设备准备信号
+               .HRDATA ( TARGEXP1HRDATA ), //读取到的数据
+               .HRESP ( TARGEXP1HRESP ), //设备响应
+
+               .SH_CLK( SH_CLK ),
+               .LD_CLK( LD_CLK ),
+               .HC_DAT( HC_DAT)
+             );
 
 endmodule
