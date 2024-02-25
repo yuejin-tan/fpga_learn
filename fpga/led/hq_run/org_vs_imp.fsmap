@@ -1,0 +1,21 @@
+.fromstates cm3inst/ahb_sram1/reg_bstate_reg[2] cm3inst/ahb_sram1/reg_bstate_reg[1] cm3inst/ahb_sram1/reg_bstate_reg[0] 
+.tostates cm3inst/ahb_sram1/reg_bstate_reg_0 cm3inst/ahb_sram1/reg_bstate_reg_1 cm3inst/ahb_sram1/reg_bstate_reg_2 
+.begin
+000 011
+101 111
+001 001
+100 010
+011 101
+010 110
+.end
+
+.fromstates cm3inst/ahb_sram1/reg_mstate_reg[2] cm3inst/ahb_sram1/reg_mstate_reg[1] cm3inst/ahb_sram1/reg_mstate_reg[0] 
+.tostates cm3inst/ahb_sram1/reg_mstate_reg_0 cm3inst/ahb_sram1/reg_mstate_reg_1 cm3inst/ahb_sram1/reg_mstate_reg_2 
+.begin
+000 101
+100 100
+001 001
+011 111
+010 110
+.end
+

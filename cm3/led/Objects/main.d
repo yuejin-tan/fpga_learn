@@ -13,3 +13,4 @@
 .\objects\main.o: src\delay.h
 .\objects\main.o: src\scd_inc.h
 .\objects\main.o: src\scd_cfg.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

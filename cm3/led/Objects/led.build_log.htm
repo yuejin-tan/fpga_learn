@@ -22,18 +22,24 @@ Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
 D:\fpga\ac208\workspace\cm3\led\led.uvprojx
-Project File Date:  02/23/2024
+Project File Date:  02/25/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
+compiling system_CM3DS.c...
 compiling main.c...
+src\main.c(63): warning:  #167-D: argument of type "unsigned long" is incompatible with parameter of type "void *"
+      memset(CM3DS_MPS2_TARGEXP0_BASE, 0, 1000ul * 1000ul);
+src\main.c(63): warning:  #152-D: conversion of nonzero integer to pointer
+      memset(CM3DS_MPS2_TARGEXP0_BASE, 0, 1000ul * 1000ul);
+src\main.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=4400 RO-data=1440 RW-data=96 ZI-data=4416  
+Program Size: Code=4976 RO-data=1440 RW-data=100 ZI-data=4420  
 FromELF: creating hex file...
 After Build - User command #1: C:\Keil_v5\\ARM\ARMCC\BIN\fromelf.exe D:\fpga\ac208\workspace\cm3\led\Objects\led.axf -c -d -e -s --output led.lst
 After Build - User command #2: C:\Keil_v5\\ARM\ARMCC\BIN\fromelf.exe D:\fpga\ac208\workspace\cm3\led\Objects\led.axf --bin -o led.bin
-".\Objects\led.axf" - 0 Error(s), 0 Warning(s).
+".\Objects\led.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -46,7 +52,7 @@ Package Vendor: ARM
   C:\Users\t\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM3\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

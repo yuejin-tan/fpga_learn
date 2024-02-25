@@ -9,13 +9,13 @@
 =  Copyright (c) 2020-2025 XiST                            @)
 =  All rights reserved.
 =========================================================================
-Info: Sat Feb 24 15:30:51 2024.
+Info: Sun Feb 25 16:24:12 2024.
 Info: Launching program D:/fpga/ac208/hq_xist_2.14.4_021824_win64/build/win_x64/bin/hqfpga.exe .
 Info: HqFpga is ready to work on host t (Windows 10 64-bit).
 
 [> readOpt D:/fpga/ac208/workspace/fpga/led/led.hqprj
 [> puts $hqui::FILE_SRC
-D:/fpga/ac208/workspace/fpga/led/cm3_sys.v D:/fpga/ac208/workspace/fpga/led/top.v D:/fpga/ac208/workspace/fpga/led/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.v D:/fpga/ac208/workspace/fpga/led/led_wf.v
+D:/fpga/ac208/workspace/fpga/led/cm3_sys.v D:/fpga/ac208/workspace/fpga/led/top.v D:/fpga/ac208/workspace/fpga/led/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.v D:/fpga/ac208/workspace/fpga/led/led_wf.v D:/fpga/ac208/workspace/fpga/led/ahb_sram.v
 [> puts $hqui::FAMILY
 SEAL
 [> puts $hqui::TOP_MODULE
@@ -37,9 +37,10 @@ Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\cm3_sys.v.
 Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\top.v.
 Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\ipcore_dir\PLL_25to200\xsIP_PLL_25to200.v.
 Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\led_wf.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\ahb_sram.v.
 Run PASS
 [> rtl.srcfiles.list
-D:/fpga/ac208/workspace/fpga/led/cm3_sys.v D:/fpga/ac208/workspace/fpga/led/top.v D:/fpga/ac208/workspace/fpga/led/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.v D:/fpga/ac208/workspace/fpga/led/led_wf.v
+D:/fpga/ac208/workspace/fpga/led/cm3_sys.v D:/fpga/ac208/workspace/fpga/led/top.v D:/fpga/ac208/workspace/fpga/led/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.v D:/fpga/ac208/workspace/fpga/led/led_wf.v D:/fpga/ac208/workspace/fpga/led/ahb_sram.v
 [> source D:/fpga/ac208/workspace/fpga/led/t.tcl
 Info: Loading device data for SEAL ....
 Info:   Loading functional data....
@@ -48,5 +49,6 @@ Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\cm3_sys.v.
 Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\top.v.
 Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\ipcore_dir\PLL_25to200\xsIP_PLL_25to200.v.
 Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\led_wf.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\ahb_sram.v.
 JSON is generated
 [> exit

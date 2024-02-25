@@ -1,10 +1,12 @@
-// D:\fpga\ac208\hqv3_xist_3.0.3_021824_win64\build\ipcreator\sup_files\ipdepot\pll\pll_freq_30k\..\_ipgen_seal_\pll_seal.exe -meta_xml D:\fpga\ac208\hqv3_xist_3.0.3_021824_win64\build\ipcreator\sup_files\ipdepot\pll\pll_freq_30k\pll_freq_25k.xml -ini_file D:/fpga/ac208/workspace/fpga/led/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.hqip -lang chs
+// D:\fpga\ac208\hq_xist_2.14.4_021824_win64\build\ipcreator\sup_files\ipdepot\pll\pll_freq_30k\..\_ipgen_seal_\pll_seal.exe -meta_xml D:\fpga\ac208\hq_xist_2.14.4_021824_win64\build\ipcreator\sup_files\ipdepot\pll\pll_freq_30k\pll_freq_25k.xml -ini_file D:/fpga/ac208/workspace/fpga/led/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.hqip -lang chs
 
 
 `timescale 1 ns / 1 ps
-module PLL_25to200 (CLKI, CLKOP, LOCK)/* synthesis NGD_DRC_MASK=1 */;
+module PLL_25to200 (CLKI, CLKOP, CLKOS, CLKOS2, LOCK)/* synthesis NGD_DRC_MASK=1 */;
     input wire CLKI;
     output wire CLKOP;
+    output wire CLKOS;
+    output wire CLKOS2;
     output wire LOCK;
 
     supply0 RST;
@@ -55,9 +57,9 @@ module PLL_25to200 (CLKI, CLKOP, LOCK)/* synthesis NGD_DRC_MASK=1 */;
     defparam PLLInst_0.CLKOS3_FPHASE = 0 ;
     defparam PLLInst_0.CLKOS3_CPHASE = 0 ;
     defparam PLLInst_0.CLKOS2_FPHASE = 0 ;
-    defparam PLLInst_0.CLKOS2_CPHASE = 0 ;
+    defparam PLLInst_0.CLKOS2_CPHASE = 15 ;
     defparam PLLInst_0.CLKOS_FPHASE = 0 ;
-    defparam PLLInst_0.CLKOS_CPHASE = 0 ;
+    defparam PLLInst_0.CLKOS_CPHASE = 7 ;
     defparam PLLInst_0.CLKOP_FPHASE = 0 ;
     defparam PLLInst_0.CLKOP_CPHASE = 3 ;
     defparam PLLInst_0.OUTDIVIDER_MUXD2 = "DIVD" ;
@@ -67,18 +69,18 @@ module PLL_25to200 (CLKI, CLKOP, LOCK)/* synthesis NGD_DRC_MASK=1 */;
     defparam PLLInst_0.OUTDIVIDER_MUXC2 = "DIVC" ;
     defparam PLLInst_0.PREDIVIDER_MUXC1 = 0 ;
     defparam PLLInst_0.VCO_BYPASS_C0 = "DISABLED" ;
-    defparam PLLInst_0.CLKOS2_ENABLE = "DISABLED" ;
+    defparam PLLInst_0.CLKOS2_ENABLE = "ENABLED" ;
     defparam PLLInst_0.OUTDIVIDER_MUXB2 = "DIVB" ;
     defparam PLLInst_0.PREDIVIDER_MUXB1 = 0 ;
     defparam PLLInst_0.VCO_BYPASS_B0 = "DISABLED" ;
-    defparam PLLInst_0.CLKOS_ENABLE = "DISABLED" ;
+    defparam PLLInst_0.CLKOS_ENABLE = "ENABLED" ;
     defparam PLLInst_0.OUTDIVIDER_MUXA2 = "DIVA" ;
     defparam PLLInst_0.PREDIVIDER_MUXA1 = 0 ;
     defparam PLLInst_0.VCO_BYPASS_A0 = "DISABLED" ;
     defparam PLLInst_0.CLKOP_ENABLE = "ENABLED" ;
     defparam PLLInst_0.CLKOS3_DIV = 0 ;
-    defparam PLLInst_0.CLKOS2_DIV = 0 ;
-    defparam PLLInst_0.CLKOS_DIV = 0 ;
+    defparam PLLInst_0.CLKOS2_DIV = 16 ;
+    defparam PLLInst_0.CLKOS_DIV = 8 ;
     defparam PLLInst_0.CLKOP_DIV = 4 ;
     defparam PLLInst_0.CLKFB_DIV = 8 ;
     defparam PLLInst_0.CLKI_DIV = 1 ;
@@ -98,16 +100,22 @@ module PLL_25to200 (CLKI, CLKOP, LOCK)/* synthesis NGD_DRC_MASK=1 */;
         .CLKOS3(CLKOS3_t), .LOCK(LOCK), .INTLOCK(), .REFCLK(), .CLKINTFB(CLKINTFB_t), 
         .DPHSRC(DPHSRC), .PLLACK(), .PLLDATO7(), .PLLDATO6(), .PLLDATO5(), .PLLDATO4(), 
         .PLLDATO3(), .PLLDATO2(), .PLLDATO1(), .PLLDATO0(), .CLKO5(CLKO5_t))
+             /* synthesis FREQUENCY_PIN_CLKOS2="50.000000" */
+             /* synthesis FREQUENCY_PIN_CLKOS="100.000000" */
              /* synthesis FREQUENCY_PIN_CLKOP="200.000000" */
              /* synthesis FREQUENCY_PIN_CLKI="25.000000" */
              /* synthesis ICP_CURRENT="8" */
              /* synthesis LPF_RESISTOR="48" */
              /* synthesis FREQ_LOCK_ACCURACY="2" */;
 
+    assign CLKOS2 = CLKOS2_t;
+    assign CLKOS = CLKOS_t;
     assign CLKOP = CLKOP_t;
 
 
     // exemplar begin
+    // exemplar attribute PLLInst_0 FREQUENCY_PIN_CLKOS2 50.000000
+    // exemplar attribute PLLInst_0 FREQUENCY_PIN_CLKOS 100.000000
     // exemplar attribute PLLInst_0 FREQUENCY_PIN_CLKOP 200.000000
     // exemplar attribute PLLInst_0 FREQUENCY_PIN_CLKI 25.000000
     // exemplar attribute PLLInst_0 ICP_CURRENT 8
@@ -115,6 +123,8 @@ module PLL_25to200 (CLKI, CLKOP, LOCK)/* synthesis NGD_DRC_MASK=1 */;
     // exemplar attribute PLLInst_0 FREQ_LOCK_ACCURACY 2
     // exemplar end
 
+    // phase clkos2 0.000000
+    // phase clkos  0.000000
     // phase clkop  0.000000
 
 endmodule

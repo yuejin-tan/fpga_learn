@@ -1,1 +1,2 @@
-3 $WORK_DIR$clk_info.sdc
+1 $WORK_DIR$hq_run/top_rtl.v
+12 $WORK_DIR$cm3_sys.v

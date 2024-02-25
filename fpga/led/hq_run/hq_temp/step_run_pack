@@ -9,6 +9,46 @@ Info: 网表整理(nl.sweep) 结束.
 # 组装(Packing)
 #====================================================
 Info: 开始组装(packing).
+Info: 将 cm3inst/ahb_sram1/read_buffer_1_reg[7] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_1_reg[6] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_1_reg[5] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_1_reg[4] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_1_reg[3] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_1_reg[2] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_1_reg[1] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_1_reg[0] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_0_reg[7] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_0_reg[6] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_0_reg[5] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_0_reg[4] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_0_reg[3] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_0_reg[2] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_0_reg[1] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/read_buffer_0_reg[0] 吸收到 IREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[17] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[16] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[15] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[14] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[13] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[12] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[11] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[10] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[9] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[8] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[7] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[6] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[5] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[4] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[3] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[2] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[1] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_high_reg[0] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_addr_low_reg[1]_dup1 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_we_n_reg 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_oe_n_reg 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_ce_n_reg 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_bs_n_reg[0] 吸收到 OREG.
+Info: 将 cm3inst/ahb_sram1/reg_bs_n_reg[1] 吸收到 OREG.
 Info: 将 led_wf1/led_sig_reg[3]_dup1 吸收到 OREG.
 Info: 将 led_wf1/led_sig_reg[2]_dup1 吸收到 OREG.
 Info: 将 led_wf1/led_sig_reg[1]_dup1 吸收到 OREG.
@@ -17,34 +57,34 @@ Info: 将 led_wf1/led_sig_reg[0]_dup2 吸收到 OREG.
 Info: 开始组装预处理.
 Info: 完成组装预处理.
 Info: CM3                         1.
-Info: IOLOGIC                     5.
-Info:     IREG_OREG               5.
-Info: PIO                        51.
+Info: IOLOGIC                    45.
+Info:     IREG_OREG              45.
+Info: PIO                        67.
 Info: PLL_25K                     1.
 Info: SLICEL                      6.
 Info:     CARRY                   6.
-Info: SLICEL(LE)                 35.
-Info:     LUT                     7.
-Info:     LUT REG                24.
-Info:     REG                     4.
+Info: SLICEL(LE)                106.
+Info:     LUT                    43.
+Info:     LUT REG                57.
+Info:     REG                     6.
 Info: 完成组装.
 Info: Start gpack.
 Info: Done gpack.
 Info: 开始建立物理网表.
-Info:   为 51   个 PIO        建立了物理网表 .
-Info:   为 5    个 IOLOGIC    建立了物理网表 .
+Info:   为 67   个 PIO        建立了物理网表 .
+Info:   为 45   个 IOLOGIC    建立了物理网表 .
 Info:   为 1    个 PLL_25K    建立了物理网表 .
 Info:   为 1    个 CM3        建立了物理网表 .
-Info:   为 12   个 SLICEL     建立了物理网表 .
+Info:   为 25   个 SLICEL     建立了物理网表 .
 Info: 完成建立物理网表.
 Info: CM3                         1.
-Info: IOLOGIC                     5.
-Info:     IREG_OREG               5.
-Info: PIO                        51.
+Info: IOLOGIC                    45.
+Info:     IREG_OREG              45.
+Info: PIO                        67.
 Info: PLL_25K                     1.
-Info: SLICEL                     12.
+Info: SLICEL                     25.
 Info:     CARRY                   6.
-Info:     LOGIC                   6.
+Info:     LOGIC                  19.
 ####
 Info: 组装执行时间 : 4 秒.
 Info: 输出网表报告到文件D:\fpga\ac208\workspace\fpga\led\hq_run\top_map.rpt中.

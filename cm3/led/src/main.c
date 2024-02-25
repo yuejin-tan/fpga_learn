@@ -7,6 +7,8 @@
 
 #include "scd_inc.h"
 
+#include "string.h"
+
 void nvicInit(void)
 {
     NVIC_SetPriorityGrouping(NVIC_PriorityGroup_2);
@@ -38,6 +40,133 @@ void uart0_init()
     NVIC_EnableIRQ(UART0_IRQn);
 }
 
+uint32_t mem_addr16b_test()
+{
+    uint32_t start_addr = CM3DS_MPS2_TARGEXP0_BASE;
+    uint32_t addr_size = 19;
+    uint32_t k;
+    uint32_t xshift;
+    uint32_t retval = 0;
+
+    uint8_t sram_rd8;
+    uint8_t sram_wd8;
+    volatile uint8_t* XMEM_p8;
+
+    uint16_t sram_rd16;
+    uint16_t sram_wd16;
+    volatile uint16_t* XMEM_p16;
+
+    uint32_t sram_rd32;
+    uint32_t sram_wd32;
+    volatile uint32_t* XMEM_p32;
+
+    memset(CM3DS_MPS2_TARGEXP0_BASE, 0, 1000ul * 1000ul);
+
+    //Write loop 8
+    xshift = 0x00000001ul << addr_size;
+    sram_wd8 = 0xAAul;
+    for (k = 0; k < addr_size + 2; k++)
+    {
+        XMEM_p8 = (uint8_t*)(start_addr + xshift);
+        *XMEM_p8 = sram_wd8;
+
+        xshift = xshift >> 1;
+        if (sram_wd8 & 0x80ul)
+            sram_wd8 = (sram_wd8 << 1) + 1;
+        else
+            sram_wd8 = sram_wd8 << 1;
+    }
+
+    //Read loop 8
+    xshift = 0x00000001ul << addr_size;
+    sram_wd8 = 0xAAul;
+    for (k = 0; k < addr_size + 2; k++)
+    {
+        XMEM_p8 = (uint8_t*)(start_addr + xshift);
+        sram_rd8 = *XMEM_p8;
+        if (sram_rd8 != sram_wd8)
+        {
+            retval++;
+        }
+
+        xshift = xshift >> 1;
+        if (sram_wd8 & 0x80ul)
+            sram_wd8 = (sram_wd8 << 1) + 1;
+        else
+            sram_wd8 = sram_wd8 << 1;
+    }
+
+    //Write loop 16
+    xshift = 0x00000001ul << addr_size;
+    sram_wd16 = 0xAAAAul;
+    for (k = 0; k < addr_size; k++)
+    {
+        XMEM_p16 = (uint16_t*)(start_addr + xshift);
+        *XMEM_p16 = sram_wd16;
+
+        xshift = xshift >> 1;
+        if (sram_wd16 & 0x8000ul)
+            sram_wd16 = (sram_wd16 << 1) + 1;
+        else
+            sram_wd16 = sram_wd16 << 1;
+    }
+
+    //Read loop 16
+    xshift = 0x00000001ul << addr_size;
+    sram_wd16 = 0xAAAAul;
+    for (k = 0; k < addr_size; k++)
+    {
+        XMEM_p16 = (uint16_t*)(start_addr + xshift);
+        sram_rd16 = *XMEM_p16;
+        if (sram_rd16 != sram_wd16)
+        {
+            retval++;
+        }
+
+        xshift = xshift >> 1;
+        if (sram_wd16 & 0x8000ul)
+            sram_wd16 = (sram_wd16 << 1) + 1;
+        else
+            sram_wd16 = sram_wd16 << 1;
+    }
+
+    //Write loop 32
+    xshift = 0x00000001ul << addr_size;
+    sram_wd32 = 0xAAAAAAAAul;
+    for (k = 0; k < addr_size - 1; k++)
+    {
+        XMEM_p32 = (uint32_t*)(start_addr + xshift);
+        *XMEM_p32 = sram_wd32;
+
+        xshift = xshift >> 1;
+        if (sram_wd32 & 0x80000000ul)
+            sram_wd32 = (sram_wd32 << 1) + 1;
+        else
+            sram_wd32 = sram_wd32 << 1;
+    }
+
+    //Read loop 32
+    xshift = 0x00000001ul << addr_size;
+    sram_wd32 = 0xAAAAAAAAul;
+    for (k = 0; k < addr_size - 1; k++)
+    {
+        XMEM_p32 = (uint32_t*)(start_addr + xshift);
+        sram_rd32 = *XMEM_p32;
+        if (sram_rd32 != sram_wd32)
+        {
+            retval++;
+        }
+
+        xshift = xshift >> 1;
+        if (sram_wd32 & 0x80000000ul)
+            sram_wd32 = (sram_wd32 << 1) + 1;
+        else
+            sram_wd32 = sram_wd32 << 1;
+    }
+
+    return retval;
+}
+
 #define LED1_ON GPIO_ResetBit( CM3DS_MPS2_GPIO0, GPIO_Pin_0)
 #define LED2_ON GPIO_ResetBit( CM3DS_MPS2_GPIO0, GPIO_Pin_1)
 
@@ -60,6 +189,11 @@ int main(void)
 
     scd_init_1();
 
+    if (mem_addr16b_test())
+    {
+        while (1);
+    }
+
     while (1)
     {
         // if ((UART_GetFlagStatus(CM3DS_MPS2_UART0, 0x01)) == RESET)
@@ -68,9 +202,9 @@ int main(void)
         // }
 
         LED1_ON;
-        delay_ms(20);
+        delay_ms(50);
         LED1_OFF;
-        DELAY_TICK(200 * 1000 * 20);
+        DELAY_TICK(200 * 1000 * 50);
     }
 }
 

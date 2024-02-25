@@ -14,13 +14,13 @@ module top (
     inout wire pll_i2c_sda,
 
     //  SRAM
-    output [ 18: 0 ] SRAM_ADDR,
-    inout [ 15: 0 ] SRAM_DQ,
-    output SRAM_nWE,
-    output SRAM_nOE,
-    output SRAM_nCE,
-    output SRAM_nLB,
-    output SRAM_nUB,
+    output wire [ 18: 0 ] SRAM_ADDR,
+    inout wire [ 15: 0 ] SRAM_DQ,
+    output wire SRAM_nWE,
+    output wire SRAM_nOE,
+    output wire SRAM_nCE,
+    output wire SRAM_nLB,
+    output wire SRAM_nUB,
 
     //  FLASH
     output wire flash_sclk,
@@ -78,14 +78,6 @@ module top (
   //  PLL EXT
   assign pll_i2c_scl = 1'bz;
 
-  // sram
-  assign SRAM_ADDR = 0;
-  assign SRAM_nWE = 1;
-  assign SRAM_nOE = 1;
-  assign SRAM_nCE = 1;
-  assign SRAM_nLB = 1;
-  assign SRAM_nUB = 1;
-
   //  FLASH
   assign flash_sclk = 0;
   assign flash_cs = 1;
@@ -129,6 +121,9 @@ module top (
   wire [ 31: 0 ] fake32;
 
   wire clk_200M;
+  wire clk_100M;
+  wire clk_50M;
+
   wire PLL1_lock;
 
   wire cm3rstn;
@@ -138,16 +133,25 @@ module top (
   led_wf led_wf1( clk_25M, key_pin[ 1 ], led_pin );
 
   cm3_sys cm3inst (
-            .CLK_CM3( clk_200M ),
+            .CLK_CM3( clk_100M ),
             .SYS_RSTN( key_pin[ 0 ] ),
             .SWCLK( swdclk ),
             .SWDIO( swddio ),
             .INTSIG( 16'b0 ),
             .GPIO_IN( { 29'b0, uart_DAP_rx, 2'b0} ),
             .GPIO_OUT( { fake28, uart_DAP_tx, fake1, beep_pin, led_core } ),
-            .GPIO_OUT_EN( fake32 )
+            .GPIO_OUT_EN( fake32 ),
+
+            //  SRAM
+            .SRAM_ADDR( SRAM_ADDR ),
+            .SRAM_DQ( SRAM_DQ ),
+            .SRAM_nWE( SRAM_nWE ),
+            .SRAM_nOE( SRAM_nOE ),
+            .SRAM_nCE( SRAM_nCE ),
+            .SRAM_nLB( SRAM_nLB ),
+            .SRAM_nUB( SRAM_nUB)
           );
 
-  PLL_25to200 PLL_25to200_1( clk_25M, clk_200M, PLL1_lock );
+  PLL_25to200 PLL_25to200_1( clk_25M, clk_200M, clk_100M, clk_50M, PLL1_lock );
 
 endmodule

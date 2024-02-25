@@ -109,6 +109,73 @@
 Tdatp -- 数据路径延迟 
 Tsu   -- 库单元建立时间 
 Tckpm -- 时钟悲观补偿 
+# ***********************************************************************
+# 时钟         : PLL_25to200_1/PLLInst_0/CLKOS
+# 最小时钟周期 : 729 ps
+# ***********************************************************************
+********************
+* 路径 1
+********************
+起点     : cm3inst/ahb_sram1/reg_bstate_reg_2/Q [激发时钟: PLL_25to200_1/PLLInst_0/CLKOS, 上升沿1]
+终点     : cm3inst/ahb_sram1/reg_bs_n_reg[1]/D  [捕获时钟: PLL_25to200_1/PLLInst_0/CLKOS, 上升沿2] 
+数据产生路径
+=========================================================================================================================================
+|                 节点                 |     单元     | 延迟 |      类型      | 位置 |                   连线                    | 扇出 |
+=========================================================================================================================================
+| CLOCK'clk_25M                        |     N/A      |    0 |                |      | N/A                                       |      |
+| clk_25M                              |     top      |    0 | clock_latency  |      | clk_25M                                   | 1    |
+| clk_25M_pad/I                        |    xsIOBI    |    0 |      net       |      | clk_25M                                   |      |
+| clk_25M_pad/O                        |    xsIOBI    |  990 |      cell      |      | clk_25M_c                                 | 29   |
+| PLL_25to200_1/PLLInst_0/CLKI         |   xsPLLSA    |    0 |      net       |      | clk_25M_c                                 |      |
+| --                                   |      --      |   -- |       --       | --   | --                                        | --   |
+| CLOCK'PLL_25to200_1/PLLInst_0/CLKOS  |     N/A      |    0 | tcst_gen_clock |      | N/A                                       |      |
+| PLL_25to200_1/PLLInst_0/CLKOS        |   xsPLLSA    |  990 | clock_latency  |      | clk_100M                                  | 76   |
+| cm3inst/ahb_sram1/reg_bstate_reg_2/C | xsDFFSA_K1P1 |    0 |      net       |      | clk_100M                                  |      |
+| --                                   |      --      |   -- |       --       | --   | --                                        | --   |
+| cm3inst/ahb_sram1/reg_bstate_reg_2/Q | xsDFFSA_K1P1 |  347 |  rising_edge   |      | cm3inst/ahb_sram1/n_162                   | 9    |
+| _i_13/I3                             |   xsLUTSA4   |    0 |      net       |      | cm3inst/ahb_sram1/n_162                   |      |
+| _i_13/O                              |   xsLUTSA4   |   81 |      cell      |      | cm3inst/ahb_sram1/n_246_CE_AND_O_CE_AND_O | 27   |
+| cm3inst/ahb_sram1/_i_214/_i_0/I5     |   xsLUTSA6   |    0 |      net       |      | cm3inst/ahb_sram1/n_246_CE_AND_O_CE_AND_O |      |
+| cm3inst/ahb_sram1/_i_214/_i_0/O      |   xsLUTSA6   |   81 |      cell      |      | cm3inst/ahb_sram1/WRREQ                   | 7    |
+| cm3inst/ahb_sram1/_i_182_decomp/I5   |   xsLUTSA6   |    0 |      net       |      | cm3inst/ahb_sram1/WRREQ                   |      |
+| cm3inst/ahb_sram1/_i_182_decomp/O    |   xsLUTSA6   |   81 |      cell      |      | cm3inst/ahb_sram1/_i_182_decomp           | 1    |
+| cm3inst/ahb_sram1/_i_182/I4          |   xsLUTSA6   |    0 |      net       |      | cm3inst/ahb_sram1/_i_182_decomp           |      |
+| cm3inst/ahb_sram1/_i_182/O           |   xsLUTSA6   |   81 |      cell      |      | cm3inst/ahb_sram1/nxt_ce_n                | 3    |
+| cm3inst/ahb_sram1/_i_198/I5          |   xsLUTSA6   |    0 |      net       |      | cm3inst/ahb_sram1/nxt_ce_n                |      |
+| cm3inst/ahb_sram1/_i_198/O           |   xsLUTSA6   |   81 |      cell      |      | cm3inst/ahb_sram1/nxt_bs_n[1]             | 1    |
+| cm3inst/ahb_sram1/reg_bs_n_reg[1]/D  | xsDFFSA_K1P1 |    0 |      net       |      | cm3inst/ahb_sram1/nxt_bs_n[1]             |      |
+=========================================================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 752        (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 405 
+        总的连线延迟 = 0 
+        逻辑级数     = 5 
+[数据捕获路径]
+========================================================================================================
+|                节点                 |     单元     | 延迟 |      类型      | 位置 |   连线    | 扇出 |
+========================================================================================================
+| CLOCK'clk_25M                       |     N/A      |    0 |                |      | N/A       |      |
+| clk_25M                             |     top      |    0 | clock_latency  |      | clk_25M   | 1    |
+| clk_25M_pad/I                       |    xsIOBI    |    0 |      net       |      | clk_25M   |      |
+| clk_25M_pad/O                       |    xsIOBI    |  990 |      cell      |      | clk_25M_c | 29   |
+| PLL_25to200_1/PLLInst_0/CLKI        |   xsPLLSA    |    0 |      net       |      | clk_25M_c |      |
+| --                                  |      --      |   -- |       --       | --   | --        | --   |
+| CLOCK'PLL_25to200_1/PLLInst_0/CLKOS |     N/A      |    0 | tcst_gen_clock |      | N/A       |      |
+| PLL_25to200_1/PLLInst_0/CLKOS       |   xsPLLSA    |  990 | clock_latency  |      | clk_100M  | 76   |
+| cm3inst/ahb_sram1/reg_bs_n_reg[1]/C | xsDFFSA_K1P1 |    0 |      net       |      | clk_100M  |      |
+========================================================================================================
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 752        + -23        - 0          - 0          
+       = 729
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
 #########################################################################
 # 时钟频率总结
 #########################################################################
@@ -116,4 +183,5 @@ Tckpm -- 时钟悲观补偿
 最小时钟周期 : 4457 ps
 最大时钟频率 : 224.4 MHz
 #########################################################################
-clk_25M : 224.4 Mhz
+clk_25M                       : 224.4 Mhz
+PLL_25to200_1/PLLInst_0/CLKOS : 1371.7 Mhz

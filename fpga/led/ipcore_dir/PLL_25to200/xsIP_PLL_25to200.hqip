@@ -31,7 +31,7 @@ clkop.phase_tolerance=0.0
 clkop.trimp_pol=0
 clkop.trimp_del=0
 
-clkos.enable=FALSE
+clkos.enable=TRUE
 clkos.freq=100.0
 clkos.tolerance=0.0
 clkos.phase_shift=0.0
@@ -39,8 +39,8 @@ clkos.phase_tolerance=0.0
 clkos.trims_pol=0
 clkos.trims_del=0
 
-clkos2.enable=FALSE
-clkos2.freq=100.0
+clkos2.enable=TRUE
+clkos2.freq=50.0
 clkos2.tolerance=0.0
 clkos2.phase_shift=0.0
 clkos2.phase_tolerance=0.0
@@ -79,5 +79,5 @@ output_module=PLL_25to200
 [IP]
 #! device from HqFpga project
 device=SA5Z-30-D1-8U213C
-meta_file=D:/fpga/ac208/hqv3_xist_3.0.3_021824_win64/build/ipcreator/sup_files/ipdepot/pll/pll_freq_30k/pll_freq_25k.xml
+meta_file=D:/fpga/ac208/hq_xist_2.14.4_021824_win64/build/ipcreator/sup_files/ipdepot/pll/pll_freq_30k/pll_freq_25k.xml
 

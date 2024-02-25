@@ -2,7 +2,7 @@ module led_wf
   #(
      parameter CLK_DIV = 25 * 1000 * 100 - 1,
      parameter LED_NUM = 4,
-     parameter INIT_STA = 4'b1110
+     parameter INIT_STA = 4'b1100
    )
    (
      input clk,
