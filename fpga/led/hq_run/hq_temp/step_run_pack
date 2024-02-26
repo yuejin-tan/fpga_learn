@@ -33,13 +33,14 @@ Info: IOLOGIC                    10.
 Info:     IREG_OREG              10.
 Info: PIO                        53.
 Info: PLL_25K                     1.
-Info: SLICEL                     29.
+Info: SLICEL                     45.
 Info:     CARRY                  24.
 Info:     MUXF7                   5.
-Info: SLICEL(LE)                381.
-Info:     LUT                    81.
-Info:     LUT REG               150.
-Info:     REG                   150.
+Info:     MUXF8                  16.
+Info: SLICEL(LE)                662.
+Info:     LUT                   128.
+Info:     LUT REG               176.
+Info:     REG                   358.
 Info: 完成组装.
 Info: Start gpack.
 Info: Done gpack.
@@ -48,17 +49,18 @@ Info:   为 53   个 PIO        建立了物理网表 .
 Info:   为 10   个 IOLOGIC    建立了物理网表 .
 Info:   为 1    个 PLL_25K    建立了物理网表 .
 Info:   为 1    个 CM3        建立了物理网表 .
-Info:   为 133  个 SLICEL     建立了物理网表 .
+Info:   为 255  个 SLICEL     建立了物理网表 .
 Info: 完成建立物理网表.
 Info: CM3                         1.
 Info: IOLOGIC                    10.
 Info:     IREG_OREG              10.
 Info: PIO                        53.
 Info: PLL_25K                     1.
-Info: SLICEL                    133.
+Info: SLICEL                    255.
 Info:     CARRY                  24.
-Info:     LOGIC                 104.
+Info:     LOGIC                 210.
 Info:     MUXF7                   5.
+Info:     MUXF8                  16.
 ####
-Info: 组装执行时间 : 5 秒.
+Info: 组装执行时间 : 6 秒.
 Info: 输出网表报告到文件D:\fpga\ac208\workspace\fpga\led\hq_run\top_map.rpt中.

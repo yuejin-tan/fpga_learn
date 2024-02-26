@@ -45,7 +45,8 @@ void uart0_init()
 void uart_ahb_init()
 {
     AHB_UART->cmd.all = 0;
-    AHB_UART->buad_div_2 = (100ul * 1000ul * 1000ul / (115200ul * 2ul)) - 1;
+    // AHB_UART->buad_div_2 = (100ul * 1000ul * 1000ul / (115200ul * 2ul)) - 1;
+    AHB_UART->buad_div_2 = (100ul * 1000ul * 1000ul / (460800ul * 2ul)) - 1;
     AHB_UART->cmd.all = 1;
 }
 
@@ -186,12 +187,14 @@ enum rwWay {
     rw_8bit = 0,
     rw_16bit,
     rw_32bit,
+    uart_test,
+    uart_test2,
     rw_clock,
 };
 
 uint32_t ms_cnt = 0;
 
-uint16_t rwWay = 3;
+uint16_t rwWay = uart_test2;
 
 uint16_t test1 = 0;
 uint16_t test2 = 0;
@@ -203,6 +206,13 @@ uint16_t test2r = 0;
 uint16_t test3r = 0;
 uint16_t test4r = 0;
 
+uint8_t txdata = 0;
+uint8_t rxdata = 0;
+uint8_t rxbuff[256] = { 0 };
+uint8_t rxbuffptr = 0;
+
+SCD_REG_DECLEAR(_2);
+
 int main(void)
 {
     nvicInit();
@@ -211,6 +221,7 @@ int main(void)
     uart0_init();
 
     scd_init_1();
+    scd_init_2();
 
     // if (mem_addr16b_test())
     // {
@@ -227,23 +238,65 @@ int main(void)
         }
 
         // uart test
-        if ((CM3DS_MPS2_GPIO0->DATA & 0x2) == 0)
+        switch (rwWay)
         {
-            switch (rwWay)
+        case uart_test2:
+            while (AHB_UART->cmd.bit.TX_FIFO_FULL == 0)
             {
-            case rw_8bit:
-                AHB_UART->data = test1;
-                break;
+                AHB_UART->data = scd_send1Byte(&scd_2);
+            }
+            // DELAY_TICK(100 * 1000 * 100);
 
-            default:
-                AHB_UART->data = ms_cnt >> 8;
+            while (AHB_UART->cmd.bit.RX_FIFO_EMPTY == 0)
+            {
+                SCD_Rev1Byte(&scd_2, AHB_UART->data);
+            }
+            break;
+
+        case uart_test:
+            if ((CM3DS_MPS2_GPIO0->DATA & 0x2) == 0)
+            {
+                while (AHB_UART->cmd.bit.TX_FIFO_FULL == 0)
+                {
+                    txdata++;
+                    AHB_UART->data = txdata;
+                }
+                // DELAY_TICK(100 * 1000 * 100);
+
+                while (AHB_UART->cmd.bit.RX_FIFO_EMPTY == 0)
+                {
+                    rxbuff[rxbuffptr++] = AHB_UART->data;
+                }
+            }
+            break;
+
+        default:
+            if ((CM3DS_MPS2_GPIO0->DATA & 0x2) == 0)
+            {
+                if (AHB_UART->cmd.bit.TX_FIFO_FULL == 0)
+                {
+                    AHB_UART->data = test1;
+                }
+                if (AHB_UART->cmd.bit.RX_FIFO_EMPTY == 0)
+                {
+                    rxdata = AHB_UART->data;
+                }
                 break;
             }
-            uint8_t recvData = AHB_UART->data;
-            AHB_LED->seg6 = recvData & 0xfu;
-            AHB_LED->seg7 = recvData >> 4;
-            delay_ms(2);
         }
+
+
+        // uint8_t recvData = AHB_UART->data;
+        // AHB_LED->seg6 = recvData & 0xfu;
+        // AHB_LED->seg7 = recvData >> 4;
+        // if (AHB_UART->cmd.bit.TX_FIFO_FULL)
+        // {
+        //     AHB_LED->seg6 |= 0x10u;
+        // }
+        // if (AHB_UART->cmd.bit.TX_FIFO_EMPTY)
+        // {
+        //     AHB_LED->seg7 |= 0x10u;
+        // }
 
         // led seg test
         switch (rwWay)
@@ -292,6 +345,15 @@ int main(void)
 
             *(volatile uint32_t*)(CM3DS_MPS2_TARGEXP1_BASE + 0) = (((uint32_t)test2) << 16) | test1;
             *(volatile uint32_t*)(CM3DS_MPS2_TARGEXP1_BASE + 4) = (((uint32_t)test4) << 16) | test3;
+            break;
+
+        case uart_test:
+            AHB_LED->seg0 = (ms_cnt >> 0) & 0xful;
+            AHB_LED->seg1 = (ms_cnt >> 4) & 0xful;
+            AHB_LED->seg2 = (ms_cnt >> 8) & 0xful;
+            AHB_LED->seg3 = (ms_cnt >> 12) & 0xful;
+            AHB_LED->seg4 = (ms_cnt >> 16) & 0xful;
+            AHB_LED->seg5 = (ms_cnt >> 20) & 0xful;
             break;
 
         default:

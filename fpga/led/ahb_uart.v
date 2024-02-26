@@ -161,23 +161,59 @@ module ahb_uart
   //   reg wr logic
   // --------------------------------------------------------------------------
 
-  // bit0 enble & RESETn bit1 ERR bit[4:2] RX_aval_cnt bit[7:5] TX_aval_cnt
+  // bit0 enble & RESETn
+  // bit1 txfifo full
+  // bit2 txfifo empty
+  // bit3 rxfifo full
+  // bit4 rxfifo empty
   reg uart_en = 0;
   reg [ 15: 0] baud_div = 0;
 
-  reg [ 7: 0] TX_data_reg = 0;
-  reg dataWrote_reg = 0;
+  // fifo
+  // TX
+  reg [ 7: 0] TX_fifo_buff[ 15: 0 ];
+  reg [ 4: 0 ] TX_fifo_wr_ptr = 0;
+  reg [ 4: 0 ] TX_fifo_rd_ptr = 0;
+
+  wire TX_fifo_full = ( ( TX_fifo_rd_ptr[ 4 ] != TX_fifo_wr_ptr[ 4 ] ) &&
+                        ( TX_fifo_rd_ptr[ 3: 0 ] == TX_fifo_wr_ptr[ 3: 0 ] ) );
+  wire TX_fifo_empty = ( TX_fifo_rd_ptr == TX_fifo_wr_ptr );
+
+  // RX
+  reg [ 7: 0] RX_fifo_buff[ 15: 0 ];
+  reg [ 4: 0 ] RX_fifo_wr_ptr = 0;
+  reg [ 4: 0 ] RX_fifo_rd_ptr = 0;
+
+  wire RX_fifo_full = ( ( RX_fifo_rd_ptr[ 4 ] != RX_fifo_wr_ptr[ 4 ] ) &&
+                        ( RX_fifo_rd_ptr[ 3: 0 ] == RX_fifo_wr_ptr[ 3: 0 ] ) );
+  wire RX_fifo_empty = ( RX_fifo_rd_ptr == RX_fifo_wr_ptr );
 
   //写寄存器1
   always @( posedge HCLK or negedge HRESETn)
     begin
       if ( ~HRESETn)
         begin
-          // reset data register to 0x00000000
           uart_en <= 0;
-          TX_data_reg <= 0;
           baud_div <= 0;
-          dataWrote_reg <= 0;
+          TX_fifo_wr_ptr <= 0;
+
+          // md，不支持generate for
+          TX_fifo_buff[ 0 ] <= 0;
+          TX_fifo_buff[ 1 ] <= 0;
+          TX_fifo_buff[ 2 ] <= 0;
+          TX_fifo_buff[ 3 ] <= 0;
+          TX_fifo_buff[ 4 ] <= 0;
+          TX_fifo_buff[ 5 ] <= 0;
+          TX_fifo_buff[ 6 ] <= 0;
+          TX_fifo_buff[ 7 ] <= 0;
+          TX_fifo_buff[ 8 ] <= 0;
+          TX_fifo_buff[ 9 ] <= 0;
+          TX_fifo_buff[ 10 ] <= 0;
+          TX_fifo_buff[ 11 ] <= 0;
+          TX_fifo_buff[ 12 ] <= 0;
+          TX_fifo_buff[ 13 ] <= 0;
+          TX_fifo_buff[ 14 ] <= 0;
+          TX_fifo_buff[ 15 ] <= 0;
         end
       else if ( ( addr[ 15: 2 ] == 14'd0 ) & ( write_en ) )
         begin
@@ -185,14 +221,10 @@ module ahb_uart
             begin
               uart_en <= HWDATA[ 0 ];
             end
-          if ( byte_strobe[ 1 ] )
+          if ( byte_strobe[ 1 ] && ( !TX_fifo_full ) )
             begin
-              TX_data_reg <= HWDATA[ 15: 8 ];
-              dataWrote_reg <= 1;
-            end
-          else
-            begin
-              dataWrote_reg <= 0;
+              TX_fifo_buff[ TX_fifo_wr_ptr[ 3: 0 ] ] <= HWDATA[ 15: 8 ];
+              TX_fifo_wr_ptr <= TX_fifo_wr_ptr + 1;
             end
           if ( byte_strobe[ 2 ] )
             begin
@@ -203,57 +235,64 @@ module ahb_uart
               baud_div[ 15: 8] <= HWDATA[ 31: 24 ];
             end
         end
-      else
+      else if ( !uart_en)
         begin
-          dataWrote_reg <= 0;
+          TX_fifo_wr_ptr <= 0;
+
+          // md，不支持generate for
+          TX_fifo_buff[ 0 ] <= 0;
+          TX_fifo_buff[ 1 ] <= 0;
+          TX_fifo_buff[ 2 ] <= 0;
+          TX_fifo_buff[ 3 ] <= 0;
+          TX_fifo_buff[ 4 ] <= 0;
+          TX_fifo_buff[ 5 ] <= 0;
+          TX_fifo_buff[ 6 ] <= 0;
+          TX_fifo_buff[ 7 ] <= 0;
+          TX_fifo_buff[ 8 ] <= 0;
+          TX_fifo_buff[ 9 ] <= 0;
+          TX_fifo_buff[ 10 ] <= 0;
+          TX_fifo_buff[ 11 ] <= 0;
+          TX_fifo_buff[ 12 ] <= 0;
+          TX_fifo_buff[ 13 ] <= 0;
+          TX_fifo_buff[ 14 ] <= 0;
+          TX_fifo_buff[ 15 ] <= 0;
         end
     end
-  reg uart_err = 0;
-  reg [ 2: 0 ] RX_aval_cnt = 0;
-  reg [ 2: 0 ] TX_aval_cnt = 0;
 
   reg [ 31: 0] HRDATA_reg = 0;
-  reg [ 7: 0 ] RX_data_reg = 0;
-  reg dataRead_reg = 0;
 
-  always @( posedge HCLK or negedge HRESETn)
+  always @( *)
     begin
-      if ( ~HRESETn)
+      if ( ( addr[ 15: 2 ] == 14'd0 ) & ( read_en ) )
         begin
-          HRDATA_reg <= 0;
-          dataRead_reg <= 0;
-        end
-      else if ( ( addr[ 15: 2 ] == 14'd0 ) & ( read_en ) )
-        begin
-          if ( byte_strobe[ 0 ] )
-            begin
-              HRDATA_reg[ 7: 0 ] <= { TX_aval_cnt, RX_aval_cnt, uart_err, uart_en };
-            end
-          if ( byte_strobe[ 1 ] )
-            begin
-              HRDATA_reg[ 15: 8 ] <= RX_data_reg ;
-              dataRead_reg <= 1;
-            end
-          else
-            begin
-              dataRead_reg <= 0;
-            end
-          if ( byte_strobe[ 2 ] )
-            begin
-              HRDATA_reg[ 23: 16 ] <= baud_div[ 7: 0] ;
-            end
-          if ( byte_strobe[ 3 ] )
-            begin
-              HRDATA_reg[ 31: 24 ] <= baud_div[ 15: 8] ;
-            end
+          HRDATA_reg = { baud_div, RX_fifo_buff[ RX_fifo_rd_ptr[ 3: 0 ] ],
+                         3'b0, RX_fifo_empty, RX_fifo_full, TX_fifo_empty, TX_fifo_full, uart_en };
         end
       else
         begin
-          dataRead_reg <= 0;
+          HRDATA_reg = { 32{ 1'bx } };
         end
     end
 
   assign HRDATA = HRDATA_reg;
+
+  // RX FIFO READ
+  always @( posedge HCLK or negedge HRESETn)
+    begin
+      if ( ~HRESETn)
+        begin
+          RX_fifo_rd_ptr <= 0;
+        end
+      else if ( !uart_en)
+        begin
+          RX_fifo_rd_ptr <= 0;
+        end
+      else if ( ( addr[ 15: 2 ] == 14'd0 ) & ( read_en ) & ( byte_strobe[ 1 ] ) & ( !RX_fifo_empty ) )
+        begin
+          RX_fifo_rd_ptr <= RX_fifo_rd_ptr + 1;
+        end
+    end
+
 
   // --------------------------------------------------------------------------
   //   uart driver logic
@@ -304,6 +343,8 @@ module ahb_uart
           TX_shiftOUT_cnt <= 0;
           TX_ready <= 1;
           TX_DIV_EN <= 0;
+
+          TX_fifo_rd_ptr <= 0;
         end
       else if ( !uart_en )
         begin
@@ -311,13 +352,17 @@ module ahb_uart
           TX_shiftOUT_cnt <= 0;
           TX_ready <= 1;
           TX_DIV_EN <= 0;
+
+          TX_fifo_rd_ptr <= 0;
         end
-      else if ( dataWrote_reg & TX_ready )
+      else if ( ( !TX_fifo_empty) & TX_ready )
         begin
-          TX_shift_reg <= { 2'b11, TX_data_reg, 1'b0 };
+          TX_shift_reg <= { 2'b11, TX_fifo_buff[ TX_fifo_rd_ptr[ 3: 0 ] ], 1'b0 };
           TX_shiftOUT_cnt <= 0;
           TX_ready <= 0;
           TX_DIV_EN <= 1;
+
+          TX_fifo_rd_ptr <= TX_fifo_rd_ptr + 1;
         end
       else if ( ( !TX_ready ) & CLK_TX_pulse )
         begin
@@ -397,7 +442,7 @@ module ahb_uart
             regard_RX_samp_low = 1;
             regard_RX_samp_high = 0;
           end
-        6'o77, 6'o76, 6'o73, 6'o75, 6'o67, 6'o57, 6'o37,
+        6'o77, 6'o76, 6'o75, 6'o73, 6'o67, 6'o57, 6'o37,
         6'o71, 6'o72, 6'o74, 6'o66, 6'o65, 6'o63, 6'o56, 6'o55, 6'o53, 6'o36, 6'o35, 6'o33, 6'o17, 6'o27, 6'o47 :
           begin
             regard_RX_samp_low = 0;
@@ -413,20 +458,20 @@ module ahb_uart
     end
 
   // 可能的起始位判定
-  reg RX_samp_low_r = 1;
+  reg RX_samp_low_d = 1;
   always @( posedge HCLK or negedge HRESETn)
     begin
       if ( ~HRESETn)
         begin
-          RX_samp_low_r <= 1;
+          RX_samp_low_d <= 1;
         end
       else
         begin
-          RX_samp_low_r <= regard_RX_samp_low;
+          RX_samp_low_d <= regard_RX_samp_low;
         end
     end
 
-  wire RX_start_bit_req = ( ~RX_samp_low_r ) & regard_RX_samp_low;
+  wire RX_start_bit_req = ( ~RX_samp_low_d ) & regard_RX_samp_low;
 
   reg [ 8: 0 ] RX_shift_reg = 0;
   reg [ 4: 0 ] RX_shiftIN_cnt = 0;
@@ -440,7 +485,25 @@ module ahb_uart
           RX_shiftIN_cnt <= 0;
           RX_recving <= 0;
           RX_DIV_EN <= 0;
-          RX_data_reg <= 0;
+
+          // md，不支持generate for
+          RX_fifo_buff[ 0 ] <= 0;
+          RX_fifo_buff[ 1 ] <= 0;
+          RX_fifo_buff[ 2 ] <= 0;
+          RX_fifo_buff[ 3 ] <= 0;
+          RX_fifo_buff[ 4 ] <= 0;
+          RX_fifo_buff[ 5 ] <= 0;
+          RX_fifo_buff[ 6 ] <= 0;
+          RX_fifo_buff[ 7 ] <= 0;
+          RX_fifo_buff[ 8 ] <= 0;
+          RX_fifo_buff[ 9 ] <= 0;
+          RX_fifo_buff[ 10 ] <= 0;
+          RX_fifo_buff[ 11 ] <= 0;
+          RX_fifo_buff[ 12 ] <= 0;
+          RX_fifo_buff[ 13 ] <= 0;
+          RX_fifo_buff[ 14 ] <= 0;
+          RX_fifo_buff[ 15 ] <= 0;
+          RX_fifo_wr_ptr <= 0;
         end
       else if ( !uart_en )
         begin
@@ -448,7 +511,25 @@ module ahb_uart
           RX_shiftIN_cnt <= 0;
           RX_recving <= 0;
           RX_DIV_EN <= 0;
-          RX_data_reg <= 0;
+
+          // md，不支持generate for
+          RX_fifo_buff[ 0 ] <= 0;
+          RX_fifo_buff[ 1 ] <= 0;
+          RX_fifo_buff[ 2 ] <= 0;
+          RX_fifo_buff[ 3 ] <= 0;
+          RX_fifo_buff[ 4 ] <= 0;
+          RX_fifo_buff[ 5 ] <= 0;
+          RX_fifo_buff[ 6 ] <= 0;
+          RX_fifo_buff[ 7 ] <= 0;
+          RX_fifo_buff[ 8 ] <= 0;
+          RX_fifo_buff[ 9 ] <= 0;
+          RX_fifo_buff[ 10 ] <= 0;
+          RX_fifo_buff[ 11 ] <= 0;
+          RX_fifo_buff[ 12 ] <= 0;
+          RX_fifo_buff[ 13 ] <= 0;
+          RX_fifo_buff[ 14 ] <= 0;
+          RX_fifo_buff[ 15 ] <= 0;
+          RX_fifo_wr_ptr <= 0;
         end
       else if ( ( !RX_recving ) & RX_start_bit_req)
         begin
@@ -462,7 +543,12 @@ module ahb_uart
           if ( RX_shiftIN_cnt == 18)
             // 提前结束，预留时钟偏差余量
             begin
-              RX_data_reg <= RX_shift_reg[ 8: 1 ];
+              if ( !RX_fifo_full)
+                begin
+                  RX_fifo_buff[ RX_fifo_wr_ptr[ 3: 0 ] ] <= RX_shift_reg[ 8: 1 ];
+                  RX_fifo_wr_ptr <= RX_fifo_wr_ptr + 1;
+                end
+
               RX_shift_reg <= 0;
               RX_shiftIN_cnt <= 0;
               RX_recving <= 0;
@@ -482,7 +568,7 @@ module ahb_uart
                     end
                   else
                     begin
-                      // 出错，认为是边沿不够陡峭，尝试挽救
+                      // 若采样疑似出错，认为是边沿不够陡峭，尝试挽救
                       RX_shift_reg <= { ~RX_shift_reg[ 8 ], RX_shift_reg[ 8: 1 ] };
                     end
                 end

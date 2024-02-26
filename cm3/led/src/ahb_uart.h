@@ -5,9 +5,11 @@
 
 struct  CMD_BITS {
     uint8_t EN : 1;
-    uint8_t ERR : 1;
-    uint8_t RX : 3;
-    uint8_t TX : 3;
+    uint8_t TX_FIFO_FULL : 1;
+    uint8_t TX_FIFO_EMPTY : 1;
+    uint8_t RX_FIFO_FULL : 1;
+    uint8_t RX_FIFO_EMPTY : 1;
+    uint8_t RSVD : 3;
 };
 
 union CMD_DEF {
