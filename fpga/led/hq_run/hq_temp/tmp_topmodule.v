@@ -1,8 +1,11 @@
--module cm3_sys
 -module top
 -module PLL_25to200
 -module led_wf
 -module ahb_sram
 -module ahb_seg7x8
--topmoduleNum 1
+-module ahb_seg7x8
+-topmoduleNum 4
 -topmodule top
+-topmodule ahb_sram
+-topmodule ahb_seg7x8
+-topmodule ahb_seg7x8

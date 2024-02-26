@@ -1,6 +1,6 @@
-D:/fpga/ac208/workspace/fpga/led/cm3_sys.v
 D:/fpga/ac208/workspace/fpga/led/top.v
 D:/fpga/ac208/workspace/fpga/led/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.v
 D:/fpga/ac208/workspace/fpga/led/led_wf.v
 D:/fpga/ac208/workspace/fpga/led/ahb_sram.v
 D:/fpga/ac208/workspace/fpga/led/ahb_seg7x8.v
+D:/fpga/ac208/workspace/fpga/led/ahb_uart.v

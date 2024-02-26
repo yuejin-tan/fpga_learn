@@ -6,8 +6,8 @@ phycst.pin.set {clk_p4} N11
 phycst.pin.set {clk_p5} P10
 
 #-------调试接口---------
-phycst.pin.set {swddio} C1
-phycst.pin.set {swdclk} H1
+phycst.pin.set {SWDIO} C1
+phycst.pin.set {SWCLK} H1
 
 #-------按键---------
 phycst.pin.set {key_pin[0]} D5

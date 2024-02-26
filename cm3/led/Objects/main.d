@@ -13,5 +13,6 @@
 .\objects\main.o: .\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_uart.h
 .\objects\main.o: src\delay.h
 .\objects\main.o: src\ahb_led.h
+.\objects\main.o: src\ahb_uart.h
 .\objects\main.o: src\scd_inc.h
 .\objects\main.o: src\scd_cfg.h

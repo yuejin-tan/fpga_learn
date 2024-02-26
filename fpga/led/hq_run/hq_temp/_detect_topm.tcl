@@ -1,10 +1,10 @@
 
-lappend argv "D:/fpga/ac208/workspace/fpga/led/cm3_sys.v" 
 lappend argv "D:/fpga/ac208/workspace/fpga/led/top.v" 
 lappend argv "D:/fpga/ac208/workspace/fpga/led/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.v" 
 lappend argv "D:/fpga/ac208/workspace/fpga/led/led_wf.v" 
 lappend argv "D:/fpga/ac208/workspace/fpga/led/ahb_sram.v" 
 lappend argv "D:/fpga/ac208/workspace/fpga/led/ahb_seg7x8.v" 
+lappend argv "D:/fpga/ac208/workspace/fpga/led/ahb_uart.v" 
 #################################################################################
 #
 # Copyright (c) uptops, Inc.

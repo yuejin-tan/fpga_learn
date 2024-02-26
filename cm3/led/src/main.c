@@ -7,6 +7,7 @@
 
 #include "delay.h"
 #include "ahb_led.h"
+#include "ahb_uart.h"
 
 #include "scd_inc.h"
 
@@ -39,6 +40,13 @@ void uart0_init()
     //接收中断配置
     UART_ITConfig(CM3DS_MPS2_UART0, UART_RxInterrupt, ENABLE);
     NVIC_EnableIRQ(UART0_IRQn);
+}
+
+void uart_ahb_init()
+{
+    AHB_UART->cmd.all = 0;
+    AHB_UART->buad_div_2 = (100ul * 1000ul * 1000ul / (115200ul * 2ul)) - 1;
+    AHB_UART->cmd.all = 1;
 }
 
 uint32_t mem_addr16b_test()
@@ -204,16 +212,37 @@ int main(void)
 
     scd_init_1();
 
-    if (mem_addr16b_test())
-    {
-        while (1);
-    }
+    // if (mem_addr16b_test())
+    // {
+    //     while (1);
+    // }
+
+    uart_ahb_init();
 
     while (1)
     {
         if ((UART_GetFlagStatus(CM3DS_MPS2_UART0, 0x01)) == RESET)
         {
             UART_SendData(CM3DS_MPS2_UART0, scd_send1Byte(&scd_1));
+        }
+
+        // uart test
+        if ((CM3DS_MPS2_GPIO0->DATA & 0x2) == 0)
+        {
+            switch (rwWay)
+            {
+            case rw_8bit:
+                AHB_UART->data = test1;
+                break;
+
+            default:
+                AHB_UART->data = ms_cnt >> 8;
+                break;
+            }
+            uint8_t recvData = AHB_UART->data;
+            AHB_LED->seg6 = recvData & 0xfu;
+            AHB_LED->seg7 = recvData >> 4;
+            delay_ms(2);
         }
 
         // led seg test

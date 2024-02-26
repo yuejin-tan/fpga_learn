@@ -7,33 +7,18 @@ Info: 开始布局(placement).
 Info: 布局模式: 时序优化.
 Info: 时序优化强度: 标准.
 Info: CE/SR NET max fanout = 2000.
-Info: Best achievable WNS = 8001.5
-[V]PL-STAT-SLICE:  2.17476 = 111 / 5104
+Info: Best achievable WNS = 8556.2
+[V]PL-STAT-SLICE:  2.6058 = 133 / 5104
 Info: 设置延迟系数: 1.33333.
 [V]: Identify CE/SR net...
-Info: 元件实例 SRAM_DQ[15] 已固定于 P9.
-Info: 元件实例 SRAM_DQ[14] 已固定于 R9.
-Info: 元件实例 SRAM_DQ[13] 已固定于 P8.
-Info: 元件实例 SRAM_DQ[12] 已固定于 R8.
-Info: 元件实例 SRAM_DQ[11] 已固定于 P7.
-Info: 元件实例 SRAM_DQ[10] 已固定于 R7.
-Info: 元件实例 SRAM_DQ[9] 已固定于 P6.
-Info: 元件实例 SRAM_DQ[8] 已固定于 P5.
-Info: 元件实例 SRAM_DQ[7] 已固定于 N6.
-Info: 元件实例 SRAM_DQ[6] 已固定于 L7.
-Info: 元件实例 SRAM_DQ[5] 已固定于 N7.
-Info: 元件实例 SRAM_DQ[4] 已固定于 N8.
-Info: 元件实例 SRAM_DQ[3] 已固定于 L9.
-Info: 元件实例 SRAM_DQ[2] 已固定于 L10.
-Info: 元件实例 SRAM_DQ[1] 已固定于 M10.
-Info: 元件实例 SRAM_DQ[0] 已固定于 M11.
-Info: 元件实例 swddio 已固定于 C1.
+Info: 元件实例 SWDIO 已固定于 C1.
 Info: 元件实例 clk_25M 已固定于 H13.
-Info: 元件实例 swdclk 已固定于 H1.
+Info: 元件实例 SWCLK 已固定于 H1.
 Info: 元件实例 key_pin[2] 已固定于 F5.
 Info: 元件实例 key_pin[1] 已固定于 E5.
 Info: 元件实例 key_pin[0] 已固定于 D5.
 Info: 元件实例 uart_DAP_rx 已固定于 C5.
+Info: 元件实例 uart_ch340_rx 已固定于 C15.
 Info: 元件实例 led_core 已固定于 B6.
 Info: 元件实例 SRAM_ADDR[18] 已固定于 R5.
 Info: 元件实例 SRAM_ADDR[17] 已固定于 P15.
@@ -80,62 +65,63 @@ Info: 元件实例 seg7_ST_CP 已固定于 G6.
 Info: 元件实例 seg7_DS 已固定于 H2.
 Info: 元件实例 osc_c6_pin 已固定于 C6.
 ----
-Info: 布局第1阶段(总共3阶段) (签名=255,60,1).
+Info: 布局第1阶段(总共3阶段) (签名=366,60,1).
 ----
-Info: 进度   3%, WNS = -11718.
-Info: 进度   7%, WNS =  -7517.
-Info: 进度  10%, WNS =  -7025.
-Info: 进度  13%, WNS =  -1958.
-Info: 进度  17%, WNS =   -477.
-Info: 进度  20%, WNS =    668.
-Info: 进度  23%, WNS =   -652.
-Info: 进度  27%, WNS =   -852.
-Info: 进度  30%, WNS =   -478.
-Info: 进度  33%, WNS =   -332.
-Info: 进度  37%, WNS =    335.
-Info: 进度  40%, WNS =   -612.
-Info: 进度  43%, WNS =   -412.
-Info: 进度  47%, WNS =    -92.
-Info: 进度  50%, WNS =   -398.
-Info: 进度  53%, WNS =   -638.
-Info: 进度  57%, WNS =   -305.
-Info: 进度  60%, WNS =   -425.
-Info: 进度  63%, WNS =   -505.
-Info: 进度  67%, WNS =  -1451.
-Info: 进度  70%, WNS =   -132.
-Info: 进度  73%, WNS =    615.
-Info: 进度  77%, WNS =    308.
-Info: 进度  80%, WNS =    175.
-Info: 进度  83%, WNS =   -225.
-Info: 进度  87%, WNS =    642.
-Info: 进度  90%, WNS =    562.
-Info: 进度  93%, WNS =    188.
-Info: 进度  97%, WNS =      2.
-Info: 进度  99%, WNS =   -425.
-Info: 进度 100%, WNS =    562.
+Info: 进度   3%, WNS =  -4045.
+Info: 进度   7%, WNS =  -6140.
+Info: 进度  10%, WNS =  -5351.
+Info: 进度  13%, WNS =  -4344.
+Info: 进度  17%, WNS =  -2264.
+Info: 进度  20%, WNS =  -2608.
+Info: 进度  23%, WNS =  -1192.
+Info: 进度  27%, WNS =  -1151.
+Info: 进度  30%, WNS =   -728.
+Info: 进度  33%, WNS =    200.
+Info: 进度  37%, WNS =    225.
+Info: 进度  38%, WNS =    910.
+Info: 进度  40%, WNS =   1528.
+Info: 进度  42%, WNS =   3259.
+Info: 进度  43%, WNS =   3603.
+Info: 进度  47%, WNS =   2833.
+Info: 进度  50%, WNS =   2723.
+Info: 进度  53%, WNS =   3923.
+Info: 进度  57%, WNS =   3150.
+Info: 进度  60%, WNS =   3927.
+Info: 进度  63%, WNS =   3415.
+Info: 进度  67%, WNS =   3776.
+Info: 进度  68%, WNS =   4030.
+Info: 进度  70%, WNS =   4030.
+Info: 进度  73%, WNS =   3838.
+Info: 进度  77%, WNS =   3576.
+Info: 进度  80%, WNS =   3558.
+Info: 进度  83%, WNS =   3731.
+Info: 进度  87%, WNS =   3811.
+Info: 进度  90%, WNS =   3896.
+Info: 进度  93%, WNS =   3683.
+Info: 进度  97%, WNS =   3790.
+Info: 进度  99%, WNS =   3790.
+Info: 进度 100%, WNS =   4030.
 ----
 Info: 布局第2阶段(总共3阶段) (签名=0,10,1).
 ----
-Info: 进度  10%, WNS =    255.
-Info: 进度  30%, WNS =    415.
-Info: 进度  50%, WNS =    562.
-Info: 进度  60%, WNS =    988.
-Info: 进度  70%, WNS =    988.
-Info: 进度  90%, WNS =    988.
-Info: 进度 100%, WNS =    988.
+Info: 进度  10%, WNS =   3838.
+Info: 进度  30%, WNS =   3838.
+Info: 进度  50%, WNS =   3838.
+Info: 进度  70%, WNS =   3838.
+Info: 进度  90%, WNS =   3838.
+Info: 进度 100%, WNS =   4030.
 ----
 Info: 布局第3阶段(总共3阶段) (签名=0,10,1).
 ----
-Info: 进度   0%, WNS =    988.
-Info: 进度  10%, WNS =    988.
-Info: 进度  30%, WNS =    815.
-Info: 进度  40%, WNS =   1348.
-Info: 进度  50%, WNS =   1348.
-Info: 进度  70%, WNS =   1348.
-Info: 进度  90%, WNS =   1348.
-Info: 进度 100%, WNS =   1348.
+Info: 进度   0%, WNS =   4051.
+Info: 进度  10%, WNS =   3615.
+Info: 进度  30%, WNS =   3615.
+Info: 进度  50%, WNS =   3615.
+Info: 进度  70%, WNS =   3816.
+Info: 进度  90%, WNS =   3816.
+Info: 进度 100%, WNS =   4051.
 ----
-Info: 布局结果最终WNS = 3011.
+Info: 布局结果最终WNS = 5400.
 ----
 Info: 完成布局.
 Info: 开始网表校正.

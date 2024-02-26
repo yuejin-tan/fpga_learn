@@ -189,3 +189,30 @@ module cm3_sys (
              );
 
 endmodule
+
+
+// cm3_sys cm3inst (
+//           .CLK_CM3( clk_100M ),
+//           .SYS_RSTN( key_pin[ 0 ] ),
+//           .SWCLK( swdclk ),
+//           .SWDIO( swddio ),
+//           .INTSIG( 16'b0 ),
+//           .GPIO_IN( { 29'b0, uart_DAP_rx, key_pin[ 2: 1 ] } ),
+//           .GPIO_OUT( { fake28, uart_DAP_tx, fake1, beep_pin, led_core } ),
+//           .GPIO_OUT_EN( fake32 ),
+
+//           //  SRAM
+//           .SRAM_ADDR( SRAM_ADDR ),
+//           .SRAM_DQ( SRAM_DQ ),
+//           .SRAM_nWE( SRAM_nWE ),
+//           .SRAM_nOE( SRAM_nOE ),
+//           .SRAM_nCE( SRAM_nCE ),
+//           .SRAM_nLB( SRAM_nLB ),
+//           .SRAM_nUB( SRAM_nUB ),
+
+//           // seg7x8
+//           .SH_CLK( seg7_SH_CP ),
+//           .LD_CLK( seg7_ST_CP ),
+//           .HC_DAT( seg7_DS)
+//         );
+
