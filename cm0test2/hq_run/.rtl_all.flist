@@ -1,0 +1,11 @@
+D:/fpga/ac208/workspace/cm0test2/top.v
+D:/fpga/ac208/workspace/cm0test2/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.v
+D:/fpga/ac208/workspace/cm0test2/ahb_seg7x8.v
+D:/fpga/ac208/workspace/cm0test2/ahb_uart.v
+D:/fpga/ac208/workspace/cm0test2/src_cm0/AHBlite_Decoder.v
+D:/fpga/ac208/workspace/cm0test2/src_cm0/AHBlite_Interconnect.v
+D:/fpga/ac208/workspace/cm0test2/src_cm0/AHBlite_SlaveMUX.v
+D:/fpga/ac208/workspace/cm0test2/src_cm0/cm0_wrap.v
+D:/fpga/ac208/workspace/cm0test2/src_cm0/cortexm0ds_logic.v
+D:/fpga/ac208/workspace/cm0test2/src_cm0/cmsdk_ahb_to_sram.v
+D:/fpga/ac208/workspace/cm0test2/src_cm0/cmsdk_fpga_sram.v

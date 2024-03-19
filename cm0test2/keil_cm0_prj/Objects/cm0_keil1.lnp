@@ -1,0 +1,12 @@
+--cpu Cortex-M0
+".\objects\system_cmsdk_cm0.o"
+".\objects\startup_cmsdk_cm0.o"
+".\objects\delay.o"
+".\objects\int_handlers.o"
+".\objects\main.o"
+".\objects\scd.o"
+".\objects\scd_reg.o"
+--library_type=microlib --strict --scatter ".\Objects\cm0_keil1.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\cm0_keil1.map" -o .\Objects\cm0_keil1.axf

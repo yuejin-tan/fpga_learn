@@ -1,0 +1,66 @@
+
+==========oOOOo===========================================oOOOo==========
+=  HqFpga(TM) V2.14.4 (Winter 2023) Build 021824
+=  SEALION series FPGA development tool
+=  Xian Intelligence Silicon Technology, Inc.(XiST)        _@)
+ _________________________________________________________/ (
+<_________________________________________________________  {}@8@@8@(*)
+                                                          \_(
+=  Copyright (c) 2020-2025 XiST                            @)
+=  All rights reserved.
+=========================================================================
+Info: Tue Mar 19 10:31:27 2024.
+Info: Launching program D:/fpga/ac208/hq_xist_2.14.4_021824_win64/build/win_x64/bin/hqfpga.exe .
+Info: HqFpga is ready to work on host t (Windows 10 64-bit).
+
+[> readOpt D:/fpga/ac208/workspace/cm0test/cm0test.hqprj
+[> puts $hqui::FILE_SRC
+D:/fpga/ac208/workspace/cm0test/top.v D:/fpga/ac208/workspace/cm0test/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.v D:/fpga/ac208/workspace/cm0test/ahb_seg7x8.v D:/fpga/ac208/workspace/cm0test/ahb_uart.v D:/fpga/ac208/workspace/cm0test/src_cm0/AHBlite_Block_RAM.v D:/fpga/ac208/workspace/cm0test/src_cm0/AHBlite_Decoder.v D:/fpga/ac208/workspace/cm0test/src_cm0/AHBlite_Interconnect.v D:/fpga/ac208/workspace/cm0test/src_cm0/AHBlite_SlaveMUX.v D:/fpga/ac208/workspace/cm0test/src_cm0/Block_RAM.v D:/fpga/ac208/workspace/cm0test/src_cm0/cm0_wrap.v D:/fpga/ac208/workspace/cm0test/src_cm0/cortexm0ds_logic.v
+[> puts $hqui::FAMILY
+SEAL
+[> puts $hqui::TOP_MODULE
+top
+[> puts $hqui::FILE_TC
+D:/fpga/ac208/workspace/cm0test/clk_info.sdc
+[> puts $hqui::FILE_PC
+D:/fpga/ac208/workspace/cm0test/cm0test.upc
+[> puts $hqui::IS_TC_AUTO_CONS
+false
+[> puts $hqui::IS_PC_AUTO_CONS
+false
+[> puts $hqui::RTL_9
+
+[> if [info exist hqui::RTL_11] {puts $hqui::RTL_11} else {puts ""}
+false
+[> source D:/fpga/ac208/workspace/cm0test/run.tcl
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\top.v.
+ERROR(SFE-E-21): D:\fpga\ac208\workspace\cm0test\top.v(74), syntax error, unexpected ), expecting inout or input or output.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\ipcore_dir\PLL_25to200\xsIP_PLL_25to200.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\ahb_seg7x8.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\ahb_uart.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\AHBlite_Block_RAM.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\AHBlite_Decoder.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\AHBlite_Interconnect.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\AHBlite_SlaveMUX.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\Block_RAM.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\cm0_wrap.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\cortexm0ds_logic.v.
+Run FAILED
+[> source D:/fpga/ac208/workspace/cm0test/t.tcl
+Info: Loading device data for SEAL ....
+Info:   Loading functional data....
+Info: Device data loaded successfully.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\top.v.
+ERROR(SFE-E-21): D:\fpga\ac208\workspace\cm0test\top.v(74), syntax error, unexpected ), expecting inout or input or output.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\ipcore_dir\PLL_25to200\xsIP_PLL_25to200.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\ahb_seg7x8.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\ahb_uart.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\AHBlite_Block_RAM.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\AHBlite_Decoder.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\AHBlite_Interconnect.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\AHBlite_SlaveMUX.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\Block_RAM.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\cm0_wrap.v.
+Info: Analyzing Verilog file D:\fpga\ac208\workspace\cm0test\src_cm0\cortexm0ds_logic.v.
+Generating JSON FAILED
+[> exit

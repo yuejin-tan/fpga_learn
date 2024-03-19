@@ -1,0 +1,46 @@
+Dependencies for Project 'cm0_keil1', Target 'uart_test': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
+F (.\bsp\device\system_CMSDK_CM0.c)(0x65F90208)(--c99 -c --cpu Cortex-M0 -D__MICROLIB --li -g -O2 --apcs=interwork --split_sections -I .\bsp\CMSIS -I .\bsp\device -I .\drv -I .\src -D__UVISION_VERSION="536" -DARMCM0-o .\objects\system_cmsdk_cm0.o --omf_browse .\objects\system_cmsdk_cm0.crf --depend .\objects\system_cmsdk_cm0.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (bsp\device\CMSDK_CM0.h)(0x59D26CAF)
+I (.\bsp\CMSIS\core_cm0.h)(0x59D26CAF)
+I (.\bsp\CMSIS\core_cmInstr.h)(0x59D26CAF)
+I (.\bsp\CMSIS\core_cmFunc.h)(0x59D26CAF)
+I (bsp\device\system_CMSDK_CM0.h)(0x59D26CAF)
+F (.\bsp\device\startup_CMSDK_CM0.s)(0x65F90637)(--cpu Cortex-M0 --li -g --apcs=interwork --pd "__MICROLIB SETA 1"-IC:\Users\t\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM0\Include--pd "__UVISION_VERSION SETA 536" --pd "ARMCM0 SETA 1"--list .\listings\startup_cmsdk_cm0.lst --xref -o .\objects\startup_cmsdk_cm0.o --depend .\objects\startup_cmsdk_cm0.d)
+F (.\drv\delay.c)(0x65F53A1B)(--c99 -c --cpu Cortex-M0 -D__MICROLIB --li -g -O2 --apcs=interwork --split_sections -I .\bsp\CMSIS -I .\bsp\device -I .\drv -I .\src -D__UVISION_VERSION="536" -DARMCM0-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
+I (drv\delay.h)(0x65D8AE65)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (.\bsp\device\CMSDK_CM0.h)(0x59D26CAF)
+I (.\bsp\CMSIS\core_cm0.h)(0x59D26CAF)
+I (.\bsp\CMSIS\core_cmInstr.h)(0x59D26CAF)
+I (.\bsp\CMSIS\core_cmFunc.h)(0x59D26CAF)
+I (.\bsp\device\system_CMSDK_CM0.h)(0x59D26CAF)
+F (.\src\int_handlers.c)(0x65F5391C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB --li -g -O2 --apcs=interwork --split_sections -I .\bsp\CMSIS -I .\bsp\device -I .\drv -I .\src -D__UVISION_VERSION="536" -DARMCM0-o .\objects\int_handlers.o --omf_browse .\objects\int_handlers.crf --depend .\objects\int_handlers.d)
+I (src\main.h)(0x65F53A20)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (src\scd_inc.h)(0x6434203B)
+I (src\scd_cfg.h)(0x65ABDFAF)
+I (.\drv\delay.h)(0x65D8AE65)
+F (.\src\main.c)(0x65F9352C)(--c99 -c --cpu Cortex-M0 -D__MICROLIB --li -g -O2 --apcs=interwork --split_sections -I .\bsp\CMSIS -I .\bsp\device -I .\drv -I .\src -D__UVISION_VERSION="536" -DARMCM0-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (.\bsp\device\CMSDK_CM0.h)(0x59D26CAF)
+I (.\bsp\CMSIS\core_cm0.h)(0x59D26CAF)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (.\bsp\CMSIS\core_cmInstr.h)(0x59D26CAF)
+I (.\bsp\CMSIS\core_cmFunc.h)(0x59D26CAF)
+I (.\bsp\device\system_CMSDK_CM0.h)(0x59D26CAF)
+I (.\drv\delay.h)(0x65D8AE65)
+I (.\drv\ahb_uart.h)(0x65F9013E)
+I (.\drv\ahb_led.h)(0x65F901D2)
+I (src\scd_inc.h)(0x6434203B)
+I (src\scd_cfg.h)(0x65ABDFAF)
+F (.\src\scd.c)(0x6434203B)(--c99 -c --cpu Cortex-M0 -D__MICROLIB --li -g -O2 --apcs=interwork --split_sections -I .\bsp\CMSIS -I .\bsp\device -I .\drv -I .\src -D__UVISION_VERSION="536" -DARMCM0-o .\objects\scd.o --omf_browse .\objects\scd.crf --depend .\objects\scd.d)
+I (src\scd_cfg.h)(0x65ABDFAF)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (src\scd_inc.h)(0x6434203B)
+F (.\src\scd_reg.c)(0x65F53949)(--c99 -c --cpu Cortex-M0 -D__MICROLIB --li -g -O2 --apcs=interwork --split_sections -I .\bsp\CMSIS -I .\bsp\device -I .\drv -I .\src -D__UVISION_VERSION="536" -DARMCM0-o .\objects\scd_reg.o --omf_browse .\objects\scd_reg.crf --depend .\objects\scd_reg.d)
+I (src\scd_inc.h)(0x6434203B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (src\scd_cfg.h)(0x65ABDFAF)
+I (src\main.h)(0x65F53A20)

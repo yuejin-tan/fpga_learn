@@ -1,0 +1,16 @@
+-module top
+-module PLL_25to200
+-module ahb_seg7x8
+-module ahb_uart
+-module AHBlite_Block_RAM
+-module AHBlite_Decoder
+-module AHBlite_Interconnect
+-module AHBlite_SlaveMUX
+-module Block_RAM
+-module cm0_wrap
+-module cortexm0ds_logic
+-topmoduleNum 4
+-topmodule top
+-topmodule AHBlite_Block_RAM
+-topmodule Block_RAM
+-topmodule cm0_wrap

@@ -1,0 +1,932 @@
+
+#########################################################################
+#
+# 最大时钟频率(FMAX)报告
+#
+#########################################################################
+#
+# 注意: FMAX 的计算仅针对在同一时钟域内的寄存器到寄存器路径，
+# 多周期路径、跨时钟域路径(包括主时钟及其生成时钟之间的路径)都将
+# 被忽略。对于一个时钟及其反向时钟之间的路径， FMAX的计算通过按
+# 频宽比(duty cycle)等比例扩展路径延迟得到。例如，假设有一
+# 条路径的起点由时钟上升沿驱动而终点由同一时钟的下降沿驱动，
+# 如果该时钟的频宽比为50，则计算FMAX时，路径延迟将乘以2(即
+# 除以50%)。
+#
+
+
+# ***********************************************************************
+# 时钟         : clk_25M
+# 最小时钟周期 : 4457 ps
+# ***********************************************************************
+
+********************
+* 路径 1
+********************
+起点     : led_wf1/cnt_reg[1]/Q  [激发时钟: clk_25M, 上升沿1]
+终点     : led_wf1/cnt_reg[23]/D [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+============================================================================================================
+|              节点               |     单元     | 延迟 |     类型      | 位置 |        连线        | 扇出 |
+============================================================================================================
+| CLOCK'clk_25M                   |     N/A      |    0 |               |      | N/A                |      |
+| clk_25M                         |     top      |    0 | clock_latency |      | clk_25M            | 1    |
+| clk_25M_pad/I                   |    xsIOBI    |    0 |      net      |      | clk_25M            |      |
+| clk_25M_pad/O                   |    xsIOBI    |  990 |     cell      |      | clk_25M_c          | 29   |
+| led_wf1/cnt_reg[1]/C            | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c          |      |
+| --                              |      --      |   -- |      --       | --   | --                 | --   |
+| led_wf1/cnt_reg[1]/Q            | xsDFFSA_K1C1 |  347 |  rising_edge  |      | led_wf1/cnt[1]     | 4    |
+| led_wf1/_i_6/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net      |      | led_wf1/cnt[1]     |      |
+| led_wf1/_i_6/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |     cell      |      | led_wf1/_i_6/_n_1  | 2    |
+| led_wf1/_i_6/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_1  |      |
+| led_wf1/_i_6/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_3  | 2    |
+| led_wf1/_i_6/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_3  |      |
+| led_wf1/_i_6/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_5  | 2    |
+| led_wf1/_i_6/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_5  |      |
+| led_wf1/_i_6/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_7  | 2    |
+| led_wf1/_i_6/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_7  |      |
+| led_wf1/_i_6/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_9  | 2    |
+| led_wf1/_i_6/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_9  |      |
+| led_wf1/_i_6/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_11 | 2    |
+| led_wf1/_i_6/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_11 |      |
+| led_wf1/_i_6/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_13 | 2    |
+| led_wf1/_i_6/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_13 |      |
+| led_wf1/_i_6/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_15 | 2    |
+| led_wf1/_i_6/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_15 |      |
+| led_wf1/_i_6/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_17 | 2    |
+| led_wf1/_i_6/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_17 |      |
+| led_wf1/_i_6/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_19 | 2    |
+| led_wf1/_i_6/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_19 |      |
+| led_wf1/_i_6/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_21 | 2    |
+| led_wf1/_i_6/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_21 |      |
+| led_wf1/_i_6/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_23 | 2    |
+| led_wf1/_i_6/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_23 |      |
+| led_wf1/_i_6/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_25 | 2    |
+| led_wf1/_i_6/bitAdd_14/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_25 |      |
+| led_wf1/_i_6/bitAdd_14/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_27 | 2    |
+| led_wf1/_i_6/bitAdd_15/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_27 |      |
+| led_wf1/_i_6/bitAdd_15/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_29 | 2    |
+| led_wf1/_i_6/bitAdd_16/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_29 |      |
+| led_wf1/_i_6/bitAdd_16/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_31 | 2    |
+| led_wf1/_i_6/bitAdd_17/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_31 |      |
+| led_wf1/_i_6/bitAdd_17/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_33 | 2    |
+| led_wf1/_i_6/bitAdd_18/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_33 |      |
+| led_wf1/_i_6/bitAdd_18/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_35 | 2    |
+| led_wf1/_i_6/bitAdd_19/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_35 |      |
+| led_wf1/_i_6/bitAdd_19/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_37 | 2    |
+| led_wf1/_i_6/bitAdd_20/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_37 |      |
+| led_wf1/_i_6/bitAdd_20/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_39 | 2    |
+| led_wf1/_i_6/bitAdd_21/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_39 |      |
+| led_wf1/_i_6/bitAdd_21/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_41 | 2    |
+| led_wf1/_i_6/bitAdd_22/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_41 |      |
+| led_wf1/_i_6/bitAdd_22/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_43 | 1    |
+| led_wf1/_i_6/bitAdd_23/xorcy/CI |   xsXORCY    |    0 |      net      |      | led_wf1/_i_6/_n_43 |      |
+| led_wf1/_i_6/bitAdd_23/xorcy/O  |   xsXORCY    |  263 |     cell      |      | led_wf1/n_35[23]   | 1    |
+| led_wf1/_i_31/I1                |   xsLUTSA2   |    0 |      net      |      | led_wf1/n_35[23]   |      |
+| led_wf1/_i_31/O                 |   xsLUTSA2   |   81 |     cell      |      | led_wf1/n_34       | 1    |
+| led_wf1/cnt_reg[23]/D           | xsDFFSA_K1C1 |    0 |      net      |      | led_wf1/n_34       |      |
+============================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 4480       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 4133 
+        总的连线延迟 = 0 
+        逻辑级数     = 24 
+
+[数据捕获路径]
+=========================================================================================
+|         节点          |     单元     | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+=========================================================================================
+| CLOCK'clk_25M         |     N/A      |    0 |               |      | N/A       |      |
+| clk_25M               |     top      |    0 | clock_latency |      | clk_25M   | 1    |
+| clk_25M_pad/I         |    xsIOBI    |    0 |      net      |      | clk_25M   |      |
+| clk_25M_pad/O         |    xsIOBI    |  990 |     cell      |      | clk_25M_c | 29   |
+| led_wf1/cnt_reg[23]/C | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c |      |
+=========================================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 4480       + -23        - 0          - 0          
+       = 4457
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 2
+********************
+起点     : led_wf1/cnt_reg[1]/Q  [激发时钟: clk_25M, 上升沿1]
+终点     : led_wf1/cnt_reg[22]/D [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+============================================================================================================
+|              节点               |     单元     | 延迟 |     类型      | 位置 |        连线        | 扇出 |
+============================================================================================================
+| CLOCK'clk_25M                   |     N/A      |    0 |               |      | N/A                |      |
+| clk_25M                         |     top      |    0 | clock_latency |      | clk_25M            | 1    |
+| clk_25M_pad/I                   |    xsIOBI    |    0 |      net      |      | clk_25M            |      |
+| clk_25M_pad/O                   |    xsIOBI    |  990 |     cell      |      | clk_25M_c          | 29   |
+| led_wf1/cnt_reg[1]/C            | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c          |      |
+| --                              |      --      |   -- |      --       | --   | --                 | --   |
+| led_wf1/cnt_reg[1]/Q            | xsDFFSA_K1C1 |  347 |  rising_edge  |      | led_wf1/cnt[1]     | 4    |
+| led_wf1/_i_6/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net      |      | led_wf1/cnt[1]     |      |
+| led_wf1/_i_6/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |     cell      |      | led_wf1/_i_6/_n_1  | 2    |
+| led_wf1/_i_6/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_1  |      |
+| led_wf1/_i_6/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_3  | 2    |
+| led_wf1/_i_6/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_3  |      |
+| led_wf1/_i_6/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_5  | 2    |
+| led_wf1/_i_6/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_5  |      |
+| led_wf1/_i_6/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_7  | 2    |
+| led_wf1/_i_6/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_7  |      |
+| led_wf1/_i_6/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_9  | 2    |
+| led_wf1/_i_6/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_9  |      |
+| led_wf1/_i_6/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_11 | 2    |
+| led_wf1/_i_6/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_11 |      |
+| led_wf1/_i_6/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_13 | 2    |
+| led_wf1/_i_6/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_13 |      |
+| led_wf1/_i_6/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_15 | 2    |
+| led_wf1/_i_6/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_15 |      |
+| led_wf1/_i_6/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_17 | 2    |
+| led_wf1/_i_6/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_17 |      |
+| led_wf1/_i_6/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_19 | 2    |
+| led_wf1/_i_6/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_19 |      |
+| led_wf1/_i_6/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_21 | 2    |
+| led_wf1/_i_6/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_21 |      |
+| led_wf1/_i_6/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_23 | 2    |
+| led_wf1/_i_6/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_23 |      |
+| led_wf1/_i_6/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_25 | 2    |
+| led_wf1/_i_6/bitAdd_14/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_25 |      |
+| led_wf1/_i_6/bitAdd_14/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_27 | 2    |
+| led_wf1/_i_6/bitAdd_15/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_27 |      |
+| led_wf1/_i_6/bitAdd_15/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_29 | 2    |
+| led_wf1/_i_6/bitAdd_16/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_29 |      |
+| led_wf1/_i_6/bitAdd_16/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_31 | 2    |
+| led_wf1/_i_6/bitAdd_17/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_31 |      |
+| led_wf1/_i_6/bitAdd_17/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_33 | 2    |
+| led_wf1/_i_6/bitAdd_18/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_33 |      |
+| led_wf1/_i_6/bitAdd_18/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_35 | 2    |
+| led_wf1/_i_6/bitAdd_19/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_35 |      |
+| led_wf1/_i_6/bitAdd_19/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_37 | 2    |
+| led_wf1/_i_6/bitAdd_20/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_37 |      |
+| led_wf1/_i_6/bitAdd_20/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_39 | 2    |
+| led_wf1/_i_6/bitAdd_21/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_39 |      |
+| led_wf1/_i_6/bitAdd_21/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_41 | 2    |
+| led_wf1/_i_6/bitAdd_22/xorcy/CI |   xsXORCY    |    0 |      net      |      | led_wf1/_i_6/_n_41 |      |
+| led_wf1/_i_6/bitAdd_22/xorcy/O  |   xsXORCY    |  263 |     cell      |      | led_wf1/n_35[22]   | 1    |
+| led_wf1/_i_30/I1                |   xsLUTSA2   |    0 |      net      |      | led_wf1/n_35[22]   |      |
+| led_wf1/_i_30/O                 |   xsLUTSA2   |   81 |     cell      |      | led_wf1/n_33       | 1    |
+| led_wf1/cnt_reg[22]/D           | xsDFFSA_K1C1 |    0 |      net      |      | led_wf1/n_33       |      |
+============================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 4312       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 3965 
+        总的连线延迟 = 0 
+        逻辑级数     = 23 
+
+[数据捕获路径]
+=========================================================================================
+|         节点          |     单元     | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+=========================================================================================
+| CLOCK'clk_25M         |     N/A      |    0 |               |      | N/A       |      |
+| clk_25M               |     top      |    0 | clock_latency |      | clk_25M   | 1    |
+| clk_25M_pad/I         |    xsIOBI    |    0 |      net      |      | clk_25M   |      |
+| clk_25M_pad/O         |    xsIOBI    |  990 |     cell      |      | clk_25M_c | 29   |
+| led_wf1/cnt_reg[22]/C | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c |      |
+=========================================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 4312       + -23        - 0          - 0          
+       = 4289
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 3
+********************
+起点     : led_wf1/cnt_reg[1]/Q  [激发时钟: clk_25M, 上升沿1]
+终点     : led_wf1/cnt_reg[21]/D [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+============================================================================================================
+|              节点               |     单元     | 延迟 |     类型      | 位置 |        连线        | 扇出 |
+============================================================================================================
+| CLOCK'clk_25M                   |     N/A      |    0 |               |      | N/A                |      |
+| clk_25M                         |     top      |    0 | clock_latency |      | clk_25M            | 1    |
+| clk_25M_pad/I                   |    xsIOBI    |    0 |      net      |      | clk_25M            |      |
+| clk_25M_pad/O                   |    xsIOBI    |  990 |     cell      |      | clk_25M_c          | 29   |
+| led_wf1/cnt_reg[1]/C            | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c          |      |
+| --                              |      --      |   -- |      --       | --   | --                 | --   |
+| led_wf1/cnt_reg[1]/Q            | xsDFFSA_K1C1 |  347 |  rising_edge  |      | led_wf1/cnt[1]     | 4    |
+| led_wf1/_i_6/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net      |      | led_wf1/cnt[1]     |      |
+| led_wf1/_i_6/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |     cell      |      | led_wf1/_i_6/_n_1  | 2    |
+| led_wf1/_i_6/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_1  |      |
+| led_wf1/_i_6/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_3  | 2    |
+| led_wf1/_i_6/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_3  |      |
+| led_wf1/_i_6/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_5  | 2    |
+| led_wf1/_i_6/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_5  |      |
+| led_wf1/_i_6/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_7  | 2    |
+| led_wf1/_i_6/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_7  |      |
+| led_wf1/_i_6/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_9  | 2    |
+| led_wf1/_i_6/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_9  |      |
+| led_wf1/_i_6/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_11 | 2    |
+| led_wf1/_i_6/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_11 |      |
+| led_wf1/_i_6/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_13 | 2    |
+| led_wf1/_i_6/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_13 |      |
+| led_wf1/_i_6/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_15 | 2    |
+| led_wf1/_i_6/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_15 |      |
+| led_wf1/_i_6/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_17 | 2    |
+| led_wf1/_i_6/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_17 |      |
+| led_wf1/_i_6/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_19 | 2    |
+| led_wf1/_i_6/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_19 |      |
+| led_wf1/_i_6/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_21 | 2    |
+| led_wf1/_i_6/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_21 |      |
+| led_wf1/_i_6/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_23 | 2    |
+| led_wf1/_i_6/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_23 |      |
+| led_wf1/_i_6/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_25 | 2    |
+| led_wf1/_i_6/bitAdd_14/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_25 |      |
+| led_wf1/_i_6/bitAdd_14/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_27 | 2    |
+| led_wf1/_i_6/bitAdd_15/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_27 |      |
+| led_wf1/_i_6/bitAdd_15/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_29 | 2    |
+| led_wf1/_i_6/bitAdd_16/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_29 |      |
+| led_wf1/_i_6/bitAdd_16/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_31 | 2    |
+| led_wf1/_i_6/bitAdd_17/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_31 |      |
+| led_wf1/_i_6/bitAdd_17/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_33 | 2    |
+| led_wf1/_i_6/bitAdd_18/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_33 |      |
+| led_wf1/_i_6/bitAdd_18/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_35 | 2    |
+| led_wf1/_i_6/bitAdd_19/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_35 |      |
+| led_wf1/_i_6/bitAdd_19/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_37 | 2    |
+| led_wf1/_i_6/bitAdd_20/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_37 |      |
+| led_wf1/_i_6/bitAdd_20/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_39 | 2    |
+| led_wf1/_i_6/bitAdd_21/xorcy/CI |   xsXORCY    |    0 |      net      |      | led_wf1/_i_6/_n_39 |      |
+| led_wf1/_i_6/bitAdd_21/xorcy/O  |   xsXORCY    |  263 |     cell      |      | led_wf1/n_35[21]   | 1    |
+| led_wf1/_i_29/I1                |   xsLUTSA2   |    0 |      net      |      | led_wf1/n_35[21]   |      |
+| led_wf1/_i_29/O                 |   xsLUTSA2   |   81 |     cell      |      | led_wf1/n_32       | 1    |
+| led_wf1/cnt_reg[21]/D           | xsDFFSA_K1C1 |    0 |      net      |      | led_wf1/n_32       |      |
+============================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 4144       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 3797 
+        总的连线延迟 = 0 
+        逻辑级数     = 22 
+
+[数据捕获路径]
+=========================================================================================
+|         节点          |     单元     | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+=========================================================================================
+| CLOCK'clk_25M         |     N/A      |    0 |               |      | N/A       |      |
+| clk_25M               |     top      |    0 | clock_latency |      | clk_25M   | 1    |
+| clk_25M_pad/I         |    xsIOBI    |    0 |      net      |      | clk_25M   |      |
+| clk_25M_pad/O         |    xsIOBI    |  990 |     cell      |      | clk_25M_c | 29   |
+| led_wf1/cnt_reg[21]/C | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c |      |
+=========================================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 4144       + -23        - 0          - 0          
+       = 4121
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 4
+********************
+起点     : led_wf1/cnt_reg[1]/Q  [激发时钟: clk_25M, 上升沿1]
+终点     : led_wf1/cnt_reg[20]/D [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+============================================================================================================
+|              节点               |     单元     | 延迟 |     类型      | 位置 |        连线        | 扇出 |
+============================================================================================================
+| CLOCK'clk_25M                   |     N/A      |    0 |               |      | N/A                |      |
+| clk_25M                         |     top      |    0 | clock_latency |      | clk_25M            | 1    |
+| clk_25M_pad/I                   |    xsIOBI    |    0 |      net      |      | clk_25M            |      |
+| clk_25M_pad/O                   |    xsIOBI    |  990 |     cell      |      | clk_25M_c          | 29   |
+| led_wf1/cnt_reg[1]/C            | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c          |      |
+| --                              |      --      |   -- |      --       | --   | --                 | --   |
+| led_wf1/cnt_reg[1]/Q            | xsDFFSA_K1C1 |  347 |  rising_edge  |      | led_wf1/cnt[1]     | 4    |
+| led_wf1/_i_6/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net      |      | led_wf1/cnt[1]     |      |
+| led_wf1/_i_6/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |     cell      |      | led_wf1/_i_6/_n_1  | 2    |
+| led_wf1/_i_6/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_1  |      |
+| led_wf1/_i_6/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_3  | 2    |
+| led_wf1/_i_6/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_3  |      |
+| led_wf1/_i_6/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_5  | 2    |
+| led_wf1/_i_6/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_5  |      |
+| led_wf1/_i_6/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_7  | 2    |
+| led_wf1/_i_6/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_7  |      |
+| led_wf1/_i_6/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_9  | 2    |
+| led_wf1/_i_6/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_9  |      |
+| led_wf1/_i_6/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_11 | 2    |
+| led_wf1/_i_6/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_11 |      |
+| led_wf1/_i_6/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_13 | 2    |
+| led_wf1/_i_6/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_13 |      |
+| led_wf1/_i_6/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_15 | 2    |
+| led_wf1/_i_6/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_15 |      |
+| led_wf1/_i_6/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_17 | 2    |
+| led_wf1/_i_6/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_17 |      |
+| led_wf1/_i_6/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_19 | 2    |
+| led_wf1/_i_6/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_19 |      |
+| led_wf1/_i_6/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_21 | 2    |
+| led_wf1/_i_6/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_21 |      |
+| led_wf1/_i_6/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_23 | 2    |
+| led_wf1/_i_6/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_23 |      |
+| led_wf1/_i_6/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_25 | 2    |
+| led_wf1/_i_6/bitAdd_14/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_25 |      |
+| led_wf1/_i_6/bitAdd_14/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_27 | 2    |
+| led_wf1/_i_6/bitAdd_15/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_27 |      |
+| led_wf1/_i_6/bitAdd_15/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_29 | 2    |
+| led_wf1/_i_6/bitAdd_16/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_29 |      |
+| led_wf1/_i_6/bitAdd_16/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_31 | 2    |
+| led_wf1/_i_6/bitAdd_17/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_31 |      |
+| led_wf1/_i_6/bitAdd_17/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_33 | 2    |
+| led_wf1/_i_6/bitAdd_18/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_33 |      |
+| led_wf1/_i_6/bitAdd_18/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_35 | 2    |
+| led_wf1/_i_6/bitAdd_19/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_35 |      |
+| led_wf1/_i_6/bitAdd_19/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_37 | 2    |
+| led_wf1/_i_6/bitAdd_20/xorcy/CI |   xsXORCY    |    0 |      net      |      | led_wf1/_i_6/_n_37 |      |
+| led_wf1/_i_6/bitAdd_20/xorcy/O  |   xsXORCY    |  263 |     cell      |      | led_wf1/n_35[20]   | 1    |
+| led_wf1/_i_28/I1                |   xsLUTSA2   |    0 |      net      |      | led_wf1/n_35[20]   |      |
+| led_wf1/_i_28/O                 |   xsLUTSA2   |   81 |     cell      |      | led_wf1/n_31       | 1    |
+| led_wf1/cnt_reg[20]/D           | xsDFFSA_K1C1 |    0 |      net      |      | led_wf1/n_31       |      |
+============================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 3976       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 3629 
+        总的连线延迟 = 0 
+        逻辑级数     = 21 
+
+[数据捕获路径]
+=========================================================================================
+|         节点          |     单元     | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+=========================================================================================
+| CLOCK'clk_25M         |     N/A      |    0 |               |      | N/A       |      |
+| clk_25M               |     top      |    0 | clock_latency |      | clk_25M   | 1    |
+| clk_25M_pad/I         |    xsIOBI    |    0 |      net      |      | clk_25M   |      |
+| clk_25M_pad/O         |    xsIOBI    |  990 |     cell      |      | clk_25M_c | 29   |
+| led_wf1/cnt_reg[20]/C | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c |      |
+=========================================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 3976       + -23        - 0          - 0          
+       = 3953
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 5
+********************
+起点     : led_wf1/cnt_reg[1]/Q  [激发时钟: clk_25M, 上升沿1]
+终点     : led_wf1/cnt_reg[19]/D [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+============================================================================================================
+|              节点               |     单元     | 延迟 |     类型      | 位置 |        连线        | 扇出 |
+============================================================================================================
+| CLOCK'clk_25M                   |     N/A      |    0 |               |      | N/A                |      |
+| clk_25M                         |     top      |    0 | clock_latency |      | clk_25M            | 1    |
+| clk_25M_pad/I                   |    xsIOBI    |    0 |      net      |      | clk_25M            |      |
+| clk_25M_pad/O                   |    xsIOBI    |  990 |     cell      |      | clk_25M_c          | 29   |
+| led_wf1/cnt_reg[1]/C            | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c          |      |
+| --                              |      --      |   -- |      --       | --   | --                 | --   |
+| led_wf1/cnt_reg[1]/Q            | xsDFFSA_K1C1 |  347 |  rising_edge  |      | led_wf1/cnt[1]     | 4    |
+| led_wf1/_i_6/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net      |      | led_wf1/cnt[1]     |      |
+| led_wf1/_i_6/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |     cell      |      | led_wf1/_i_6/_n_1  | 2    |
+| led_wf1/_i_6/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_1  |      |
+| led_wf1/_i_6/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_3  | 2    |
+| led_wf1/_i_6/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_3  |      |
+| led_wf1/_i_6/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_5  | 2    |
+| led_wf1/_i_6/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_5  |      |
+| led_wf1/_i_6/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_7  | 2    |
+| led_wf1/_i_6/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_7  |      |
+| led_wf1/_i_6/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_9  | 2    |
+| led_wf1/_i_6/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_9  |      |
+| led_wf1/_i_6/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_11 | 2    |
+| led_wf1/_i_6/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_11 |      |
+| led_wf1/_i_6/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_13 | 2    |
+| led_wf1/_i_6/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_13 |      |
+| led_wf1/_i_6/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_15 | 2    |
+| led_wf1/_i_6/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_15 |      |
+| led_wf1/_i_6/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_17 | 2    |
+| led_wf1/_i_6/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_17 |      |
+| led_wf1/_i_6/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_19 | 2    |
+| led_wf1/_i_6/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_19 |      |
+| led_wf1/_i_6/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_21 | 2    |
+| led_wf1/_i_6/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_21 |      |
+| led_wf1/_i_6/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_23 | 2    |
+| led_wf1/_i_6/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_23 |      |
+| led_wf1/_i_6/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_25 | 2    |
+| led_wf1/_i_6/bitAdd_14/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_25 |      |
+| led_wf1/_i_6/bitAdd_14/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_27 | 2    |
+| led_wf1/_i_6/bitAdd_15/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_27 |      |
+| led_wf1/_i_6/bitAdd_15/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_29 | 2    |
+| led_wf1/_i_6/bitAdd_16/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_29 |      |
+| led_wf1/_i_6/bitAdd_16/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_31 | 2    |
+| led_wf1/_i_6/bitAdd_17/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_31 |      |
+| led_wf1/_i_6/bitAdd_17/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_33 | 2    |
+| led_wf1/_i_6/bitAdd_18/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_33 |      |
+| led_wf1/_i_6/bitAdd_18/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_35 | 2    |
+| led_wf1/_i_6/bitAdd_19/xorcy/CI |   xsXORCY    |    0 |      net      |      | led_wf1/_i_6/_n_35 |      |
+| led_wf1/_i_6/bitAdd_19/xorcy/O  |   xsXORCY    |  263 |     cell      |      | led_wf1/n_35[19]   | 1    |
+| led_wf1/_i_27/I1                |   xsLUTSA2   |    0 |      net      |      | led_wf1/n_35[19]   |      |
+| led_wf1/_i_27/O                 |   xsLUTSA2   |   81 |     cell      |      | led_wf1/n_30       | 1    |
+| led_wf1/cnt_reg[19]/D           | xsDFFSA_K1C1 |    0 |      net      |      | led_wf1/n_30       |      |
+============================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 3808       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 3461 
+        总的连线延迟 = 0 
+        逻辑级数     = 20 
+
+[数据捕获路径]
+=========================================================================================
+|         节点          |     单元     | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+=========================================================================================
+| CLOCK'clk_25M         |     N/A      |    0 |               |      | N/A       |      |
+| clk_25M               |     top      |    0 | clock_latency |      | clk_25M   | 1    |
+| clk_25M_pad/I         |    xsIOBI    |    0 |      net      |      | clk_25M   |      |
+| clk_25M_pad/O         |    xsIOBI    |  990 |     cell      |      | clk_25M_c | 29   |
+| led_wf1/cnt_reg[19]/C | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c |      |
+=========================================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 3808       + -23        - 0          - 0          
+       = 3785
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 6
+********************
+起点     : led_wf1/cnt_reg[1]/Q  [激发时钟: clk_25M, 上升沿1]
+终点     : led_wf1/cnt_reg[18]/D [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+============================================================================================================
+|              节点               |     单元     | 延迟 |     类型      | 位置 |        连线        | 扇出 |
+============================================================================================================
+| CLOCK'clk_25M                   |     N/A      |    0 |               |      | N/A                |      |
+| clk_25M                         |     top      |    0 | clock_latency |      | clk_25M            | 1    |
+| clk_25M_pad/I                   |    xsIOBI    |    0 |      net      |      | clk_25M            |      |
+| clk_25M_pad/O                   |    xsIOBI    |  990 |     cell      |      | clk_25M_c          | 29   |
+| led_wf1/cnt_reg[1]/C            | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c          |      |
+| --                              |      --      |   -- |      --       | --   | --                 | --   |
+| led_wf1/cnt_reg[1]/Q            | xsDFFSA_K1C1 |  347 |  rising_edge  |      | led_wf1/cnt[1]     | 4    |
+| led_wf1/_i_6/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net      |      | led_wf1/cnt[1]     |      |
+| led_wf1/_i_6/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |     cell      |      | led_wf1/_i_6/_n_1  | 2    |
+| led_wf1/_i_6/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_1  |      |
+| led_wf1/_i_6/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_3  | 2    |
+| led_wf1/_i_6/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_3  |      |
+| led_wf1/_i_6/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_5  | 2    |
+| led_wf1/_i_6/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_5  |      |
+| led_wf1/_i_6/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_7  | 2    |
+| led_wf1/_i_6/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_7  |      |
+| led_wf1/_i_6/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_9  | 2    |
+| led_wf1/_i_6/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_9  |      |
+| led_wf1/_i_6/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_11 | 2    |
+| led_wf1/_i_6/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_11 |      |
+| led_wf1/_i_6/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_13 | 2    |
+| led_wf1/_i_6/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_13 |      |
+| led_wf1/_i_6/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_15 | 2    |
+| led_wf1/_i_6/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_15 |      |
+| led_wf1/_i_6/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_17 | 2    |
+| led_wf1/_i_6/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_17 |      |
+| led_wf1/_i_6/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_19 | 2    |
+| led_wf1/_i_6/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_19 |      |
+| led_wf1/_i_6/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_21 | 2    |
+| led_wf1/_i_6/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_21 |      |
+| led_wf1/_i_6/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_23 | 2    |
+| led_wf1/_i_6/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_23 |      |
+| led_wf1/_i_6/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_25 | 2    |
+| led_wf1/_i_6/bitAdd_14/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_25 |      |
+| led_wf1/_i_6/bitAdd_14/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_27 | 2    |
+| led_wf1/_i_6/bitAdd_15/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_27 |      |
+| led_wf1/_i_6/bitAdd_15/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_29 | 2    |
+| led_wf1/_i_6/bitAdd_16/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_29 |      |
+| led_wf1/_i_6/bitAdd_16/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_31 | 2    |
+| led_wf1/_i_6/bitAdd_17/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_31 |      |
+| led_wf1/_i_6/bitAdd_17/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_33 | 2    |
+| led_wf1/_i_6/bitAdd_18/xorcy/CI |   xsXORCY    |    0 |      net      |      | led_wf1/_i_6/_n_33 |      |
+| led_wf1/_i_6/bitAdd_18/xorcy/O  |   xsXORCY    |  263 |     cell      |      | led_wf1/n_35[18]   | 1    |
+| led_wf1/_i_26/I1                |   xsLUTSA2   |    0 |      net      |      | led_wf1/n_35[18]   |      |
+| led_wf1/_i_26/O                 |   xsLUTSA2   |   81 |     cell      |      | led_wf1/n_29       | 1    |
+| led_wf1/cnt_reg[18]/D           | xsDFFSA_K1C1 |    0 |      net      |      | led_wf1/n_29       |      |
+============================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 3640       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 3293 
+        总的连线延迟 = 0 
+        逻辑级数     = 19 
+
+[数据捕获路径]
+=========================================================================================
+|         节点          |     单元     | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+=========================================================================================
+| CLOCK'clk_25M         |     N/A      |    0 |               |      | N/A       |      |
+| clk_25M               |     top      |    0 | clock_latency |      | clk_25M   | 1    |
+| clk_25M_pad/I         |    xsIOBI    |    0 |      net      |      | clk_25M   |      |
+| clk_25M_pad/O         |    xsIOBI    |  990 |     cell      |      | clk_25M_c | 29   |
+| led_wf1/cnt_reg[18]/C | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c |      |
+=========================================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 3640       + -23        - 0          - 0          
+       = 3617
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 7
+********************
+起点     : led_wf1/cnt_reg[1]/Q  [激发时钟: clk_25M, 上升沿1]
+终点     : led_wf1/cnt_reg[17]/D [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+============================================================================================================
+|              节点               |     单元     | 延迟 |     类型      | 位置 |        连线        | 扇出 |
+============================================================================================================
+| CLOCK'clk_25M                   |     N/A      |    0 |               |      | N/A                |      |
+| clk_25M                         |     top      |    0 | clock_latency |      | clk_25M            | 1    |
+| clk_25M_pad/I                   |    xsIOBI    |    0 |      net      |      | clk_25M            |      |
+| clk_25M_pad/O                   |    xsIOBI    |  990 |     cell      |      | clk_25M_c          | 29   |
+| led_wf1/cnt_reg[1]/C            | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c          |      |
+| --                              |      --      |   -- |      --       | --   | --                 | --   |
+| led_wf1/cnt_reg[1]/Q            | xsDFFSA_K1C1 |  347 |  rising_edge  |      | led_wf1/cnt[1]     | 4    |
+| led_wf1/_i_6/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net      |      | led_wf1/cnt[1]     |      |
+| led_wf1/_i_6/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |     cell      |      | led_wf1/_i_6/_n_1  | 2    |
+| led_wf1/_i_6/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_1  |      |
+| led_wf1/_i_6/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_3  | 2    |
+| led_wf1/_i_6/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_3  |      |
+| led_wf1/_i_6/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_5  | 2    |
+| led_wf1/_i_6/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_5  |      |
+| led_wf1/_i_6/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_7  | 2    |
+| led_wf1/_i_6/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_7  |      |
+| led_wf1/_i_6/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_9  | 2    |
+| led_wf1/_i_6/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_9  |      |
+| led_wf1/_i_6/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_11 | 2    |
+| led_wf1/_i_6/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_11 |      |
+| led_wf1/_i_6/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_13 | 2    |
+| led_wf1/_i_6/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_13 |      |
+| led_wf1/_i_6/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_15 | 2    |
+| led_wf1/_i_6/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_15 |      |
+| led_wf1/_i_6/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_17 | 2    |
+| led_wf1/_i_6/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_17 |      |
+| led_wf1/_i_6/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_19 | 2    |
+| led_wf1/_i_6/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_19 |      |
+| led_wf1/_i_6/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_21 | 2    |
+| led_wf1/_i_6/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_21 |      |
+| led_wf1/_i_6/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_23 | 2    |
+| led_wf1/_i_6/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_23 |      |
+| led_wf1/_i_6/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_25 | 2    |
+| led_wf1/_i_6/bitAdd_14/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_25 |      |
+| led_wf1/_i_6/bitAdd_14/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_27 | 2    |
+| led_wf1/_i_6/bitAdd_15/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_27 |      |
+| led_wf1/_i_6/bitAdd_15/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_29 | 2    |
+| led_wf1/_i_6/bitAdd_16/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_29 |      |
+| led_wf1/_i_6/bitAdd_16/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_31 | 2    |
+| led_wf1/_i_6/bitAdd_17/xorcy/CI |   xsXORCY    |    0 |      net      |      | led_wf1/_i_6/_n_31 |      |
+| led_wf1/_i_6/bitAdd_17/xorcy/O  |   xsXORCY    |  263 |     cell      |      | led_wf1/n_35[17]   | 1    |
+| led_wf1/_i_25/I1                |   xsLUTSA2   |    0 |      net      |      | led_wf1/n_35[17]   |      |
+| led_wf1/_i_25/O                 |   xsLUTSA2   |   81 |     cell      |      | led_wf1/n_28       | 1    |
+| led_wf1/cnt_reg[17]/D           | xsDFFSA_K1C1 |    0 |      net      |      | led_wf1/n_28       |      |
+============================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 3472       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 3125 
+        总的连线延迟 = 0 
+        逻辑级数     = 18 
+
+[数据捕获路径]
+=========================================================================================
+|         节点          |     单元     | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+=========================================================================================
+| CLOCK'clk_25M         |     N/A      |    0 |               |      | N/A       |      |
+| clk_25M               |     top      |    0 | clock_latency |      | clk_25M   | 1    |
+| clk_25M_pad/I         |    xsIOBI    |    0 |      net      |      | clk_25M   |      |
+| clk_25M_pad/O         |    xsIOBI    |  990 |     cell      |      | clk_25M_c | 29   |
+| led_wf1/cnt_reg[17]/C | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c |      |
+=========================================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 3472       + -23        - 0          - 0          
+       = 3449
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 8
+********************
+起点     : led_wf1/cnt_reg[1]/Q  [激发时钟: clk_25M, 上升沿1]
+终点     : led_wf1/cnt_reg[16]/D [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+============================================================================================================
+|              节点               |     单元     | 延迟 |     类型      | 位置 |        连线        | 扇出 |
+============================================================================================================
+| CLOCK'clk_25M                   |     N/A      |    0 |               |      | N/A                |      |
+| clk_25M                         |     top      |    0 | clock_latency |      | clk_25M            | 1    |
+| clk_25M_pad/I                   |    xsIOBI    |    0 |      net      |      | clk_25M            |      |
+| clk_25M_pad/O                   |    xsIOBI    |  990 |     cell      |      | clk_25M_c          | 29   |
+| led_wf1/cnt_reg[1]/C            | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c          |      |
+| --                              |      --      |   -- |      --       | --   | --                 | --   |
+| led_wf1/cnt_reg[1]/Q            | xsDFFSA_K1C1 |  347 |  rising_edge  |      | led_wf1/cnt[1]     | 4    |
+| led_wf1/_i_6/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net      |      | led_wf1/cnt[1]     |      |
+| led_wf1/_i_6/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |     cell      |      | led_wf1/_i_6/_n_1  | 2    |
+| led_wf1/_i_6/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_1  |      |
+| led_wf1/_i_6/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_3  | 2    |
+| led_wf1/_i_6/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_3  |      |
+| led_wf1/_i_6/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_5  | 2    |
+| led_wf1/_i_6/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_5  |      |
+| led_wf1/_i_6/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_7  | 2    |
+| led_wf1/_i_6/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_7  |      |
+| led_wf1/_i_6/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_9  | 2    |
+| led_wf1/_i_6/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_9  |      |
+| led_wf1/_i_6/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_11 | 2    |
+| led_wf1/_i_6/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_11 |      |
+| led_wf1/_i_6/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_13 | 2    |
+| led_wf1/_i_6/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_13 |      |
+| led_wf1/_i_6/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_15 | 2    |
+| led_wf1/_i_6/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_15 |      |
+| led_wf1/_i_6/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_17 | 2    |
+| led_wf1/_i_6/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_17 |      |
+| led_wf1/_i_6/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_19 | 2    |
+| led_wf1/_i_6/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_19 |      |
+| led_wf1/_i_6/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_21 | 2    |
+| led_wf1/_i_6/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_21 |      |
+| led_wf1/_i_6/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_23 | 2    |
+| led_wf1/_i_6/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_23 |      |
+| led_wf1/_i_6/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_25 | 2    |
+| led_wf1/_i_6/bitAdd_14/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_25 |      |
+| led_wf1/_i_6/bitAdd_14/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_27 | 2    |
+| led_wf1/_i_6/bitAdd_15/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_27 |      |
+| led_wf1/_i_6/bitAdd_15/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_29 | 2    |
+| led_wf1/_i_6/bitAdd_16/xorcy/CI |   xsXORCY    |    0 |      net      |      | led_wf1/_i_6/_n_29 |      |
+| led_wf1/_i_6/bitAdd_16/xorcy/O  |   xsXORCY    |  263 |     cell      |      | led_wf1/n_35[16]   | 1    |
+| led_wf1/_i_24/I1                |   xsLUTSA2   |    0 |      net      |      | led_wf1/n_35[16]   |      |
+| led_wf1/_i_24/O                 |   xsLUTSA2   |   81 |     cell      |      | led_wf1/n_27       | 1    |
+| led_wf1/cnt_reg[16]/D           | xsDFFSA_K1C1 |    0 |      net      |      | led_wf1/n_27       |      |
+============================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 3304       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 2957 
+        总的连线延迟 = 0 
+        逻辑级数     = 17 
+
+[数据捕获路径]
+=========================================================================================
+|         节点          |     单元     | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+=========================================================================================
+| CLOCK'clk_25M         |     N/A      |    0 |               |      | N/A       |      |
+| clk_25M               |     top      |    0 | clock_latency |      | clk_25M   | 1    |
+| clk_25M_pad/I         |    xsIOBI    |    0 |      net      |      | clk_25M   |      |
+| clk_25M_pad/O         |    xsIOBI    |  990 |     cell      |      | clk_25M_c | 29   |
+| led_wf1/cnt_reg[16]/C | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c |      |
+=========================================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 3304       + -23        - 0          - 0          
+       = 3281
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 9
+********************
+起点     : led_wf1/cnt_reg[1]/Q  [激发时钟: clk_25M, 上升沿1]
+终点     : led_wf1/cnt_reg[15]/D [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+============================================================================================================
+|              节点               |     单元     | 延迟 |     类型      | 位置 |        连线        | 扇出 |
+============================================================================================================
+| CLOCK'clk_25M                   |     N/A      |    0 |               |      | N/A                |      |
+| clk_25M                         |     top      |    0 | clock_latency |      | clk_25M            | 1    |
+| clk_25M_pad/I                   |    xsIOBI    |    0 |      net      |      | clk_25M            |      |
+| clk_25M_pad/O                   |    xsIOBI    |  990 |     cell      |      | clk_25M_c          | 29   |
+| led_wf1/cnt_reg[1]/C            | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c          |      |
+| --                              |      --      |   -- |      --       | --   | --                 | --   |
+| led_wf1/cnt_reg[1]/Q            | xsDFFSA_K1C1 |  347 |  rising_edge  |      | led_wf1/cnt[1]     | 4    |
+| led_wf1/_i_6/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net      |      | led_wf1/cnt[1]     |      |
+| led_wf1/_i_6/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |     cell      |      | led_wf1/_i_6/_n_1  | 2    |
+| led_wf1/_i_6/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_1  |      |
+| led_wf1/_i_6/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_3  | 2    |
+| led_wf1/_i_6/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_3  |      |
+| led_wf1/_i_6/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_5  | 2    |
+| led_wf1/_i_6/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_5  |      |
+| led_wf1/_i_6/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_7  | 2    |
+| led_wf1/_i_6/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_7  |      |
+| led_wf1/_i_6/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_9  | 2    |
+| led_wf1/_i_6/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_9  |      |
+| led_wf1/_i_6/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_11 | 2    |
+| led_wf1/_i_6/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_11 |      |
+| led_wf1/_i_6/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_13 | 2    |
+| led_wf1/_i_6/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_13 |      |
+| led_wf1/_i_6/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_15 | 2    |
+| led_wf1/_i_6/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_15 |      |
+| led_wf1/_i_6/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_17 | 2    |
+| led_wf1/_i_6/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_17 |      |
+| led_wf1/_i_6/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_19 | 2    |
+| led_wf1/_i_6/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_19 |      |
+| led_wf1/_i_6/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_21 | 2    |
+| led_wf1/_i_6/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_21 |      |
+| led_wf1/_i_6/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_23 | 2    |
+| led_wf1/_i_6/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_23 |      |
+| led_wf1/_i_6/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_25 | 2    |
+| led_wf1/_i_6/bitAdd_14/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_25 |      |
+| led_wf1/_i_6/bitAdd_14/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_27 | 2    |
+| led_wf1/_i_6/bitAdd_15/xorcy/CI |   xsXORCY    |    0 |      net      |      | led_wf1/_i_6/_n_27 |      |
+| led_wf1/_i_6/bitAdd_15/xorcy/O  |   xsXORCY    |  263 |     cell      |      | led_wf1/n_35[15]   | 1    |
+| led_wf1/_i_23/I1                |   xsLUTSA2   |    0 |      net      |      | led_wf1/n_35[15]   |      |
+| led_wf1/_i_23/O                 |   xsLUTSA2   |   81 |     cell      |      | led_wf1/n_26       | 1    |
+| led_wf1/cnt_reg[15]/D           | xsDFFSA_K1C1 |    0 |      net      |      | led_wf1/n_26       |      |
+============================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 3136       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 2789 
+        总的连线延迟 = 0 
+        逻辑级数     = 16 
+
+[数据捕获路径]
+=========================================================================================
+|         节点          |     单元     | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+=========================================================================================
+| CLOCK'clk_25M         |     N/A      |    0 |               |      | N/A       |      |
+| clk_25M               |     top      |    0 | clock_latency |      | clk_25M   | 1    |
+| clk_25M_pad/I         |    xsIOBI    |    0 |      net      |      | clk_25M   |      |
+| clk_25M_pad/O         |    xsIOBI    |  990 |     cell      |      | clk_25M_c | 29   |
+| led_wf1/cnt_reg[15]/C | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c |      |
+=========================================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 3136       + -23        - 0          - 0          
+       = 3113
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+********************
+* 路径 10
+********************
+起点     : led_wf1/cnt_reg[1]/Q  [激发时钟: clk_25M, 上升沿1]
+终点     : led_wf1/cnt_reg[14]/D [捕获时钟: clk_25M, 上升沿2] 
+
+数据产生路径
+============================================================================================================
+|              节点               |     单元     | 延迟 |     类型      | 位置 |        连线        | 扇出 |
+============================================================================================================
+| CLOCK'clk_25M                   |     N/A      |    0 |               |      | N/A                |      |
+| clk_25M                         |     top      |    0 | clock_latency |      | clk_25M            | 1    |
+| clk_25M_pad/I                   |    xsIOBI    |    0 |      net      |      | clk_25M            |      |
+| clk_25M_pad/O                   |    xsIOBI    |  990 |     cell      |      | clk_25M_c          | 29   |
+| led_wf1/cnt_reg[1]/C            | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c          |      |
+| --                              |      --      |   -- |      --       | --   | --                 | --   |
+| led_wf1/cnt_reg[1]/Q            | xsDFFSA_K1C1 |  347 |  rising_edge  |      | led_wf1/cnt[1]     | 4    |
+| led_wf1/_i_6/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net      |      | led_wf1/cnt[1]     |      |
+| led_wf1/_i_6/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |     cell      |      | led_wf1/_i_6/_n_1  | 2    |
+| led_wf1/_i_6/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_1  |      |
+| led_wf1/_i_6/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_3  | 2    |
+| led_wf1/_i_6/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_3  |      |
+| led_wf1/_i_6/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_5  | 2    |
+| led_wf1/_i_6/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_5  |      |
+| led_wf1/_i_6/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_7  | 2    |
+| led_wf1/_i_6/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_7  |      |
+| led_wf1/_i_6/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_9  | 2    |
+| led_wf1/_i_6/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_9  |      |
+| led_wf1/_i_6/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_11 | 2    |
+| led_wf1/_i_6/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_11 |      |
+| led_wf1/_i_6/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_13 | 2    |
+| led_wf1/_i_6/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_13 |      |
+| led_wf1/_i_6/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_15 | 2    |
+| led_wf1/_i_6/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_15 |      |
+| led_wf1/_i_6/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_17 | 2    |
+| led_wf1/_i_6/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_17 |      |
+| led_wf1/_i_6/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_19 | 2    |
+| led_wf1/_i_6/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_19 |      |
+| led_wf1/_i_6/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_21 | 2    |
+| led_wf1/_i_6/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_21 |      |
+| led_wf1/_i_6/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_23 | 2    |
+| led_wf1/_i_6/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net      |      | led_wf1/_i_6/_n_23 |      |
+| led_wf1/_i_6/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | led_wf1/_i_6/_n_25 | 2    |
+| led_wf1/_i_6/bitAdd_14/xorcy/CI |   xsXORCY    |    0 |      net      |      | led_wf1/_i_6/_n_25 |      |
+| led_wf1/_i_6/bitAdd_14/xorcy/O  |   xsXORCY    |  263 |     cell      |      | led_wf1/n_35[14]   | 1    |
+| led_wf1/_i_22/I1                |   xsLUTSA2   |    0 |      net      |      | led_wf1/n_35[14]   |      |
+| led_wf1/_i_22/O                 |   xsLUTSA2   |   81 |     cell      |      | led_wf1/n_25       | 1    |
+| led_wf1/cnt_reg[14]/D           | xsDFFSA_K1C1 |    0 |      net      |      | led_wf1/n_25       |      |
+============================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 2968       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 2621 
+        总的连线延迟 = 0 
+        逻辑级数     = 15 
+
+[数据捕获路径]
+=========================================================================================
+|         节点          |     单元     | 延迟 |     类型      | 位置 |   连线    | 扇出 |
+=========================================================================================
+| CLOCK'clk_25M         |     N/A      |    0 |               |      | N/A       |      |
+| clk_25M               |     top      |    0 | clock_latency |      | clk_25M   | 1    |
+| clk_25M_pad/I         |    xsIOBI    |    0 |      net      |      | clk_25M   |      |
+| clk_25M_pad/O         |    xsIOBI    |  990 |     cell      |      | clk_25M_c | 29   |
+| led_wf1/cnt_reg[14]/C | xsDFFSA_K1C1 |    0 |      net      |      | clk_25M_c |      |
+=========================================================================================
+
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 2968       + -23        - 0          - 0          
+       = 2945
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+#########################################################################
+# 时钟频率总结
+#########################################################################
+最慢时钟     : clk_25M
+最小时钟周期 : 4457 ps
+最大时钟频率 : 224.4 MHz
+#########################################################################
+clk_25M : 224.4 Mhz
+
+

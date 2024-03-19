@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpt>
+	<heads>
+		<h><![CDATA[HqFpga(TM) Release V2.14.4 (Winter 2023) Build 021824]]></h>
+		<h><![CDATA[[资源位置分配报告]]]></h>
+	</heads>
+	<subheads>
+		<sh name="日期">Tue Mar 19 23:03:48 2024</sh>
+		<sh name="器件">SA5Z-30-D1-8U213C</sh>
+	</subheads>
+	<sec title="IO端口位置" >
+		<tbl>
+			<cols>
+				<c>端口名</c>
+				<c>方向</c>
+				<c>位置</c>
+				<c>IO标准</c>
+				<c>Bank</c>
+				<c>VCCIO</c>
+				<c>DRIVE</c>
+				<c>SLEWRATE</c>
+				<c>PULLMODE</c>
+			</cols>
+
+			<r>
+				<v>clk_27M</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>clk_25M</v> <v>INPUT</v> <v>H13</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>clk_p3</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>clk_p4</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>clk_p5</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>flash_miso</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SWCLK</v> <v>INPUT</v> <v>H1</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>key_pin[2]</v> <v>INPUT</v> <v>F5</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>key_pin[1]</v> <v>INPUT</v> <v>E5</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>key_pin[0]</v> <v>INPUT</v> <v>D5</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v></v> <v></v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>uart_DAP_rx</v> <v>INPUT</v> <v>C5</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v></v> <v></v> <v>UP</v>
+			</r>
+			<r>
+				<v>uart_ch340_rx</v> <v>INPUT</v> <v>C15</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v></v> <v></v> <v>UP</v>
+			</r>
+			<r>
+				<v>sd_miso</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>w5500_rstn</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>w5500_intn</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>w5500_miso</v> <v>INPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>led_core</v> <v>OUTPUT</v> <v>B6</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>pll_i2c_scl</v> <v>OUTPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[18]</v> <v>OUTPUT</v> <v>R5</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[17]</v> <v>OUTPUT</v> <v>P15</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[16]</v> <v>OUTPUT</v> <v>R15</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[15]</v> <v>OUTPUT</v> <v>P14</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[14]</v> <v>OUTPUT</v> <v>P4</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[13]</v> <v>OUTPUT</v> <v>R4</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[12]</v> <v>OUTPUT</v> <v>P3</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[11]</v> <v>OUTPUT</v> <v>R3</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[10]</v> <v>OUTPUT</v> <v>R2</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[9]</v> <v>OUTPUT</v> <v>M3</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[8]</v> <v>OUTPUT</v> <v>N3</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[7]</v> <v>OUTPUT</v> <v>L5</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[6]</v> <v>OUTPUT</v> <v>M4</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[5]</v> <v>OUTPUT</v> <v>N5</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[4]</v> <v>OUTPUT</v> <v>M12</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[3]</v> <v>OUTPUT</v> <v>N14</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[2]</v> <v>OUTPUT</v> <v>N15</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[1]</v> <v>OUTPUT</v> <v>M13</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_ADDR[0]</v> <v>OUTPUT</v> <v>L11</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_nWE</v> <v>OUTPUT</v> <v>L6</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_nOE</v> <v>OUTPUT</v> <v>R14</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_nCE</v> <v>OUTPUT</v> <v>N12</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_nLB</v> <v>OUTPUT</v> <v>R13</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_nUB</v> <v>OUTPUT</v> <v>P13</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>flash_sclk</v> <v>OUTPUT</v> <v>A1</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>flash_cs</v> <v>OUTPUT</v> <v>A8</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>flash_mosi</v> <v>OUTPUT</v> <v>G2</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>led_pin[3]</v> <v>OUTPUT</v> <v>E14</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>led_pin[2]</v> <v>OUTPUT</v> <v>F14</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>led_pin[1]</v> <v>OUTPUT</v> <v>G15</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>led_pin[0]</v> <v>OUTPUT</v> <v>D15</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>beep_pin</v> <v>OUTPUT</v> <v>E13</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>uart_DAP_tx</v> <v>OUTPUT</v> <v>C12</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v>UP</v>
+			</r>
+			<r>
+				<v>uart_ch340_tx</v> <v>OUTPUT</v> <v>E12</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v>UP</v>
+			</r>
+			<r>
+				<v>sd_sclk</v> <v>OUTPUT</v> <v>E11</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>sd_cs</v> <v>OUTPUT</v> <v>D11</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>sd_mosi</v> <v>OUTPUT</v> <v>D12</v> <v>LVCMOS33</v> <v>2</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>w5500_sclk</v> <v>OUTPUT</v> <v>L15</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>w5500_cs</v> <v>OUTPUT</v> <v>K9</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>w5500_mosi</v> <v>OUTPUT</v> <v>M15</v> <v>LVCMOS33</v> <v>3</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>seg7_SH_CP</v> <v>OUTPUT</v> <v>E4</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>seg7_ST_CP</v> <v>OUTPUT</v> <v>G6</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>seg7_DS</v> <v>OUTPUT</v> <v>H2</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>i2c_scl</v> <v>OUTPUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>osc_c6_pin</v> <v>OUTPUT</v> <v>C6</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v></v>
+			</r>
+			<r>
+				<v>pll_i2c_sda</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[15]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[14]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[13]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[12]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[11]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[10]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[9]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[8]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[7]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[6]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[5]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[4]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[3]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[2]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[1]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SRAM_DQ[0]</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+			<r>
+				<v>SWDIO</v> <v>INOUT</v> <v>C1</v> <v>LVCMOS33</v> <v>1</v> <v>3.3</v> <v>8</v> <v>SLOW</v> <v>DOWN</v>
+			</r>
+			<r>
+				<v>i2c_sda</v> <v>INOUT</v> <v>-NOT USED-</v> <v>-NOT USED-</v> <v></v> <v></v> <v></v> <v></v> <v></v>
+			</r>
+		</tbl>
+	</sec>
+	<sec title="单元位置" >
+		<tbl>
+			<cols>
+				<c>元件</c>
+				<c>元件类型</c>
+				<c>位置</c>
+			</cols>
+
+			<r>
+				<v>uart_ch340_rx_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T89C</v>
+			</r>
+			<r>
+				<v>led_pin[3]_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T92D</v>
+			</r>
+			<r>
+				<v>led_pin[2]_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T92A</v>
+			</r>
+			<r>
+				<v>led_pin[1]_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T92B</v>
+			</r>
+			<r>
+				<v>led_pin[0]_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T95D</v>
+			</r>
+			<r>
+				<v>uart_ch340_tx_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T70A</v>
+			</r>
+			<r>
+				<v>seg7_SH_CP_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T37C</v>
+			</r>
+			<r>
+				<v>seg7_ST_CP_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T40B</v>
+			</r>
+			<r>
+				<v>seg7_DS_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T16A</v>
+			</r>
+			<r>
+				<v>osc_c6_pin_MGIOL</v> <v>IOLOGIC</v> <v>IOL_T43C</v>
+			</r>
+			<r>
+				<v>PLL_25to200_1/PLLInst_0</v> <v>PLL_25K</v> <v>LPLL1</v>
+			</r>
+			<r>
+				<v>inst</v> <v>CM3</v> <v>CM3</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[1]</v> <v>SLICEL</v> <v>R9C66M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[5]</v> <v>SLICEL</v> <v>R9C67M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[9]</v> <v>SLICEL</v> <v>R9C68M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[13]</v> <v>SLICEL</v> <v>R9C69M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[17]</v> <v>SLICEL</v> <v>R9C70M</v>
+			</r>
+			<r>
+				<v>led_wf1/n_35[21]</v> <v>SLICEL</v> <v>R9C71M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_829[1]</v> <v>SLICEL</v> <v>R20C24L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_829[5]</v> <v>SLICEL</v> <v>R20C25L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_829[9]</v> <v>SLICEL</v> <v>R20C26L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_829[13]</v> <v>SLICEL</v> <v>R20C27L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_836[1]</v> <v>SLICEL</v> <v>R22C30L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_836[5]</v> <v>SLICEL</v> <v>R22C31L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_836[9]</v> <v>SLICEL</v> <v>R22C32L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_836[13]</v> <v>SLICEL</v> <v>R22C33L</v>
+			</r>
+			<r>
+				<v>seg_inst/n_1031[1]</v> <v>SLICEL</v> <v>R20C78M</v>
+			</r>
+			<r>
+				<v>seg_inst/n_1031[5]</v> <v>SLICEL</v> <v>R20C79M</v>
+			</r>
+			<r>
+				<v>seg_inst/n_1037[1]</v> <v>SLICEL</v> <v>R18C83M</v>
+			</r>
+			<r>
+				<v>seg_inst/n_1037[5]</v> <v>SLICEL</v> <v>R18C84M</v>
+			</r>
+			<r>
+				<v>net_extracted_nHQX9</v> <v>SLICEL</v> <v>R21C32M</v>
+			</r>
+			<r>
+				<v>_n_2241</v> <v>SLICEL</v> <v>R22C25L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_101</v> <v>SLICEL</v> <v>R22C26L</v>
+			</r>
+			<r>
+				<v>_n_2252</v> <v>SLICEL</v> <v>R22C25M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_122</v> <v>SLICEL</v> <v>R22C26M</v>
+			</r>
+			<r>
+				<v>seg_inst/n_1040</v> <v>SLICEL</v> <v>R26C15L</v>
+			</r>
+			<r>
+				<v>TARGEXP0HRDATA[8]</v> <v>SLICEL</v> <v>R19C54L</v>
+			</r>
+			<r>
+				<v>TARGEXP0HRDATA[9]</v> <v>SLICEL</v> <v>R18C53M</v>
+			</r>
+			<r>
+				<v>TARGEXP0HRDATA[10]</v> <v>SLICEL</v> <v>R18C54M</v>
+			</r>
+			<r>
+				<v>TARGEXP0HRDATA[11]</v> <v>SLICEL</v> <v>R18C53L</v>
+			</r>
+			<r>
+				<v>TARGEXP0HRDATA[12]</v> <v>SLICEL</v> <v>R20C53M</v>
+			</r>
+			<r>
+				<v>TARGEXP0HRDATA[13]</v> <v>SLICEL</v> <v>R21C53L</v>
+			</r>
+			<r>
+				<v>TARGEXP0HRDATA[14]</v> <v>SLICEL</v> <v>R19C55M</v>
+			</r>
+			<r>
+				<v>TARGEXP0HRDATA[15]</v> <v>SLICEL</v> <v>R19C55L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_275[0]</v> <v>SLICEL</v> <v>R21C38L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_275[1]</v> <v>SLICEL</v> <v>R23C36M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_275[2]</v> <v>SLICEL</v> <v>R21C37L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_275[3]</v> <v>SLICEL</v> <v>R22C36L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_275[4]</v> <v>SLICEL</v> <v>R24C36L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_275[5]</v> <v>SLICEL</v> <v>R25C37M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_275[6]</v> <v>SLICEL</v> <v>R25C39M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_275[7]</v> <v>SLICEL</v> <v>R25C39L</v>
+			</r>
+			<r>
+				<v>seg_inst/seg_2_dec[0]</v> <v>SLICEL</v> <v>R24C15M</v>
+			</r>
+			<r>
+				<v>seg_inst/seg_2_dec[1]</v> <v>SLICEL</v> <v>R22C15M</v>
+			</r>
+			<r>
+				<v>seg_inst/seg_2_dec[2]</v> <v>SLICEL</v> <v>R24C14L</v>
+			</r>
+			<r>
+				<v>seg_inst/seg_2_dec[3]</v> <v>SLICEL</v> <v>R23C14M</v>
+			</r>
+			<r>
+				<v>seg_inst/seg_2_dec[4]</v> <v>SLICEL</v> <v>R23C15M</v>
+			</r>
+			<r>
+				<v>seg_inst/size_reg[0]</v> <v>SLICEL</v> <v>R25C16M</v>
+			</r>
+			<r>
+				<v>seg7_DS_c</v> <v>SLICEL</v> <v>R12C19L</v>
+			</r>
+			<r>
+				<v>seg_inst/seg_data_shifer_reg[7]</v> <v>SLICEL</v> <v>R14C20L</v>
+			</r>
+			<r>
+				<v>seg_inst/seg_data_shifer_reg[0]</v> <v>SLICEL</v> <v>R15C20M</v>
+			</r>
+			<r>
+				<v>seg_inst/n_1082</v> <v>SLICEL</v> <v>R14C20M</v>
+			</r>
+			<r>
+				<v>_n_2068</v> <v>SLICEL</v> <v>R26C15M</v>
+			</r>
+			<r>
+				<v>inst_extracted_iHQX12_rkd_8</v> <v>SLICEL</v> <v>R26C16M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_454</v> <v>SLICEL</v> <v>R22C38L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_333</v> <v>SLICEL</v> <v>R23C37L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[0][6]</v> <v>SLICEL</v> <v>R24C38L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[0][0]</v> <v>SLICEL</v> <v>R23C37M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_322</v> <v>SLICEL</v> <v>R22C37M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_recving</v> <v>SLICEL</v> <v>R22C52M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_shift_reg[8]</v> <v>SLICEL</v> <v>R21C52M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/_i_403_rkd_5</v> <v>SLICEL</v> <v>R21C52L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_shift_reg[7]</v> <v>SLICEL</v> <v>R22C52L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[0][6]</v> <v>SLICEL</v> <v>R20C55L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[0][4]</v> <v>SLICEL</v> <v>R20C53L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_wr_ptr[4]</v> <v>SLICEL</v> <v>R19C51M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_117</v> <v>SLICEL</v> <v>R21C40L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_rd_ptr[3]</v> <v>SLICEL</v> <v>R22C39M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_rd_ptr[1]</v> <v>SLICEL</v> <v>R19C52M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_rd_ptr[0]</v> <v>SLICEL</v> <v>R19C53L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_714</v> <v>SLICEL</v> <v>R19C33L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_713</v> <v>SLICEL</v> <v>R21C31L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_wr_ptr[2]</v> <v>SLICEL</v> <v>R22C37L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_81</v> <v>SLICEL</v> <v>R21C37M</v>
+			</r>
+			<r>
+				<v>led_wf1/cnt[9]</v> <v>SLICEL</v> <v>R8C68L</v>
+			</r>
+			<r>
+				<v>led_wf1/cnt[13]</v> <v>SLICEL</v> <v>R9C68L</v>
+			</r>
+			<r>
+				<v>led_wf1/cnt[17]</v> <v>SLICEL</v> <v>R9C67L</v>
+			</r>
+			<r>
+				<v>led_wf1/_i_2/_i_0_rkd_19</v> <v>SLICEL</v> <v>R9C69L</v>
+			</r>
+			<r>
+				<v>TARGEXP1HRDATA[7]</v> <v>SLICEL</v> <v>R25C14L</v>
+			</r>
+			<r>
+				<v>TARGEXP1HRDATA[16]</v> <v>SLICEL</v> <v>R23C15L</v>
+			</r>
+			<r>
+				<v>TARGEXP1HRDATA[18]</v> <v>SLICEL</v> <v>R24C14M</v>
+			</r>
+			<r>
+				<v>TARGEXP1HRDATA[21]</v> <v>SLICEL</v> <v>R24C15L</v>
+			</r>
+			<r>
+				<v>TARGEXP1HRDATA[25]</v> <v>SLICEL</v> <v>R22C15L</v>
+			</r>
+			<r>
+				<v>TARGEXP1HRDATA[30]</v> <v>SLICEL</v> <v>R23C14L</v>
+			</r>
+			<r>
+				<v>_n_2171</v> <v>SLICEL</v> <v>R22C39L</v>
+			</r>
+			<r>
+				<v>_n_2176</v> <v>SLICEL</v> <v>R19C51L</v>
+			</r>
+			<r>
+				<v>seg_inst/clk_1M_cnt[6]</v> <v>SLICEL</v> <v>R20C78L</v>
+			</r>
+			<r>
+				<v>seg_inst/clk_1M_cnt[7]</v> <v>SLICEL</v> <v>R21C78L</v>
+			</r>
+			<r>
+				<v>seg_inst/n_974</v> <v>SLICEL</v> <v>R25C16L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_DIV_cnt[2]</v> <v>SLICEL</v> <v>R22C33M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_DIV_cnt[10]</v> <v>SLICEL</v> <v>R22C31M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_DIV_cnt[11]</v> <v>SLICEL</v> <v>R22C32M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_DIV_cnt[3]</v> <v>SLICEL</v> <v>R20C26M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_DIV_cnt[10]</v> <v>SLICEL</v> <v>R20C25M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_644</v> <v>SLICEL</v> <v>R20C54L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_631</v> <v>SLICEL</v> <v>R19C54M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_605</v> <v>SLICEL</v> <v>R21C51M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_501</v> <v>SLICEL</v> <v>R19C53M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_shiftIN_cnt[3]</v> <v>SLICEL</v> <v>R23C52M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_shiftIN_cnt[2]</v> <v>SLICEL</v> <v>R23C52L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_shift_reg[4]</v> <v>SLICEL</v> <v>R21C40M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_737</v> <v>SLICEL</v> <v>R20C40L</v>
+			</r>
+			<r>
+				<v>seg_inst/HC595_CLK_CNT[2]</v> <v>SLICEL</v> <v>R18C83L</v>
+			</r>
+			<r>
+				<v>seg_inst/seg_data_shifer_reg[11]</v> <v>SLICEL</v> <v>R14C19M</v>
+			</r>
+			<r>
+				<v>net_extracted_nHQX21</v> <v>SLICEL</v> <v>R22C38M</v>
+			</r>
+			<r>
+				<v>net_extracted_nHQX18</v> <v>SLICEL</v> <v>R23C39L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_736</v> <v>SLICEL</v> <v>R20C40M</v>
+			</r>
+			<r>
+				<v>net_extracted_nHQX20</v> <v>SLICEL</v> <v>R23C39M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_shift_reg[8]</v> <v>SLICEL</v> <v>R22C40M</v>
+			</r>
+			<r>
+				<v>seg_inst/seg_data_shifer_reg[15]</v> <v>SLICEL</v> <v>R14C19L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/n_58</v> <v>SLICEL</v> <v>R2C31L</v>
+			</r>
+			<r>
+				<v>led_wf1/n_3</v> <v>SLICEL</v> <v>R9C70L</v>
+			</r>
+			<r>
+				<v>seg_inst/clk_1M_cnt[0]</v> <v>SLICEL</v> <v>R21C78M</v>
+			</r>
+			<r>
+				<v>seg_inst/HC595_CLK_CNT[0]</v> <v>SLICEL</v> <v>R18C84L</v>
+			</r>
+			<r>
+				<v>led_pin[3]_c</v> <v>SLICEL</v> <v>R8C70M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/addr[5]</v> <v>SLICEL</v> <v>R21C33M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/addr[6]</v> <v>SLICEL</v> <v>R21C33L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/addr[8]</v> <v>SLICEL</v> <v>R21C31M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/addr[10]</v> <v>SLICEL</v> <v>R20C32L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/addr[12]</v> <v>SLICEL</v> <v>R20C32M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/addr[14]</v> <v>SLICEL</v> <v>R21C32L</v>
+			</r>
+			<r>
+				<v>TARGEXP0HRDATA[21]</v> <v>SLICEL</v> <v>R22C19M</v>
+			</r>
+			<r>
+				<v>TARGEXP0HRDATA[28]</v> <v>SLICEL</v> <v>R22C18L</v>
+			</r>
+			<r>
+				<v>TARGEXP0HRDATA[29]</v> <v>SLICEL</v> <v>R22C17L</v>
+			</r>
+			<r>
+				<v>TARGEXP0HRDATA[30]</v> <v>SLICEL</v> <v>R22C19L</v>
+			</r>
+			<r>
+				<v>TARGEXP0HRDATA[31]</v> <v>SLICEL</v> <v>R22C17M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[2][2]</v> <v>SLICEL</v> <v>R20C36M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[2][3]</v> <v>SLICEL</v> <v>R21C35M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[2][5]</v> <v>SLICEL</v> <v>R20C38L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[2][7]</v> <v>SLICEL</v> <v>R24C40L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[3][3]</v> <v>SLICEL</v> <v>R23C36L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[3][5]</v> <v>SLICEL</v> <v>R25C37L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[3][7]</v> <v>SLICEL</v> <v>R24C39M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[4][2]</v> <v>SLICEL</v> <v>R23C38L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[4][3]</v> <v>SLICEL</v> <v>R23C34M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[4][5]</v> <v>SLICEL</v> <v>R24C34L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[4][7]</v> <v>SLICEL</v> <v>R25C38L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[5][2]</v> <v>SLICEL</v> <v>R19C38M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[5][3]</v> <v>SLICEL</v> <v>R21C35L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[5][5]</v> <v>SLICEL</v> <v>R24C36M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[5][7]</v> <v>SLICEL</v> <v>R25C40M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[6][3]</v> <v>SLICEL</v> <v>R22C35L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[6][4]</v> <v>SLICEL</v> <v>R24C35M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[6][6]</v> <v>SLICEL</v> <v>R27C38L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[7][3]</v> <v>SLICEL</v> <v>R24C37L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[7][4]</v> <v>SLICEL</v> <v>R20C37L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[7][6]</v> <v>SLICEL</v> <v>R27C38M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[8][4]</v> <v>SLICEL</v> <v>R20C38M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[8][5]</v> <v>SLICEL</v> <v>R20C37M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[8][7]</v> <v>SLICEL</v> <v>R26C37L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[9][2]</v> <v>SLICEL</v> <v>R23C38M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[9][3]</v> <v>SLICEL</v> <v>R24C37M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[9][5]</v> <v>SLICEL</v> <v>R25C36M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[9][7]</v> <v>SLICEL</v> <v>R26C37M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[10][2]</v> <v>SLICEL</v> <v>R23C35L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[10][3]</v> <v>SLICEL</v> <v>R22C35M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[10][5]</v> <v>SLICEL</v> <v>R25C36L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[10][7]</v> <v>SLICEL</v> <v>R26C39M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[11][2]</v> <v>SLICEL</v> <v>R23C40M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[11][3]</v> <v>SLICEL</v> <v>R23C35M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[11][5]</v> <v>SLICEL</v> <v>R24C35L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[11][7]</v> <v>SLICEL</v> <v>R24C39L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[12][2]</v> <v>SLICEL</v> <v>R21C38M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[12][3]</v> <v>SLICEL</v> <v>R19C37M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[12][5]</v> <v>SLICEL</v> <v>R26C36L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[12][7]</v> <v>SLICEL</v> <v>R26C38L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[13][2]</v> <v>SLICEL</v> <v>R21C39L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[13][3]</v> <v>SLICEL</v> <v>R19C37L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[13][5]</v> <v>SLICEL</v> <v>R24C38M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[13][7]</v> <v>SLICEL</v> <v>R24C40M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[14][2]</v> <v>SLICEL</v> <v>R21C36L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[14][3]</v> <v>SLICEL</v> <v>R22C36M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[14][5]</v> <v>SLICEL</v> <v>R26C36M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[14][7]</v> <v>SLICEL</v> <v>R26C38M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[15][2]</v> <v>SLICEL</v> <v>R21C39M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[15][3]</v> <v>SLICEL</v> <v>R21C36M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[15][5]</v> <v>SLICEL</v> <v>R25C38M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/TX_fifo_buff[15][7]</v> <v>SLICEL</v> <v>R26C39L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[2][2]</v> <v>SLICEL</v> <v>R23C54M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[2][3]</v> <v>SLICEL</v> <v>R19C52L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[2][5]</v> <v>SLICEL</v> <v>R22C53L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[2][7]</v> <v>SLICEL</v> <v>R23C55M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[3][3]</v> <v>SLICEL</v> <v>R18C51L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[3][4]</v> <v>SLICEL</v> <v>R20C52L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[3][7]</v> <v>SLICEL</v> <v>R21C55L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[4][2]</v> <v>SLICEL</v> <v>R18C56M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[4][3]</v> <v>SLICEL</v> <v>R15C53L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[4][5]</v> <v>SLICEL</v> <v>R23C53M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[4][7]</v> <v>SLICEL</v> <v>R15C55L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[5][2]</v> <v>SLICEL</v> <v>R14C54M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[5][3]</v> <v>SLICEL</v> <v>R14C53M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[5][5]</v> <v>SLICEL</v> <v>R24C53M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[5][7]</v> <v>SLICEL</v> <v>R23C55L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[6][3]</v> <v>SLICEL</v> <v>R14C52M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[6][5]</v> <v>SLICEL</v> <v>R22C54M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[6][7]</v> <v>SLICEL</v> <v>R20C56M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[7][4]</v> <v>SLICEL</v> <v>R20C55M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[7][5]</v> <v>SLICEL</v> <v>R20C51M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[7][7]</v> <v>SLICEL</v> <v>R19C56M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[8][2]</v> <v>SLICEL</v> <v>R20C54M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[8][3]</v> <v>SLICEL</v> <v>R20C51L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[8][5]</v> <v>SLICEL</v> <v>R22C53M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[8][7]</v> <v>SLICEL</v> <v>R22C55M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[9][2]</v> <v>SLICEL</v> <v>R18C56L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[9][3]</v> <v>SLICEL</v> <v>R14C52L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[9][5]</v> <v>SLICEL</v> <v>R21C54L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[9][7]</v> <v>SLICEL</v> <v>R19C56L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[10][2]</v> <v>SLICEL</v> <v>R15C54M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[10][3]</v> <v>SLICEL</v> <v>R18C52M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[10][5]</v> <v>SLICEL</v> <v>R23C53L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[10][7]</v> <v>SLICEL</v> <v>R23C56L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[11][2]</v> <v>SLICEL</v> <v>R18C55M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[11][3]</v> <v>SLICEL</v> <v>R15C53M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[11][5]</v> <v>SLICEL</v> <v>R24C53L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[11][7]</v> <v>SLICEL</v> <v>R24C55L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[12][3]</v> <v>SLICEL</v> <v>R14C53L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[12][4]</v> <v>SLICEL</v> <v>R18C55L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[12][7]</v> <v>SLICEL</v> <v>R21C55M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[13][2]</v> <v>SLICEL</v> <v>R18C54L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[13][3]</v> <v>SLICEL</v> <v>R18C51M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[13][5]</v> <v>SLICEL</v> <v>R21C53M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[13][7]</v> <v>SLICEL</v> <v>R21C56L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[14][2]</v> <v>SLICEL</v> <v>R22C54L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[14][3]</v> <v>SLICEL</v> <v>R18C52L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[14][5]</v> <v>SLICEL</v> <v>R20C52M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[14][7]</v> <v>SLICEL</v> <v>R22C55L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[15][2]</v> <v>SLICEL</v> <v>R15C54L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[15][3]</v> <v>SLICEL</v> <v>R14C54L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[15][5]</v> <v>SLICEL</v> <v>R21C54M</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_fifo_buff[15][7]</v> <v>SLICEL</v> <v>R20C56L</v>
+			</r>
+			<r>
+				<v>ahb_uart1/RX_samp_regs[4]</v> <v>SLICEL</v> <v>R21C57L</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_2[4]</v> <v>SLICEL</v> <v>R24C18L</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_2[5]</v> <v>SLICEL</v> <v>R23C17M</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_3[5]</v> <v>SLICEL</v> <v>R25C15M</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_3[7]</v> <v>SLICEL</v> <v>R24C16M</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_4[2]</v> <v>SLICEL</v> <v>R24C18M</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_4[3]</v> <v>SLICEL</v> <v>R22C14L</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_4[5]</v> <v>SLICEL</v> <v>R25C18L</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_4[7]</v> <v>SLICEL</v> <v>R25C14M</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_5[2]</v> <v>SLICEL</v> <v>R25C17L</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_5[3]</v> <v>SLICEL</v> <v>R23C16L</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_5[5]</v> <v>SLICEL</v> <v>R25C17M</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_5[7]</v> <v>SLICEL</v> <v>R23C16M</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_6[2]</v> <v>SLICEL</v> <v>R24C17L</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_6[3]</v> <v>SLICEL</v> <v>R23C17L</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_6[5]</v> <v>SLICEL</v> <v>R24C17M</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_6[7]</v> <v>SLICEL</v> <v>R21C15L</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_7[3]</v> <v>SLICEL</v> <v>R22C14M</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_7[4]</v> <v>SLICEL</v> <v>R24C16L</v>
+			</r>
+			<r>
+				<v>seg_inst/segx_reg_7[6]</v> <v>SLICEL</v> <v>R25C15L</v>
+			</r>
+			<r>
+				<v>seg_inst/addr_reg[6]</v> <v>SLICEL</v> <v>R26C16L</v>
+			</r>
+			<r>
+				<v>seg_inst/addr_reg[7]</v> <v>SLICEL</v> <v>R27C15M</v>
+			</r>
+			<r>
+				<v>seg_inst/addr_reg[10]</v> <v>SLICEL</v> <v>R26C17M</v>
+			</r>
+			<r>
+				<v>seg_inst/addr_reg[12]</v> <v>SLICEL</v> <v>R26C17L</v>
+			</r>
+			<r>
+				<v>seg_inst/addr_reg[14]</v> <v>SLICEL</v> <v>R27C15L</v>
+			</r>
+		</tbl>
+	</sec>
+</rpt>

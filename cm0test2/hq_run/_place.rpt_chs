@@ -1,0 +1,157 @@
+
+######################oOOOo###########oOOOo##########################
+#  HqFpga(TM) Release V3.0.3 (Winter 2023) Build 021824
+#  [网表报告]
+#####################################################################
+日期 : Sat Feb 24 14:40:58 2024
+
+Library U_ARCH
++-----------+------+
+| Cell 名称 | 数量 |
++-----------+------+
+| PIO       |   51 |
+| IOLOGIC   |    5 |
+| PLL_25K   |    1 |
+| CM3       |    1 |
+| SLICEL    |   12 |
++-----------+------+
+| Sum       |   70 |
++-----------+------+
+
+Library work
++-----------+------+
+| Cell 名称 | 数量 |
++-----------+------+
+| top       |    1 |
++-----------+------+
+| Sum       |    1 |
++-----------+------+
+
+######################oOOOo###########oOOOo##########################
+#  HqFpga(TM) Release V3.0.3 (Winter 2023) Build 021824
+#  [资源位置分配报告]
+#####################################################################
+日期 : Sat Feb 24 14:40:58 2024
+器件 : SA5Z-30-D1-8U213C
+
+** Bank Voltage Available **
++------+-------+
+| Bank | VCCIO |
++------+-------+
+| 0    |  2.5  |
+| 1    |  3.3  |
+| 2    |  3.3  |
+| 3    |  3.3  |
+| 5    |  2.5  |
++------+-------+
+** IO端口位置 **
++---------------+--------+------------+------------+------+-------+-------+----------+----------+
+| 端口名        |  方向  |    位置    |   IO标准   | Bank | VCCIO | DRIVE | SLEWRATE | PULLMODE |
++---------------+--------+------------+------------+------+-------+-------+----------+----------+
+| clk_27M       | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| clk_25M       | INPUT  |    H13     |  LVCMOS33  |  2   |  3.3  |       |          |   DOWN   |
+| clk_p3        | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| clk_p4        | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| clk_p5        | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| flash_miso    | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| swdclk        | INPUT  |     H1     |  LVCMOS33  |  1   |  3.3  |       |          |   DOWN   |
+| key_pin[2]    | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| key_pin[1]    | INPUT  |     E5     |  LVCMOS33  |  1   |  3.3  |       |          |   DOWN   |
+| key_pin[0]    | INPUT  |     D5     |  LVCMOS33  |  1   |  3.3  |       |          |   DOWN   |
+| uart_DAP_rx   | INPUT  |     C5     |  LVCMOS33  |  1   |  3.3  |       |          |    UP    |
+| uart_ch340_rx | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| sd_miso       | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| w5500_rstn    | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| w5500_intn    | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| w5500_miso    | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| led_core      | OUTPUT |     B6     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |          |
+| pll_i2c_scl   | OUTPUT | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_ADDR[18] | OUTPUT |     R5     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[17] | OUTPUT |    P15     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[16] | OUTPUT |    R15     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[15] | OUTPUT |    P14     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[14] | OUTPUT |     P4     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[13] | OUTPUT |     R4     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[12] | OUTPUT |     P3     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[11] | OUTPUT |     R3     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[10] | OUTPUT |     R2     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[9]  | OUTPUT |     M3     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[8]  | OUTPUT |     N3     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[7]  | OUTPUT |     L5     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[6]  | OUTPUT |     M4     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[5]  | OUTPUT |     N5     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[4]  | OUTPUT |    M12     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[3]  | OUTPUT |    N14     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[2]  | OUTPUT |    N15     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[1]  | OUTPUT |    M13     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_ADDR[0]  | OUTPUT |    L11     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_nWE      | OUTPUT |     L6     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_nOE      | OUTPUT |    R14     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_nCE      | OUTPUT |    N12     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_nLB      | OUTPUT |    R13     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| SRAM_nUB      | OUTPUT |    P13     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| flash_sclk    | OUTPUT |     A1     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |          |
+| flash_cs      | OUTPUT |     A8     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |          |
+| flash_mosi    | OUTPUT |     G2     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |          |
+| led_pin[3]    | OUTPUT |    E14     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |          |
+| led_pin[2]    | OUTPUT |    F14     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |          |
+| led_pin[1]    | OUTPUT |    G15     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |          |
+| led_pin[0]    | OUTPUT |    D15     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |          |
+| beep_pin      | OUTPUT |    E13     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |          |
+| uart_DAP_tx   | OUTPUT |    C12     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |    UP    |
+| uart_ch340_tx | OUTPUT |    E12     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |    UP    |
+| sd_sclk       | OUTPUT |    E11     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |          |
+| sd_cs         | OUTPUT |    D11     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |          |
+| sd_mosi       | OUTPUT |    D12     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |          |
+| w5500_sclk    | OUTPUT |    L15     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| w5500_cs      | OUTPUT |     K9     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| w5500_mosi    | OUTPUT |    M15     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| seg7_SH_CP    | OUTPUT |     E4     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |          |
+| seg7_ST_CP    | OUTPUT |     G6     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |          |
+| seg7_DS       | OUTPUT |     H2     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |          |
+| i2c_scl       | OUTPUT | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| osc_c6_pin    | OUTPUT |     C6     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |          |
+| pll_i2c_sda   | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[15]   | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[14]   | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[13]   | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[12]   | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[11]   | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[10]   | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[9]    | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[8]    | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[7]    | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[6]    | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[5]    | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[4]    | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[3]    | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[2]    | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[1]    | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[0]    | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| swddio        | INOUT  |     C1     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |   DOWN   |
+| i2c_sda       | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
++---------------+--------+------------+------------+------+-------+-------+----------+----------+
+** 单元位置 **
++--------------------------+----------+----------+
+| 元件                     | 元件类型 |   位置   |
++--------------------------+----------+----------+
+| led_pin[3]_MGIOL         | IOLOGIC  | IOL_T92D |
+| led_pin[2]_MGIOL         | IOLOGIC  | IOL_T92A |
+| led_pin[1]_MGIOL         | IOLOGIC  | IOL_T92B |
+| led_pin[0]_MGIOL         | IOLOGIC  | IOL_T95D |
+| osc_c6_pin_MGIOL         | IOLOGIC  | IOL_T43C |
+| PLL_25to200_1/PLLInst_0  | PLL_25K  |  LPLL1   |
+| cm3inst/inst             |   CM3    |   CM3    |
+| led_wf1/n_35[1]          |  SLICEL  |  R2C99M  |
+| led_wf1/n_35[5]          |  SLICEL  | R2C100M  |
+| led_wf1/n_35[9]          |  SLICEL  | R2C101M  |
+| led_wf1/n_35[13]         |  SLICEL  | R2C102M  |
+| led_wf1/n_35[17]         |  SLICEL  | R2C103M  |
+| led_wf1/n_35[21]         |  SLICEL  | R2C104M  |
+| led_wf1/cnt[6]           |  SLICEL  |  R2C99L  |
+| led_wf1/cnt[9]           |  SLICEL  | R2C101L  |
+| led_wf1/cnt[16]          |  SLICEL  | R2C102L  |
+| led_wf1/_i_2/_i_0_rkd_12 |  SLICEL  | R2C100L  |
+| led_wf1/n_3              |  SLICEL  | R2C103L  |
+| led_pin[3]_c             |  SLICEL  |  R2C98L  |
++--------------------------+----------+----------+

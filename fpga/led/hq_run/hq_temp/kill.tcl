@@ -1,1 +1,0 @@
-exec TASKKILL /T /F /PID 23644 &

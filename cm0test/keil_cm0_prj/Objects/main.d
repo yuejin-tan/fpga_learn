@@ -1,0 +1,13 @@
+.\objects\main.o: src\main.c
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\main.o: .\bsp\device\CMSDK_CM0.h
+.\objects\main.o: .\bsp\CMSIS\core_cm0.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: .\bsp\CMSIS\core_cmInstr.h
+.\objects\main.o: .\bsp\CMSIS\core_cmFunc.h
+.\objects\main.o: .\bsp\device\system_CMSDK_CM0.h
+.\objects\main.o: .\drv\delay.h
+.\objects\main.o: .\drv\ahb_uart.h
+.\objects\main.o: .\drv\ahb_led.h
+.\objects\main.o: src\scd_inc.h
+.\objects\main.o: src\scd_cfg.h

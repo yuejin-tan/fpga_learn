@@ -1,0 +1,15 @@
+-module top
+-module PLL_25to200
+-module ahb_seg7x8
+-module ahb_uart
+-module AHBlite_Decoder
+-module AHBlite_Interconnect
+-module AHBlite_SlaveMUX
+-module cm0_wrap
+-module cortexm0ds_logic
+-module cmsdk_ahb_to_sram
+-module cmsdk_fpga_sram
+-topmoduleNum 3
+-topmodule top
+-topmodule cmsdk_ahb_to_sram
+-topmodule cmsdk_fpga_sram

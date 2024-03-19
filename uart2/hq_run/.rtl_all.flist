@@ -1,0 +1,6 @@
+D:/fpga/ac208/workspace/uart2/top.v
+D:/fpga/ac208/workspace/uart2/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.v
+D:/fpga/ac208/workspace/uart2/led_wf.v
+D:/fpga/ac208/workspace/uart2/ahb_sram.v
+D:/fpga/ac208/workspace/uart2/ahb_seg7x8.v
+D:/fpga/ac208/workspace/uart2/ahb_uart.v

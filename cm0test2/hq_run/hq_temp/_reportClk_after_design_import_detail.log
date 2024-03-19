@@ -1,0 +1,263 @@
+#########################################################################
+#
+# 最大时钟频率(FMAX)报告
+#
+#########################################################################
+#
+# 注意: FMAX 的计算仅针对在同一时钟域内的寄存器到寄存器路径，
+# 多周期路径、跨时钟域路径(包括主时钟及其生成时钟之间的路径)都将
+# 被忽略。对于一个时钟及其反向时钟之间的路径， FMAX的计算通过按
+# 频宽比(duty cycle)等比例扩展路径延迟得到。例如，假设有一
+# 条路径的起点由时钟上升沿驱动而终点由同一时钟的下降沿驱动，
+# 如果该时钟的频宽比为50，则计算FMAX时，路径延迟将乘以2(即
+# 除以50%)。
+#
+# ***********************************************************************
+# 时钟         : SWCLK
+# 最小时钟周期 : 1053 ps
+# ***********************************************************************
+********************
+* 路径 1
+********************
+起点     : cm0_inst1/u_logic/Golpw6_reg/Q [激发时钟: SWCLK, 上升沿1]
+终点     : cm0_inst1/u_logic/Sdlpw6_reg/D [捕获时钟: SWCLK, 上升沿2] 
+数据产生路径
+===================================================================================================================================================
+|                       节点                        |     单元     | 延迟 |     类型      | 位置 |                  连线                   | 扇出 |
+===================================================================================================================================================
+| CLOCK'SWCLK                                       |     N/A      |    0 |               |      | N/A                                     |      |
+| SWCLK                                             |     top      |    0 | clock_latency |      | SWCLK                                   | 1    |
+| SWCLK_pad/I                                       |    xsIOBI    |    0 |      net      |      | SWCLK                                   |      |
+| SWCLK_pad/O                                       |    xsIOBI    |  990 |     cell      |      | SWCLK_c                                 | 107  |
+| cm0_inst1/u_logic/Golpw6_reg/C                    | xsDFFSA_K1E1 |    0 |      net      |      | SWCLK_c                                 |      |
+| --                                                |      --      |   -- |      --       | --   | --                                      | --   |
+| cm0_inst1/u_logic/Golpw6_reg/Q                    | xsDFFSA_K1E1 |  347 |  rising_edge  |      | cm0_inst1/u_logic/Mdhpw6[2]             | 14   |
+| inst_extracted_iHQX391_andor_decomp_0/I1          |   xsLUTSA5   |    0 |      net      |      | cm0_inst1/u_logic/Mdhpw6[2]             |      |
+| inst_extracted_iHQX391_andor_decomp_0/O           |   xsLUTSA5   |   81 |     cell      |      | net_extracted_nHQX395                   | 2    |
+| cm0_inst1/u_logic/_i_8526/I3                      |   xsLUTSA4   |    0 |      net      |      | net_extracted_nHQX395                   |      |
+| cm0_inst1/u_logic/_i_8526/O                       |   xsLUTSA4   |   81 |     cell      |      | cm0_inst1/u_logic/n_2689                | 5    |
+| inst_extracted_iHQX248/I5                         |   xsLUTSA6   |    0 |      net      |      | cm0_inst1/u_logic/n_2689                |      |
+| inst_extracted_iHQX248/O                          |   xsLUTSA6   |   81 |     cell      |      | net_extracted_nHQX260                   | 3    |
+| inverted_cm0_inst1/u_logic/_i_8522/I4             |   xsLUTSA5   |    0 |      net      |      | net_extracted_nHQX260                   |      |
+| inverted_cm0_inst1/u_logic/_i_8522/O              |   xsLUTSA5   |   81 |     cell      |      | _n_119101                               | 4    |
+| cm0_inst1/u_logic/_i_263/I4                       |   xsLUTSA5   |    0 |      net      |      | _n_119101                               |      |
+| cm0_inst1/u_logic/_i_263/O                        |   xsLUTSA5   |   81 |     cell      |      | cm0_inst1/u_logic/Sbyhu6                | 2    |
+| inst_extracted_iHQX209_iHQX210/I4                 |   xsLUTSA5   |    0 |      net      |      | cm0_inst1/u_logic/Sbyhu6                |      |
+| inst_extracted_iHQX209_iHQX210/O                  |   xsLUTSA5   |   81 |     cell      |      | net_extracted_nHQX220                   | 2    |
+| dec_of_cm0_inst1/u_logic/_i_194_decomp_iHQX753/I1 |   xsLUTSA4   |    0 |      net      |      | net_extracted_nHQX220                   |      |
+| dec_of_cm0_inst1/u_logic/_i_194_decomp_iHQX753/O  |   xsLUTSA4   |   81 |     cell      |      | _n_118752                               | 1    |
+| cm0_inst1/u_logic/_i_194_decomp_iHQX624/I4        |   xsLUTSA6   |    0 |      net      |      | _n_118752                               |      |
+| cm0_inst1/u_logic/_i_194_decomp_iHQX624/O         |   xsLUTSA6   |   81 |     cell      |      | cm0_inst1/u_logic/_i_194_decomp_nHQX653 | 1    |
+| cm0_inst1/u_logic/_i_194/I5                       |   xsLUTSA6   |    0 |      net      |      | cm0_inst1/u_logic/_i_194_decomp_nHQX653 |      |
+| cm0_inst1/u_logic/_i_194/O                        |   xsLUTSA6   |   81 |     cell      |      | cm0_inst1/u_logic/n_120                 | 1    |
+| cm0_inst1/u_logic/Sdlpw6_reg/D                    | xsDFFSA_K1P1 |    0 |      net      |      | cm0_inst1/u_logic/n_120                 |      |
+===================================================================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 1076       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 729 
+        总的连线延迟 = 0 
+        逻辑级数     = 9 
+[数据捕获路径]
+================================================================================================
+|              节点              |     单元     | 延迟 |     类型      | 位置 |  连线   | 扇出 |
+================================================================================================
+| CLOCK'SWCLK                    |     N/A      |    0 |               |      | N/A     |      |
+| SWCLK                          |     top      |    0 | clock_latency |      | SWCLK   | 1    |
+| SWCLK_pad/I                    |    xsIOBI    |    0 |      net      |      | SWCLK   |      |
+| SWCLK_pad/O                    |    xsIOBI    |  990 |     cell      |      | SWCLK_c | 107  |
+| cm0_inst1/u_logic/Sdlpw6_reg/C | xsDFFSA_K1P1 |    0 |      net      |      | SWCLK_c |      |
+================================================================================================
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 1076       + -23        - 0          - 0          
+       = 1053
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+# ***********************************************************************
+# 时钟         : cm0_inst1/seg_inst/clk_DRV_reg/Q
+# 最小时钟周期 : 1769 ps
+# ***********************************************************************
+********************
+* 路径 1
+********************
+起点     : cm0_inst1/seg_inst/HC595_CLK_CNT_reg[1]/Q [激发时钟: cm0_inst1/seg_inst/clk_DRV_reg/Q, 上升沿1]
+终点     : cm0_inst1/seg_inst/HC595_CLK_CNT_reg[7]/D [捕获时钟: cm0_inst1/seg_inst/clk_DRV_reg/Q, 上升沿2] 
+数据产生路径
+========================================================================================================================================
+|                    节点                    |     单元     | 延迟 |     类型      | 位置 |                连线                 | 扇出 |
+========================================================================================================================================
+| CLOCK'cm0_inst1/seg_inst/clk_DRV_reg/Q     |     N/A      |    0 |               |      | N/A                                 |      |
+| cm0_inst1/seg_inst/clk_DRV_reg/Q           | xsDFFSA_K1C1 |    0 | clock_latency |      | cm0_inst1/seg_inst/clk_DRV          | 31   |
+| cm0_inst1/seg_inst/HC595_CLK_CNT_reg[1]/C  | xsDFFSA_K1C1 |    0 |      net      |      | cm0_inst1/seg_inst/clk_DRV          |      |
+| --                                         |      --      |   -- |      --       | --   | --                                  | --   |
+| cm0_inst1/seg_inst/HC595_CLK_CNT_reg[1]/Q  | xsDFFSA_K1C1 |  347 |  rising_edge  |      | cm0_inst1/seg_inst/HC595_CLK_CNT[1] | 3    |
+| cm0_inst1/seg_inst/_i_56/bitAdd_1/muxcy/S  |   xsMUXCY    |    0 |      net      |      | cm0_inst1/seg_inst/HC595_CLK_CNT[1] |      |
+| cm0_inst1/seg_inst/_i_56/bitAdd_1/muxcy/O  |   xsMUXCY    |  261 |     cell      |      | cm0_inst1/seg_inst/_i_56/_n_1       | 2    |
+| cm0_inst1/seg_inst/_i_56/bitAdd_2/muxcy/CI |   xsMUXCY    |    0 |      net      |      | cm0_inst1/seg_inst/_i_56/_n_1       |      |
+| cm0_inst1/seg_inst/_i_56/bitAdd_2/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | cm0_inst1/seg_inst/_i_56/_n_3       | 2    |
+| cm0_inst1/seg_inst/_i_56/bitAdd_3/muxcy/CI |   xsMUXCY    |    0 |      net      |      | cm0_inst1/seg_inst/_i_56/_n_3       |      |
+| cm0_inst1/seg_inst/_i_56/bitAdd_3/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | cm0_inst1/seg_inst/_i_56/_n_5       | 2    |
+| cm0_inst1/seg_inst/_i_56/bitAdd_4/muxcy/CI |   xsMUXCY    |    0 |      net      |      | cm0_inst1/seg_inst/_i_56/_n_5       |      |
+| cm0_inst1/seg_inst/_i_56/bitAdd_4/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | cm0_inst1/seg_inst/_i_56/_n_7       | 2    |
+| cm0_inst1/seg_inst/_i_56/bitAdd_5/muxcy/CI |   xsMUXCY    |    0 |      net      |      | cm0_inst1/seg_inst/_i_56/_n_7       |      |
+| cm0_inst1/seg_inst/_i_56/bitAdd_5/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | cm0_inst1/seg_inst/_i_56/_n_9       | 2    |
+| cm0_inst1/seg_inst/_i_56/bitAdd_6/muxcy/CI |   xsMUXCY    |    0 |      net      |      | cm0_inst1/seg_inst/_i_56/_n_9       |      |
+| cm0_inst1/seg_inst/_i_56/bitAdd_6/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | cm0_inst1/seg_inst/_i_56/_n_11      | 1    |
+| cm0_inst1/seg_inst/_i_56/bitAdd_7/xorcy/CI |   xsXORCY    |    0 |      net      |      | cm0_inst1/seg_inst/_i_56/_n_11      |      |
+| cm0_inst1/seg_inst/_i_56/bitAdd_7/xorcy/O  |   xsXORCY    |  263 |     cell      |      | cm0_inst1/seg_inst/n_7660[7]        | 1    |
+| cm0_inst1/seg_inst/_i_214/I2               |   xsLUTSA3   |    0 |      net      |      | cm0_inst1/seg_inst/n_7660[7]        |      |
+| cm0_inst1/seg_inst/_i_214/O                |   xsLUTSA3   |   81 |     cell      |      | cm0_inst1/seg_inst/n_7613           | 1    |
+| cm0_inst1/seg_inst/HC595_CLK_CNT_reg[7]/D  | xsDFFSA_K1C1 |    0 |      net      |      | cm0_inst1/seg_inst/n_7613           |      |
+========================================================================================================================================
+时钟路径延迟         = 0         
+数据路径延迟         = 1792       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 1445 
+        总的连线延迟 = 0 
+        逻辑级数     = 8 
+[数据捕获路径]
+==============================================================================================================================
+|                   节点                    |     单元     | 延迟 |     类型      | 位置 |            连线            | 扇出 |
+==============================================================================================================================
+| CLOCK'cm0_inst1/seg_inst/clk_DRV_reg/Q    |     N/A      |    0 |               |      | N/A                        |      |
+| cm0_inst1/seg_inst/clk_DRV_reg/Q          | xsDFFSA_K1C1 |    0 | clock_latency |      | cm0_inst1/seg_inst/clk_DRV | 31   |
+| cm0_inst1/seg_inst/HC595_CLK_CNT_reg[7]/C | xsDFFSA_K1C1 |    0 |      net      |      | cm0_inst1/seg_inst/clk_DRV |      |
+==============================================================================================================================
+时钟路径延迟         = 0         
+    时钟偏差         = 0 (Tcksw)
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 1792       + -23        - 0          - 0          
+       = 1769
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+# ***********************************************************************
+# 时钟         : PLL_25to200_1/PLLInst_0/CLKOS3
+# 最小时钟周期 : 9503 ps
+# ***********************************************************************
+********************
+* 路径 1
+********************
+起点     : cm0_inst1/u_logic/Yvjpw6_reg/Q [激发时钟: PLL_25to200_1/PLLInst_0/CLKOS3, 上升沿1]
+终点     : cm0_inst1/u_logic/Ydopw6_reg/D [捕获时钟: PLL_25to200_1/PLLInst_0/CLKOS3, 上升沿2] 
+数据产生路径
+========================================================================================================================================================================
+|                           节点                           |     单元     | 延迟 |      类型      | 位置 |                         连线                         | 扇出 |
+========================================================================================================================================================================
+| CLOCK'clk_25M                                            |     N/A      |    0 |                |      | N/A                                                  |      |
+| clk_25M                                                  |     top      |    0 | clock_latency  |      | clk_25M                                              | 1    |
+| clk_25M_pad/I                                            |    xsIOBI    |    0 |      net       |      | clk_25M                                              |      |
+| clk_25M_pad/O                                            |    xsIOBI    |  990 |      cell      |      | clk_25M_c                                            | 1    |
+| PLL_25to200_1/PLLInst_0/CLKI                             |   xsPLLSA    |    0 |      net       |      | clk_25M_c                                            |      |
+| --                                                       |      --      |   -- |       --       | --   | --                                                   | --   |
+| CLOCK'PLL_25to200_1/PLLInst_0/CLKOS3                     |     N/A      |    0 | tcst_gen_clock |      | N/A                                                  |      |
+| PLL_25to200_1/PLLInst_0/CLKOS3                           |   xsPLLSA    |  990 | clock_latency  |      | clk_40M                                              | 1426 |
+| cm0_inst1/u_logic/Yvjpw6_reg/C                           | xsDFFSA_K1C1 |    0 |      net       |      | clk_40M                                              |      |
+| --                                                       |      --      |   -- |       --       | --   | --                                                   | --   |
+| cm0_inst1/u_logic/Yvjpw6_reg/Q                           | xsDFFSA_K1C1 |  347 |  rising_edge   |      | cm0_inst1/u_logic/Cyfpw6[7]                          | 121  |
+| cm0_inst1/u_logic/_i_20089/I0                            |   xsLUTSA2   |    0 |      net       |      | cm0_inst1/u_logic/Cyfpw6[7]                          |      |
+| cm0_inst1/u_logic/_i_20089/O                             |   xsLUTSA2   |   81 |      cell      |      | cm0_inst1/u_logic/Oiaiu6                             | 17   |
+| cm0_inst1/u_logic/_i_19730/I5                            |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/Oiaiu6                             |      |
+| cm0_inst1/u_logic/_i_19730/O                             |   xsLUTSA6   |   81 |      cell      |      | cm0_inst1/u_logic/n_6180                             | 5    |
+| cm0_inst1/u_logic/_i_502/I4                              |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/n_6180                             |      |
+| cm0_inst1/u_logic/_i_502/O                               |   xsLUTSA6   |   81 |      cell      |      | cm0_inst1/u_logic/Xuzhu6                             | 64   |
+| cm0_inst1/u_logic/_i_496/I0                              |   xsLUTSA2   |    0 |      net       |      | cm0_inst1/u_logic/Xuzhu6                             |      |
+| cm0_inst1/u_logic/_i_496/O                               |   xsLUTSA2   |   81 |      cell      |      | cm0_inst1/u_logic/n_246                              | 2    |
+| cm0_inst1/u_logic/_i_20266__split_mult_a0b0/mult_ins/A11 |   xsMULT18   |    0 |      net       |      | cm0_inst1/u_logic/n_246                              |      |
+| cm0_inst1/u_logic/_i_20266__split_mult_a0b0/mult_ins/P35 |   xsMULT18   | 3096 |     PD_DEL     |      | cm0_inst1/u_logic/_i_20266__split_mult_a0b0__P[35]   | 1    |
+| cm0_inst1/u_logic/_i_20266_splited__alu_0/alu_inst/MA35  |   xsALU54    |    0 |      net       |      | cm0_inst1/u_logic/_i_20266__split_mult_a0b0__P[35]   |      |
+| cm0_inst1/u_logic/_i_20266_splited__alu_0/alu_inst/R53   |   xsALU54    | 1334 |     PD_DEL     |      | cm0_inst1/u_logic/_i_20266_splited__alu_0___pout[35] | 1    |
+| cm0_inst1/u_logic/_i_20266_splited__alu_2/alu_inst/CIN53 |   xsALU54    |    0 |      net       |      | cm0_inst1/u_logic/_i_20266_splited__alu_0___pout[35] |      |
+| cm0_inst1/u_logic/_i_20266_splited__alu_2/alu_inst/R3    |   xsALU54    | 2097 |     PD_DEL     |      | cm0_inst1/u_logic/Affpw6[21]                         | 1    |
+| cm0_inst1/u_logic/_i_10149_andor_decomp_0/I0             |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/Affpw6[21]                         |      |
+| cm0_inst1/u_logic/_i_10149_andor_decomp_0/O              |   xsLUTSA6   |   81 |      cell      |      | cm0_inst1/u_logic/Azliu6                             | 2    |
+| _i_663/I                                                 |     BUF      |    0 |      net       |      | cm0_inst1/u_logic/Azliu6                             |      |
+| _i_663/O                                                 |     BUF      |    0 | combinational  |      | _n_129639                                            | 1    |
+| _i_664/S                                                 |   xsMUXCY    |    0 |      net       |      | _n_129639                                            |      |
+| _i_664/O                                                 |   xsMUXCY    |  261 |      cell      |      | _n_129647                                            | 1    |
+| _i_666/CI                                                |   xsMUXCY    |    0 |      net       |      | _n_129647                                            |      |
+| _i_666/O                                                 |   xsMUXCY    |  168 |      cell      |      | _n_129648                                            | 1    |
+| _i_668/CI                                                |   xsMUXCY    |    0 |      net       |      | _n_129648                                            |      |
+| _i_668/O                                                 |   xsMUXCY    |  168 |      cell      |      | _n_129649                                            | 1    |
+| _i_670/CI                                                |   xsMUXCY    |    0 |      net       |      | _n_129649                                            |      |
+| _i_670/O                                                 |   xsMUXCY    |  168 |      cell      |      | _n_129650                                            | 1    |
+| _i_672/CI                                                |   xsMUXCY    |    0 |      net       |      | _n_129650                                            |      |
+| _i_672/O                                                 |   xsMUXCY    |  168 |      cell      |      | _n_129651                                            | 1    |
+| _i_674/CI                                                |   xsMUXCY    |    0 |      net       |      | _n_129651                                            |      |
+| _i_674/O                                                 |   xsMUXCY    |  168 |      cell      |      | _n_129652                                            | 1    |
+| _i_676/CI                                                |   xsMUXCY    |    0 |      net       |      | _n_129652                                            |      |
+| _i_676/O                                                 |   xsMUXCY    |  168 |      cell      |      | _n_129653                                            | 1    |
+| _i_678/CI                                                |   xsMUXCY    |    0 |      net       |      | _n_129653                                            |      |
+| _i_678/O                                                 |   xsMUXCY    |  168 |      cell      |      | cm0_inst1/u_logic/Wo7ju6                             | 1    |
+| cm0_inst1/u_logic/_i_9038_rkd_24/I2                      |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/Wo7ju6                             |      |
+| cm0_inst1/u_logic/_i_9038_rkd_24/O                       |   xsLUTSA6   |   81 |      cell      |      | cm0_inst1/u_logic/_i_9038_rkd_24                     | 1    |
+| cm0_inst1/u_logic/_i_9038_andor_decomp_0/I4              |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/_i_9038_rkd_24                     |      |
+| cm0_inst1/u_logic/_i_9038_andor_decomp_0/O               |   xsLUTSA6   |   81 |      cell      |      | cm0_inst1/u_logic/n_2851                             | 2    |
+| cm0_inst1/u_logic/_i_8929/_i_0/I2                        |   xsLUTSA5   |    0 |      net       |      | cm0_inst1/u_logic/n_2851                             |      |
+| cm0_inst1/u_logic/_i_8929/_i_0/O                         |   xsLUTSA5   |   81 |      cell      |      | cm0_inst1/u_logic/Dm3ju6                             | 1    |
+| dec_of_cm0_inst1/u_logic/_i_8769/I3                      |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/Dm3ju6                             |      |
+| dec_of_cm0_inst1/u_logic/_i_8769/O                       |   xsLUTSA6   |   81 |      cell      |      | _n_118666                                            | 1    |
+| cm0_inst1/u_logic/_i_8769/I0                             |   xsLUTSA2   |    0 |      net       |      | _n_118666                                            |      |
+| cm0_inst1/u_logic/_i_8769/O                              |   xsLUTSA2   |   81 |      cell      |      | cm0_inst1/u_logic/Y5ziu6                             | 3    |
+| cm0_inst1/u_logic/_i_8751/_i_0_rkd_1/I4                  |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/Y5ziu6                             |      |
+| cm0_inst1/u_logic/_i_8751/_i_0_rkd_1/O                   |   xsLUTSA6   |   81 |      cell      |      | cm0_inst1/u_logic/_i_8751/_i_0_rkd_1                 | 1    |
+| cm0_inst1/u_logic/_i_8751/_i_0/I5                        |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/_i_8751/_i_0_rkd_1                 |      |
+| cm0_inst1/u_logic/_i_8751/_i_0/O                         |   xsLUTSA6   |   81 |      cell      |      | cm0_inst1/u_logic/Ge2ju6                             | 1    |
+| cm0_inst1/u_logic/_i_8678_rkd_9/I5                       |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/Ge2ju6                             |      |
+| cm0_inst1/u_logic/_i_8678_rkd_9/O                        |   xsLUTSA6   |   81 |      cell      |      | cm0_inst1/u_logic/_i_8678_rkd_9                      | 1    |
+| dec_of_cm0_inst1/u_logic/_i_8678/I5                      |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/_i_8678_rkd_9                      |      |
+| dec_of_cm0_inst1/u_logic/_i_8678/O                       |   xsLUTSA6   |   81 |      cell      |      | _n_118748                                            | 1    |
+| cm0_inst1/u_logic/_i_8678/I2                             |   xsLUTSA5   |    0 |      net       |      | _n_118748                                            |      |
+| cm0_inst1/u_logic/_i_8678/O                              |   xsLUTSA5   |   81 |      cell      |      | cm0_inst1/u_logic/n_2733                             | 1    |
+| cm0_inst1/u_logic/Ydopw6_reg/D                           | xsDFFSA_K1C1 |    0 |      net       |      | cm0_inst1/u_logic/n_2733                             |      |
+========================================================================================================================================================================
+时钟路径延迟         = 990       
+数据路径延迟         = 9526       (Tdatp)
+     clock-to-q 延迟 = 347 
+        总的单元延迟 = 9179 
+        总的连线延迟 = 0 
+        逻辑级数     = 27 
+[数据捕获路径]
+=========================================================================================================
+|                 节点                 |     单元     | 延迟 |      类型      | 位置 |   连线    | 扇出 |
+=========================================================================================================
+| CLOCK'clk_25M                        |     N/A      |    0 |                |      | N/A       |      |
+| clk_25M                              |     top      |    0 | clock_latency  |      | clk_25M   | 1    |
+| clk_25M_pad/I                        |    xsIOBI    |    0 |      net       |      | clk_25M   |      |
+| clk_25M_pad/O                        |    xsIOBI    |  990 |      cell      |      | clk_25M_c | 1    |
+| PLL_25to200_1/PLLInst_0/CLKI         |   xsPLLSA    |    0 |      net       |      | clk_25M_c |      |
+| --                                   |      --      |   -- |       --       | --   | --        | --   |
+| CLOCK'PLL_25to200_1/PLLInst_0/CLKOS3 |     N/A      |    0 | tcst_gen_clock |      | N/A       |      |
+| PLL_25to200_1/PLLInst_0/CLKOS3       |   xsPLLSA    |  990 | clock_latency  |      | clk_40M   | 1426 |
+| cm0_inst1/u_logic/Ydopw6_reg/C       | xsDFFSA_K1C1 |    0 |      net       |      | clk_40M   |      |
+=========================================================================================================
+时钟路径延迟         = 990       
+    时钟偏差         = 0 (Tcksw)
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 9526       + -23        - 0          - 0          
+       = 9503
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+#########################################################################
+# 时钟频率总结
+#########################################################################
+最慢时钟     : PLL_25to200_1/PLLInst_0/CLKOS3
+最小时钟周期 : 9503 ps
+最大时钟频率 : 105.2 MHz
+#########################################################################
+SWCLK                            : 949.7 Mhz
+cm0_inst1/seg_inst/clk_DRV_reg/Q : 565.3 Mhz
+PLL_25to200_1/PLLInst_0/CLKOS3   : 105.2 Mhz

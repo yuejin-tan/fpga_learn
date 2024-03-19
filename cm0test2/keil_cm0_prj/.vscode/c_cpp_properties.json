@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/bsp/device/",
+                "${workspaceFolder}/bsp/CMSIS/",
+                "${workspaceFolder}/drv",
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/",
+                "D:\\stm32\\GNU_ARM\\arm-none-eabi\\include"
+            ],
+            "defines": [
+                "DEBUG"
+            ],
+            "windowsSdkVersion": "10.0.17763.0",
+            "compilerPath": "D:\\stm32\\GNU_ARM\\bin\\arm-none-eabi-gcc.exe",
+            "cStandard": "gnu11",
+            "cppStandard": "c++11",
+            "forcedInclude": [],
+            "intelliSenseMode": "gcc-arm"
+        }
+    ],
+    "version": 4
+}
