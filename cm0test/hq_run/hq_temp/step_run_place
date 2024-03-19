@@ -1,0 +1,140 @@
+Info: 检查时序约束 ....
+Info: 已完成.
+#=============oOOOo================oOOOo=============
+# 布局(Placement)
+#====================================================
+Info: 开始布局(placement).
+Info: 布局模式: 时序优化.
+Info: 时序优化强度: 标准.
+Info: CE/SR NET max fanout = 2000.
+Info: Best achievable WNS = 10000
+[V]PL-STAT-SLICE:  28.8205 = 1471 / 5104
+Info: 设置延迟系数: 1.33333.
+[V]: Identify CE/SR net...
+Info: 元件实例 SWDIO 已固定于 C1.
+Info: 元件实例 clk_25M 已固定于 H13.
+Info: 元件实例 SWCLK 已固定于 H1.
+Info: 元件实例 key_pin[0] 已固定于 D5.
+Info: 元件实例 uart_DAP_rx 已固定于 C5.
+Info: 元件实例 led_core 已固定于 B6.
+Info: 元件实例 SRAM_ADDR[18] 已固定于 R5.
+Info: 元件实例 SRAM_ADDR[17] 已固定于 P15.
+Info: 元件实例 SRAM_ADDR[16] 已固定于 R15.
+Info: 元件实例 SRAM_ADDR[15] 已固定于 P14.
+Info: 元件实例 SRAM_ADDR[14] 已固定于 P4.
+Info: 元件实例 SRAM_ADDR[13] 已固定于 R4.
+Info: 元件实例 SRAM_ADDR[12] 已固定于 P3.
+Info: 元件实例 SRAM_ADDR[11] 已固定于 R3.
+Info: 元件实例 SRAM_ADDR[10] 已固定于 R2.
+Info: 元件实例 SRAM_ADDR[9] 已固定于 M3.
+Info: 元件实例 SRAM_ADDR[8] 已固定于 N3.
+Info: 元件实例 SRAM_ADDR[7] 已固定于 L5.
+Info: 元件实例 SRAM_ADDR[6] 已固定于 M4.
+Info: 元件实例 SRAM_ADDR[5] 已固定于 N5.
+Info: 元件实例 SRAM_ADDR[4] 已固定于 M12.
+Info: 元件实例 SRAM_ADDR[3] 已固定于 N14.
+Info: 元件实例 SRAM_ADDR[2] 已固定于 N15.
+Info: 元件实例 SRAM_ADDR[1] 已固定于 M13.
+Info: 元件实例 SRAM_ADDR[0] 已固定于 L11.
+Info: 元件实例 SRAM_nWE 已固定于 L6.
+Info: 元件实例 SRAM_nOE 已固定于 R14.
+Info: 元件实例 SRAM_nCE 已固定于 N12.
+Info: 元件实例 SRAM_nLB 已固定于 R13.
+Info: 元件实例 SRAM_nUB 已固定于 P13.
+Info: 元件实例 flash_sclk 已固定于 A1.
+Info: 元件实例 flash_cs 已固定于 A8.
+Info: 元件实例 flash_mosi 已固定于 G2.
+Info: 元件实例 led_pin[3] 已固定于 E14.
+Info: 元件实例 led_pin[2] 已固定于 F14.
+Info: 元件实例 led_pin[1] 已固定于 G15.
+Info: 元件实例 led_pin[0] 已固定于 D15.
+Info: 元件实例 beep_pin 已固定于 E13.
+Info: 元件实例 uart_DAP_tx 已固定于 C12.
+Info: 元件实例 uart_ch340_tx 已固定于 E12.
+Info: 元件实例 sd_sclk 已固定于 E11.
+Info: 元件实例 sd_cs 已固定于 D11.
+Info: 元件实例 sd_mosi 已固定于 D12.
+Info: 元件实例 w5500_sclk 已固定于 L15.
+Info: 元件实例 w5500_cs 已固定于 K9.
+Info: 元件实例 w5500_mosi 已固定于 M15.
+Info: 元件实例 seg7_SH_CP 已固定于 E4.
+Info: 元件实例 seg7_ST_CP 已固定于 G6.
+Info: 元件实例 seg7_DS 已固定于 H2.
+----
+Info: 布局第1阶段(总共3阶段) (签名=532,60,1).
+----
+Info: 进度   3%, WNS = -84801.
+Info: 进度   7%, WNS = -73953.
+Info: 进度   8%, WNS = -44459.
+Info: 进度  10%, WNS = -37338.
+Info: 进度  12%, WNS = -29263.
+Info: 进度  13%, WNS = -26285.
+Info: 进度  15%, WNS = -22788.
+Info: 进度  17%, WNS = -26181.
+Info: 进度  18%, WNS = -21043.
+Info: 进度  20%, WNS = -20528.
+Info: 进度  23%, WNS = -16383.
+Info: 进度  25%, WNS = -16143.
+Info: 进度  27%, WNS = -18495.
+Info: 进度  30%, WNS = -13763.
+Info: 进度  32%, WNS = -13305.
+Info: 进度  33%, WNS = -13262.
+Info: 进度  35%, WNS = -11043.
+Info: 进度  37%, WNS = -11527.
+Info: 进度  40%, WNS =  -7641.
+Info: 进度  43%, WNS =  -8332.
+Info: 进度  47%, WNS =  -9788.
+Info: 进度  48%, WNS =  -7536.
+Info: 进度  50%, WNS =  -6633.
+Info: 进度  52%, WNS =  -5913.
+Info: 进度  53%, WNS =  -9605.
+Info: 进度  55%, WNS =  -4066.
+Info: 进度  57%, WNS =  -5450.
+Info: 进度  58%, WNS =  -3859.
+Info: 进度  60%, WNS =  -4820.
+Info: 进度  63%, WNS =  -2176.
+Info: 进度  65%, WNS =  -1348.
+Info: 进度  67%, WNS =  -3508.
+Info: 进度  70%, WNS =  -3112.
+Info: 进度  73%, WNS =  -1490.
+Info: 进度  75%, WNS =   -183.
+Info: 进度  77%, WNS =   -943.
+Info: 进度  80%, WNS =   -826.
+Info: 进度  83%, WNS =  -2180.
+Info: 进度  85%, WNS =    147.
+Info: 进度  87%, WNS =   -130.
+Info: 进度  90%, WNS =  -2183.
+Info: 进度  93%, WNS =  -1157.
+Info: 进度  97%, WNS =  -8470.
+Info: 进度  98%, WNS =   1172.
+Info: 进度  99%, WNS = -10765.
+Info: 进度 100%, WNS =   1172.
+----
+Info: 布局第2阶段(总共3阶段) (签名=8,10,1).
+----
+Info: 进度  10%, WNS =   1307.
+Info: 进度  20%, WNS =   2520.
+Info: 进度  30%, WNS =  -3245.
+Info: 进度  50%, WNS =   -352.
+Info: 进度  70%, WNS =   -325.
+Info: 进度  90%, WNS =    733.
+Info: 进度 100%, WNS =   2520.
+----
+Info: 布局第3阶段(总共3阶段) (签名=268,10,1).
+----
+Info: 进度  10%, WNS =   -948.
+Info: 进度  30%, WNS =   -213.
+Info: 进度  50%, WNS =    187.
+Info: 进度  70%, WNS =   -400.
+Info: 进度  90%, WNS =   -547.
+Info: 进度 100%, WNS =   2520.
+----
+Info: 布局结果最终WNS = 6156.
+----
+Info: 完成布局.
+Info: 开始网表校正.
+Info: 完成网表校正.
+####
+Info: 布局执行时间 : 21 秒.
+####
+Info: 输出网表报告到文件D:\fpga\ac208\workspace\cm0test\hq_run\top_place.rpt中.

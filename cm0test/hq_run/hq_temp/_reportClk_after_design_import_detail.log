@@ -32,23 +32,23 @@
 | cm0_inst1/u_logic/Oulpw6_reg/C                    | xsDFFSA_K1C1E1 |    0 |      net      |      | SWCLK_c                                 |      |
 | --                                                |       --       |   -- |      --       | --   | --                                      | --   |
 | cm0_inst1/u_logic/Oulpw6_reg/Q                    | xsDFFSA_K1C1E1 |  347 |  rising_edge  |      | cm0_inst1/u_logic/Pinhu6                | 5    |
-| inst_extracted_iHQX378_andor_decomp_0/I0          |    xsLUTSA5    |    0 |      net      |      | cm0_inst1/u_logic/Pinhu6                |      |
-| inst_extracted_iHQX378_andor_decomp_0/O           |    xsLUTSA5    |   81 |     cell      |      | net_extracted_nHQX379                   | 2    |
-| cm0_inst1/u_logic/_i_8526/I3                      |    xsLUTSA4    |    0 |      net      |      | net_extracted_nHQX379                   |      |
+| inst_extracted_iHQX379_andor_decomp_0/I0          |    xsLUTSA5    |    0 |      net      |      | cm0_inst1/u_logic/Pinhu6                |      |
+| inst_extracted_iHQX379_andor_decomp_0/O           |    xsLUTSA5    |   81 |     cell      |      | net_extracted_nHQX380                   | 2    |
+| cm0_inst1/u_logic/_i_8526/I3                      |    xsLUTSA4    |    0 |      net      |      | net_extracted_nHQX380                   |      |
 | cm0_inst1/u_logic/_i_8526/O                       |    xsLUTSA4    |   81 |     cell      |      | cm0_inst1/u_logic/n_2689                | 5    |
-| inst_extracted_iHQX270/I5                         |    xsLUTSA6    |    0 |      net      |      | cm0_inst1/u_logic/n_2689                |      |
-| inst_extracted_iHQX270/O                          |    xsLUTSA6    |   81 |     cell      |      | net_extracted_nHQX294                   | 3    |
-| inverted_cm0_inst1/u_logic/_i_8522/I4             |    xsLUTSA5    |    0 |      net      |      | net_extracted_nHQX294                   |      |
-| inverted_cm0_inst1/u_logic/_i_8522/O              |    xsLUTSA5    |   81 |     cell      |      | _n_119716                               | 4    |
-| cm0_inst1/u_logic/_i_263/I4                       |    xsLUTSA5    |    0 |      net      |      | _n_119716                               |      |
+| inst_extracted_iHQX288/I5                         |    xsLUTSA6    |    0 |      net      |      | cm0_inst1/u_logic/n_2689                |      |
+| inst_extracted_iHQX288/O                          |    xsLUTSA6    |   81 |     cell      |      | net_extracted_nHQX307                   | 3    |
+| inverted_cm0_inst1/u_logic/_i_8522/I4             |    xsLUTSA5    |    0 |      net      |      | net_extracted_nHQX307                   |      |
+| inverted_cm0_inst1/u_logic/_i_8522/O              |    xsLUTSA5    |   81 |     cell      |      | _n_119750                               | 4    |
+| cm0_inst1/u_logic/_i_263/I4                       |    xsLUTSA5    |    0 |      net      |      | _n_119750                               |      |
 | cm0_inst1/u_logic/_i_263/O                        |    xsLUTSA5    |   81 |     cell      |      | cm0_inst1/u_logic/Sbyhu6                | 2    |
-| inst_extracted_iHQX227/I4                         |    xsLUTSA5    |    0 |      net      |      | cm0_inst1/u_logic/Sbyhu6                |      |
-| inst_extracted_iHQX227/O                          |    xsLUTSA5    |   81 |     cell      |      | net_extracted_nHQX246                   | 2    |
-| dec_of_cm0_inst1/u_logic/_i_194_decomp_iHQX729/I1 |    xsLUTSA4    |    0 |      net      |      | net_extracted_nHQX246                   |      |
-| dec_of_cm0_inst1/u_logic/_i_194_decomp_iHQX729/O  |    xsLUTSA4    |   81 |     cell      |      | _n_119392                               | 1    |
-| cm0_inst1/u_logic/_i_194_decomp_iHQX604/I4        |    xsLUTSA6    |    0 |      net      |      | _n_119392                               |      |
-| cm0_inst1/u_logic/_i_194_decomp_iHQX604/O         |    xsLUTSA6    |   81 |     cell      |      | cm0_inst1/u_logic/_i_194_decomp_nHQX627 | 1    |
-| cm0_inst1/u_logic/_i_194/I5                       |    xsLUTSA6    |    0 |      net      |      | cm0_inst1/u_logic/_i_194_decomp_nHQX627 |      |
+| inst_extracted_iHQX239/I4                         |    xsLUTSA5    |    0 |      net      |      | cm0_inst1/u_logic/Sbyhu6                |      |
+| inst_extracted_iHQX239/O                          |    xsLUTSA5    |   81 |     cell      |      | net_extracted_nHQX259                   | 2    |
+| dec_of_cm0_inst1/u_logic/_i_194_decomp_iHQX725/I1 |    xsLUTSA4    |    0 |      net      |      | net_extracted_nHQX259                   |      |
+| dec_of_cm0_inst1/u_logic/_i_194_decomp_iHQX725/O  |    xsLUTSA4    |   81 |     cell      |      | _n_119422                               | 1    |
+| cm0_inst1/u_logic/_i_194_decomp_iHQX602/I4        |    xsLUTSA6    |    0 |      net      |      | _n_119422                               |      |
+| cm0_inst1/u_logic/_i_194_decomp_iHQX602/O         |    xsLUTSA6    |   81 |     cell      |      | cm0_inst1/u_logic/_i_194_decomp_nHQX625 | 1    |
+| cm0_inst1/u_logic/_i_194/I5                       |    xsLUTSA6    |    0 |      net      |      | cm0_inst1/u_logic/_i_194_decomp_nHQX625 |      |
 | cm0_inst1/u_logic/_i_194/O                        |    xsLUTSA6    |   81 |     cell      |      | cm0_inst1/u_logic/n_120                 | 1    |
 | cm0_inst1/u_logic/Sdlpw6_reg/D                    |  xsDFFSA_K1P1  |    0 |      net      |      | cm0_inst1/u_logic/n_120                 |      |
 =====================================================================================================================================================
@@ -160,28 +160,28 @@ Tckpm --  ±÷”±Øπ€≤π≥•
 | PLL_25to200_1/PLLInst_0/CLKI                                              |   xsPLLSA    |    0 |      net       |      | clk_25M_c                                                              |      |
 | --                                                                        |      --      |   -- |       --       | --   | --                                                                     | --   |
 | CLOCK'PLL_25to200_1/PLLInst_0/CLKOS3                                      |     N/A      |    0 | tcst_gen_clock |      | N/A                                                                    |      |
-| PLL_25to200_1/PLLInst_0/CLKOS3                                            |   xsPLLSA    |  990 | clock_latency  |      | clk_40M                                                                | 1382 |
+| PLL_25to200_1/PLLInst_0/CLKOS3                                            |   xsPLLSA    |  990 | clock_latency  |      | clk_40M                                                                | 1745 |
 | cm0_inst1/u_logic/Vzupw6_reg/C                                            | xsDFFSA_K1C1 |    0 |      net       |      | clk_40M                                                                |      |
 | --                                                                        |      --      |   -- |       --       | --   | --                                                                     | --   |
-| cm0_inst1/u_logic/Vzupw6_reg/Q                                            | xsDFFSA_K1C1 |  347 |  rising_edge   |      | cm0_inst1/u_logic/Cyfpw6[0]                                            | 190  |
-| _i_954/I0                                                                 |   xsLUTSA3   |    0 |      net       |      | cm0_inst1/u_logic/Cyfpw6[0]                                            |      |
-| _i_954/O                                                                  |   xsLUTSA3   |   81 |      cell      |      | _n_130176                                                              | 1    |
-| _i_955/S                                                                  |   xsMUXCY    |    0 |      net       |      | _n_130176                                                              |      |
-| _i_955/O                                                                  |   xsMUXCY    |  261 |      cell      |      | _n_130182                                                              | 1    |
-| _i_957/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130182                                                              |      |
-| _i_957/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130183                                                              | 1    |
-| _i_959/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130183                                                              |      |
-| _i_959/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130184                                                              | 1    |
-| _i_961/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130184                                                              |      |
-| _i_961/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130185                                                              | 1    |
-| _i_963/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130185                                                              |      |
-| _i_963/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130186                                                              | 1    |
-| _i_965/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130186                                                              |      |
-| _i_965/O                                                                  |   xsMUXCY    |  168 |      cell      |      | cm0_inst1/u_logic/n_2773                                               | 34   |
+| cm0_inst1/u_logic/Vzupw6_reg/Q                                            | xsDFFSA_K1C1 |  347 |  rising_edge   |      | cm0_inst1/u_logic/Cyfpw6[0]                                            | 187  |
+| _i_981/I0                                                                 |   xsLUTSA3   |    0 |      net       |      | cm0_inst1/u_logic/Cyfpw6[0]                                            |      |
+| _i_981/O                                                                  |   xsLUTSA3   |   81 |      cell      |      | _n_130360                                                              | 1    |
+| _i_982/S                                                                  |   xsMUXCY    |    0 |      net       |      | _n_130360                                                              |      |
+| _i_982/O                                                                  |   xsMUXCY    |  261 |      cell      |      | _n_130366                                                              | 1    |
+| _i_984/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130366                                                              |      |
+| _i_984/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130367                                                              | 1    |
+| _i_986/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130367                                                              |      |
+| _i_986/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130368                                                              | 1    |
+| _i_988/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130368                                                              |      |
+| _i_988/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130369                                                              | 1    |
+| _i_990/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130369                                                              |      |
+| _i_990/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130370                                                              | 1    |
+| _i_992/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130370                                                              |      |
+| _i_992/O                                                                  |   xsMUXCY    |  168 |      cell      |      | cm0_inst1/u_logic/n_2773                                               | 34   |
 | cm0_inst1/u_logic/_i_566/I1                                               |   xsLUTSA2   |    0 |      net       |      | cm0_inst1/u_logic/n_2773                                               |      |
 | cm0_inst1/u_logic/_i_566/O                                                |   xsLUTSA2   |   81 |      cell      |      | cm0_inst1/u_logic/Idfpw6[0]                                            | 2    |
-| _i_226/I0                                                                 |   xsLUTSA2   |    0 |      net       |      | cm0_inst1/u_logic/Idfpw6[0]                                            |      |
-| _i_226/O                                                                  |   xsLUTSA2   |   81 |      cell      |      | cm0_inst1/u_logic/_i_20268/bitAdd_0/LO                                 | 2    |
+| _i_228/I0                                                                 |   xsLUTSA2   |    0 |      net       |      | cm0_inst1/u_logic/Idfpw6[0]                                            |      |
+| _i_228/O                                                                  |   xsLUTSA2   |   81 |      cell      |      | cm0_inst1/u_logic/_i_20268/bitAdd_0/LO                                 | 2    |
 | cm0_inst1/u_logic/_i_20268/bitAdd_0/muxcy/S                               |   xsMUXCY    |    0 |      net       |      | cm0_inst1/u_logic/_i_20268/bitAdd_0/LO                                 |      |
 | cm0_inst1/u_logic/_i_20268/bitAdd_0/muxcy/O                               |   xsMUXCY    |  261 |      cell      |      | cm0_inst1/u_logic/_i_20268/_n_1                                        | 2    |
 | cm0_inst1/u_logic/_i_20268/bitAdd_1/muxcy/CI                              |   xsMUXCY    |    0 |      net       |      | cm0_inst1/u_logic/_i_20268/_n_1                                        |      |
@@ -257,41 +257,41 @@ Tckpm --  ±÷”±Øπ€≤π≥•
 | cm0_inst1/u_logic/_i_8929/_i_0/I2                                         |   xsLUTSA5   |    0 |      net       |      | cm0_inst1/u_logic/n_2851                                               |      |
 | cm0_inst1/u_logic/_i_8929/_i_0/O                                          |   xsLUTSA5   |   81 |      cell      |      | cm0_inst1/u_logic/Dm3ju6                                               | 1    |
 | dec_of_cm0_inst1/u_logic/_i_8769/I3                                       |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/Dm3ju6                                               |      |
-| dec_of_cm0_inst1/u_logic/_i_8769/O                                        |   xsLUTSA6   |   81 |      cell      |      | _n_119317                                                              | 1    |
-| cm0_inst1/u_logic/_i_8769/I0                                              |   xsLUTSA2   |    0 |      net       |      | _n_119317                                                              |      |
+| dec_of_cm0_inst1/u_logic/_i_8769/O                                        |   xsLUTSA6   |   81 |      cell      |      | _n_119368                                                              | 1    |
+| cm0_inst1/u_logic/_i_8769/I0                                              |   xsLUTSA2   |    0 |      net       |      | _n_119368                                                              |      |
 | cm0_inst1/u_logic/_i_8769/O                                               |   xsLUTSA2   |   81 |      cell      |      | cm0_inst1/u_logic/Y5ziu6                                               | 3    |
-| cm0_inst1/u_logic/_i_8111_decomp_iHQX178_decomp_iHQX734_andor_decomp_1/I5 |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/Y5ziu6                                               |      |
-| cm0_inst1/u_logic/_i_8111_decomp_iHQX178_decomp_iHQX734_andor_decomp_1/O  |   xsLUTSA6   |   81 |      cell      |      | cm0_inst1/u_logic/_i_8111_decomp_iHQX178_decomp_iHQX734_andor_decomp_1 | 1    |
-| dec_of_inverted_cm0_inst1/u_logic/_i_8111_decomp_iHQX178/I5               |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/_i_8111_decomp_iHQX178_decomp_iHQX734_andor_decomp_1 |      |
-| dec_of_inverted_cm0_inst1/u_logic/_i_8111_decomp_iHQX178/O                |   xsLUTSA6   |   81 |      cell      |      | _n_119778                                                              | 1    |
-| _i_868/I4                                                                 |   xsLUTSA6   |    0 |      net       |      | _n_119778                                                              |      |
-| _i_868/O                                                                  |   xsLUTSA6   |   81 |      cell      |      | _n_130095                                                              | 1    |
-| _i_869/S                                                                  |   xsMUXCY    |    0 |      net       |      | _n_130095                                                              |      |
-| _i_869/O                                                                  |   xsMUXCY    |  261 |      cell      |      | _n_130108                                                              | 1    |
-| _i_871/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130108                                                              |      |
-| _i_871/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130109                                                              | 1    |
-| _i_873/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130109                                                              |      |
-| _i_873/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130110                                                              | 1    |
-| _i_875/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130110                                                              |      |
-| _i_875/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130111                                                              | 1    |
-| _i_877/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130111                                                              |      |
-| _i_877/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130112                                                              | 1    |
-| _i_879/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130112                                                              |      |
-| _i_879/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130113                                                              | 1    |
-| _i_881/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130113                                                              |      |
-| _i_881/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130114                                                              | 1    |
-| _i_883/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130114                                                              |      |
-| _i_883/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130115                                                              | 1    |
-| _i_885/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130115                                                              |      |
-| _i_885/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130116                                                              | 1    |
-| _i_887/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130116                                                              |      |
-| _i_887/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130117                                                              | 1    |
-| _i_889/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130117                                                              |      |
-| _i_889/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130118                                                              | 1    |
-| _i_891/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130118                                                              |      |
-| _i_891/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130119                                                              | 1    |
-| _i_893/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130119                                                              |      |
-| _i_893/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_42_HQCLR                                                            | 1    |
+| cm0_inst1/u_logic/_i_8111_decomp_iHQX179_decomp_iHQX728_andor_decomp_1/I5 |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/Y5ziu6                                               |      |
+| cm0_inst1/u_logic/_i_8111_decomp_iHQX179_decomp_iHQX728_andor_decomp_1/O  |   xsLUTSA6   |   81 |      cell      |      | cm0_inst1/u_logic/_i_8111_decomp_iHQX179_decomp_iHQX728_andor_decomp_1 | 1    |
+| dec_of_inverted_cm0_inst1/u_logic/_i_8111_decomp_iHQX179/I5               |   xsLUTSA6   |    0 |      net       |      | cm0_inst1/u_logic/_i_8111_decomp_iHQX179_decomp_iHQX728_andor_decomp_1 |      |
+| dec_of_inverted_cm0_inst1/u_logic/_i_8111_decomp_iHQX179/O                |   xsLUTSA6   |   81 |      cell      |      | _n_119819                                                              | 1    |
+| _i_895/I4                                                                 |   xsLUTSA6   |    0 |      net       |      | _n_119819                                                              |      |
+| _i_895/O                                                                  |   xsLUTSA6   |   81 |      cell      |      | _n_130279                                                              | 1    |
+| _i_896/S                                                                  |   xsMUXCY    |    0 |      net       |      | _n_130279                                                              |      |
+| _i_896/O                                                                  |   xsMUXCY    |  261 |      cell      |      | _n_130292                                                              | 1    |
+| _i_898/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130292                                                              |      |
+| _i_898/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130293                                                              | 1    |
+| _i_900/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130293                                                              |      |
+| _i_900/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130294                                                              | 1    |
+| _i_902/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130294                                                              |      |
+| _i_902/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130295                                                              | 1    |
+| _i_904/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130295                                                              |      |
+| _i_904/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130296                                                              | 1    |
+| _i_906/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130296                                                              |      |
+| _i_906/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130297                                                              | 1    |
+| _i_908/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130297                                                              |      |
+| _i_908/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130298                                                              | 1    |
+| _i_910/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130298                                                              |      |
+| _i_910/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130299                                                              | 1    |
+| _i_912/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130299                                                              |      |
+| _i_912/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130300                                                              | 1    |
+| _i_914/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130300                                                              |      |
+| _i_914/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130301                                                              | 1    |
+| _i_916/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130301                                                              |      |
+| _i_916/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130302                                                              | 1    |
+| _i_918/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130302                                                              |      |
+| _i_918/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_130303                                                              | 1    |
+| _i_920/CI                                                                 |   xsMUXCY    |    0 |      net       |      | _n_130303                                                              |      |
+| _i_920/O                                                                  |   xsMUXCY    |  168 |      cell      |      | _n_42_HQCLR                                                            | 1    |
 | cm0_inst1/u_logic/Vgjpw6_reg/D                                            |  xsDFFSA_K1  |    0 |      net       |      | _n_42_HQCLR                                                            |      |
 ===========================================================================================================================================================================================================
  ±÷”¬∑æ∂—”≥Ÿ         = 990       
@@ -311,7 +311,7 @@ Tckpm --  ±÷”±Øπ€≤π≥•
 | PLL_25to200_1/PLLInst_0/CLKI         |  xsPLLSA   |    0 |      net       |      | clk_25M_c |      |
 | --                                   |     --     |   -- |       --       | --   | --        | --   |
 | CLOCK'PLL_25to200_1/PLLInst_0/CLKOS3 |    N/A     |    0 | tcst_gen_clock |      | N/A       |      |
-| PLL_25to200_1/PLLInst_0/CLKOS3       |  xsPLLSA   |  990 | clock_latency  |      | clk_40M   | 1382 |
+| PLL_25to200_1/PLLInst_0/CLKOS3       |  xsPLLSA   |  990 | clock_latency  |      | clk_40M   | 1745 |
 | cm0_inst1/u_logic/Vgjpw6_reg/C       | xsDFFSA_K1 |    0 |      net       |      | clk_40M   |      |
 =======================================================================================================
  ±÷”¬∑æ∂—”≥Ÿ         = 990       

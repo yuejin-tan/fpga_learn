@@ -30,10 +30,10 @@ void uart_ahb_init()
 
 volatile uint32_t ms_cnt = 0;
 
-uint16_t test1 = 0;
-uint16_t test2 = 0;
-uint16_t test3 = 0;
-uint16_t test4 = 0;
+uint16_t test1 = 1;
+uint16_t test2 = 2;
+uint16_t test3 = 3;
+uint16_t test4 = 4;
 
 uint16_t test1r = 0;
 uint16_t test2r = 0;
@@ -52,33 +52,24 @@ int main(void)
     test3 = AHB_UART->buad_div_2;
 
     // 测试delay函数
-    // delay_ms(1000);
-    // test1 = ms_cnt;
-    // DELAY_TICK(1000 * 1000 * 50);
-    // test2 = ms_cnt;
+    delay_ms(1000);
+    test1 = ms_cnt;
+    DELAY_TICK(1000 * 1000 * 50);
+    test2 = ms_cnt;
 
     scd_init_1();
 
     while (1)
     {
-        // if (AHB_UART->cmd.bit.TX_FIFO_FULL == 0)
-        // {
-        //     AHB_UART->data = scd_send1Byte(&scd_1);
-        // }
+        while (AHB_UART->cmd.bit.TX_FIFO_FULL == 0)
+        {
+            AHB_UART->data = scd_send1Byte(&scd_1);
+        }
 
-        // if (AHB_UART->cmd.bit.RX_FIFO_EMPTY == 0)
-        // {
-        //     SCD_Rev1Byte(&scd_1, AHB_UART->data);
-        // }
-
-        AHB_LED->seg0 = (ms_cnt >> 0) & 0xful;
-        AHB_LED->seg1 = (ms_cnt >> 4) & 0xful;
-        AHB_LED->seg2 = (ms_cnt >> 8) & 0xful;
-        AHB_LED->seg3 = (ms_cnt >> 12) & 0xful;
-        AHB_LED->seg4 = (ms_cnt >> 16) & 0xful;
-        AHB_LED->seg5 = (ms_cnt >> 20) & 0xful;
-        AHB_LED->seg6 = (ms_cnt >> 24) & 0xful;
-        AHB_LED->seg7 = (ms_cnt >> 28) & 0xful;
+        while (AHB_UART->cmd.bit.RX_FIFO_EMPTY == 0)
+        {
+            SCD_Rev1Byte(&scd_1, AHB_UART->data);
+        }
 
         test1r = AHB_LED->seg1;
         test1r <<= 8;
@@ -92,6 +83,15 @@ int main(void)
         test4r = AHB_LED->seg7;
         test4r <<= 8;
         test4r |= AHB_LED->seg6;
+
+        AHB_LED->seg0 = test1;
+        AHB_LED->seg1 = test1 >> 8;
+        AHB_LED->seg2 = test2;
+        AHB_LED->seg3 = test2 >> 8;
+        AHB_LED->seg4 = test3;
+        AHB_LED->seg5 = test3 >> 8;
+        AHB_LED->seg6 = test4;
+        AHB_LED->seg7 = test4 >> 8;
     }
 
 }

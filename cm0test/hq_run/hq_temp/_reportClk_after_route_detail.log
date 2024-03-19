@@ -14,109 +14,85 @@
 #
 # ***********************************************************************
 # 时钟         : clkPLL40
-# 最小时钟周期 : 21204 ps
+# 最小时钟周期 : 21712.4 ps
 # ***********************************************************************
 ********************
 * 路径 1
 ********************
-起点     : cm0_inst1/u_logic/n_4338/AQ       [激发时钟: clkPLL40, 上升沿1]
-终点     : cm0_inst1/u_logic/vis_r7_o[14]/BX [捕获时钟: clkPLL40, 上升沿2] 
+起点     : cm0_inst1/u_logic/_i_8445_decomp/BQ [激发时钟: clkPLL40, 上升沿1]
+终点     : cm0_inst1/u_logic/H6ghu6/CIN        [捕获时钟: clkPLL40, 上升沿2] 
 数据产生路径
-=============================================================================================================================================================================
-|                        节点                         |  单元   |  延迟  |     类型      |  位置   |                              连线                               | 扇出 |
-=============================================================================================================================================================================
-| CLOCK'clkPLL40                                      |   N/A   |      0 |               |         | N/A                                                             |      |
-| PLL_25to200_1/PLLInst_0/CLKOS3                      | PLL_25K |      0 | clock_latency |         | clk_40M                                                         | 800  |
-| cm0_inst1/u_logic/n_4338/CLK                        | SLICEL  | 1119.4 |      net      | R23C54L | clk_40M                                                         |      |
-| --                                                  |   --    |     -- |      --       | --      | --                                                              | --   |
-| cm0_inst1/u_logic/n_4338/AQ                         | SLICEL  |   30.5 |     Tcko      |         | cm0_inst1/u_logic/R4gpw6[55]                                    | 5    |
-| cm0_inst1/u_logic/Vbgpw6[26]/C1                     | SLICEL  | 1111.5 |      net      | R23C48L | cm0_inst1/u_logic/R4gpw6[55]                                    |      |
-| cm0_inst1/u_logic/Vbgpw6[26]/C                      | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/_i_15092_decomp                               | 2    |
-| cm0_inst1/u_logic/Vbgpw6[26]/D4                     | SLICEL  |  209.9 |      net      | R23C48L | cm0_inst1/u_logic/_i_15092_decomp                               |      |
-| cm0_inst1/u_logic/Vbgpw6[26]/D                      | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/Vdgow6                                        | 6    |
-| cm0_inst1/u_logic/Upsow6/C4                         | SLICEL  | 1279.6 |      net      | R23C48M | cm0_inst1/u_logic/Vdgow6                                        |      |
-| cm0_inst1/u_logic/Upsow6/C                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/_i_15071_decomp                               | 1    |
-| cm0_inst1/u_logic/Upsow6/D4                         | SLICEL  |  209.9 |      net      | R23C48M | cm0_inst1/u_logic/_i_15071_decomp                               |      |
-| cm0_inst1/u_logic/Upsow6/D                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/n_4672                                        | 5    |
-| cm0_inst1/u_logic/Vbgpw6[26]/B2                     | SLICEL  |  304.3 |      net      | R23C48L | cm0_inst1/u_logic/n_4672                                        |      |
-| cm0_inst1/u_logic/Vbgpw6[26]/B                      | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/Uxrow6                                        | 2    |
-| cm0_inst1/u_logic/n_4685/D2                         | SLICEL  | 1268.3 |      net      | R22C48M | cm0_inst1/u_logic/Uxrow6                                        |      |
-| cm0_inst1/u_logic/n_4685/D                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/_i_15048_andor_decomp_1                       | 1    |
-| cm0_inst1/u_logic/n_4685/C5                         | SLICEL  |    205 |      net      | R22C48M | cm0_inst1/u_logic/_i_15048_andor_decomp_1                       |      |
-| cm0_inst1/u_logic/n_4685/C                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/n_4666                                        | 7    |
-| cm0_inst1/u_logic/n_4692/D3                         | SLICEL  |  508.1 |      net      | R20C48M | cm0_inst1/u_logic/n_4666                                        |      |
-| cm0_inst1/u_logic/n_4692/D                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/Mtrow6                                        | 3    |
-| cm0_inst1/u_logic/Ylrow6/C2                         | SLICEL  |    544 |      net      | R20C49L | cm0_inst1/u_logic/Mtrow6                                        |      |
-| cm0_inst1/u_logic/Ylrow6/C                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/_i_14887_rkd_2                                | 1    |
-| cm0_inst1/u_logic/Ylrow6/D4                         | SLICEL  |  209.9 |      net      | R20C49L | cm0_inst1/u_logic/_i_14887_rkd_2                                |      |
-| cm0_inst1/u_logic/Ylrow6/D                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/n_4611                                        | 7    |
-| cm0_inst1/u_logic/Ylrow6/A4                         | SLICEL  |  312.6 |      net      | R20C49L | cm0_inst1/u_logic/n_4611                                        |      |
-| cm0_inst1/u_logic/Ylrow6/A                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/Ylrow6                                        | 3    |
-| cm0_inst1/u_logic/Hnrow6/D1                         | SLICEL  |  486.4 |      net      | R20C50L | cm0_inst1/u_logic/Ylrow6                                        |      |
-| cm0_inst1/u_logic/Hnrow6/D                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/_i_14861_rkd_0                                | 3    |
-| net_extracted_nHQX460/A1                            | SLICEL  |  486.7 |      net      | R22C50L | cm0_inst1/u_logic/_i_14861_rkd_0                                |      |
-| net_extracted_nHQX460/A                             | SLICEL  |   75.1 |     Tilo      |         | net_extracted_nHQX460                                           | 4    |
-| cm0_inst1/u_logic/n_4603/A5                         | SLICEL  |  755.4 |      net      | R20C48L | net_extracted_nHQX460                                           |      |
-| cm0_inst1/u_logic/n_4603/A                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/n_4603                                        | 3    |
-| cm0_inst1/u_logic/V0fow6/D1                         | SLICEL  |  770.3 |      net      | R22C49M | cm0_inst1/u_logic/n_4603                                        |      |
-| cm0_inst1/u_logic/V0fow6/D                          | SLICEL  |   75.1 |     Tilo      |         | _n_120630                                                       | 6    |
-| cm0_inst1/u_logic/n_4598/A5                         | SLICEL  |  518.5 |      net      | R20C50M | _n_120630                                                       |      |
-| cm0_inst1/u_logic/n_4598/A                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/n_4598                                        | 3    |
-| cm0_inst1/u_logic/Hnrow6/C2                         | SLICEL  |    270 |      net      | R20C50L | cm0_inst1/u_logic/n_4598                                        |      |
-| cm0_inst1/u_logic/Hnrow6/C                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/Mfrow6                                        | 2    |
-| cm0_inst1/u_logic/n_4589/B2                         | SLICEL  |  509.9 |      net      | R21C50M | cm0_inst1/u_logic/Mfrow6                                        |      |
-| cm0_inst1/u_logic/n_4589/B                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/_i_14813_decomp_rkd_0                         | 1    |
-| cm0_inst1/u_logic/n_4589/A4                         | SLICEL  |  209.9 |      net      | R21C50M | cm0_inst1/u_logic/_i_14813_decomp_rkd_0                         |      |
-| cm0_inst1/u_logic/n_4589/A                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/n_4589                                        | 6    |
-| cm0_inst1/u_logic/n_4589/D1                         | SLICEL  |  312.5 |      net      | R21C50M | cm0_inst1/u_logic/n_4589                                        |      |
-| cm0_inst1/u_logic/n_4589/D                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/_i_14801_decomp                               | 1    |
-| cm0_inst1/u_logic/B3gpw6[1]/D3                      | SLICEL  |  225.8 |      net      | R21C50L | cm0_inst1/u_logic/_i_14801_decomp                               |      |
-| cm0_inst1/u_logic/B3gpw6[1]/D                       | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/n_4582                                        | 3    |
-| cm0_inst1/u_logic/vis_primask_o/C1                  | SLICEL  |  757.8 |      net      | R21C56M | cm0_inst1/u_logic/n_4582                                        |      |
-| cm0_inst1/u_logic/vis_primask_o/C                   | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/U6piu6                                        | 5    |
-| cm0_inst1/u_logic/n_4436/B6                         | SLICEL  |  488.5 |      net      | R19C56L | cm0_inst1/u_logic/U6piu6                                        |      |
-| cm0_inst1/u_logic/n_4436/B                          | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/_i_13894_decomp                               | 2    |
-| _i_148_decomp_rkd_5/C3                              | SLICEL  |  260.1 |      net      | R19C56M | cm0_inst1/u_logic/_i_13894_decomp                               |      |
-| _i_148_decomp_rkd_5/C                               | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/_i_13868_decomp_decomp_iHQX325_andor_decomp_1 | 1    |
-| cm0_inst1/u_logic/_i_13445_decomp/C2                | SLICEL  | 1151.3 |      net      | R19C62L | cm0_inst1/u_logic/_i_13868_decomp_decomp_iHQX325_andor_decomp_1 |      |
-| cm0_inst1/u_logic/_i_13445_decomp/C                 | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/H78ow6                                        | 6    |
-| cm0_inst1/u_logic/_i_13648_decomp_andor_decomp_1/B6 | SLICEL  |  516.4 |      net      | R21C62L | cm0_inst1/u_logic/H78ow6                                        |      |
-| cm0_inst1/u_logic/_i_13648_decomp_andor_decomp_1/B  | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/_i_13860_decomp                               | 1    |
-| cm0_inst1/u_logic/_i_13648_decomp_andor_decomp_1/D6 | SLICEL  |  176.4 |      net      | R21C62L | cm0_inst1/u_logic/_i_13860_decomp                               |      |
-| cm0_inst1/u_logic/_i_13648_decomp_andor_decomp_1/D  | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/n_4254                                        | 4    |
-| cm0_inst1/u_logic/_i_13526_decomp/B1                | SLICEL  |  518.1 |      net      | R21C63L | cm0_inst1/u_logic/n_4254                                        |      |
-| cm0_inst1/u_logic/_i_13526_decomp/B                 | SLICEL  |   75.1 |     Tilo      |         | net_extracted_nHQX444                                           | 1    |
-| cm0_inst1/u_logic/_i_13526_decomp/C6                | SLICEL  |  176.4 |      net      | R21C63L | net_extracted_nHQX444                                           |      |
-| cm0_inst1/u_logic/_i_13526_decomp/C                 | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/Ytcow6                                        | 9    |
-| cm0_inst1/u_logic/vis_r11_o[20]/D4                  | SLICEL  |  789.3 |      net      | R20C69L | cm0_inst1/u_logic/Ytcow6                                        |      |
-| cm0_inst1/u_logic/vis_r11_o[20]/D                   | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/n_4220                                        | 8    |
-| cm0_inst1/u_logic/_i_11798_andor_decomp_2/D3        | SLICEL  |  552.5 |      net      | R20C67M | cm0_inst1/u_logic/n_4220                                        |      |
-| cm0_inst1/u_logic/_i_11798_andor_decomp_2/D         | SLICEL  |   75.1 |     Tilo      |         | net_extracted_nHQX188                                           | 2    |
-| cm0_inst1/u_logic/vis_r0_o[16]/A2                   | SLICEL  | 1203.4 |      net      | R18C73M | net_extracted_nHQX188                                           |      |
-| cm0_inst1/u_logic/vis_r0_o[16]/A                    | SLICEL  |   75.1 |     Tilo      |         | cm0_inst1/u_logic/n_1676                                        | 13   |
-| cm0_inst1/u_logic/vis_r7_o[14]/BX                   | SLICEL  | 1384.8 |      net      | R22C77M | cm0_inst1/u_logic/n_1676                                        |      |
-=============================================================================================================================================================================
+================================================================================================================================================================================================================
+|                                   节点                                    |  单元   |  延迟  |     类型      |     位置      |                                  连线                                  | 扇出 |
+================================================================================================================================================================================================================
+| CLOCK'clkPLL40                                                            |   N/A   |      0 |               |               | N/A                                                                    |      |
+| PLL_25to200_1/PLLInst_0/CLKOS3                                            | PLL_25K |      0 | clock_latency |               | clk_40M                                                                | 989  |
+| cm0_inst1/u_logic/_i_8445_decomp/CLK                                      | SLICEL  | 1119.4 |      net      | R24C62M       | clk_40M                                                                |      |
+| --                                                                        |   --    |     -- |      --       | --            | --                                                                     | --   |
+| cm0_inst1/u_logic/_i_8445_decomp/BQ                                       | SLICEL  |   30.5 |     Tcko      |               | cm0_inst1/u_logic/C0ehu6                                               | 189  |
+| cm0_inst1/u_logic/Omyiu6/A5                                               | SLICEL  | 2013.6 |      net      | R11C69L       | cm0_inst1/u_logic/C0ehu6                                               |      |
+| cm0_inst1/u_logic/Omyiu6/A                                                | SLICEL  |   75.1 |     Tilo      |               | cm0_inst1/u_logic/Omyiu6                                               | 23   |
+| cm0_inst1/u_logic/Fd0iu6/B2                                               | SLICEL  | 1470.7 |      net      | R21C70L       | cm0_inst1/u_logic/Omyiu6                                               |      |
+| cm0_inst1/u_logic/Fd0iu6/B                                                | SLICEL  |   75.1 |     Tilo      |               | cm0_inst1/u_logic/n_6180                                               | 5    |
+| cm0_inst1/u_logic/Fd0iu6/C6                                               | SLICEL  |  176.4 |      net      | R21C70L       | cm0_inst1/u_logic/n_6180                                               |      |
+| cm0_inst1/u_logic/Fd0iu6/C                                                | SLICEL  |   75.1 |     Tilo      |               | cm0_inst1/u_logic/Xuzhu6                                               | 61   |
+| cm0_inst1/u_logic/Qiqow6/B6                                               | SLICEL  | 1492.6 |      net      | R29C73M       | cm0_inst1/u_logic/Xuzhu6                                               |      |
+| cm0_inst1/u_logic/Qiqow6/B                                                | SLICEL  |   75.1 |     Tilo      |               | cm0_inst1/u_logic/n_198                                                | 2    |
+| cm0_inst1/u_logic/_i_20266__split_mult_a0b1/mult_ins/B8                   | MULT18  | 1789.4 |      net      | MULT18_R17C66 | cm0_inst1/u_logic/n_198                                                |      |
+| cm0_inst1/u_logic/_i_20266__split_mult_a0b1/mult_ins/P26                  | MULT18  |   3006 |    PD_DEL     |               | cm0_inst1/u_logic/_i_20266__split_mult_a0b1__P[26]                     | 1    |
+| cm0_inst1/u_logic/_i_20266_splited__alu_0/alu_inst/MB26                   |  ALU54  |      0 |      net      | ALU54_R17C68  | cm0_inst1/u_logic/_i_20266__split_mult_a0b1__P[26]                     |      |
+| cm0_inst1/u_logic/_i_20266_splited__alu_0/alu_inst/R11                    |  ALU54  |   1334 |    PD_DEL     |               | cm0_inst1/u_logic/Affpw6[11]                                           | 2    |
+| cm0_inst1/u_logic/_i_20266_splited__alu_2/alu_inst/CIN11                  |  ALU54  |      0 |      net      | ALU54_R17C72  | cm0_inst1/u_logic/Affpw6[11]                                           |      |
+| cm0_inst1/u_logic/_i_20266_splited__alu_2/alu_inst/R8                     |  ALU54  |   2097 |    PD_DEL     |               | cm0_inst1/u_logic/_i_9517_andor_decomp_0                               | 1    |
+| cm0_inst1/u_logic/Idfpw6[26]/B6                                           | SLICEL  |  888.8 |      net      | R14C69L       | cm0_inst1/u_logic/_i_9517_andor_decomp_0                               |      |
+| cm0_inst1/u_logic/Idfpw6[26]/B                                            | SLICEL  |   75.1 |     Tilo      |               | inst_extracted_iHQX151_andor_decomp_1                                  | 1    |
+| cm0_inst1/u_logic/Idfpw6[26]/D6                                           | SLICEL  |  176.4 |      net      | R14C69L       | inst_extracted_iHQX151_andor_decomp_1                                  |      |
+| cm0_inst1/u_logic/Idfpw6[26]/D                                            | SLICEL  |   75.1 |     Tilo      |               | net_extracted_nHQX184                                                  | 3    |
+| net_extracted_nHQX218/A1                                                  | SLICEL  | 1008.4 |      net      | R22C69M       | net_extracted_nHQX184                                                  |      |
+| net_extracted_nHQX218/A                                                   | SLICEL  |   75.1 |     Tilo      |               | net_extracted_nHQX218                                                  | 1    |
+| net_extracted_nHQX160/B3                                                  | SLICEL  |  472.6 |      net      | R20C69M       | net_extracted_nHQX218                                                  |      |
+| net_extracted_nHQX160/B                                                   | SLICEL  |   75.1 |     Tilo      |               | cm0_inst1/u_logic/_i_9038_rkd_5                                        | 1    |
+| cm0_inst1/u_logic/vis_r11_o[4]/D3                                         | SLICEL  |  724.5 |      net      | R21C67L       | cm0_inst1/u_logic/_i_9038_rkd_5                                        |      |
+| cm0_inst1/u_logic/vis_r11_o[4]/D                                          | SLICEL  |   75.1 |     Tilo      |               | cm0_inst1/u_logic/n_2851                                               | 2    |
+| _n_119368/B1                                                              | SLICEL  |  701.2 |      net      | R23C64M       | cm0_inst1/u_logic/n_2851                                               |      |
+| _n_119368/B                                                               | SLICEL  |   75.1 |     Tilo      |               | cm0_inst1/u_logic/Dm3ju6                                               | 1    |
+| _n_119368/A4                                                              | SLICEL  |  209.9 |      net      | R23C64M       | cm0_inst1/u_logic/Dm3ju6                                               |      |
+| _n_119368/A                                                               | SLICEL  |   75.1 |     Tilo      |               | _n_119368                                                              | 1    |
+| cm0_inst1/u_logic/Y5ziu6/A6                                               | SLICEL  |  418.7 |      net      | R24C64M       | _n_119368                                                              |      |
+| cm0_inst1/u_logic/Y5ziu6/A                                                | SLICEL  |   75.1 |     Tilo      |               | cm0_inst1/u_logic/Y5ziu6                                               | 3    |
+| cm0_inst1/u_logic/_i_8111_decomp_iHQX179_decomp_iHQX728_andor_decomp_1/A3 | SLICEL  |  533.3 |      net      | R23C64L       | cm0_inst1/u_logic/Y5ziu6                                               |      |
+| cm0_inst1/u_logic/_i_8111_decomp_iHQX179_decomp_iHQX728_andor_decomp_1/A  | SLICEL  |   75.1 |     Tilo      |               | cm0_inst1/u_logic/_i_8111_decomp_iHQX179_decomp_iHQX728_andor_decomp_1 | 1    |
+| cm0_inst1/u_logic/_i_8111_decomp_iHQX179_decomp_andor_decomp_1/D3         | SLICEL  | 1020.7 |      net      | R15C64M       | cm0_inst1/u_logic/_i_8111_decomp_iHQX179_decomp_iHQX728_andor_decomp_1 |      |
+| cm0_inst1/u_logic/_i_8111_decomp_iHQX179_decomp_andor_decomp_1/D          | SLICEL  |   75.1 |     Tilo      |               | _n_119819                                                              | 1    |
+| _n_130295/A2                                                              | SLICEL  |    733 |      net      | R11C64L       | _n_119819                                                              |      |
+| _n_130295/COUT                                                            | SLICEL  |  115.3 |    Topcya     |               | _n_130295                                                              | 1    |
+| _n_130299/CIN                                                             | SLICEL  |      0 |      net      | R11C65L       | _n_130295                                                              |      |
+| _n_130299/COUT                                                            | SLICEL  |   62.2 |     Tbyp      |               | _n_130299                                                              | 1    |
+| _n_130303/CIN                                                             | SLICEL  |      0 |      net      | R11C66L       | _n_130299                                                              |      |
+| _n_130303/COUT                                                            | SLICEL  |   62.2 |     Tbyp      |               | _n_130303                                                              | 1    |
+| cm0_inst1/u_logic/H6ghu6/CIN                                              | SLICEL  |      0 |      net      | R11C67L       | _n_130303                                                              |      |
+================================================================================================================================================================================================================
 时钟路径延迟         = 1119.4    
-数据路径延迟         = 21117.3    (Tdatp)
+数据路径延迟         = 21588.8    (Tdatp)
      clock-to-q 延迟 = 30.5 
-        总的单元延迟 = 2403.2 
-        总的连线延迟 = 18683.6 
-        逻辑级数     = 32 
+        总的单元延迟 = 7728.1 
+        总的连线延迟 = 13830.2 
+        逻辑级数     = 20 
 [数据捕获路径]
-====================================================================================================
-|                节点                |  单元   |  延迟  |     类型      |  位置   |  连线   | 扇出 |
-====================================================================================================
-| CLOCK'clkPLL40                     |   N/A   |      0 |               |         | N/A     |      |
-| PLL_25to200_1/PLLInst_0/CLKOS3     | PLL_25K |      0 | clock_latency |         | clk_40M | 800  |
-| cm0_inst1/u_logic/vis_r7_o[14]/CLK | SLICEL  | 1080.4 |      net      | R22C77M | clk_40M |      |
-====================================================================================================
+================================================================================================
+|              节点              |  单元   |  延迟  |     类型      |  位置   |  连线   | 扇出 |
+================================================================================================
+| CLOCK'clkPLL40                 |   N/A   |      0 |               |         | N/A     |      |
+| PLL_25to200_1/PLLInst_0/CLKOS3 | PLL_25K |      0 | clock_latency |         | clk_40M | 989  |
+| cm0_inst1/u_logic/H6ghu6/CLK   | SLICEL  | 1080.4 |      net      | R11C67L | clk_40M |      |
+================================================================================================
 时钟路径延迟         = 1080.4    
     时钟偏差         = -39 (Tcksw)
 [延迟计算]
 ======================================================================
 总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
-       = 21117.3    + 47.7       - 0          - -39        
-       = 21204
+       = 21588.8    + 84.6       - 0          - -39        
+       = 21712.4
 ======================================================================
 Tdatp -- 数据路径延迟 
 Tsu   -- 库单元建立时间 
@@ -125,7 +101,7 @@ Tckpm -- 时钟悲观补偿
 # 时钟频率总结
 #########################################################################
 最慢时钟     : clkPLL40
-最小时钟周期 : 21204 ps
-最大时钟频率 : 47.2 MHz
+最小时钟周期 : 21712.4 ps
+最大时钟频率 : 46.1 MHz
 #########################################################################
-clkPLL40 : 47.2 Mhz
+clkPLL40 : 46.1 Mhz

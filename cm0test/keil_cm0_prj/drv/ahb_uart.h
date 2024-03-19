@@ -26,7 +26,7 @@ typedef struct
 }AHB_UART_TypeDef;
 
 //base address
-#define CM0_AHB2_BASE   (0xA40000000UL)
+#define CM0_AHB2_BASE   (0x40000000UL)
 #define AHB_UART_BASE   (CM0_AHB2_BASE + 0x0000UL)
 
 //mapping

@@ -18,16 +18,16 @@ Info: 设计分析执行时间 : 0 秒.
 #=============oOOOo================oOOOo=============
 # 寄存器传输级综合(RTL Synthesis)
 #====================================================
-Info: D:\fpga\ac208\workspace\uart2\ahb_seg7x8.v(227), 识别一个ROM mem, 深度=32, 宽度=8.
+Info: D:\fpga\ac208\workspace\uart2\ahb_seg7x8.v(229), 识别一个ROM mem, 深度=32, 宽度=8.
 Info: 开始MUX优化.
 Info: 完成MUX优化.
 Info: 设计顶层模块设置为 "top".
 Info: 开始逻辑优化.
-Info:     Total number of literals before LO: 5715.
+Info:     Total number of literals before LO: 5759.
 Info:   正在优化 view : top.
-Info:     逻辑优化前literals数 : 4272.
-Info:     LO 循环 1 : literal数 从 4272 到 2705.
-Info:     逻辑优化后literals数 : 2705.
+Info:     逻辑优化前literals数 : 4335.
+Info:     LO 循环 1 : literal数 从 4335 到 2563.
+Info:     逻辑优化后literals数 : 2563.
 Info: 将 FF ahb_uart1/TX_shift_reg_reg[10] 变换为 ONE ，原因：constant data input.
 Info: 将 FF seg_inst/refresh_segnum_reg_reg[3] 变换为 ZERO ，原因：it having AND feedback.
 Info: 将 FF ahb_uart1/TX_shift_reg_reg[9] 变换为 ONE ，原因：constant data input.
@@ -36,7 +36,7 @@ Info: Degraded fragmented SET/RESET control logic for 1 DFFs.
 Info: Degraded fragmented control logic for 10 DFFs, totally
 Info: 完成逻辑优化.
 ####
-Info: RTL综合执行时间 : 2 秒.
+Info: RTL综合执行时间 : 1 秒.
 ####
 #=============oOOOo================oOOOo=============
 # 时序驱动优化与映射
@@ -51,14 +51,13 @@ Info:   计算锥(Cone)....
 Info:   计算覆盖(Cover)....
 Info:   生成LUT网表..
 Info:   网表后处理....
-Info: Decomposed 1 wide-input NOR gate(s)
+Info: Decomposed 2 wide-input NOR gate(s)
 Info: Decomposed 2 wide-input AND gate(s)
-Info: Decomposed 1 wide-input OR gate(s)
 Info: 完成工艺映射.
 Info: 开始网表校正.
 Info: 完成网表校正.
 ####
-Info: 时序驱动优化及映射执行时间 : 0 秒.
+Info: 时序驱动优化及映射执行时间 : 1 秒.
 ####
 Info: 自动添加约束: create_generated_clock {PLL_25to200_1/PLLInst_0/CLKOS} -source {PLL_25to200_1/PLLInst_0/CLKI} -multiply_by 32 -divide_by 8.
 Info: 输出网表报告到文件D:\fpga\ac208\workspace\uart2\hq_run\top_import.rpt中.

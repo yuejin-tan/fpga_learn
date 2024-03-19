@@ -6,8 +6,8 @@ Info: 已完成.
 Info: 布线模式 : timing.
 Info: 优化强度 : std.
 Info: 读入布线资源并检查网表 ....
-Info: 当前网表中有 320 个元件例示(instance).
-Info: 总共需要对 916 条连线 (3401 连接点) 进行布线.
+Info: 当前网表中有 310 个元件例示(instance).
+Info: 总共需要对 847 条连线 (3212 连接点) 进行布线.
 Info: 连线 CLK_CM3 指定为 PCLK (由 placer).
 Info: 连线 seg_inst/clk_DRV 指定为 PCLK (由 placer).
 Info: 连线 clk_25M_c 指定为 PCLK (由 placer).
@@ -17,28 +17,28 @@ Info: set customeized options
 |   5   |   5 |   5  |   2   |   3 |   6 |   6 |   6 |   6 |   6  |  50  |   3   |   4   |   7   
 | MALL | MLONG | MX0  | X12RAM | X46RAM | X12VIQ | X46VIQ | X12CLKV | PLO | CLO | X-LOCAL | CLKV+ | GFANn | GNDfo | GNDlut 
 |   1  |   1   |   1  |    2   |    2   |    3   |    2   |     5   |  10 |   5 |    0    |   1   |   2   |    0  |    0   
-Info: 第  0 轮 : 还需要对 741   条连线 (2057  连接点)进行布线.
-Info: 第  1 轮 : 还需要对 98    条连线 (63    连接点)进行布线.
-Info: 第  2 轮 : 还需要对 9     条连线 (6     连接点)进行布线.
+Info: 第  0 轮 : 还需要对 693   条连线 (1953  连接点)进行布线.
+Info: 第  1 轮 : 还需要对 82    条连线 (56    连接点)进行布线.
+Info: 第  2 轮 : 还需要对 15    条连线 (12    连接点)进行布线.
 Info: 第  3 轮 : 还需要对 0     条连线 (0     连接点)进行布线.
 Info: 完成布线.
 Info: 开始更新物理网表.
-Info:   为 112  个 SLICEL     建立了物理网表 .
+Info:   为 106  个 SLICEL     建立了物理网表 .
 Info:   为 62   个 TIEOFF     建立了物理网表 .
 Info: 完成更新物理网表.
 ####
-Info: 布线执行时间 : 3 秒.
+Info: 布线执行时间 : 4 秒.
 ####
 Info: 生成最差时序余量(WNS)报告 ...
 =============================================
 Clock Name   Req Period  Setup WNS   Hold WNS
 ---------------------------------------------
-clkbase           40000      35453        315
-clkCM3             5000      -1466        305
+clkbase           40000      34776        375
+clkCM3             5000       -814        275
 =============================================
 【汇总】
-WARN(WNS-W3): Setup WNS = -1466, 【严重不满足】时序目标!.
-Info(wns-ok): Hold  WNS = 305, 满足时序目标.
+WARN(WNS-W2): Setup WNS = -814, *不满足* 时序目标!.
+Info(wns-ok): Hold  WNS = 275, 满足时序目标.
 ====
 Info: 完成WNS报告.
 Info:   (可在文件 "D:/fpga/ac208/workspace/uart2/hq_run/top_slack.rpt" 中检查更详细信息).

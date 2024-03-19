@@ -387,7 +387,7 @@ module cm0_wrap(
              .HTRANS ( HTRANS_P2 ),
              .HSIZE ( HSIZE_P2 ),
              .HWRITE ( HWRITE_P2 ),
-             .HWDATA ( HRDATA_P2 ),
+             .HWDATA ( HWDATA_P2 ),
              .HREADY ( HREADY_P2 ),
 
              .HREADYOUT ( HREADYOUT_P2 ),
@@ -409,7 +409,7 @@ module cm0_wrap(
                .HTRANS ( HTRANS_P3 ), //传输控制信号
                .HSIZE ( HSIZE_P3 ),  //传输大小
                .HWRITE ( HWRITE_P3 ), //写控制
-               .HWDATA ( HRDATA_P3 ), //写数据
+               .HWDATA ( HWDATA_P3 ), //写数据
                .HREADY ( HREADY_P3 ), //传输完成
 
                .HREADYOUT ( HREADYOUT_P3 ), // AHB Outputs，设备准备信号

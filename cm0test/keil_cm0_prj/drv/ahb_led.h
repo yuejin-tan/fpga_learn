@@ -17,7 +17,7 @@ typedef struct
 
 //base address
 //base address
-#define CM0_AHB3_BASE   (0xC0000000UL)
+#define CM0_AHB3_BASE   (0x40010000UL)
 #define AHB_LED_BASE   (CM0_AHB3_BASE + 0x0000)
 
 //mapping

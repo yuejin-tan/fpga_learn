@@ -169,9 +169,11 @@ module ahb_seg7x8
         begin
           case ( addr_reg[ 15: 2 ] )
             14'd0:
-              HRDATA_reg = { segx_reg[ 3 ], segx_reg[ 2 ], segx_reg[ 1 ], segx_reg[ 0 ] };
+              // HRDATA_reg = { segx_reg[ 3 ], segx_reg[ 2 ], segx_reg[ 1 ], segx_reg[ 0 ] };
+              HRDATA_reg = 32'h12345678;
             14'd1:
-              HRDATA_reg = { segx_reg[ 7 ], segx_reg[ 6 ], segx_reg[ 5 ], segx_reg[ 4 ] };
+              // HRDATA_reg = { segx_reg[ 7 ], segx_reg[ 6 ], segx_reg[ 5 ], segx_reg[ 4 ] };
+              HRDATA_reg = 32'h9abcdef0;
             default:
               HRDATA_reg = 0;
           endcase
