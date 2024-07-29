@@ -1,0 +1,13 @@
+.\objects\touch_gt911_drv.o: driver\touch_GT911_drv.c
+.\objects\touch_gt911_drv.o: driver\touch_GT911_drv.h
+.\objects\touch_gt911_drv.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\touch_gt911_drv.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\touch_gt911_drv.o: .\CMSIS\Device\Include\CM3DS_MPS2.h
+.\objects\touch_gt911_drv.o: .\CMSIS\Core\Include\core_cm3.h
+.\objects\touch_gt911_drv.o: .\CMSIS\Core\Include\core_cmInstr.h
+.\objects\touch_gt911_drv.o: .\CMSIS\Core\Include\core_cmFunc.h
+.\objects\touch_gt911_drv.o: .\CMSIS\Device\Include\system_CM3DS.h
+.\objects\touch_gt911_drv.o: .\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_conf.h
+.\objects\touch_gt911_drv.o: .\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_gpio.h
+.\objects\touch_gt911_drv.o: .\src\delay.h
+.\objects\touch_gt911_drv.o: driver\i2c_gpio.h

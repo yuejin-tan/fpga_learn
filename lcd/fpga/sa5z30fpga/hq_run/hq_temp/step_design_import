@@ -1,0 +1,90 @@
+Info: 加载器件信息(SA5Z-30-D1-8U213C)....
+Info:   加载功能信息....
+Info:   加载时序信息....
+Info:   加载物理信息....
+Info: 器件加载成功.
+#=============oOOOo================oOOOo=============
+# 设计分析
+#====================================================
+Info: 分析verilog文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\ahb_lcd8080.v.
+Info: 分析verilog文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\ahb_null.v.
+Info: 分析verilog文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\ahb_seg7x8.v.
+Info: 分析verilog文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\ahb_sram.v.
+Info: 分析verilog文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\ahb_uart.v.
+Info: 分析verilog文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\AHBlite_Decoder.v.
+Info: 分析verilog文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\AHBlite_Interconnect.v.
+Info: 分析verilog文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\AHBlite_SlaveMUX.v.
+Info: 分析verilog文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\led_wf.v.
+Info: 分析verilog文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\top.v.
+Info: 分析verilog文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\sa5z30fpga\ipcore_dir\PLL_FREQ\xsIP_PLL_FREQ.v.
+####
+Info: 设计分析执行时间 : 0 秒.
+####
+#=============oOOOo================oOOOo=============
+# 寄存器传输级综合(RTL Synthesis)
+#====================================================
+WARN(ELAB-W-4): D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\top.v(274), 变量"HRDATA_P0"未赋值，初始化为0.
+WARN(ELAB-W-4): D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\top.v(273), 变量"HREADYOUT_P0"未赋值，初始化为0.
+WARN(ELAB-W-4): D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\top.v(275), 变量"HRESP_P0"未赋值，初始化为0.
+Info: D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\ahb_seg7x8.v(229), 识别一个ROM mem, 深度=32, 宽度=8.
+Info: D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\ahb_sram.v(373), 优化FSM.
+Info:      状态寄存器 : reg_bstate_reg.
+Info:        状态编码 : AUTO.
+Info:    优化前状态数 : 6.
+Info:    优化后状态数 : 6.
+Info: D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\ahb_sram.v(719), 优化FSM.
+Info:      状态寄存器 : reg_mstate_reg.
+Info:        状态编码 : AUTO.
+Info:    优化前状态数 : 5.
+Info:    优化后状态数 : 5.
+Info: 开始MUX优化.
+Info: 完成MUX优化.
+Info: 设计顶层模块设置为 "top".
+Info: 开始逻辑优化.
+Info:     Total number of literals before LO: 10163.
+Info:   正在优化 view : top.
+Info:     逻辑优化前literals数 : 4693.
+Info:     LO 循环 1 : literal数 从 4693 到 3376.
+Info:     逻辑优化后literals数 : 3376.
+Info: 将 FF Interconncet/SlaveMUX/hsel_reg_reg[0] 变换为 ZERO ，原因：always-active ACLR.
+Info: 将 FF Interconncet/SlaveMUX/hsel_reg_reg[1] 变换为 ZERO ，原因：always-active ACLR.
+Info: 将 FF Interconncet/SlaveMUX/hsel_reg_reg[2] 变换为 ZERO ，原因：always-active ACLR.
+Info: 将 FF Interconncet/SlaveMUX/hsel_reg_reg[3] 变换为 ZERO ，原因：always-active ACLR.
+Info: 将 FF ahb_uart1/TX_shift_reg_reg[10] 变换为 ONE ，原因：constant data input.
+Info: 将 FF seg_inst/refresh_segnum_reg_reg[3] 变换为 ZERO ，原因：it having AND feedback.
+Info: 将 FF ahb_sram1/reg_bstate_reg_1 变换为 ONE ，原因：it having OR feedback.
+Info: 将 FF ahb_uart1/TX_shift_reg_reg[9] 变换为 ONE ，原因：constant data input.
+Info: 将 FF ahb_sram1/reg_bstate_reg_0 变换为 ZERO ，原因：it having AND feedback.
+Info: 将 FF ahb_sram1/reg_lb_mux_reg[0] 变换为 ZERO ，原因：it having AND feedback.
+Info: 将 FF ahb_sram1/reg_mcount_reg[2] 变换为 ZERO ，原因：it having AND feedback.
+Info: Degraded fragmented CE control logic for 11 DFFs.
+Info: Degraded fragmented SET/RESET control logic for 1 DFFs.
+Info: Degraded fragmented control logic for 12 DFFs, totally
+Info: 完成逻辑优化.
+####
+Info: RTL综合执行时间 : 2 秒.
+####
+#=============oOOOo================oOOOo=============
+# 时序驱动优化与映射
+#====================================================
+Info: 开始时序驱动优化.
+Info:   未发现时序约束，跳过本优化.
+Info: 完成时序驱动优化.
+Info: 插入了 75 个输入/输出单元.
+Info: 开始工艺映射.
+Info:   网表预处理....
+Info:   计算锥(Cone)....
+Info:   计算覆盖(Cover)....
+Info:   生成LUT网表..
+Info:   网表后处理....
+Info: Decomposed 1 wide-input NOR gate(s)
+Info: Decomposed 6 wide-input AND gate(s)
+Info: 完成工艺映射.
+Info: 开始网表校正.
+Info: 完成网表校正.
+####
+Info: 时序驱动优化及映射执行时间 : 0 秒.
+####
+Info: 自动添加约束: create_generated_clock {PLL_inst1/PLLInst_0/CLKOP} -source {PLL_inst1/PLLInst_0/CLKI} -multiply_by 32 -divide_by 8.
+Info: 自动添加约束: create_generated_clock {PLL_inst1/PLLInst_0/CLKOS} -source {PLL_inst1/PLLInst_0/CLKI} -multiply_by 32 -divide_by 16.
+Info: 输出网表报告到文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\sa5z30fpga\hq_run\top_import.rpt中.

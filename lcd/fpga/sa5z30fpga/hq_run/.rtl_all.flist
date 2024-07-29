@@ -1,0 +1,11 @@
+D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/ahb_lcd8080.v
+D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/ahb_null.v
+D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/ahb_seg7x8.v
+D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/ahb_sram.v
+D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/ahb_uart.v
+D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/AHBlite_Decoder.v
+D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/AHBlite_Interconnect.v
+D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/AHBlite_SlaveMUX.v
+D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/led_wf.v
+D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/top.v
+D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/sa5z30fpga/ipcore_dir/PLL_FREQ/xsIP_PLL_FREQ.v

@@ -9,21 +9,21 @@
 =  Copyright (c) 2020-2025 XiST                            @)
 =  All rights reserved.
 =========================================================================
-Info: Mon Feb 26 11:07:07 2024.
-Info: Launching program D:/fpga/ac208/hq_xist_2.14.4_021824_win64/build/win_x64/bin/hqfpga.exe .
-Info: HqFpga is ready to work on host t (Windows 10 64-bit).
+Info: Sat Jul 20 08:53:38 2024.
+Info: Launching program D:/fpga/AC208-SA5Z30-CM3/hq_xist_2.14.4_021824_win64/build/win_x64/bin/hqfpga.exe .
+Info: HqFpga is ready to work on host hp (Windows 10 64-bit).
 
-[> readOpt D:/fpga/ac208/workspace/fpga/led/led.hqprj
+[> readOpt D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/uart2.hqprj
 [> puts $hqui::FILE_SRC
-D:/fpga/ac208/workspace/fpga/led/top.v D:/fpga/ac208/workspace/fpga/led/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.v D:/fpga/ac208/workspace/fpga/led/led_wf.v D:/fpga/ac208/workspace/fpga/led/ahb_sram.v D:/fpga/ac208/workspace/fpga/led/ahb_seg7x8.v D:/fpga/ac208/workspace/fpga/led/ahb_uart.v
+D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/top.v D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.v D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/led_wf.v D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/ahb_sram.v D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/ahb_seg7x8.v D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/ahb_uart.v
 [> puts $hqui::FAMILY
 SEAL
 [> puts $hqui::TOP_MODULE
 top
 [> puts $hqui::FILE_TC
-D:/fpga/ac208/workspace/fpga/led/clk_info.sdc
+D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/clk_info.sdc
 [> puts $hqui::FILE_PC
-D:/fpga/ac208/workspace/fpga/led/led.upc
+D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/uart2.upc
 [> puts $hqui::IS_TC_AUTO_CONS
 false
 [> puts $hqui::IS_PC_AUTO_CONS
@@ -32,25 +32,25 @@ false
 
 [> if [info exist hqui::RTL_11] {puts $hqui::RTL_11} else {puts ""}
 false
-[> source D:/fpga/ac208/workspace/fpga/led/run.tcl
-Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\top.v.
-ERROR(SFE-E-21): D:\fpga\ac208\workspace\fpga\led\top.v(264), syntax error, unexpected identifier.
-Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\ipcore_dir\PLL_25to200\xsIP_PLL_25to200.v.
-Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\led_wf.v.
-Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\ahb_sram.v.
-Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\ahb_seg7x8.v.
-Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\ahb_uart.v.
-Run FAILED
-[> source D:/fpga/ac208/workspace/fpga/led/t.tcl
+[> source D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/run.tcl
+Info: Analyzing Verilog file D:\fpga\AC208-SA5Z30-CM3\workspace\uart2\top.v.
+Info: Analyzing Verilog file D:\fpga\AC208-SA5Z30-CM3\workspace\uart2\ipcore_dir\PLL_25to200\xsIP_PLL_25to200.v.
+Info: Analyzing Verilog file D:\fpga\AC208-SA5Z30-CM3\workspace\uart2\led_wf.v.
+Info: Analyzing Verilog file D:\fpga\AC208-SA5Z30-CM3\workspace\uart2\ahb_sram.v.
+Info: Analyzing Verilog file D:\fpga\AC208-SA5Z30-CM3\workspace\uart2\ahb_seg7x8.v.
+Info: Analyzing Verilog file D:\fpga\AC208-SA5Z30-CM3\workspace\uart2\ahb_uart.v.
+Run PASS
+[> rtl.srcfiles.list
+D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/top.v D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/ipcore_dir/PLL_25to200/xsIP_PLL_25to200.v D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/led_wf.v D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/ahb_sram.v D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/ahb_seg7x8.v D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/ahb_uart.v
+[> source D:/fpga/AC208-SA5Z30-CM3/workspace/uart2/t.tcl
 Info: Loading device data for SEAL ....
 Info:   Loading functional data....
 Info: Device data loaded successfully.
-Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\top.v.
-ERROR(SFE-E-21): D:\fpga\ac208\workspace\fpga\led\top.v(264), syntax error, unexpected identifier.
-Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\ipcore_dir\PLL_25to200\xsIP_PLL_25to200.v.
-Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\led_wf.v.
-Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\ahb_sram.v.
-Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\ahb_seg7x8.v.
-Info: Analyzing Verilog file D:\fpga\ac208\workspace\fpga\led\ahb_uart.v.
-Generating JSON FAILED
+Info: Analyzing Verilog file D:\fpga\AC208-SA5Z30-CM3\workspace\uart2\top.v.
+Info: Analyzing Verilog file D:\fpga\AC208-SA5Z30-CM3\workspace\uart2\ipcore_dir\PLL_25to200\xsIP_PLL_25to200.v.
+Info: Analyzing Verilog file D:\fpga\AC208-SA5Z30-CM3\workspace\uart2\led_wf.v.
+Info: Analyzing Verilog file D:\fpga\AC208-SA5Z30-CM3\workspace\uart2\ahb_sram.v.
+Info: Analyzing Verilog file D:\fpga\AC208-SA5Z30-CM3\workspace\uart2\ahb_seg7x8.v.
+Info: Analyzing Verilog file D:\fpga\AC208-SA5Z30-CM3\workspace\uart2\ahb_uart.v.
+JSON is generated
 [> exit

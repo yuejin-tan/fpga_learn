@@ -1,0 +1,493 @@
+
+######################oOOOo###########oOOOo##########################
+#  HqFpga(TM) Release V2.14.4 (Winter 2023) Build 021824
+#  [网表报告]
+#####################################################################
+日期 : Tue Jul 30 00:20:01 2024
+
+Library U_ARCH
++-----------+------+
+| Cell 名称 | 数量 |
++-----------+------+
+| PIO       |   95 |
+| IOLOGIC   |   65 |
+| PLL_25K   |    1 |
+| CM3       |    1 |
+| SLICEL    |  263 |
++-----------+------+
+| Sum       |  425 |
++-----------+------+
+
+Library work
++-----------+------+
+| Cell 名称 | 数量 |
++-----------+------+
+| top       |    1 |
++-----------+------+
+| Sum       |    1 |
++-----------+------+
+
+######################oOOOo###########oOOOo##########################
+#  HqFpga(TM) Release V2.14.4 (Winter 2023) Build 021824
+#  [资源位置分配报告]
+#####################################################################
+日期 : Tue Jul 30 00:20:01 2024
+器件 : SA5Z-30-D1-8U213C
+
+** Bank Voltage Available **
++------+-------+
+| Bank | VCCIO |
++------+-------+
+| 0    |  2.5  |
+| 1    |  3.3  |
+| 2    |  3.3  |
+| 3    |  3.3  |
+| 5    |  2.5  |
++------+-------+
+** IO端口位置 **
++---------------+--------+------------+------------+------+-------+-------+----------+----------+
+| 端口名        |  方向  |    位置    |   IO标准   | Bank | VCCIO | DRIVE | SLEWRATE | PULLMODE |
++---------------+--------+------------+------------+------+-------+-------+----------+----------+
+| clk_27M       | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| clk_25M       | INPUT  |    H13     |  LVCMOS33  |  2   |  3.3  |       |          |   DOWN   |
+| clk_p3        | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| clk_p4        | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| clk_p5        | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SWCLK         | INPUT  |     H1     |  LVCMOS33  |  1   |  3.3  |       |          |   DOWN   |
+| key_pin[2]    | INPUT  |     F5     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |   DOWN   |
+| key_pin[1]    | INPUT  |     E5     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |   DOWN   |
+| key_pin[0]    | INPUT  |     D5     |  LVCMOS33  |  1   |  3.3  |       |          |   DOWN   |
+| uart_ch340_rx | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| w5500_rstn    | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| w5500_intn    | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| w5500_miso    | INPUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| led_core      | OUTPUT |     B6     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |   DOWN   |
+| SRAM_ADDR[18] | OUTPUT |     R5     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[17] | OUTPUT |    P15     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[16] | OUTPUT |    R15     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[15] | OUTPUT |    P14     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[14] | OUTPUT |     P4     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[13] | OUTPUT |     R4     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[12] | OUTPUT |     P3     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[11] | OUTPUT |     R3     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[10] | OUTPUT |     R2     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[9]  | OUTPUT |     M3     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[8]  | OUTPUT |     N3     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[7]  | OUTPUT |     L5     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[6]  | OUTPUT |     M4     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[5]  | OUTPUT |     N5     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[4]  | OUTPUT |    M12     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[3]  | OUTPUT |    N14     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[2]  | OUTPUT |    N15     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[1]  | OUTPUT |    M13     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_ADDR[0]  | OUTPUT |    L11     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_nWE      | OUTPUT |     L6     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_nOE      | OUTPUT |    R14     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_nCE      | OUTPUT |    N12     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_nLB      | OUTPUT |    R13     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_nUB      | OUTPUT |    P13     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| led_pin[3]    | OUTPUT |    E14     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |          |
+| led_pin[2]    | OUTPUT |    F14     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |          |
+| led_pin[1]    | OUTPUT |    G15     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |          |
+| led_pin[0]    | OUTPUT |    D15     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |          |
+| beep_pin      | OUTPUT |    E13     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |   DOWN   |
+| uart_ch340_tx | OUTPUT |    E12     |  LVCMOS33  |  2   |  3.3  |   8   |   FAST   |          |
+| w5500_sclk    | OUTPUT |    L15     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| w5500_cs      | OUTPUT |     K9     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| w5500_mosi    | OUTPUT |    M15     |  LVCMOS33  |  3   |  3.3  |   8   |   SLOW   |          |
+| seg7_SH_CP    | OUTPUT |     E4     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |          |
+| seg7_ST_CP    | OUTPUT |     G6     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |          |
+| seg7_DS       | OUTPUT |     H2     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |          |
+| CS_8080       | OUTPUT |    L12     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| RS_8080       | OUTPUT |    L13     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| WR_8080       | OUTPUT |    P12     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| RD_8080       | OUTPUT |    K11     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| pll_i2c_scl   | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| pll_i2c_sda   | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| SRAM_DQ[15]   | INOUT  |     P9     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[14]   | INOUT  |     R9     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[13]   | INOUT  |     P8     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[12]   | INOUT  |     R8     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[11]   | INOUT  |     P7     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[10]   | INOUT  |     R7     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[9]    | INOUT  |     P6     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[8]    | INOUT  |     P5     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[7]    | INOUT  |     N6     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[6]    | INOUT  |     L7     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[5]    | INOUT  |     N7     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[4]    | INOUT  |     N8     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[3]    | INOUT  |     L9     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[2]    | INOUT  |    L10     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[1]    | INOUT  |    M10     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| SRAM_DQ[0]    | INOUT  |    M11     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| flash_sclk    | INOUT  |     A1     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |   DOWN   |
+| flash_cs      | INOUT  |     A8     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |   DOWN   |
+| flash_mosi    | INOUT  |     G2     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |   DOWN   |
+| flash_miso    | INOUT  |     G1     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |   DOWN   |
+| SWDIO         | INOUT  |     C1     |  LVCMOS33  |  1   |  3.3  |   8   |   SLOW   |   DOWN   |
+| uart_DAP_rx   | INOUT  |     K2     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| uart_DAP_tx   | INOUT  |     L2     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| sd_sclk       | INOUT  |    E11     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |   DOWN   |
+| sd_cs         | INOUT  |    D11     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |   DOWN   |
+| sd_mosi       | INOUT  |    D12     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |   DOWN   |
+| sd_miso       | INOUT  |    F11     |  LVCMOS33  |  2   |  3.3  |   8   |   SLOW   |   DOWN   |
+| DATA_8080[15] | INOUT  |     G3     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[14] | INOUT  |     H3     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[13] | INOUT  |    G10     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[12] | INOUT  |     E6     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[11] | INOUT  |     E7     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[10] | INOUT  |     J4     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[9]  | INOUT  |     F6     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[8]  | INOUT  |     K3     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[7]  | INOUT  |     J5     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[6]  | INOUT  |     K5     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[5]  | INOUT  |     J6     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[4]  | INOUT  |    R11     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[3]  | INOUT  |    N10     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[2]  | INOUT  |    P11     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[1]  | INOUT  |     K6     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| DATA_8080[0]  | INOUT  |    R12     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| LCD_BL        | INOUT  |     G5     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| LCD_RST       | INOUT  |    K10     |  LVCMOS33  |  3   |  3.3  |   8   |   FAST   |          |
+| LCDT_RST      | INOUT  |     J2     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| LCDT_PEN      | INOUT  |     J3     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| LCDT_SCL      | INOUT  |     J1     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| LCDT_SDA      | INOUT  |     N1     |  LVCMOS33  |  1   |  3.3  |   8   |   FAST   |          |
+| i2c_scl       | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
+| i2c_sda       | INOUT  | -NOT USED- | -NOT USED- |      |       |       |          |          |
++---------------+--------+------------+------------+------+-------+-------+----------+----------+
+** 单元位置 **
++--------------------------------------------------------+----------+----------+
+| 元件                                                   | 元件类型 |   位置   |
++--------------------------------------------------------+----------+----------+
+| SRAM_DQ[15]_MGIOL                                      | IOLOGIC  | IOL_B70C |
+| SRAM_DQ[14]_MGIOL                                      | IOLOGIC  | IOL_B70D |
+| SRAM_DQ[13]_MGIOL                                      | IOLOGIC  | IOL_B67C |
+| SRAM_DQ[12]_MGIOL                                      | IOLOGIC  | IOL_B67D |
+| SRAM_DQ[11]_MGIOL                                      | IOLOGIC  | IOL_B64C |
+| SRAM_DQ[10]_MGIOL                                      | IOLOGIC  | IOL_B64D |
+| SRAM_DQ[9]_MGIOL                                       | IOLOGIC  | IOL_B61C |
+| SRAM_DQ[8]_MGIOL                                       | IOLOGIC  | IOL_B58C |
+| SRAM_DQ[7]_MGIOL                                       | IOLOGIC  | IOL_B64A |
+| SRAM_DQ[6]_MGIOL                                       | IOLOGIC  | IOL_B54A |
+| SRAM_DQ[5]_MGIOL                                       | IOLOGIC  | IOL_B67A |
+| SRAM_DQ[4]_MGIOL                                       | IOLOGIC  | IOL_B67B |
+| SRAM_DQ[3]_MGIOL                                       | IOLOGIC  | IOL_B70A |
+| SRAM_DQ[2]_MGIOL                                       | IOLOGIC  | IOL_B70B |
+| SRAM_DQ[1]_MGIOL                                       | IOLOGIC  | IOL_B79A |
+| SRAM_DQ[0]_MGIOL                                       | IOLOGIC  | IOL_B79B |
+| DATA_8080[15]_MGIOL                                    | IOLOGIC  | IOL_T13A |
+| DATA_8080[14]_MGIOL                                    | IOLOGIC  | IOL_T19B |
+| DATA_8080[13]_MGIOL                                    | IOLOGIC  | IOL_T52B |
+| DATA_8080[12]_MGIOL                                    | IOLOGIC  | IOL_T40D |
+| DATA_8080[11]_MGIOL                                    | IOLOGIC  | IOL_T43B |
+| DATA_8080[10]_MGIOL                                    | IOLOGIC  | IOL_T37B |
+| DATA_8080[9]_MGIOL                                     | IOLOGIC  | IOL_T40A |
+| DATA_8080[8]_MGIOL                                     | IOLOGIC  | IOL_T34B |
+| DATA_8080[7]_MGIOL                                     | IOLOGIC  | IOL_T49A |
+| DATA_8080[6]_MGIOL                                     | IOLOGIC  | IOL_B51A |
+| DATA_8080[5]_MGIOL                                     | IOLOGIC  | IOL_T49B |
+| DATA_8080[4]_MGIOL                                     | IOLOGIC  | IOL_B73D |
+| DATA_8080[3]_MGIOL                                     | IOLOGIC  | IOL_B73B |
+| DATA_8080[2]_MGIOL                                     | IOLOGIC  | IOL_B76C |
+| DATA_8080[1]_MGIOL                                     | IOLOGIC  | IOL_B51B |
+| DATA_8080[0]_MGIOL                                     | IOLOGIC  | IOL_B76D |
+| SRAM_ADDR[18]_MGIOL                                    | IOLOGIC  | IOL_B61D |
+| SRAM_ADDR[17]_MGIOL                                    | IOLOGIC  | IOL_B92D |
+| SRAM_ADDR[16]_MGIOL                                    | IOLOGIC  | IOL_B89D |
+| SRAM_ADDR[15]_MGIOL                                    | IOLOGIC  | IOL_B82D |
+| SRAM_ADDR[14]_MGIOL                                    | IOLOGIC  | IOL_B54C |
+| SRAM_ADDR[13]_MGIOL                                    | IOLOGIC  | IOL_B58D |
+| SRAM_ADDR[12]_MGIOL                                    | IOLOGIC  | IOL_B51C |
+| SRAM_ADDR[11]_MGIOL                                    | IOLOGIC  | IOL_B54D |
+| SRAM_ADDR[10]_MGIOL                                    | IOLOGIC  | IOL_B51D |
+| SRAM_ADDR[9]_MGIOL                                     | IOLOGIC  | IOL_B58A |
+| SRAM_ADDR[8]_MGIOL                                     | IOLOGIC  | IOL_B61B |
+| SRAM_ADDR[7]_MGIOL                                     | IOLOGIC  | IOL_B61A |
+| SRAM_ADDR[6]_MGIOL                                     | IOLOGIC  | IOL_B58B |
+| SRAM_ADDR[5]_MGIOL                                     | IOLOGIC  | IOL_B64B |
+| SRAM_ADDR[4]_MGIOL                                     | IOLOGIC  | IOL_B92A |
+| SRAM_ADDR[3]_MGIOL                                     | IOLOGIC  | IOL_B92C |
+| SRAM_ADDR[2]_MGIOL                                     | IOLOGIC  | IOL_B95D |
+| SRAM_ADDR[1]_MGIOL                                     | IOLOGIC  | IOL_B92B |
+| SRAM_ADDR[0]_MGIOL                                     | IOLOGIC  | IOL_B85C |
+| SRAM_nWE_MGIOL                                         | IOLOGIC  | IOL_B54B |
+| SRAM_nOE_MGIOL                                         | IOLOGIC  | IOL_B89C |
+| SRAM_nCE_MGIOL                                         | IOLOGIC  | IOL_B79C |
+| SRAM_nLB_MGIOL                                         | IOLOGIC  | IOL_B82C |
+| SRAM_nUB_MGIOL                                         | IOLOGIC  | IOL_B79D |
+| led_pin[3]_MGIOL                                       | IOLOGIC  | IOL_T92D |
+| led_pin[2]_MGIOL                                       | IOLOGIC  | IOL_T92A |
+| led_pin[1]_MGIOL                                       | IOLOGIC  | IOL_T92B |
+| led_pin[0]_MGIOL                                       | IOLOGIC  | IOL_T95D |
+| uart_ch340_tx_MGIOL                                    | IOLOGIC  | IOL_T70A |
+| seg7_SH_CP_MGIOL                                       | IOLOGIC  | IOL_T37C |
+| seg7_ST_CP_MGIOL                                       | IOLOGIC  | IOL_T40B |
+| seg7_DS_MGIOL                                          | IOLOGIC  | IOL_T16A |
+| RS_8080_MGIOL                                          | IOLOGIC  | IOL_B95A |
+| PLL_inst1/PLLInst_0                                    | PLL_25K  |  LPLL1   |
+| inst                                                   |   CM3    |   CM3    |
+| led_wf_inst1/n_37[1]                                   |  SLICEL  | R19C96M  |
+| led_wf_inst1/n_37[5]                                   |  SLICEL  | R19C97M  |
+| led_wf_inst1/n_37[9]                                   |  SLICEL  | R19C98M  |
+| led_wf_inst1/n_37[13]                                  |  SLICEL  | R19C99M  |
+| led_wf_inst1/n_37[17]                                  |  SLICEL  | R19C100M |
+| led_wf_inst1/n_37[21]                                  |  SLICEL  | R19C101M |
+| led_wf_inst1/n_37[25]                                  |  SLICEL  | R19C102M |
+| ahb_lcd8080_inst1/n_281[1]                             |  SLICEL  | R20C44L  |
+| ahb_lcd8080_inst1/n_281[5]                             |  SLICEL  | R20C45L  |
+| ahb_lcd8080_inst1/n_284[1]                             |  SLICEL  | R19C44L  |
+| ahb_lcd8080_inst1/n_284[5]                             |  SLICEL  | R19C45L  |
+| ahb_lcd8080_inst1/n_286[1]                             |  SLICEL  | R19C42L  |
+| ahb_lcd8080_inst1/n_286[5]                             |  SLICEL  | R19C43L  |
+| ahb_lcd8080_inst1/n_288[1]                             |  SLICEL  | R18C43L  |
+| ahb_lcd8080_inst1/n_288[5]                             |  SLICEL  | R18C44L  |
+| ahb_lcd8080_inst1/n_290[1]                             |  SLICEL  | R18C41M  |
+| ahb_lcd8080_inst1/n_290[5]                             |  SLICEL  | R18C42M  |
+| seg_inst/n_753[1]                                      |  SLICEL  | R18C84L  |
+| seg_inst/n_753[5]                                      |  SLICEL  | R18C85L  |
+| seg_inst/n_759[1]                                      |  SLICEL  | R12C29M  |
+| seg_inst/n_759[5]                                      |  SLICEL  | R12C30M  |
+| ahb_uart1/n_1613[1]                                    |  SLICEL  | R14C57L  |
+| ahb_uart1/n_1613[5]                                    |  SLICEL  | R14C58L  |
+| ahb_uart1/n_1613[9]                                    |  SLICEL  | R14C59L  |
+| ahb_uart1/n_1613[13]                                   |  SLICEL  | R14C60L  |
+| net_extracted                                          |  SLICEL  | R20C38L  |
+| ahb_lcd8080_inst1/n_179                                |  SLICEL  | R19C41M  |
+| ahb_lcd8080_inst1/n_181                                |  SLICEL  | R20C42M  |
+| ahb_lcd8080_inst1/n_177                                |  SLICEL  | R19C41L  |
+| ahb_lcd8080_inst1/n_175                                |  SLICEL  | R20C43M  |
+| ahb_lcd8080_inst1/n_183                                |  SLICEL  | R18C40L  |
+| _n_9220                                                |  SLICEL  | R15C54M  |
+| ahb_uart1/n_885                                        |  SLICEL  | R15C55M  |
+| ahb_uart1/n_1059[0]                                    |  SLICEL  | R21C51L  |
+| ahb_uart1/n_1059[1]                                    |  SLICEL  | R19C53M  |
+| ahb_uart1/n_1059[2]                                    |  SLICEL  | R21C51M  |
+| ahb_uart1/n_1059[3]                                    |  SLICEL  | R19C52L  |
+| ahb_uart1/n_1059[4]                                    |  SLICEL  | R21C53M  |
+| ahb_uart1/n_1059[5]                                    |  SLICEL  | R21C53L  |
+| ahb_uart1/n_1059[6]                                    |  SLICEL  | R19C51M  |
+| ahb_uart1/n_1059[7]                                    |  SLICEL  | R19C51L  |
+| ahb_lcd8080_inst1/n_318                                |  SLICEL  | R15C42M  |
+| seg_inst/seg_2_dec[0]                                  |  SLICEL  | R19C31M  |
+| seg_inst/seg_2_dec[1]                                  |  SLICEL  | R19C32M  |
+| seg_inst/seg_2_dec[2]                                  |  SLICEL  | R20C30L  |
+| seg_inst/seg_2_dec[3]                                  |  SLICEL  | R18C32M  |
+| seg_inst/seg_2_dec[4]                                  |  SLICEL  | R20C31L  |
+| TARGEXP0HRDATA[0]                                      |  SLICEL  | R29C49L  |
+| TARGEXP0HRDATA[1]                                      |  SLICEL  | R27C43L  |
+| TARGEXP0HRDATA[2]                                      |  SLICEL  | R29C51M  |
+| TARGEXP0HRDATA[3]                                      |  SLICEL  | R29C50M  |
+| TARGEXP0HRDATA[4]                                      |  SLICEL  | R27C49L  |
+| TARGEXP0HRDATA[5]                                      |  SLICEL  | R27C31M  |
+| TARGEXP0HRDATA[6]                                      |  SLICEL  | R29C51L  |
+| TARGEXP0HRDATA[7]                                      |  SLICEL  | R27C34L  |
+| TARGEXP0HRDATA[8]                                      |  SLICEL  | R29C45L  |
+| TARGEXP0HRDATA[9]                                      |  SLICEL  | R27C43M  |
+| TARGEXP0HRDATA[10]                                     |  SLICEL  | R27C46L  |
+| TARGEXP0HRDATA[11]                                     |  SLICEL  | R27C47M  |
+| TARGEXP0HRDATA[12]                                     |  SLICEL  | R29C50L  |
+| TARGEXP0HRDATA[13]                                     |  SLICEL  | R27C32L  |
+| TARGEXP0HRDATA[14]                                     |  SLICEL  | R29C35M  |
+| TARGEXP0HRDATA[15]                                     |  SLICEL  | R29C33L  |
+| TARGEXP0HRDATA[16]                                     |  SLICEL  | R27C25M  |
+| TARGEXP0HRDATA[17]                                     |  SLICEL  | R23C17L  |
+| TARGEXP0HRDATA[18]                                     |  SLICEL  | R23C14L  |
+| TARGEXP0HRDATA[19]                                     |  SLICEL  | R23C14M  |
+| TARGEXP0HRDATA[20]                                     |  SLICEL  | R23C16M  |
+| TARGEXP0HRDATA[21]                                     |  SLICEL  | R27C19L  |
+| TARGEXP0HRDATA[22]                                     |  SLICEL  | R23C15M  |
+| TARGEXP0HRDATA[23]                                     |  SLICEL  | R22C14M  |
+| TARGEXP0HRDATA[24]                                     |  SLICEL  | R22C15L  |
+| TARGEXP0HRDATA[25]                                     |  SLICEL  | R22C17L  |
+| TARGEXP0HRDATA[26]                                     |  SLICEL  | R22C14L  |
+| TARGEXP0HRDATA[27]                                     |  SLICEL  | R26C15M  |
+| TARGEXP0HRDATA[28]                                     |  SLICEL  | R27C33L  |
+| TARGEXP0HRDATA[29]                                     |  SLICEL  | R22C17M  |
+| TARGEXP0HRDATA[30]                                     |  SLICEL  | R22C15M  |
+| TARGEXP0HRDATA[31]                                     |  SLICEL  | R26C15L  |
+| CM3SYS_RSTN_buff                                       |  SLICEL  | R30C19L  |
+| ahb_sram1/n_1844                                       |  SLICEL  | R30C61M  |
+| ahb_sram1/n_1800                                       |  SLICEL  | R30C56M  |
+| ahb_sram1/nxt_we_n                                     |  SLICEL  | R31C61L  |
+| ahb_sram1/reg_byte_mask[0]                             |  SLICEL  | R30C63L  |
+| ahb_sram1/n_1738                                       |  SLICEL  | R31C62L  |
+| ahb_sram1/n_1836                                       |  SLICEL  | R30C61L  |
+| ahb_sram1/reg_rd_req                                   |  SLICEL  | R30C62M  |
+| ahb_sram1/reg_active                                   |  SLICEL  | R31C56M  |
+| ahb_sram1/DATAOUT[10]                                  |  SLICEL  | R23C19L  |
+| ahb_sram1/DATAOUT[2]                                   |  SLICEL  | R23C19M  |
+| ahb_uart1/n_1249                                       |  SLICEL  | R20C52M  |
+| ahb_uart1/n_1117                                       |  SLICEL  | R20C52L  |
+| ahb_uart1/TX_fifo_buff[0][7]                           |  SLICEL  | R20C50L  |
+| ahb_uart1/TX_fifo_buff[0][4]                           |  SLICEL  | R21C49M  |
+| ahb_uart1/TX_shift_reg[8]                              |  SLICEL  | R19C53L  |
+| ahb_uart1/n_901                                        |  SLICEL  | R13C52L  |
+| ahb_uart1/n_1504                                       |  SLICEL  | R19C52M  |
+| ahb_uart1/n_1497                                       |  SLICEL  | R20C49M  |
+| ahb_uart1/TX_fifo_wr_ptr[1]                            |  SLICEL  | R21C50M  |
+| ahb_uart1/TX_fifo_wr_ptr[0]                            |  SLICEL  | R21C52L  |
+| ahb_uart1/n_1105                                       |  SLICEL  | R20C50M  |
+| _n_8826                                                |  SLICEL  | R21C52M  |
+| ahb_uart1/_i_22_rkd_9                                  |  SLICEL  | R21C42M  |
+| inst_extracted_iHQX4_rkd_8                             |  SLICEL  | R22C40L  |
+| inst_extracted_iHQX4_rkd_9                             |  SLICEL  | R25C14M  |
+| seg7_DS_c                                              |  SLICEL  | R15C30L  |
+| seg_inst/seg_data_shifer_reg[7]                        |  SLICEL  | R14C30M  |
+| seg_inst/seg_data_shifer_reg[4]                        |  SLICEL  | R14C31M  |
+| seg_inst/n_771                                         |  SLICEL  | R14C30L  |
+| ahb_lcd8080_inst1/byte_strobe[3]                       |  SLICEL  | R20C39M  |
+| ahb_lcd8080_inst1/byte_strobe[0]                       |  SLICEL  | R20C39L  |
+| ahb_lcd8080_inst1/trans_req                            |  SLICEL  | R18C39L  |
+| led_wf_inst1/cnt[4]                                    |  SLICEL  | R19C96L  |
+| led_wf_inst1/cnt[12]                                   |  SLICEL  | R19C99L  |
+| led_wf_inst1/cnt[13]                                   |  SLICEL  | R19C98L  |
+| led_wf_inst1/cnt[25]                                   |  SLICEL  | R19C100L |
+| led_wf_inst1/_i_2/_i_0_rkd_14                          |  SLICEL  | R19C97L  |
+| ahb_lcd8080_inst1/n_367                                |  SLICEL  | R15C42L  |
+| ahb_lcd8080_inst1/_i_286/_i_286/muxf6_1_andor_decomp_0 |  SLICEL  | R15C41L  |
+| ahb_lcd8080_inst1/n_196                                |  SLICEL  | R14C42M  |
+| _n_8824                                                |  SLICEL  | R14C41L  |
+| _n_8842                                                |  SLICEL  | R20C40M  |
+| _n_8830                                                |  SLICEL  | R19C40L  |
+| net_extracted_nHQX28                                   |  SLICEL  | R19C40M  |
+| TARGEXP1HRDATA[16]                                     |  SLICEL  | R20C41L  |
+| TARGEXP1HRDATA[23]                                     |  SLICEL  | R19C39M  |
+| TARGEXP1HRDATA[26]                                     |  SLICEL  | R21C39M  |
+| TARGEXP1HRDATA[27]                                     |  SLICEL  | R21C41M  |
+| TARGEXP1HRDATA[31]                                     |  SLICEL  | R19C39L  |
+| ahb_lcd8080_inst1/n_124                                |  SLICEL  | R18C40M  |
+| ahb_sram1/n_1757                                       |  SLICEL  | R30C62L  |
+| ahb_uart1/TX_DIV_cnt[1]                                |  SLICEL  | R14C59M  |
+| ahb_uart1/TX_DIV_cnt[7]                                |  SLICEL  | R14C57M  |
+| ahb_uart1/TX_shift_reg[4]                              |  SLICEL  | R18C53M  |
+| ahb_uart1/n_1521                                       |  SLICEL  | R14C52M  |
+| seg_inst/clk_1M_cnt[6]                                 |  SLICEL  | R18C84M  |
+| seg_inst/clk_DRV                                       |  SLICEL  | R18C83M  |
+| seg_inst/n_698                                         |  SLICEL  | R22C34L  |
+| seg_inst/n_697                                         |  SLICEL  | R22C34M  |
+| ahb_lcd8080_inst1/read_h_cnt[2]                        |  SLICEL  | R18C41L  |
+| ahb_lcd8080_inst1/read_l_cnt[2]                        |  SLICEL  | R18C42L  |
+| ahb_lcd8080_inst1/write_h_cnt[0]                       |  SLICEL  | R19C42M  |
+| ahb_lcd8080_inst1/write_l_cnt[4]                       |  SLICEL  | R19C43M  |
+| ahb_lcd8080_inst1/cmd_data_chg_cnt[4]                  |  SLICEL  | R20C43L  |
+| ahb_lcd8080_inst1/cmd_data_chg_cnt[7]                  |  SLICEL  | R15C43M  |
+| ahb_lcd8080_inst1/n_220                                |  SLICEL  | R14C41M  |
+| ahb_lcd8080_inst1/_i_286/_i_286/muxf6_2_andor_decomp_1 |  SLICEL  | R15C41M  |
+| ahb_uart1/write_en                                     |  SLICEL  | R22C40M  |
+| ahb_uart1/n_1520                                       |  SLICEL  | R13C52M  |
+| seg_inst/wr_en_reg                                     |  SLICEL  | R22C36M  |
+| seg_inst/HC595_CLK_CNT[3]                              |  SLICEL  | R12C29L  |
+| seg_inst/seg_data_shifer_reg[11]                       |  SLICEL  | R18C30M  |
+| seg_inst/seg_data_shifer_reg[15]                       |  SLICEL  | R18C30L  |
+| led_wf_inst1/n_3                                       |  SLICEL  | R21C66M  |
+| seg_inst/clk_1M_cnt[0]                                 |  SLICEL  | R18C83L  |
+| seg_inst/HC595_CLK_CNT[0]                              |  SLICEL  | R12C30L  |
+| led_pin[3]_c                                           |  SLICEL  | R18C97M  |
+| ahb_lcd8080_inst1/addr[5]                              |  SLICEL  | R20C40L  |
+| ahb_lcd8080_inst1/addr[7]                              |  SLICEL  | R22C38M  |
+| ahb_lcd8080_inst1/addr[9]                              |  SLICEL  | R21C38L  |
+| ahb_lcd8080_inst1/addr[11]                             |  SLICEL  | R21C38M  |
+| ahb_lcd8080_inst1/addr[13]                             |  SLICEL  | R19C38M  |
+| ahb_lcd8080_inst1/addr[15]                             |  SLICEL  | R20C38M  |
+| ahb_lcd8080_inst1/cmd_data_w_reg[5]                    |  SLICEL  | R21C43M  |
+| ahb_lcd8080_inst1/cmd_data_w_reg[7]                    |  SLICEL  | R19C44M  |
+| ahb_lcd8080_inst1/cmd_data_w_reg[10]                   |  SLICEL  | R19C34L  |
+| ahb_lcd8080_inst1/cmd_data_w_reg[11]                   |  SLICEL  | R15C40L  |
+| ahb_lcd8080_inst1/cmd_data_w_reg[13]                   |  SLICEL  | R18C39M  |
+| ahb_lcd8080_inst1/cmd_data_w_reg[15]                   |  SLICEL  | R18C19M  |
+| ahb_lcd8080_inst1/tick_cmd_data_chg[5]                 |  SLICEL  | R20C45M  |
+| ahb_lcd8080_inst1/tick_cmd_data_chg[6]                 |  SLICEL  | R20C41M  |
+| ahb_lcd8080_inst1/tick_cmd_data_chg[7]                 |  SLICEL  | R20C44M  |
+| ahb_lcd8080_inst1/tick_read_l[6]                       |  SLICEL  | R20C42L  |
+| ahb_lcd8080_inst1/tick_read_l[7]                       |  SLICEL  | R21C42L  |
+| seg_inst/segx_reg_0[2]                                 |  SLICEL  | R20C33M  |
+| seg_inst/segx_reg_0[3]                                 |  SLICEL  | R18C33L  |
+| seg_inst/segx_reg_1[2]                                 |  SLICEL  | R19C31L  |
+| seg_inst/segx_reg_1[3]                                 |  SLICEL  | R18C33M  |
+| seg_inst/segx_reg_2[2]                                 |  SLICEL  | R20C32M  |
+| seg_inst/segx_reg_2[3]                                 |  SLICEL  | R19C33L  |
+| seg_inst/segx_reg_3[2]                                 |  SLICEL  | R20C31M  |
+| seg_inst/segx_reg_3[3]                                 |  SLICEL  | R20C32L  |
+| seg_inst/segx_reg_4[2]                                 |  SLICEL  | R19C30L  |
+| seg_inst/segx_reg_4[3]                                 |  SLICEL  | R18C32L  |
+| seg_inst/segx_reg_5[2]                                 |  SLICEL  | R21C31M  |
+| seg_inst/segx_reg_5[3]                                 |  SLICEL  | R19C33M  |
+| seg_inst/segx_reg_6[2]                                 |  SLICEL  | R20C30M  |
+| seg_inst/segx_reg_6[3]                                 |  SLICEL  | R19C32L  |
+| seg_inst/addr_reg[10]                                  |  SLICEL  | R22C37L  |
+| seg_inst/addr_reg[11]                                  |  SLICEL  | R22C36L  |
+| seg_inst/addr_reg[12]                                  |  SLICEL  | R23C40L  |
+| seg_inst/addr_reg[13]                                  |  SLICEL  | R23C40M  |
+| seg_inst/addr_reg[14]                                  |  SLICEL  | R22C38L  |
+| seg_inst/addr_reg[15]                                  |  SLICEL  | R22C37M  |
+| ahb_uart1/byte_strobe[2]                               |  SLICEL  | R22C39L  |
+| ahb_uart1/byte_strobe[3]                               |  SLICEL  | R22C39M  |
+| ahb_uart1/addr[10]                                     |  SLICEL  | R22C41L  |
+| ahb_uart1/addr[11]                                     |  SLICEL  | R22C42L  |
+| ahb_uart1/addr[12]                                     |  SLICEL  | R22C41M  |
+| ahb_uart1/addr[13]                                     |  SLICEL  | R21C40M  |
+| ahb_uart1/addr[14]                                     |  SLICEL  | R21C40L  |
+| ahb_uart1/addr[15]                                     |  SLICEL  | R22C42M  |
+| HRDATA_P2[20]                                          |  SLICEL  | R19C55M  |
+| HRDATA_P2[21]                                          |  SLICEL  | R20C55L  |
+| HRDATA_P2[23]                                          |  SLICEL  | R15C49L  |
+| HRDATA_P2[28]                                          |  SLICEL  | R15C50M  |
+| HRDATA_P2[29]                                          |  SLICEL  | R19C47L  |
+| HRDATA_P2[30]                                          |  SLICEL  | R15C50L  |
+| HRDATA_P2[31]                                          |  SLICEL  | R18C47M  |
+| ahb_uart1/TX_fifo_buff[2][2]                           |  SLICEL  | R20C48M  |
+| ahb_uart1/TX_fifo_buff[2][3]                           |  SLICEL  | R20C48L  |
+| ahb_uart1/TX_fifo_buff[2][5]                           |  SLICEL  | R22C49M  |
+| ahb_uart1/TX_fifo_buff[2][7]                           |  SLICEL  | R19C48L  |
+| ahb_uart1/TX_fifo_buff[3][4]                           |  SLICEL  | R20C54L  |
+| ahb_uart1/TX_fifo_buff[3][5]                           |  SLICEL  | R22C52M  |
+| ahb_uart1/TX_fifo_buff[3][7]                           |  SLICEL  | R18C51M  |
+| ahb_uart1/TX_fifo_buff[4][2]                           |  SLICEL  | R22C50M  |
+| ahb_uart1/TX_fifo_buff[4][3]                           |  SLICEL  | R20C53L  |
+| ahb_uart1/TX_fifo_buff[4][5]                           |  SLICEL  | R22C53M  |
+| ahb_uart1/TX_fifo_buff[4][7]                           |  SLICEL  | R19C49L  |
+| ahb_uart1/TX_fifo_buff[5][2]                           |  SLICEL  | R23C51M  |
+| ahb_uart1/TX_fifo_buff[5][3]                           |  SLICEL  | R20C53M  |
+| ahb_uart1/TX_fifo_buff[5][5]                           |  SLICEL  | R23C53L  |
+| ahb_uart1/TX_fifo_buff[5][7]                           |  SLICEL  | R19C50L  |
+| ahb_uart1/TX_fifo_buff[6][2]                           |  SLICEL  | R23C51L  |
+| ahb_uart1/TX_fifo_buff[6][3]                           |  SLICEL  | R18C52M  |
+| ahb_uart1/TX_fifo_buff[6][5]                           |  SLICEL  | R22C52L  |
+| ahb_uart1/TX_fifo_buff[6][7]                           |  SLICEL  | R18C50M  |
+| ahb_uart1/TX_fifo_buff[7][2]                           |  SLICEL  | R21C50L  |
+| ahb_uart1/TX_fifo_buff[7][3]                           |  SLICEL  | R20C54M  |
+| ahb_uart1/TX_fifo_buff[7][5]                           |  SLICEL  | R22C54M  |
+| ahb_uart1/TX_fifo_buff[7][7]                           |  SLICEL  | R20C49L  |
+| ahb_uart1/TX_fifo_buff[8][2]                           |  SLICEL  | R22C49L  |
+| ahb_uart1/TX_fifo_buff[8][3]                           |  SLICEL  | R18C49L  |
+| ahb_uart1/TX_fifo_buff[8][5]                           |  SLICEL  | R22C50L  |
+| ahb_uart1/TX_fifo_buff[8][7]                           |  SLICEL  | R18C49M  |
+| ahb_uart1/TX_fifo_buff[9][2]                           |  SLICEL  | R23C50M  |
+| ahb_uart1/TX_fifo_buff[9][3]                           |  SLICEL  | R19C54M  |
+| ahb_uart1/TX_fifo_buff[9][5]                           |  SLICEL  | R23C53M  |
+| ahb_uart1/TX_fifo_buff[9][7]                           |  SLICEL  | R19C50M  |
+| ahb_uart1/TX_fifo_buff[10][2]                          |  SLICEL  | R23C50L  |
+| ahb_uart1/TX_fifo_buff[10][3]                          |  SLICEL  | R18C50L  |
+| ahb_uart1/TX_fifo_buff[10][5]                          |  SLICEL  | R23C52L  |
+| ahb_uart1/TX_fifo_buff[10][7]                          |  SLICEL  | R15C51L  |
+| ahb_uart1/TX_fifo_buff[11][2]                          |  SLICEL  | R22C51L  |
+| ahb_uart1/TX_fifo_buff[11][3]                          |  SLICEL  | R19C54L  |
+| ahb_uart1/TX_fifo_buff[11][5]                          |  SLICEL  | R22C53L  |
+| ahb_uart1/TX_fifo_buff[11][7]                          |  SLICEL  | R18C51L  |
+| ahb_uart1/TX_fifo_buff[12][2]                          |  SLICEL  | R21C48L  |
+| ahb_uart1/TX_fifo_buff[12][3]                          |  SLICEL  | R18C52L  |
+| ahb_uart1/TX_fifo_buff[12][5]                          |  SLICEL  | R23C52M  |
+| ahb_uart1/TX_fifo_buff[12][7]                          |  SLICEL  | R19C48M  |
+| ahb_uart1/TX_fifo_buff[13][2]                          |  SLICEL  | R20C51L  |
+| ahb_uart1/TX_fifo_buff[13][4]                          |  SLICEL  | R21C54M  |
+| ahb_uart1/TX_fifo_buff[13][7]                          |  SLICEL  | R20C51M  |
+| ahb_uart1/TX_fifo_buff[14][2]                          |  SLICEL  | R21C48M  |
+| ahb_uart1/TX_fifo_buff[14][3]                          |  SLICEL  | R20C47M  |
+| ahb_uart1/TX_fifo_buff[14][5]                          |  SLICEL  | R21C49L  |
+| ahb_uart1/TX_fifo_buff[14][7]                          |  SLICEL  | R19C49M  |
+| ahb_uart1/TX_fifo_buff[15][2]                          |  SLICEL  | R22C51M  |
+| ahb_uart1/TX_fifo_buff[15][3]                          |  SLICEL  | R18C53L  |
+| ahb_uart1/TX_fifo_buff[15][5]                          |  SLICEL  | R21C54L  |
+| ahb_uart1/TX_fifo_buff[15][7]                          |  SLICEL  | R15C51M  |
++--------------------------------------------------------+----------+----------+
