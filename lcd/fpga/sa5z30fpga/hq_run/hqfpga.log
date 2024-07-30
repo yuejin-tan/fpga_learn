@@ -36,9 +36,6 @@ Info: 设计分析执行时间 : 0 秒.
 #=============oOOOo================oOOOo=============
 # 寄存器传输级综合(RTL Synthesis)
 #====================================================
-WARN(ELAB-W-4): D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\top.v(274), 变量"HRDATA_P0"未赋值，初始化为0.
-WARN(ELAB-W-4): D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\top.v(273), 变量"HREADYOUT_P0"未赋值，初始化为0.
-WARN(ELAB-W-4): D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\top.v(275), 变量"HRESP_P0"未赋值，初始化为0.
 Info: D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\ahb_seg7x8.v(229), 识别一个ROM mem, 深度=32, 宽度=8.
 Info: D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\ahb_sram.v(373), 优化FSM.
 Info:      状态寄存器 : reg_bstate_reg.
@@ -56,13 +53,9 @@ Info: 设计顶层模块设置为 "top".
 Info: 开始逻辑优化.
 Info:     Total number of literals before LO: 10163.
 Info:   正在优化 view : top.
-Info:     逻辑优化前literals数 : 4693.
-Info:     LO 循环 1 : literal数 从 4693 到 3376.
-Info:     逻辑优化后literals数 : 3376.
-Info: 将 FF Interconncet/SlaveMUX/hsel_reg_reg[0] 变换为 ZERO ，原因：always-active ACLR.
-Info: 将 FF Interconncet/SlaveMUX/hsel_reg_reg[1] 变换为 ZERO ，原因：always-active ACLR.
-Info: 将 FF Interconncet/SlaveMUX/hsel_reg_reg[2] 变换为 ZERO ，原因：always-active ACLR.
-Info: 将 FF Interconncet/SlaveMUX/hsel_reg_reg[3] 变换为 ZERO ，原因：always-active ACLR.
+Info:     逻辑优化前literals数 : 7092.
+Info:     LO 循环 1 : literal数 从 7092 到 4380.
+Info:     逻辑优化后literals数 : 4380.
 Info: 将 FF ahb_uart1/TX_shift_reg_reg[10] 变换为 ONE ，原因：constant data input.
 Info: 将 FF seg_inst/refresh_segnum_reg_reg[3] 变换为 ZERO ，原因：it having AND feedback.
 Info: 将 FF ahb_sram1/reg_bstate_reg_1 变换为 ONE ，原因：it having OR feedback.
@@ -70,12 +63,12 @@ Info: 将 FF ahb_uart1/TX_shift_reg_reg[9] 变换为 ONE ，原因：constant data input
 Info: 将 FF ahb_sram1/reg_bstate_reg_0 变换为 ZERO ，原因：it having AND feedback.
 Info: 将 FF ahb_sram1/reg_lb_mux_reg[0] 变换为 ZERO ，原因：it having AND feedback.
 Info: 将 FF ahb_sram1/reg_mcount_reg[2] 变换为 ZERO ，原因：it having AND feedback.
-Info: Degraded fragmented CE control logic for 11 DFFs.
+Info: Degraded fragmented CE control logic for 13 DFFs.
 Info: Degraded fragmented SET/RESET control logic for 1 DFFs.
-Info: Degraded fragmented control logic for 12 DFFs, totally
+Info: Degraded fragmented control logic for 14 DFFs, totally
 Info: 完成逻辑优化.
 ####
-Info: RTL综合执行时间 : 2 秒.
+Info: RTL综合执行时间 : 3 秒.
 ####
 
 #=============oOOOo================oOOOo=============
@@ -84,15 +77,15 @@ Info: RTL综合执行时间 : 2 秒.
 Info: 开始时序驱动优化.
 Info:   未发现时序约束，跳过本优化.
 Info: 完成时序驱动优化.
-Info: 插入了 75 个输入/输出单元.
+Info: 插入了 76 个输入/输出单元.
 Info: 开始工艺映射.
 Info:   网表预处理....
 Info:   计算锥(Cone)....
 Info:   计算覆盖(Cover)....
 Info:   生成LUT网表..
 Info:   网表后处理....
-Info: Decomposed 1 wide-input NOR gate(s)
-Info: Decomposed 6 wide-input AND gate(s)
+Info: Decomposed 3 wide-input NOR gate(s)
+Info: Decomposed 7 wide-input AND gate(s)
 Info: 完成工艺映射.
 Info: 开始网表校正.
 Info: 完成网表校正.
@@ -152,10 +145,10 @@ Info: 输出网表报告到文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\sa5z30fpga\h
 | seg_inst/_i_46/bitAdd_6/muxcy/CI |   xsMUXCY    |    0 |      net      |      | seg_inst/_i_46/_n_9       |      |
 | seg_inst/_i_46/bitAdd_6/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | seg_inst/_i_46/_n_11      | 1    |
 | seg_inst/_i_46/bitAdd_7/xorcy/CI |   xsXORCY    |    0 |      net      |      | seg_inst/_i_46/_n_11      |      |
-| seg_inst/_i_46/bitAdd_7/xorcy/O  |   xsXORCY    |  263 |     cell      |      | seg_inst/n_759[7]         | 1    |
-| seg_inst/_i_186/I2               |   xsLUTSA3   |    0 |      net      |      | seg_inst/n_759[7]         |      |
-| seg_inst/_i_186/O                |   xsLUTSA3   |   81 |     cell      |      | seg_inst/n_711            | 1    |
-| seg_inst/HC595_CLK_CNT_reg[7]/D  | xsDFFSA_K1C1 |    0 |      net      |      | seg_inst/n_711            |      |
+| seg_inst/_i_46/bitAdd_7/xorcy/O  |   xsXORCY    |  263 |     cell      |      | seg_inst/n_758[7]         | 1    |
+| seg_inst/_i_186/I2               |   xsLUTSA3   |    0 |      net      |      | seg_inst/n_758[7]         |      |
+| seg_inst/_i_186/O                |   xsLUTSA3   |   81 |     cell      |      | seg_inst/n_710            | 1    |
+| seg_inst/HC595_CLK_CNT_reg[7]/D  | xsDFFSA_K1C1 |    0 |      net      |      | seg_inst/n_710            |      |
 ====================================================================================================================
 时钟路径延迟         = 0         
 数据路径延迟         = 1792       (Tdatp)
@@ -195,8 +188,8 @@ Tckpm -- 时钟悲观补偿
 ********************
 * 路径 1
 ********************
-起点     : ahb_uart1/TX_DIV_cnt_reg[1]/Q  [激发时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿1]
-终点     : ahb_uart1/TX_DIV_cnt_reg[15]/D [捕获时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿2] 
+起点     : ahb_uart1/RX_DIV_cnt_reg[1]/Q  [激发时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿1]
+终点     : ahb_uart1/RX_DIV_cnt_reg[15]/D [捕获时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿2] 
 
 数据产生路径
 ======================================================================================================================
@@ -209,43 +202,43 @@ Tckpm -- 时钟悲观补偿
 | PLL_inst1/PLLInst_0/CLKI            |   xsPLLSA    |    0 |      net       |      | clk_25M_c               |      |
 | --                                  |      --      |   -- |       --       | --   | --                      | --   |
 | CLOCK'PLL_inst1/PLLInst_0/CLKOP     |     N/A      |    0 | tcst_gen_clock |      | N/A                     |      |
-| PLL_inst1/PLLInst_0/CLKOP           |   xsPLLSA    |  990 | clock_latency  |      | AHB_USR_CLK             | 499  |
-| ahb_uart1/TX_DIV_cnt_reg[1]/C       | xsDFFSA_K1C1 |    0 |      net       |      | AHB_USR_CLK             |      |
+| PLL_inst1/PLLInst_0/CLKOP           |   xsPLLSA    |  990 | clock_latency  |      | AHB_USR_CLK             | 680  |
+| ahb_uart1/RX_DIV_cnt_reg[1]/C       | xsDFFSA_K1C1 |    0 |      net       |      | AHB_USR_CLK             |      |
 | --                                  |      --      |   -- |       --       | --   | --                      | --   |
-| ahb_uart1/TX_DIV_cnt_reg[1]/Q       | xsDFFSA_K1C1 |  347 |  rising_edge   |      | ahb_uart1/TX_DIV_cnt[1] | 3    |
-| ahb_uart1/_i_291/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net       |      | ahb_uart1/TX_DIV_cnt[1] |      |
-| ahb_uart1/_i_291/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |      cell      |      | ahb_uart1/_i_291/_n_1   | 2    |
-| ahb_uart1/_i_291/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_1   |      |
-| ahb_uart1/_i_291/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_3   | 2    |
-| ahb_uart1/_i_291/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_3   |      |
-| ahb_uart1/_i_291/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_5   | 2    |
-| ahb_uart1/_i_291/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_5   |      |
-| ahb_uart1/_i_291/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_7   | 2    |
-| ahb_uart1/_i_291/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_7   |      |
-| ahb_uart1/_i_291/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_9   | 2    |
-| ahb_uart1/_i_291/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_9   |      |
-| ahb_uart1/_i_291/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_11  | 2    |
-| ahb_uart1/_i_291/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_11  |      |
-| ahb_uart1/_i_291/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_13  | 2    |
-| ahb_uart1/_i_291/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_13  |      |
-| ahb_uart1/_i_291/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_15  | 2    |
-| ahb_uart1/_i_291/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_15  |      |
-| ahb_uart1/_i_291/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_17  | 2    |
-| ahb_uart1/_i_291/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_17  |      |
-| ahb_uart1/_i_291/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_19  | 2    |
-| ahb_uart1/_i_291/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_19  |      |
-| ahb_uart1/_i_291/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_21  | 2    |
-| ahb_uart1/_i_291/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_21  |      |
-| ahb_uart1/_i_291/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_23  | 2    |
-| ahb_uart1/_i_291/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_23  |      |
-| ahb_uart1/_i_291/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_25  | 2    |
-| ahb_uart1/_i_291/bitAdd_14/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_25  |      |
-| ahb_uart1/_i_291/bitAdd_14/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_27  | 1    |
-| ahb_uart1/_i_291/bitAdd_15/xorcy/CI |   xsXORCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_27  |      |
-| ahb_uart1/_i_291/bitAdd_15/xorcy/O  |   xsXORCY    |  263 |      cell      |      | ahb_uart1/n_1613[15]    | 1    |
-| ahb_uart1/_i_366/I0                 |   xsLUTSA3   |    0 |      net       |      | ahb_uart1/n_1613[15]    |      |
-| ahb_uart1/_i_366/O                  |   xsLUTSA3   |   81 |      cell      |      | ahb_uart1/n_1579        | 1    |
-| ahb_uart1/TX_DIV_cnt_reg[15]/D      | xsDFFSA_K1C1 |    0 |      net       |      | ahb_uart1/n_1579        |      |
+| ahb_uart1/RX_DIV_cnt_reg[1]/Q       | xsDFFSA_K1C1 |  347 |  rising_edge   |      | ahb_uart1/RX_DIV_cnt[1] | 3    |
+| ahb_uart1/_i_300/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net       |      | ahb_uart1/RX_DIV_cnt[1] |      |
+| ahb_uart1/_i_300/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |      cell      |      | ahb_uart1/_i_300/_n_1   | 2    |
+| ahb_uart1/_i_300/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_1   |      |
+| ahb_uart1/_i_300/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_3   | 2    |
+| ahb_uart1/_i_300/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_3   |      |
+| ahb_uart1/_i_300/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_5   | 2    |
+| ahb_uart1/_i_300/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_5   |      |
+| ahb_uart1/_i_300/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_7   | 2    |
+| ahb_uart1/_i_300/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_7   |      |
+| ahb_uart1/_i_300/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_9   | 2    |
+| ahb_uart1/_i_300/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_9   |      |
+| ahb_uart1/_i_300/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_11  | 2    |
+| ahb_uart1/_i_300/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_11  |      |
+| ahb_uart1/_i_300/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_13  | 2    |
+| ahb_uart1/_i_300/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_13  |      |
+| ahb_uart1/_i_300/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_15  | 2    |
+| ahb_uart1/_i_300/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_15  |      |
+| ahb_uart1/_i_300/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_17  | 2    |
+| ahb_uart1/_i_300/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_17  |      |
+| ahb_uart1/_i_300/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_19  | 2    |
+| ahb_uart1/_i_300/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_19  |      |
+| ahb_uart1/_i_300/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_21  | 2    |
+| ahb_uart1/_i_300/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_21  |      |
+| ahb_uart1/_i_300/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_23  | 2    |
+| ahb_uart1/_i_300/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_23  |      |
+| ahb_uart1/_i_300/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_25  | 2    |
+| ahb_uart1/_i_300/bitAdd_14/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_25  |      |
+| ahb_uart1/_i_300/bitAdd_14/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_27  | 1    |
+| ahb_uart1/_i_300/bitAdd_15/xorcy/CI |   xsXORCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_27  |      |
+| ahb_uart1/_i_300/bitAdd_15/xorcy/O  |   xsXORCY    |  263 |      cell      |      | ahb_uart1/n_1619[15]    | 1    |
+| ahb_uart1/_i_400/I0                 |   xsLUTSA3   |    0 |      net       |      | ahb_uart1/n_1619[15]    |      |
+| ahb_uart1/_i_400/O                  |   xsLUTSA3   |   81 |      cell      |      | ahb_uart1/n_1601        | 1    |
+| ahb_uart1/RX_DIV_cnt_reg[15]/D      | xsDFFSA_K1C1 |    0 |      net       |      | ahb_uart1/n_1601        |      |
 ======================================================================================================================
 时钟路径延迟         = 990       
 数据路径延迟         = 3136       (Tdatp)
@@ -265,8 +258,8 @@ Tckpm -- 时钟悲观补偿
 | PLL_inst1/PLLInst_0/CLKI        |   xsPLLSA    |    0 |      net       |      | clk_25M_c   |      |
 | --                              |      --      |   -- |       --       | --   | --          | --   |
 | CLOCK'PLL_inst1/PLLInst_0/CLKOP |     N/A      |    0 | tcst_gen_clock |      | N/A         |      |
-| PLL_inst1/PLLInst_0/CLKOP       |   xsPLLSA    |  990 | clock_latency  |      | AHB_USR_CLK | 499  |
-| ahb_uart1/TX_DIV_cnt_reg[15]/C  | xsDFFSA_K1C1 |    0 |      net       |      | AHB_USR_CLK |      |
+| PLL_inst1/PLLInst_0/CLKOP       |   xsPLLSA    |  990 | clock_latency  |      | AHB_USR_CLK | 680  |
+| ahb_uart1/RX_DIV_cnt_reg[15]/C  | xsDFFSA_K1C1 |    0 |      net       |      | AHB_USR_CLK |      |
 ======================================================================================================
 
 时钟路径延迟         = 990       
@@ -463,6 +456,7 @@ Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[3] 吸收到 IREG.
 Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[2] 吸收到 IREG.
 Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[1] 吸收到 IREG.
 Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[0] 吸收到 IREG.
+Info: 将 ahb_uart1/RX_samp_regs_reg[5] 吸收到 IREG.
 Info: 将 ahb_sram1/reg_addr_high_reg[17] 吸收到 OREG.
 Info: 将 ahb_sram1/reg_addr_high_reg[16] 吸收到 OREG.
 Info: 将 ahb_sram1/reg_addr_high_reg[15] 吸收到 OREG.
@@ -499,39 +493,39 @@ Info: 将 ahb_lcd8080_inst1/sta8080_reg[3]_dup1 吸收到 OREG.
 Info: 开始组装预处理.
 Info: 完成组装预处理.
 Info: CM3                         1.
-Info: IOLOGIC                    65.
-Info:     IREG_OREG              65.
-Info: PIO                        95.
+Info: IOLOGIC                    66.
+Info:     IREG_OREG              66.
+Info: PIO                        96.
 Info: PLL_25K                     1.
-Info: SLICEL                     79.
-Info:     CARRY                  33.
+Info: SLICEL                     95.
+Info:     CARRY                  41.
 Info:     MUXF7                  38.
-Info:     MUXF8                   8.
-Info: SLICEL(LE)                645.
-Info:     LUT                   155.
-Info:     LUT REG               205.
-Info:     REG                   285.
+Info:     MUXF8                  16.
+Info: SLICEL(LE)                871.
+Info:     LUT                   201.
+Info:     LUT REG               260.
+Info:     REG                   410.
 Info: 完成组装.
 
 Info: Start gpack.
 Info: Done gpack.
 Info: 开始建立物理网表.
-Info:   为 95   个 PIO        建立了物理网表 .
-Info:   为 65   个 IOLOGIC    建立了物理网表 .
+Info:   为 96   个 PIO        建立了物理网表 .
+Info:   为 66   个 IOLOGIC    建立了物理网表 .
 Info:   为 1    个 PLL_25K    建立了物理网表 .
 Info:   为 1    个 CM3        建立了物理网表 .
-Info:   为 263  个 SLICEL     建立了物理网表 .
+Info:   为 352  个 SLICEL     建立了物理网表 .
 Info: 完成建立物理网表.
 Info: CM3                         1.
-Info: IOLOGIC                    65.
-Info:     IREG_OREG              65.
-Info: PIO                        95.
+Info: IOLOGIC                    66.
+Info:     IREG_OREG              66.
+Info: PIO                        96.
 Info: PLL_25K                     1.
-Info: SLICEL                    263.
-Info:     CARRY                  33.
-Info:     LOGIC                 184.
+Info: SLICEL                    352.
+Info:     CARRY                  41.
+Info:     LOGIC                 257.
 Info:     MUXF7                  38.
-Info:     MUXF8                   8.
+Info:     MUXF8                  16.
 ####
 Info: 组装执行时间 : 6 秒.
 Info: 输出网表报告到文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\sa5z30fpga\hq_run\top_map.rpt中.
@@ -546,7 +540,7 @@ Info: 布局模式: 时序优化.
 Info: 时序优化强度: 标准.
 Info: CE/SR NET max fanout = 2000.
 Info: Best achievable WNS = 8001.5
-[V]PL-STAT-SLICE:  5.15282 = 263 / 5104
+[V]PL-STAT-SLICE:  6.89655 = 352 / 5104
 Info: 设置延迟系数: 1.33333.
 [V]: Identify CE/SR net...
 Info: 元件实例 led_core 已固定于 B6.
@@ -605,6 +599,7 @@ Info: 元件实例 DATA_8080[0] 已固定于 R12.
 Info: 元件实例 clk_25M 已固定于 H13.
 Info: 元件实例 SWCLK 已固定于 H1.
 Info: 元件实例 key_pin[0] 已固定于 D5.
+Info: 元件实例 uart_ch340_rx 已固定于 C15.
 Info: 元件实例 SRAM_ADDR[18] 已固定于 R5.
 Info: 元件实例 SRAM_ADDR[17] 已固定于 P15.
 Info: 元件实例 SRAM_ADDR[16] 已固定于 R15.
@@ -645,82 +640,79 @@ Info: 元件实例 RS_8080 已固定于 L13.
 Info: 元件实例 WR_8080 已固定于 P12.
 Info: 元件实例 RD_8080 已固定于 K11.
 ----
-Info: 布局第1阶段(总共3阶段) (签名=461,60,1).
+Info: 布局第1阶段(总共3阶段) (签名=457,60,1).
 ----
-Info: 进度   3%, WNS = -17105.
-Info: 进度   7%, WNS = -18818.
-Info: 进度   8%, WNS = -13036.
-Info: 进度  10%, WNS = -13570.
-Info: 进度  12%, WNS = -10188.
-Info: 进度  13%, WNS =  -5898.
-Info: 进度  15%, WNS =  -4252.
-Info: 进度  17%, WNS =  -5259.
-Info: 进度  20%, WNS =  -5372.
-Info: 进度  22%, WNS =  -3992.
-Info: 进度  23%, WNS =  -5011.
-Info: 进度  25%, WNS =  -3483.
-Info: 进度  27%, WNS =  -4112.
-Info: 进度  30%, WNS =  -3262.
-Info: 进度  33%, WNS =  -2998.
-Info: 进度  37%, WNS =  -2451.
-Info: 进度  40%, WNS =  -4061.
-Info: 进度  42%, WNS =  -1603.
-Info: 进度  43%, WNS =  -1198.
-Info: 进度  45%, WNS =   -905.
-Info: 进度  47%, WNS =   -825.
-Info: 进度  50%, WNS =  -1265.
-Info: 进度  53%, WNS =  -1641.
-Info: 进度  55%, WNS =   -532.
-Info: 进度  57%, WNS =  -1423.
-Info: 进度  58%, WNS =   -625.
-Info: 进度  60%, WNS =   -338.
-Info: 进度  63%, WNS =  -1041.
-Info: 进度  67%, WNS =   -318.
-Info: 进度  70%, WNS =  -2227.
-Info: 进度  73%, WNS =   -105.
-Info: 进度  77%, WNS =   -278.
-Info: 进度  80%, WNS =    228.
-Info: 进度  83%, WNS =    315.
-Info: 进度  87%, WNS =   -412.
-Info: 进度  90%, WNS =   -158.
-Info: 进度  93%, WNS =   -492.
-Info: 进度  97%, WNS =   -925.
-Info: 进度  99%, WNS =   -236.
-Info: 进度 100%, WNS =    228.
+Info: 进度   3%, WNS = -24502.
+Info: 进度   7%, WNS = -13479.
+Info: 进度   8%, WNS =  -9482.
+Info: 进度  10%, WNS =  -9890.
+Info: 进度  13%, WNS =  -8694.
+Info: 进度  15%, WNS =  -7838.
+Info: 进度  17%, WNS =  -5875.
+Info: 进度  20%, WNS =  -5735.
+Info: 进度  22%, WNS =  -4377.
+Info: 进度  23%, WNS =  -5955.
+Info: 进度  25%, WNS =  -4007.
+Info: 进度  27%, WNS =  -6011.
+Info: 进度  28%, WNS =  -4018.
+Info: 进度  30%, WNS =  -5266.
+Info: 进度  32%, WNS =  -3182.
+Info: 进度  33%, WNS =  -2454.
+Info: 进度  37%, WNS =  -3227.
+Info: 进度  40%, WNS =  -4242.
+Info: 进度  42%, WNS =  -1645.
+Info: 进度  43%, WNS =  -1662.
+Info: 进度  47%, WNS =  -1385.
+Info: 进度  50%, WNS =   -998.
+Info: 进度  53%, WNS =  -4875.
+Info: 进度  57%, WNS =   -665.
+Info: 进度  60%, WNS =   -558.
+Info: 进度  63%, WNS =   -945.
+Info: 进度  67%, WNS =   -838.
+Info: 进度  70%, WNS =   -749.
+Info: 进度  73%, WNS =   -825.
+Info: 进度  77%, WNS =  -1581.
+Info: 进度  78%, WNS =    171.
+Info: 进度  80%, WNS =   -658.
+Info: 进度  83%, WNS =   -307.
+Info: 进度  87%, WNS =   -387.
+Info: 进度  90%, WNS =   -285.
+Info: 进度  93%, WNS =     14.
+Info: 进度  97%, WNS =    -69.
+Info: 进度  98%, WNS =    170.
+Info: 进度  99%, WNS =   -938.
+Info: 进度 100%, WNS =    170.
 ----
 Info: 布局第2阶段(总共3阶段) (签名=1,10,1).
 ----
-Info: 进度   0%, WNS =    128.
-Info: 进度  10%, WNS =     55.
-Info: 进度  30%, WNS =   -345.
-Info: 进度  50%, WNS =    405.
-Info: 进度  60%, WNS =    405.
-Info: 进度  70%, WNS =    405.
-Info: 进度  80%, WNS =    402.
-Info: 进度  90%, WNS =    402.
-Info: 进度 100%, WNS =    402.
+Info: 进度   0%, WNS =    170.
+Info: 进度  10%, WNS =    170.
+Info: 进度  20%, WNS =    170.
+Info: 进度  30%, WNS =    236.
+Info: 进度  40%, WNS =    236.
+Info: 进度  50%, WNS =    236.
+Info: 进度  70%, WNS =    236.
+Info: 进度  90%, WNS =    239.
+Info: 进度 100%, WNS =    239.
 ----
 Info: 布局第3阶段(总共3阶段) (签名=0,10,1).
 ----
-Info: 进度   0%, WNS =    405.
-Info: 进度  10%, WNS =    402.
-Info: 进度  20%, WNS =    402.
-Info: 进度  30%, WNS =    402.
-Info: 进度  50%, WNS =    202.
-Info: 进度  60%, WNS =    405.
-Info: 进度  70%, WNS =    405.
-Info: 进度  80%, WNS =    405.
-Info: 进度  90%, WNS =    402.
-Info: 进度 100%, WNS =    405.
+Info: 进度  10%, WNS =    239.
+Info: 进度  20%, WNS =    239.
+Info: 进度  30%, WNS =    236.
+Info: 进度  50%, WNS =    236.
+Info: 进度  70%, WNS =    236.
+Info: 进度  90%, WNS =    239.
+Info: 进度 100%, WNS =    239.
 ----
-Info: 布局结果最终WNS = 2634.
+Info: 布局结果最终WNS = 2461.
 ----
 Info: 完成布局.
 
 Info: 开始网表校正.
 Info: 完成网表校正.
 ####
-Info: 布局执行时间 : 1 秒.
+Info: 布局执行时间 : 2 秒.
 ####
 Info: 输出网表报告到文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\sa5z30fpga\hq_run\top_place.rpt中.
 Info: 检查时序约束 ....
@@ -732,8 +724,8 @@ Info: 已完成.
 Info: 布线模式 : timing.
 Info: 优化强度 : std.
 Info: 读入布线资源并检查网表 ....
-Info: 当前网表中有 427 个元件例示(instance).
-Info: 总共需要对 1121 条连线 (3746 连接点) 进行布线.
+Info: 当前网表中有 518 个元件例示(instance).
+Info: 总共需要对 1390 条连线 (4918 连接点) 进行布线.
 Info: 连线 AHB_USR_CLK 指定为 PCLK (由 placer).
 Info: 连线 CLK_FPGA_SYS1 指定为 PCLK (由 placer).
 Info: 连线 seg_inst/clk_DRV 指定为 PCLK (由 placer).
@@ -747,22 +739,19 @@ Info: set customeized options
 | MALL | MLONG | MX0  | X12RAM | X46RAM | X12VIQ | X46VIQ | X12CLKV | PLO | CLO | X-LOCAL | CLKV+ | GFANn | GNDfo | GNDlut 
 |   1  |   1   |   1  |    2   |    2   |    3   |    2   |     5   |  10 |   5 |    0    |   1   |   2   |    0  |    0   
 
-Info: 第  0 轮 : 还需要对 898   条连线 (2899  连接点)进行布线.
-Info: 第  1 轮 : 还需要对 83    条连线 (50    连接点)进行布线.
-Info: 第  2 轮 : 还需要对 6     条连线 (3     连接点)进行布线.
-Info: 第  3 轮 : 还需要对 2     条连线 (1     连接点)进行布线.
-Info: 第  4 轮 : 还需要对 2     条连线 (1     连接点)进行布线.
-Info: 第  5 轮 : 还需要对 2     条连线 (1     连接点)进行布线.
-Info: 第  6 轮 : 还需要对 0     条连线 (0     连接点)进行布线.
+Info: 第  0 轮 : 还需要对 1133  条连线 (4083  连接点)进行布线.
+Info: 第  1 轮 : 还需要对 128   条连线 (88    连接点)进行布线.
+Info: 第  2 轮 : 还需要对 15    条连线 (10    连接点)进行布线.
+Info: 第  3 轮 : 还需要对 0     条连线 (0     连接点)进行布线.
 
 Info: 完成布线.
 
 Info: 开始更新物理网表.
-Info:   为 155  个 SLICEL     建立了物理网表 .
-Info:   为 74   个 TIEOFF     建立了物理网表 .
+Info:   为 195  个 SLICEL     建立了物理网表 .
+Info:   为 89   个 TIEOFF     建立了物理网表 .
 Info: 完成更新物理网表.
 ####
-Info: 布线执行时间 : 6 秒.
+Info: 布线执行时间 : 10 秒.
 ####
  
 Info: 生成最差时序余量(WNS)报告 ...
@@ -770,12 +759,12 @@ Info: 生成最差时序余量(WNS)报告 ...
 Clock Name                  Req Period  Setup WNS   Hold WNS
 ------------------------------------------------------------
 clkbase                          40000         --         --
-PLL_inst1/PLLInst_0/CLKOP        10000       1578        305
-PLL_inst1/PLLInst_0/CLKOS        20000      15033        347
+PLL_inst1/PLLInst_0/CLKOP        10000       1951        326
+PLL_inst1/PLLInst_0/CLKOS        20000      14519        392
 ============================================================
 【汇总】
-Info(wns-ok): Setup WNS = 1578, 满足时序目标.
-Info(wns-ok): Hold  WNS = 305, 满足时序目标.
+Info(wns-ok): Setup WNS = 1951, 满足时序目标.
+Info(wns-ok): Hold  WNS = 326, 满足时序目标.
 ====
 Info: 完成WNS报告.
 Info:   (可在文件 "D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/sa5z30fpga/hq_run/top_slack.rpt" 中检查更详细信息).
@@ -802,74 +791,72 @@ Info: 输出网表报告到文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\sa5z30fpga\h
 
 # ***********************************************************************
 # 时钟         : PLL_inst1/PLLInst_0/CLKOP
-# 最小时钟周期 : 8422.2 ps
+# 最小时钟周期 : 8049.3 ps
 # ***********************************************************************
 
 ********************
 * 路径 1
 ********************
-起点     : ahb_lcd8080_inst1/addr[15]/BMUX [激发时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿1]
-终点     : inst/TARGEXP1HREADYOUT          [捕获时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿2] 
+起点     : inst/TARGEXP0HTRANS1   [激发时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿1]
+终点     : SRAM_nLB_MGIOL/TXDATA0 [捕获时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿2] 
 
 数据产生路径
-==========================================================================================================================================================================
-|                           节点                            |  单元   |  延迟  |     类型      |  位置   |                          连线                          | 扇出 |
-==========================================================================================================================================================================
-| CLOCK'clkbase                                             |   N/A   |      0 |               |         | N/A                                                    |      |
-| clk_25M                                                   |   top   |      0 | clock_latency |         | clk_25M                                                | 1    |
-| clk_25M/PAD#bidir_in                                      |   PIO   |      0 |      net      | PT79A   | clk_25M                                                | 1    |
-| clk_25M/PADDI                                             |   PIO   |   1091 |   PADI_DEL    |         | clk_25M_c                                              | 1    |
-| PLL_inst1/PLLInst_0/CLKI                                  | PLL_25K | 4620.3 |      net      | LPLL1   | clk_25M_c                                              |      |
-| --                                                        |   --    |     -- |      --       | --      | --                                                     | --   |
-| CLOCK'PLL_inst1/PLLInst_0/CLKOP                           |   N/A   |      0 |  CLKI2OP_DEL  |         | N/A                                                    |      |
-| PLL_inst1/PLLInst_0/CLKOP                                 | PLL_25K | 5711.3 | clock_latency |         | AHB_USR_CLK                                            | 254  |
-| ahb_lcd8080_inst1/addr[15]/CLK                            | SLICEL  | 1096.4 |      net      | R20C38M | AHB_USR_CLK                                            |      |
-| --                                                        |   --    |     -- |      --       | --      | --                                                     | --   |
-| ahb_lcd8080_inst1/addr[15]/BMUX                           | SLICEL  |   47.7 |    Tshcko     |         | ahb_lcd8080_inst1/addr[14]                             | 1    |
-| net_extracted/A1                                          | SLICEL  |   1007 |      net      | R20C38L | ahb_lcd8080_inst1/addr[14]                             |      |
-| net_extracted/BMUX                                        | SLICEL  |    117 |     Topab     |         | net_extracted                                          | 33   |
-| ahb_lcd8080_inst1/_i_286/_i_286/muxf6_1_andor_decomp_0/C3 | SLICEL  | 1315.2 |      net      | R15C41L | net_extracted                                          |      |
-| ahb_lcd8080_inst1/_i_286/_i_286/muxf6_1_andor_decomp_0/C  | SLICEL  |   75.1 |     Tilo      |         | ahb_lcd8080_inst1/_i_246_decomp                        | 3    |
-| ahb_lcd8080_inst1/_i_286/_i_286/muxf6_1_andor_decomp_0/A6 | SLICEL  |  210.6 |      net      | R15C41L | ahb_lcd8080_inst1/_i_246_decomp                        |      |
-| ahb_lcd8080_inst1/_i_286/_i_286/muxf6_1_andor_decomp_0/A  | SLICEL  |   75.1 |     Tilo      |         | ahb_lcd8080_inst1/_i_286/_i_286/muxf6_1_andor_decomp_0 | 1    |
-| ahb_lcd8080_inst1/n_318/B4                                | SLICEL  |  629.5 |      net      | R15C42M | ahb_lcd8080_inst1/_i_286/_i_286/muxf6_1_andor_decomp_0 |      |
-| ahb_lcd8080_inst1/n_318/AMUX                              | SLICEL  |  104.3 |     Topba     |         | ahb_lcd8080_inst1/n_318                                | 1    |
-| ahb_lcd8080_inst1/n_196/D6                                | SLICEL  |  418.7 |      net      | R14C42M | ahb_lcd8080_inst1/n_318                                |      |
-| ahb_lcd8080_inst1/n_196/D                                 | SLICEL  |   75.1 |     Tilo      |         | ahb_lcd8080_inst1/sta8080_now[0]                       | 23   |
-| ahb_lcd8080_inst1/read_h_cnt[2]/B3                        | SLICEL  | 1248.2 |      net      | R18C41L | ahb_lcd8080_inst1/sta8080_now[0]                       |      |
-| ahb_lcd8080_inst1/read_h_cnt[2]/BMUX                      | SLICEL  |   88.9 |     Topbb     |         | _n_8816                                                | 1    |
-| inst/TARGEXP1HREADYOUT                                    |   CM3   | 2015.8 |      net      | CM3     | _n_8816                                                |      |
-==========================================================================================================================================================================
-时钟路径延迟         = 6807.7    
-数据路径延迟         = 7428.2     (Tdatp)
-     clock-to-q 延迟 = 47.7 
-        总的单元延迟 = 535.5 
-        总的连线延迟 = 6845 
-        逻辑级数     = 6 
+=====================================================================================================================================
+|              节点               |  单元   |  延迟  |         类型          |   位置   |                连线                | 扇出 |
+=====================================================================================================================================
+| CLOCK'clkbase                   |   N/A   |      0 |                       |          | N/A                                |      |
+| clk_25M                         |   top   |      0 |     clock_latency     |          | clk_25M                            | 1    |
+| clk_25M/PAD#bidir_in            |   PIO   |      0 |          net          | PT79A    | clk_25M                            | 1    |
+| clk_25M/PADDI                   |   PIO   |   1091 |       PADI_DEL        |          | clk_25M_c                          | 1    |
+| PLL_inst1/PLLInst_0/CLKI        | PLL_25K | 4135.3 |          net          | LPLL1    | clk_25M_c                          |      |
+| --                              |   --    |     -- |          --           | --       | --                                 | --   |
+| CLOCK'PLL_inst1/PLLInst_0/CLKOP |   N/A   |      0 |      CLKI2OP_DEL      |          | N/A                                |      |
+| PLL_inst1/PLLInst_0/CLKOP       | PLL_25K | 5226.3 |     clock_latency     |          | AHB_USR_CLK                        | 335  |
+| inst/CIBCLK                     |   CM3   | 1096.4 |          net          | CM3      | AHB_USR_CLK                        |      |
+| --                              |   --    |     -- |          --           | --       | --                                 | --   |
+| inst/TARGEXP0HTRANS1            |   CM3   |   1321 | Tcq_TARGEXP0HTRANS[1] |          | TARGEXP0HTRANS[1]                  | 2    |
+| ahb_sram1/reg_active/B1         | SLICEL  | 2501.6 |          net          | R33C56M  | TARGEXP0HTRANS[1]                  |      |
+| ahb_sram1/reg_active/B          | SLICEL  |   75.1 |         Tilo          |          | ahb_sram1/n_1883_CE_AND_O_CE_AND_O | 26   |
+| ahb_sram1/reg_rd_req/A2         | SLICEL  |  475.4 |          net          | R33C56L  | ahb_sram1/n_1883_CE_AND_O_CE_AND_O |      |
+| ahb_sram1/reg_rd_req/A          | SLICEL  |   75.1 |         Tilo          |          | ahb_sram1/RDREQ                    | 9    |
+| ahb_sram1/n_1756/C1             | SLICEL  |  641.4 |          net          | R33C57M  | ahb_sram1/RDREQ                    |      |
+| ahb_sram1/n_1756/C              | SLICEL  |   75.1 |         Tilo          |          | _n_8424                            | 1    |
+| ahb_sram1/n_1756/D4             | SLICEL  |  209.9 |          net          | R33C57M  | _n_8424                            |      |
+| ahb_sram1/n_1756/D              | SLICEL  |   75.1 |         Tilo          |          | ahb_sram1/nxt_ce_n                 | 3    |
+| ahb_sram1/reg_byte_mask[0]/B5   | SLICEL  | 1381.1 |          net          | R33C81M  | ahb_sram1/nxt_ce_n                 |      |
+| ahb_sram1/reg_byte_mask[0]/B    | SLICEL  |   75.1 |         Tilo          |          | ahb_sram1/nxt_bs_n[0]              | 1    |
+| SRAM_nLB_MGIOL/TXDATA0          | IOLOGIC |  802.4 |          net          | IOL_B82C | ahb_sram1/nxt_bs_n[0]              |      |
+=====================================================================================================================================
+时钟路径延迟         = 6322.7    
+数据路径延迟         = 7708.3     (Tdatp)
+     clock-to-q 延迟 = 1321 
+        总的单元延迟 = 375.5 
+        总的连线延迟 = 6011.8 
+        逻辑级数     = 5 
 
 [数据捕获路径]
-===================================================================================================
-|              节点               |  单元   |  延迟  |     类型      | 位置  |    连线     | 扇出 |
-===================================================================================================
-| CLOCK'clkbase                   |   N/A   |      0 |               |       | N/A         |      |
-| clk_25M                         |   top   |      0 | clock_latency |       | clk_25M     | 1    |
-| clk_25M/PAD#bidir_in            |   PIO   |      0 |      net      | PT79A | clk_25M     | 1    |
-| clk_25M/PADDI                   |   PIO   |   1091 |   PADI_DEL    |       | clk_25M_c   | 1    |
-| PLL_inst1/PLLInst_0/CLKI        | PLL_25K | 4470.9 |      net      | LPLL1 | clk_25M_c   |      |
-| --                              |   --    |     -- |      --       | --    | --          | --   |
-| CLOCK'PLL_inst1/PLLInst_0/CLKOP |   N/A   |      0 |  CLKI2OP_DEL  |       | N/A         |      |
-| PLL_inst1/PLLInst_0/CLKOP       | PLL_25K | 5561.9 | clock_latency |       | AHB_USR_CLK | 254  |
-| inst/CIBCLK                     |   CM3   | 1057.4 |      net      | CM3   | AHB_USR_CLK |      |
-===================================================================================================
+======================================================================================================
+|              节点               |  单元   |  延迟  |     类型      |   位置   |    连线     | 扇出 |
+======================================================================================================
+| CLOCK'clkbase                   |   N/A   |      0 |               |          | N/A         |      |
+| clk_25M                         |   top   |      0 | clock_latency |          | clk_25M     | 1    |
+| clk_25M/PAD#bidir_in            |   PIO   |      0 |      net      | PT79A    | clk_25M     | 1    |
+| clk_25M/PADDI                   |   PIO   |   1091 |   PADI_DEL    |          | clk_25M_c   | 1    |
+| PLL_inst1/PLLInst_0/CLKI        | PLL_25K | 3973.2 |      net      | LPLL1    | clk_25M_c   |      |
+| --                              |   --    |     -- |      --       | --       | --          | --   |
+| CLOCK'PLL_inst1/PLLInst_0/CLKOP |   N/A   |      0 |  CLKI2OP_DEL  |          | N/A         |      |
+| PLL_inst1/PLLInst_0/CLKOP       | PLL_25K | 5064.2 | clock_latency |          | AHB_USR_CLK | 335  |
+| SRAM_nLB_MGIOL/CLK              | IOLOGIC | 1057.4 |      net      | IOL_B82C | AHB_USR_CLK |      |
+======================================================================================================
 
-时钟路径延迟         = 6619.3    
-    时钟偏差         = -188.4 (Tcksw)
+时钟路径延迟         = 6121.6    
+    时钟偏差         = -201 (Tcksw)
 
 [延迟计算]
 ======================================================================
 总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
-       = 7428.2     + 955        - 149.4      - -188.4     
-       = 8422.2
+       = 7708.3     + 302        - 162        - -201       
+       = 8049.3
 ======================================================================
 Tdatp -- 数据路径延迟 
 Tsu   -- 库单元建立时间 
@@ -878,14 +865,14 @@ Tckpm -- 时钟悲观补偿
 
 # ***********************************************************************
 # 时钟         : PLL_inst1/PLLInst_0/CLKOS
-# 最小时钟周期 : 4967.1 ps
+# 最小时钟周期 : 5480.8 ps
 # ***********************************************************************
 
 ********************
 * 路径 1
 ********************
-起点     : led_wf_inst1/cnt[13]/AQ [激发时钟: PLL_inst1/PLLInst_0/CLKOS, 上升沿1]
-终点     : led_pin[3]_MGIOL/CE     [捕获时钟: PLL_inst1/PLLInst_0/CLKOS, 上升沿2] 
+起点     : led_wf_inst1/cnt[15]/AQ [激发时钟: PLL_inst1/PLLInst_0/CLKOS, 上升沿1]
+终点     : led_pin[0]_MGIOL/CE     [捕获时钟: PLL_inst1/PLLInst_0/CLKOS, 上升沿2] 
 
 数据产生路径
 =========================================================================================================================
@@ -895,28 +882,28 @@ Tckpm -- 时钟悲观补偿
 | clk_25M                          |   top   |      0 | clock_latency |          | clk_25M                       | 1    |
 | clk_25M/PAD#bidir_in             |   PIO   |      0 |      net      | PT79A    | clk_25M                       | 1    |
 | clk_25M/PADDI                    |   PIO   |   1091 |   PADI_DEL    |          | clk_25M_c                     | 1    |
-| PLL_inst1/PLLInst_0/CLKI         | PLL_25K | 4620.3 |      net      | LPLL1    | clk_25M_c                     |      |
+| PLL_inst1/PLLInst_0/CLKI         | PLL_25K | 4135.3 |      net      | LPLL1    | clk_25M_c                     |      |
 | --                               |   --    |     -- |      --       | --       | --                            | --   |
 | CLOCK'PLL_inst1/PLLInst_0/CLKOS  |   N/A   |      0 |  CLKI2OS_DEL  |          | N/A                           |      |
-| PLL_inst1/PLLInst_0/CLKOS        | PLL_25K | 5711.3 | clock_latency |          | CLK_FPGA_SYS1                 | 10   |
-| led_wf_inst1/cnt[13]/CLK         | SLICEL  | 1096.4 |      net      | R19C98L  | CLK_FPGA_SYS1                 |      |
+| PLL_inst1/PLLInst_0/CLKOS        | PLL_25K | 5226.3 | clock_latency |          | CLK_FPGA_SYS1                 | 10   |
+| led_wf_inst1/cnt[15]/CLK         | SLICEL  | 1096.4 |      net      | R21C68L  | CLK_FPGA_SYS1                 |      |
 | --                               |   --    |     -- |      --       | --       | --                            | --   |
-| led_wf_inst1/cnt[13]/AQ          | SLICEL  |   30.5 |     Tcko      |          | led_wf_inst1/cnt[13]          | 2    |
-| led_wf_inst1/cnt[12]/C1          | SLICEL  |  490.2 |      net      | R19C99L  | led_wf_inst1/cnt[13]          |      |
+| led_wf_inst1/cnt[15]/AQ          | SLICEL  |   30.5 |     Tcko      |          | led_wf_inst1/cnt[15]          | 2    |
+| led_wf_inst1/cnt[12]/C3          | SLICEL  |  756.4 |      net      | R21C69L  | led_wf_inst1/cnt[15]          |      |
 | led_wf_inst1/cnt[12]/C           | SLICEL  |   75.1 |     Tilo      |          | led_wf_inst1/_i_2/_i_0_rkd_16 | 1    |
-| led_wf_inst1/cnt[12]/D4          | SLICEL  |  209.9 |      net      | R19C99L  | led_wf_inst1/_i_2/_i_0_rkd_16 |      |
+| led_wf_inst1/cnt[12]/D1          | SLICEL  |  244.1 |      net      | R21C69L  | led_wf_inst1/_i_2/_i_0_rkd_16 |      |
 | led_wf_inst1/cnt[12]/D           | SLICEL  |   75.1 |     Tilo      |          | led_wf_inst1/_i_2/_i_0_rkd_21 | 1    |
-| led_wf_inst1/_i_2/_i_0_rkd_14/B2 | SLICEL  |  996.4 |      net      | R19C97L  | led_wf_inst1/_i_2/_i_0_rkd_21 |      |
-| led_wf_inst1/_i_2/_i_0_rkd_14/B  | SLICEL  |   75.1 |     Tilo      |          | _n_8915                       | 1    |
-| led_wf_inst1/_i_2/_i_0_rkd_14/D1 | SLICEL  |  985.7 |      net      | R19C97L  | _n_8915                       |      |
+| led_wf_inst1/_i_2/_i_0_rkd_14/B2 | SLICEL  |  497.4 |      net      | R21C67L  | led_wf_inst1/_i_2/_i_0_rkd_21 |      |
+| led_wf_inst1/_i_2/_i_0_rkd_14/B  | SLICEL  |   75.1 |     Tilo      |          | _n_8448                       | 1    |
+| led_wf_inst1/_i_2/_i_0_rkd_14/D6 | SLICEL  |  176.4 |      net      | R21C67L  | _n_8448                       |      |
 | led_wf_inst1/_i_2/_i_0_rkd_14/D  | SLICEL  |   75.1 |     Tilo      |          | led_wf_inst1/n_6              | 20   |
-| led_pin[3]_MGIOL/CE              | IOLOGIC |   1894 |      net      | IOL_T92D | led_wf_inst1/n_6              |      |
+| led_pin[0]_MGIOL/CE              | IOLOGIC | 3415.6 |      net      | IOL_T95D | led_wf_inst1/n_6              |      |
 =========================================================================================================================
-时钟路径延迟         = 6807.7    
-数据路径延迟         = 4907.1     (Tdatp)
+时钟路径延迟         = 6322.7    
+数据路径延迟         = 5420.8     (Tdatp)
      clock-to-q 延迟 = 30.5 
         总的单元延迟 = 300.4 
-        总的连线延迟 = 4576.2 
+        总的连线延迟 = 5089.9 
         逻辑级数     = 4 
 
 [数据捕获路径]
@@ -927,21 +914,21 @@ Tckpm -- 时钟悲观补偿
 | clk_25M                         |   top   |      0 | clock_latency |          | clk_25M       | 1    |
 | clk_25M/PAD#bidir_in            |   PIO   |      0 |      net      | PT79A    | clk_25M       | 1    |
 | clk_25M/PADDI                   |   PIO   |   1091 |   PADI_DEL    |          | clk_25M_c     | 1    |
-| PLL_inst1/PLLInst_0/CLKI        | PLL_25K | 4470.9 |      net      | LPLL1    | clk_25M_c     |      |
+| PLL_inst1/PLLInst_0/CLKI        | PLL_25K | 3973.2 |      net      | LPLL1    | clk_25M_c     |      |
 | --                              |   --    |     -- |      --       | --       | --            | --   |
 | CLOCK'PLL_inst1/PLLInst_0/CLKOS |   N/A   |      0 |  CLKI2OS_DEL  |          | N/A           |      |
-| PLL_inst1/PLLInst_0/CLKOS       | PLL_25K | 5561.9 | clock_latency |          | CLK_FPGA_SYS1 | 10   |
-| led_pin[3]_MGIOL/CLK            | IOLOGIC | 1057.4 |      net      | IOL_T92D | CLK_FPGA_SYS1 |      |
+| PLL_inst1/PLLInst_0/CLKOS       | PLL_25K | 5064.2 | clock_latency |          | CLK_FPGA_SYS1 | 10   |
+| led_pin[0]_MGIOL/CLK            | IOLOGIC | 1057.4 |      net      | IOL_T95D | CLK_FPGA_SYS1 |      |
 ========================================================================================================
 
-时钟路径延迟         = 6619.3    
-    时钟偏差         = -188.4 (Tcksw)
+时钟路径延迟         = 6121.6    
+    时钟偏差         = -201 (Tcksw)
 
 [延迟计算]
 ======================================================================
 总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
-       = 4907.1     + 21         - 149.4      - -188.4     
-       = 4967.1
+       = 5420.8     + 21         - 162        - -201       
+       = 5480.8
 ======================================================================
 Tdatp -- 数据路径延迟 
 Tsu   -- 库单元建立时间 
@@ -952,11 +939,11 @@ Tckpm -- 时钟悲观补偿
 # 时钟频率总结
 #########################################################################
 最慢时钟     : PLL_inst1/PLLInst_0/CLKOP
-最小时钟周期 : 8422.2 ps
-最大时钟频率 : 118.7 MHz
+最小时钟周期 : 8049.3 ps
+最大时钟频率 : 124.2 MHz
 #########################################################################
-PLL_inst1/PLLInst_0/CLKOP : 118.7 Mhz
-PLL_inst1/PLLInst_0/CLKOS : 201.3 Mhz
+PLL_inst1/PLLInst_0/CLKOP : 124.2 Mhz
+PLL_inst1/PLLInst_0/CLKOS : 182.5 Mhz
 
 
 
@@ -968,7 +955,7 @@ Info: 载入设计 ....
 Info: 输出位流文件 top.bit ....
 Info: 完成.
 ####
-Info: 位流生成执行时间 : 2 秒.
+Info: 位流生成执行时间 : 1 秒.
 ####
 Info: 启动比特流下载器 ....
 D:/fpga/AC208-SA5Z30-CM3/hq_xist_2.14.4_021824_win64/build/hqdnload/hqdnload.exe -f top.bit -family seal30k -lang chs

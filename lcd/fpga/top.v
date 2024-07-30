@@ -134,37 +134,6 @@ module top (
   assign LCDT_RST = GPIO[ 18 ];
   assign LCDT_PEN = GPIO[ 19 ];
 
-  // xsIOBB inst_xsIOBB_GPIO15 (
-  //          .I (GPIO_OUT[15]),
-  //          .T (~GPIO_OUT_EN[15]),
-  //          .O (GPIO_IN[15]),
-  //          .B (LCDT_SCL)
-  //        );
-  // xsIOBB inst_xsIOBB_GPIO16 (
-  //          .I (GPIO_OUT[16]),
-  //          .T (~GPIO_OUT_EN[16]),
-  //          .O (GPIO_IN[16]),
-  //          .B (LCDT_SDA)
-  //        );
-  // xsIOBB inst_xsIOBB_GPIO17 (
-  //          .I (GPIO_OUT[17]),
-  //          .T (~GPIO_OUT_EN[17]),
-  //          .O (GPIO_IN[17]),
-  //          .B (LCD_RST)
-  //        );
-  // xsIOBB inst_xsIOBB_GPIO18 (
-  //          .I (GPIO_OUT[18]),
-  //          .T (~GPIO_OUT_EN[18]),
-  //          .O (GPIO_IN[18]),
-  //          .B (LCDT_RST)
-  //        );
-  // xsIOBB inst_xsIOBB_GPIO19 (
-  //          .I (GPIO_OUT[19]),
-  //          .T (~GPIO_OUT_EN[19]),
-  //          .O (GPIO_IN[19]),
-  //          .B (LCDT_PEN)
-  //        );
-
   // sram
   // assign SRAM_ADDR = 0;
   // assign SRAM_nWE = 1;
@@ -317,34 +286,35 @@ module top (
   wire [31: 0] HRDATA_P3;
   wire HRESP_P3;
 
-  ahb_lcd8080 ahb_lcd8080_inst1(
-                .HCLK ( AHB_USR_CLK ),
-                .HRESETn ( CM3SYS_RSTN ),
+  // ahb_lcd8080 ahb_lcd8080_inst1(
+  //               .HCLK ( AHB_USR_CLK ),
+  //               .HRESETn ( CM3SYS_RSTN ),
 
-                .HSEL ( TARGEXP1HSEL ),
-                .HADDR ( TARGEXP1HADDR[ 15: 0 ] ),
-                .HTRANS ( TARGEXP1HTRANS ),
-                .HSIZE ( TARGEXP1HSIZE ),
-                .HWRITE ( TARGEXP1HWRITE ),
-                .HWDATA ( TARGEXP1HWDATA ),
-                .HREADY ( TARGEXP1HREADYMUX ),
+  //               .HSEL ( TARGEXP1HSEL ),
+  //               .HADDR ( TARGEXP1HADDR[ 15: 0 ] ),
+  //               .HTRANS ( TARGEXP1HTRANS ),
+  //               .HSIZE ( TARGEXP1HSIZE ),
+  //               .HWRITE ( TARGEXP1HWRITE ),
+  //               .HWDATA ( TARGEXP1HWDATA ),
+  //               .HREADY ( TARGEXP1HREADYMUX ),
 
-                .HREADYOUT ( TARGEXP1HREADYOUT ),
-                .HRDATA ( TARGEXP1HRDATA ),
-                .HRESP ( TARGEXP1HRESP ),
+  //               .HREADYOUT ( TARGEXP1HREADYOUT ),
+  //               .HRDATA ( TARGEXP1HRDATA ),
+  //               .HRESP ( TARGEXP1HRESP ),
 
-                // UART SIG
-                .CS_8080(CS_8080),
-                .RS_8080(RS_8080), // 0:CMD 1:DATA
-                .WR_8080(WR_8080),
-                .RD_8080(RD_8080),
+  //               // UART SIG
+  //               .CS_8080(CS_8080),
+  //               .RS_8080(RS_8080), // 0:CMD 1:DATA
+  //               .WR_8080(WR_8080),
+  //               .RD_8080(RD_8080),
 
-                .DATA_8080(DATA_8080)
-              );
+  //               .DATA_8080(DATA_8080)
+  //             );
 
   AHBlite_Interconnect Interconncet(
                          .HCLK (AHB_USR_CLK),
-                         .HRESETn (0),
+                         .HRESETn (CM3SYS_RSTN),
+                         //  .HRESETn (0),
 
                          // CORE SIDE
                          .HSEL_M (TARGEXP1HSEL),
@@ -356,13 +326,13 @@ module top (
                          .HMASTLOCK (TARGEXP1HMASTLOCK),
                          .HWRITE (TARGEXP1HWRITE),
                          .HWDATA (TARGEXP1HWDATA),
-                         //  .HRDATA (TARGEXP1HRDATA),
-                         .HRDATA ( ),
+                         .HRDATA (TARGEXP1HRDATA),
+                         //  .HRDATA ( ),
                          .HREADY_master (TARGEXP1HREADYMUX),
-                         //  .HREADY (TARGEXP1HREADYOUT),
-                         .HREADY ( ),
-                         //  .HRESP (TARGEXP1HRESP),
-                         .HRESP ( ),
+                         .HREADY (TARGEXP1HREADYOUT),
+                         //  .HREADY ( ),
+                         .HRESP (TARGEXP1HRESP),
+                         //  .HRESP ( ),
 
                          // P0
                          .HSEL_P0 (HSEL_P0),
@@ -425,30 +395,30 @@ module top (
                          .HRESP_P3 (HRESP_P3)
                        );
 
-  // ahb_lcd8080 ahb_lcd8080_inst1(
-  //               .HCLK ( AHB_USR_CLK ),
-  //               .HRESETn ( CM3SYS_RSTN ),
+  ahb_lcd8080 ahb_lcd8080_inst1(
+                .HCLK ( AHB_USR_CLK ),
+                .HRESETn ( CM3SYS_RSTN ),
 
-  //               .HSEL ( HSEL_P0 ),
-  //               .HADDR ( HADDR_P0[ 15: 0 ] ),
-  //               .HTRANS ( HTRANS_P0 ),
-  //               .HSIZE ( HSIZE_P0 ),
-  //               .HWRITE ( HWRITE_P0 ),
-  //               .HWDATA ( HWDATA_P0 ),
-  //               .HREADY ( HREADY_P0 ),
+                .HSEL ( HSEL_P0 ),
+                .HADDR ( HADDR_P0[ 15: 0 ] ),
+                .HTRANS ( HTRANS_P0 ),
+                .HSIZE ( HSIZE_P0 ),
+                .HWRITE ( HWRITE_P0 ),
+                .HWDATA ( HWDATA_P0 ),
+                .HREADY ( HREADY_P0 ),
 
-  //               .HREADYOUT ( HREADYOUT_P0 ),
-  //               .HRDATA ( HRDATA_P0 ),
-  //               .HRESP ( HRESP_P0 ),
+                .HREADYOUT ( HREADYOUT_P0 ),
+                .HRDATA ( HRDATA_P0 ),
+                .HRESP ( HRESP_P0 ),
 
-  //               // UART SIG
-  //               .CS_8080(CS_8080),
-  //               .RS_8080(RS_8080), // 0:CMD 1:DATA
-  //               .WR_8080(WR_8080),
-  //               .RD_8080(RD_8080),
+                // UART SIG
+                .CS_8080(CS_8080),
+                .RS_8080(RS_8080), // 0:CMD 1:DATA
+                .WR_8080(WR_8080),
+                .RD_8080(RD_8080),
 
-  //               .DATA_8080(DATA_8080)
-  //             );
+                .DATA_8080(DATA_8080)
+              );
 
   // 8位数码管
   ahb_seg7x8 seg_inst(

@@ -211,8 +211,6 @@ uint16_t test4r = 0;
 
 static GT911info_struct touchInfo1;
 
-#include "CM3_retarget.h"
-
 int main(void)
 {
     GPIO_DeInit(CM3DS_MPS2_GPIO0);
@@ -223,8 +221,8 @@ int main(void)
 
     printf("SA5Z30 CM3+FPGA TEST\r\n");
 
-    // uart_ahb_init();
-    // scd_init_1();
+    uart_ahb_init();
+    scd_init_1();
 
     LCD_Init();
     GT911_init();
@@ -249,23 +247,23 @@ int main(void)
     {
         while (CM3DS_MPS2_TIMER1->INTSTATUS == 0)
         {
-            // while (AHB_UART->cmd.bit.TX_FIFO_FULL == 0)
-            // {
-            //     AHB_UART->data = scd_send1Byte(&scd_1);
-            // }
-            // while (AHB_UART->cmd.bit.RX_FIFO_EMPTY == 0)
-            // {
-            //     SCD_Rev1Byte(&scd_1, AHB_UART->data);
-            // }
+            while (AHB_UART->cmd.bit.TX_FIFO_FULL == 0)
+            {
+                AHB_UART->data = scd_send1Byte(&scd_1);
+            }
+            while (AHB_UART->cmd.bit.RX_FIFO_EMPTY == 0)
+            {
+                SCD_Rev1Byte(&scd_1, AHB_UART->data);
+            }
 
-            // AHB_LED->seg0 = (ms_cnt >> 0) & 0xful;
-            // AHB_LED->seg1 = (ms_cnt >> 4) & 0xful;
-            // AHB_LED->seg2 = (ms_cnt >> 8) & 0xful;
-            // AHB_LED->seg3 = (ms_cnt >> 12) & 0xful;
-            // AHB_LED->seg4 = (ms_cnt >> 16) & 0xful;
-            // AHB_LED->seg5 = (ms_cnt >> 20) & 0xful;
-            // AHB_LED->seg6 = (ms_cnt >> 24) & 0xful;
-            // AHB_LED->seg7 = (ms_cnt >> 28) & 0xful;
+            AHB_LED->seg0 = (ms_cnt >> 0) & 0xful;
+            AHB_LED->seg1 = (ms_cnt >> 4) & 0xful;
+            AHB_LED->seg2 = (ms_cnt >> 8) & 0xful;
+            AHB_LED->seg3 = (ms_cnt >> 12) & 0xful;
+            AHB_LED->seg4 = (ms_cnt >> 16) & 0xful;
+            AHB_LED->seg5 = (ms_cnt >> 20) & 0xful;
+            AHB_LED->seg6 = (ms_cnt >> 24) & 0xful;
+            AHB_LED->seg7 = (ms_cnt >> 28) & 0xful;
         }
 
         CM3DS_MPS2_TIMER1->INTCLEAR = 1;

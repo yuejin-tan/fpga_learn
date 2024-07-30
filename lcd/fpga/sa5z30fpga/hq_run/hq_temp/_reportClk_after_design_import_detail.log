@@ -43,10 +43,10 @@
 | seg_inst/_i_46/bitAdd_6/muxcy/CI |   xsMUXCY    |    0 |      net      |      | seg_inst/_i_46/_n_9       |      |
 | seg_inst/_i_46/bitAdd_6/muxcy/O  |   xsMUXCY    |  168 |     cell      |      | seg_inst/_i_46/_n_11      | 1    |
 | seg_inst/_i_46/bitAdd_7/xorcy/CI |   xsXORCY    |    0 |      net      |      | seg_inst/_i_46/_n_11      |      |
-| seg_inst/_i_46/bitAdd_7/xorcy/O  |   xsXORCY    |  263 |     cell      |      | seg_inst/n_759[7]         | 1    |
-| seg_inst/_i_186/I2               |   xsLUTSA3   |    0 |      net      |      | seg_inst/n_759[7]         |      |
-| seg_inst/_i_186/O                |   xsLUTSA3   |   81 |     cell      |      | seg_inst/n_711            | 1    |
-| seg_inst/HC595_CLK_CNT_reg[7]/D  | xsDFFSA_K1C1 |    0 |      net      |      | seg_inst/n_711            |      |
+| seg_inst/_i_46/bitAdd_7/xorcy/O  |   xsXORCY    |  263 |     cell      |      | seg_inst/n_758[7]         | 1    |
+| seg_inst/_i_186/I2               |   xsLUTSA3   |    0 |      net      |      | seg_inst/n_758[7]         |      |
+| seg_inst/_i_186/O                |   xsLUTSA3   |   81 |     cell      |      | seg_inst/n_710            | 1    |
+| seg_inst/HC595_CLK_CNT_reg[7]/D  | xsDFFSA_K1C1 |    0 |      net      |      | seg_inst/n_710            |      |
 ====================================================================================================================
 时钟路径延迟         = 0         
 数据路径延迟         = 1792       (Tdatp)
@@ -80,8 +80,8 @@ Tckpm -- 时钟悲观补偿
 ********************
 * 路径 1
 ********************
-起点     : ahb_uart1/TX_DIV_cnt_reg[1]/Q  [激发时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿1]
-终点     : ahb_uart1/TX_DIV_cnt_reg[15]/D [捕获时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿2] 
+起点     : ahb_uart1/RX_DIV_cnt_reg[1]/Q  [激发时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿1]
+终点     : ahb_uart1/RX_DIV_cnt_reg[15]/D [捕获时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿2] 
 数据产生路径
 ======================================================================================================================
 |                节点                 |     单元     | 延迟 |      类型      | 位置 |          连线           | 扇出 |
@@ -93,43 +93,43 @@ Tckpm -- 时钟悲观补偿
 | PLL_inst1/PLLInst_0/CLKI            |   xsPLLSA    |    0 |      net       |      | clk_25M_c               |      |
 | --                                  |      --      |   -- |       --       | --   | --                      | --   |
 | CLOCK'PLL_inst1/PLLInst_0/CLKOP     |     N/A      |    0 | tcst_gen_clock |      | N/A                     |      |
-| PLL_inst1/PLLInst_0/CLKOP           |   xsPLLSA    |  990 | clock_latency  |      | AHB_USR_CLK             | 499  |
-| ahb_uart1/TX_DIV_cnt_reg[1]/C       | xsDFFSA_K1C1 |    0 |      net       |      | AHB_USR_CLK             |      |
+| PLL_inst1/PLLInst_0/CLKOP           |   xsPLLSA    |  990 | clock_latency  |      | AHB_USR_CLK             | 680  |
+| ahb_uart1/RX_DIV_cnt_reg[1]/C       | xsDFFSA_K1C1 |    0 |      net       |      | AHB_USR_CLK             |      |
 | --                                  |      --      |   -- |       --       | --   | --                      | --   |
-| ahb_uart1/TX_DIV_cnt_reg[1]/Q       | xsDFFSA_K1C1 |  347 |  rising_edge   |      | ahb_uart1/TX_DIV_cnt[1] | 3    |
-| ahb_uart1/_i_291/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net       |      | ahb_uart1/TX_DIV_cnt[1] |      |
-| ahb_uart1/_i_291/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |      cell      |      | ahb_uart1/_i_291/_n_1   | 2    |
-| ahb_uart1/_i_291/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_1   |      |
-| ahb_uart1/_i_291/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_3   | 2    |
-| ahb_uart1/_i_291/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_3   |      |
-| ahb_uart1/_i_291/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_5   | 2    |
-| ahb_uart1/_i_291/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_5   |      |
-| ahb_uart1/_i_291/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_7   | 2    |
-| ahb_uart1/_i_291/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_7   |      |
-| ahb_uart1/_i_291/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_9   | 2    |
-| ahb_uart1/_i_291/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_9   |      |
-| ahb_uart1/_i_291/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_11  | 2    |
-| ahb_uart1/_i_291/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_11  |      |
-| ahb_uart1/_i_291/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_13  | 2    |
-| ahb_uart1/_i_291/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_13  |      |
-| ahb_uart1/_i_291/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_15  | 2    |
-| ahb_uart1/_i_291/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_15  |      |
-| ahb_uart1/_i_291/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_17  | 2    |
-| ahb_uart1/_i_291/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_17  |      |
-| ahb_uart1/_i_291/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_19  | 2    |
-| ahb_uart1/_i_291/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_19  |      |
-| ahb_uart1/_i_291/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_21  | 2    |
-| ahb_uart1/_i_291/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_21  |      |
-| ahb_uart1/_i_291/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_23  | 2    |
-| ahb_uart1/_i_291/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_23  |      |
-| ahb_uart1/_i_291/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_25  | 2    |
-| ahb_uart1/_i_291/bitAdd_14/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_25  |      |
-| ahb_uart1/_i_291/bitAdd_14/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_291/_n_27  | 1    |
-| ahb_uart1/_i_291/bitAdd_15/xorcy/CI |   xsXORCY    |    0 |      net       |      | ahb_uart1/_i_291/_n_27  |      |
-| ahb_uart1/_i_291/bitAdd_15/xorcy/O  |   xsXORCY    |  263 |      cell      |      | ahb_uart1/n_1613[15]    | 1    |
-| ahb_uart1/_i_366/I0                 |   xsLUTSA3   |    0 |      net       |      | ahb_uart1/n_1613[15]    |      |
-| ahb_uart1/_i_366/O                  |   xsLUTSA3   |   81 |      cell      |      | ahb_uart1/n_1579        | 1    |
-| ahb_uart1/TX_DIV_cnt_reg[15]/D      | xsDFFSA_K1C1 |    0 |      net       |      | ahb_uart1/n_1579        |      |
+| ahb_uart1/RX_DIV_cnt_reg[1]/Q       | xsDFFSA_K1C1 |  347 |  rising_edge   |      | ahb_uart1/RX_DIV_cnt[1] | 3    |
+| ahb_uart1/_i_300/bitAdd_1/muxcy/S   |   xsMUXCY    |    0 |      net       |      | ahb_uart1/RX_DIV_cnt[1] |      |
+| ahb_uart1/_i_300/bitAdd_1/muxcy/O   |   xsMUXCY    |  261 |      cell      |      | ahb_uart1/_i_300/_n_1   | 2    |
+| ahb_uart1/_i_300/bitAdd_2/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_1   |      |
+| ahb_uart1/_i_300/bitAdd_2/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_3   | 2    |
+| ahb_uart1/_i_300/bitAdd_3/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_3   |      |
+| ahb_uart1/_i_300/bitAdd_3/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_5   | 2    |
+| ahb_uart1/_i_300/bitAdd_4/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_5   |      |
+| ahb_uart1/_i_300/bitAdd_4/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_7   | 2    |
+| ahb_uart1/_i_300/bitAdd_5/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_7   |      |
+| ahb_uart1/_i_300/bitAdd_5/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_9   | 2    |
+| ahb_uart1/_i_300/bitAdd_6/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_9   |      |
+| ahb_uart1/_i_300/bitAdd_6/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_11  | 2    |
+| ahb_uart1/_i_300/bitAdd_7/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_11  |      |
+| ahb_uart1/_i_300/bitAdd_7/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_13  | 2    |
+| ahb_uart1/_i_300/bitAdd_8/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_13  |      |
+| ahb_uart1/_i_300/bitAdd_8/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_15  | 2    |
+| ahb_uart1/_i_300/bitAdd_9/muxcy/CI  |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_15  |      |
+| ahb_uart1/_i_300/bitAdd_9/muxcy/O   |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_17  | 2    |
+| ahb_uart1/_i_300/bitAdd_10/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_17  |      |
+| ahb_uart1/_i_300/bitAdd_10/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_19  | 2    |
+| ahb_uart1/_i_300/bitAdd_11/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_19  |      |
+| ahb_uart1/_i_300/bitAdd_11/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_21  | 2    |
+| ahb_uart1/_i_300/bitAdd_12/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_21  |      |
+| ahb_uart1/_i_300/bitAdd_12/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_23  | 2    |
+| ahb_uart1/_i_300/bitAdd_13/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_23  |      |
+| ahb_uart1/_i_300/bitAdd_13/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_25  | 2    |
+| ahb_uart1/_i_300/bitAdd_14/muxcy/CI |   xsMUXCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_25  |      |
+| ahb_uart1/_i_300/bitAdd_14/muxcy/O  |   xsMUXCY    |  168 |      cell      |      | ahb_uart1/_i_300/_n_27  | 1    |
+| ahb_uart1/_i_300/bitAdd_15/xorcy/CI |   xsXORCY    |    0 |      net       |      | ahb_uart1/_i_300/_n_27  |      |
+| ahb_uart1/_i_300/bitAdd_15/xorcy/O  |   xsXORCY    |  263 |      cell      |      | ahb_uart1/n_1619[15]    | 1    |
+| ahb_uart1/_i_400/I0                 |   xsLUTSA3   |    0 |      net       |      | ahb_uart1/n_1619[15]    |      |
+| ahb_uart1/_i_400/O                  |   xsLUTSA3   |   81 |      cell      |      | ahb_uart1/n_1601        | 1    |
+| ahb_uart1/RX_DIV_cnt_reg[15]/D      | xsDFFSA_K1C1 |    0 |      net       |      | ahb_uart1/n_1601        |      |
 ======================================================================================================================
 时钟路径延迟         = 990       
 数据路径延迟         = 3136       (Tdatp)
@@ -148,8 +148,8 @@ Tckpm -- 时钟悲观补偿
 | PLL_inst1/PLLInst_0/CLKI        |   xsPLLSA    |    0 |      net       |      | clk_25M_c   |      |
 | --                              |      --      |   -- |       --       | --   | --          | --   |
 | CLOCK'PLL_inst1/PLLInst_0/CLKOP |     N/A      |    0 | tcst_gen_clock |      | N/A         |      |
-| PLL_inst1/PLLInst_0/CLKOP       |   xsPLLSA    |  990 | clock_latency  |      | AHB_USR_CLK | 499  |
-| ahb_uart1/TX_DIV_cnt_reg[15]/C  | xsDFFSA_K1C1 |    0 |      net       |      | AHB_USR_CLK |      |
+| PLL_inst1/PLLInst_0/CLKOP       |   xsPLLSA    |  990 | clock_latency  |      | AHB_USR_CLK | 680  |
+| ahb_uart1/RX_DIV_cnt_reg[15]/C  | xsDFFSA_K1C1 |    0 |      net       |      | AHB_USR_CLK |      |
 ======================================================================================================
 时钟路径延迟         = 990       
     时钟偏差         = 0 (Tcksw)

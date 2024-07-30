@@ -141,7 +141,7 @@ int16_t GT9XX_ReadData(uint16_t addr, uint16_t cnt, uint8_t* value)
     return 0;
 }
 
-#define TOUCH_911_DBG
+// #define TOUCH_911_DBG
 
 void GT911_init(void)
 {

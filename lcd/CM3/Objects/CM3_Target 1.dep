@@ -143,7 +143,7 @@ I (.\CMSIS\Device\Include\system_CM3DS.h)(0x65D85DE4)
 I (.\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_conf.h)(0x65D85DF7)
 I (.\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_gpio.h)(0x65D8C701)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
-F (.\src\main.c)(0x66A7C2C9)(--c99 --gnu -c --cpu Cortex-M3 --li -g -O2 --apcs=interwork --split_sections -I .\CMSIS\Core\Include -I .\CMSIS\Device\Include -I .\CMSIS\Device\Source -I .\CMSIS\Device\StdPeriph_Driver\inc -I .\CMSIS\generic -I .\src -I .\driver-IC:\Users\t\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="536" -DARMCM3-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\src\main.c)(0x66A856DF)(--c99 --gnu -c --cpu Cortex-M3 --li -g -O2 --apcs=interwork --split_sections -I .\CMSIS\Core\Include -I .\CMSIS\Device\Include -I .\CMSIS\Device\Source -I .\CMSIS\Device\StdPeriph_Driver\inc -I .\CMSIS\generic -I .\src -I .\driver-IC:\Users\t\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="536" -DARMCM3-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (.\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_gpio.h)(0x65D8C701)
@@ -166,7 +166,6 @@ I (.\driver\lcd_9488_drv.h)(0x66A7C114)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (.\driver\ahb_lcd8080.h)(0x66A799D8)
 I (.\driver\touch_GT911_drv.h)(0x66A117DE)
-I (.\CMSIS\Device\StdPeriph_Driver\inc\CM3_retarget.h)(0x65D85DF2)
 F (.\src\delay.c)(0x65D8AF8F)(--c99 --gnu -c --cpu Cortex-M3 --li -g -O2 --apcs=interwork --split_sections -I .\CMSIS\Core\Include -I .\CMSIS\Device\Include -I .\CMSIS\Device\Source -I .\CMSIS\Device\StdPeriph_Driver\inc -I .\CMSIS\generic -I .\src -I .\driver-IC:\Users\t\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="536" -DARMCM3-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
 I (src\delay.h)(0x65D8AE65)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -224,7 +223,7 @@ I (.\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_gpio.h)(0x65D8C701)
 I (driver\ahb_lcd8080.h)(0x66A799D8)
 I (.\src\delay.h)(0x65D8AE65)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
-F (.\driver\touch_GT911_drv.c)(0x66A7C4D4)(--c99 --gnu -c --cpu Cortex-M3 --li -g -O2 --apcs=interwork --split_sections -I .\CMSIS\Core\Include -I .\CMSIS\Device\Include -I .\CMSIS\Device\Source -I .\CMSIS\Device\StdPeriph_Driver\inc -I .\CMSIS\generic -I .\src -I .\driver-IC:\Users\t\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="536" -DARMCM3-o .\objects\touch_gt911_drv.o --omf_browse .\objects\touch_gt911_drv.crf --depend .\objects\touch_gt911_drv.d)
+F (.\driver\touch_GT911_drv.c)(0x66A856E4)(--c99 --gnu -c --cpu Cortex-M3 --li -g -O2 --apcs=interwork --split_sections -I .\CMSIS\Core\Include -I .\CMSIS\Device\Include -I .\CMSIS\Device\Source -I .\CMSIS\Device\StdPeriph_Driver\inc -I .\CMSIS\generic -I .\src -I .\driver-IC:\Users\t\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="536" -DARMCM3-o .\objects\touch_gt911_drv.o --omf_browse .\objects\touch_gt911_drv.crf --depend .\objects\touch_gt911_drv.d)
 I (driver\touch_GT911_drv.h)(0x66A117DE)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)

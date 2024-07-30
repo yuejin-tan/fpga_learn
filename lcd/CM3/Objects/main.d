@@ -21,4 +21,3 @@
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\main.o: .\driver\ahb_lcd8080.h
 .\objects\main.o: .\driver\touch_GT911_drv.h
-.\objects\main.o: .\CMSIS\Device\StdPeriph_Driver\inc\CM3_retarget.h

@@ -28,12 +28,16 @@ Project File Date:  07/30/2024
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
 compiling touch_GT911_drv.c...
+compiling main.c...
+src\main.c(235): warning:  #1293-D: assignment in condition
+      if (ret = mem_addr16b_test())
+src\main.c: 1 warning, 0 errors
 linking...
-Program Size: Code=7800 RO-data=1456 RW-data=84 ZI-data=4460  
+Program Size: Code=7948 RO-data=1536 RW-data=120 ZI-data=4464  
 FromELF: creating hex file...
 After Build - User command #1: C:\Keil_v5\\ARM\ARMCC\BIN\fromelf.exe D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\CM3\Objects\CM3.axf -c -d -e -s --output cm3.lst
 After Build - User command #2: C:\Keil_v5\\ARM\ARMCC\BIN\fromelf.exe D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\CM3\Objects\CM3.axf --bin -o cm3.bin
-".\Objects\CM3.axf" - 0 Error(s), 0 Warning(s).
+".\Objects\CM3.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -46,7 +50,7 @@ Package Vendor: ARM
   C:\Users\t\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM3\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

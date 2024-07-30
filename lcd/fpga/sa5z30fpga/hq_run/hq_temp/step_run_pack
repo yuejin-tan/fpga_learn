@@ -48,6 +48,7 @@ Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[3] 吸收到 IREG.
 Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[2] 吸收到 IREG.
 Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[1] 吸收到 IREG.
 Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[0] 吸收到 IREG.
+Info: 将 ahb_uart1/RX_samp_regs_reg[5] 吸收到 IREG.
 Info: 将 ahb_sram1/reg_addr_high_reg[17] 吸收到 OREG.
 Info: 将 ahb_sram1/reg_addr_high_reg[16] 吸收到 OREG.
 Info: 将 ahb_sram1/reg_addr_high_reg[15] 吸收到 OREG.
@@ -84,38 +85,38 @@ Info: 将 ahb_lcd8080_inst1/sta8080_reg[3]_dup1 吸收到 OREG.
 Info: 开始组装预处理.
 Info: 完成组装预处理.
 Info: CM3                         1.
-Info: IOLOGIC                    65.
-Info:     IREG_OREG              65.
-Info: PIO                        95.
+Info: IOLOGIC                    66.
+Info:     IREG_OREG              66.
+Info: PIO                        96.
 Info: PLL_25K                     1.
-Info: SLICEL                     79.
-Info:     CARRY                  33.
+Info: SLICEL                     95.
+Info:     CARRY                  41.
 Info:     MUXF7                  38.
-Info:     MUXF8                   8.
-Info: SLICEL(LE)                645.
-Info:     LUT                   155.
-Info:     LUT REG               205.
-Info:     REG                   285.
+Info:     MUXF8                  16.
+Info: SLICEL(LE)                871.
+Info:     LUT                   201.
+Info:     LUT REG               260.
+Info:     REG                   410.
 Info: 完成组装.
 Info: Start gpack.
 Info: Done gpack.
 Info: 开始建立物理网表.
-Info:   为 95   个 PIO        建立了物理网表 .
-Info:   为 65   个 IOLOGIC    建立了物理网表 .
+Info:   为 96   个 PIO        建立了物理网表 .
+Info:   为 66   个 IOLOGIC    建立了物理网表 .
 Info:   为 1    个 PLL_25K    建立了物理网表 .
 Info:   为 1    个 CM3        建立了物理网表 .
-Info:   为 263  个 SLICEL     建立了物理网表 .
+Info:   为 352  个 SLICEL     建立了物理网表 .
 Info: 完成建立物理网表.
 Info: CM3                         1.
-Info: IOLOGIC                    65.
-Info:     IREG_OREG              65.
-Info: PIO                        95.
+Info: IOLOGIC                    66.
+Info:     IREG_OREG              66.
+Info: PIO                        96.
 Info: PLL_25K                     1.
-Info: SLICEL                    263.
-Info:     CARRY                  33.
-Info:     LOGIC                 184.
+Info: SLICEL                    352.
+Info:     CARRY                  41.
+Info:     LOGIC                 257.
 Info:     MUXF7                  38.
-Info:     MUXF8                   8.
+Info:     MUXF8                  16.
 ####
 Info: 组装执行时间 : 6 秒.
 Info: 输出网表报告到文件D:\fpga\AC208-SA5Z30-CM3\workspace\lcd\fpga\sa5z30fpga\hq_run\top_map.rpt中.
