@@ -1,0 +1,563 @@
+
+==========oOOOo===========================================oOOOo==========
+=  HqFpga(TM) 版本2.14.4 (Winter 2023) Build 021824
+=  SEALION系列FPGA开发软件
+=  西安智多晶微电子有限公司 (isilicontech.com)             _@)
+ _________________________________________________________/ (
+<_________________________________________________________  {}@8@@8@(*)
+                                                          \_(
+=  版权所有 (c) 2020-2025 XiST 智多晶                      @)
+=  保留一切权利.
+=========================================================================
+Info: 检查时序约束 ....
+Info: 已完成.
+Info: 检查物理约束 ....
+Info: 已完成.
+Info: 网表整理(nl.sweep) 开始 ....
+Info: 共有 0 个节点被 nl.sweep 删除.
+Info: 网表整理(nl.sweep) 结束.
+
+WARN(NCHK-CLK001): 连线 seg_inst/clk_DRV 混合了时钟和数据连接.
+-- 非时钟引脚 --
+   seg_inst/clk_DRV_reg_ctrlmux.I0
+[说明]上述情况通常源自生成时钟，例如通过计数进行分频的逻辑。
+如果确实是这种情况而且是必须的(例如不能用PLL/DCM分频替代)，
+请别忘为相关连线显式地指定时钟约束。否则，这种时钟和数据混
+合的描述方式是不推荐使用的，请复查并修改。
+
+#=============oOOOo================oOOOo=============
+# 组装(Packing)
+#====================================================
+Info: 开始组装(packing).
+Info: 将 ahb_sram1/read_buffer_1_reg[7] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_1_reg[6] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_1_reg[5] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_1_reg[4] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_1_reg[3] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_1_reg[2] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_1_reg[1] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_1_reg[0] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_0_reg[7] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_0_reg[6] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_0_reg[5] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_0_reg[4] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_0_reg[3] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_0_reg[2] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_0_reg[1] 吸收到 IREG.
+Info: 将 ahb_sram1/read_buffer_0_reg[0] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[15] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[14] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[13] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[12] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[11] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[10] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[9] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[8] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[7] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[6] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[5] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[4] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[3] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[2] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[1] 吸收到 IREG.
+Info: 将 ahb_lcd8080_inst1/cmd_data_r_reg_reg[0] 吸收到 IREG.
+Info: 将 ahb_uart1/RX_samp_regs_reg[5] 吸收到 IREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[17] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[16] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[15] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[14] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[13] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[12] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[11] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[10] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[9] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[8] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[7] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[6] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[5] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[4] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[3] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[2] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[1] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_high_reg[0] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_addr_low_reg[1]_dup1 吸收到 OREG.
+Info: 将 ahb_sram1/reg_we_n_reg 吸收到 OREG.
+Info: 将 ahb_sram1/reg_oe_n_reg 吸收到 OREG.
+Info: 将 ahb_sram1/reg_ce_n_reg 吸收到 OREG.
+Info: 将 ahb_sram1/reg_bs_n_reg[0] 吸收到 OREG.
+Info: 将 ahb_sram1/reg_bs_n_reg[1] 吸收到 OREG.
+Info: 将 led_wf_inst1/led_sig_reg[3]_dup1 吸收到 OREG.
+Info: 将 led_wf_inst1/led_sig_reg[2]_dup1 吸收到 OREG.
+Info: 将 led_wf_inst1/led_sig_reg[1]_dup1 吸收到 OREG.
+Info: 将 led_wf_inst1/led_sig_reg[0]_dup1 吸收到 OREG.
+Info: 将 ahb_uart1/TX_shift_reg_reg[0] 吸收到 OREG.
+Info: 将 seg_inst/SH_CLK_reg 吸收到 OREG.
+Info: 将 seg_inst/LD_CLK_reg 吸收到 OREG.
+Info: 将 seg_inst/HC_DAT_reg_dup1 吸收到 OREG.
+Info: 将 ahb_lcd8080_inst1/sta8080_reg[3]_dup1 吸收到 OREG.
+Info: 开始组装预处理.
+Info: 完成组装预处理.
+Info: CM3                         1.
+Info: IOLOGIC                    66.
+Info:     IREG_OREG              66.
+Info: PIO                        98.
+Info: PLL_25K                     1.
+Info: SLICEL                     95.
+Info:     CARRY                  41.
+Info:     MUXF7                  38.
+Info:     MUXF8                  16.
+Info: SLICEL(LE)                871.
+Info:     LUT                   201.
+Info:     LUT REG               260.
+Info:     REG                   410.
+Info: 完成组装.
+
+Info: Start gpack.
+Info: Done gpack.
+Info: 开始建立物理网表.
+Info:   为 98   个 PIO        建立了物理网表 .
+Info:   为 66   个 IOLOGIC    建立了物理网表 .
+Info:   为 1    个 PLL_25K    建立了物理网表 .
+Info:   为 1    个 CM3        建立了物理网表 .
+Info:   为 352  个 SLICEL     建立了物理网表 .
+Info: 完成建立物理网表.
+Info: CM3                         1.
+Info: IOLOGIC                    66.
+Info:     IREG_OREG              66.
+Info: PIO                        98.
+Info: PLL_25K                     1.
+Info: SLICEL                    352.
+Info:     CARRY                  41.
+Info:     LOGIC                 257.
+Info:     MUXF7                  38.
+Info:     MUXF8                  16.
+####
+Info: 组装执行时间 : 6 秒.
+Info: 输出网表报告到文件D:\fpga\AC208-SA5Z30-CM3\workspace\deskClock\fpga\sa5z30fpga\hq_run\top_map.rpt中.
+Info: 检查时序约束 ....
+Info: 已完成.
+
+#=============oOOOo================oOOOo=============
+# 布局(Placement)
+#====================================================
+Info: 开始布局(placement).
+Info: 布局模式: 时序优化.
+Info: 时序优化强度: 标准.
+Info: CE/SR NET max fanout = 2000.
+Info: Best achievable WNS = 8001.5
+[V]PL-STAT-SLICE:  6.89655 = 352 / 5104
+Info: 设置延迟系数: 1.33333.
+[V]: Identify CE/SR net...
+Info: 元件实例 led_core 已固定于 B6.
+Info: 元件实例 beep_pin 已固定于 E13.
+Info: 元件实例 uart_DAP_rx 已固定于 K2.
+Info: 元件实例 uart_DAP_tx 已固定于 L2.
+Info: 元件实例 key_pin[1] 已固定于 E5.
+Info: 元件实例 key_pin[2] 已固定于 F5.
+Info: 元件实例 LCD_BL 已固定于 G5.
+Info: 元件实例 sd_sclk 已固定于 E11.
+Info: 元件实例 sd_cs 已固定于 D11.
+Info: 元件实例 sd_mosi 已固定于 D12.
+Info: 元件实例 sd_miso 已固定于 F11.
+Info: 元件实例 flash_sclk 已固定于 A1.
+Info: 元件实例 flash_cs 已固定于 A8.
+Info: 元件实例 flash_mosi 已固定于 G2.
+Info: 元件实例 flash_miso 已固定于 G1.
+Info: 元件实例 LCDT_SCL 已固定于 J1.
+Info: 元件实例 LCDT_SDA 已固定于 N1.
+Info: 元件实例 LCD_RST 已固定于 K10.
+Info: 元件实例 LCDT_RST 已固定于 J2.
+Info: 元件实例 LCDT_PEN 已固定于 J3.
+Info: 元件实例 bme_scl 已固定于 B4.
+Info: 元件实例 bme_sda 已固定于 C5.
+Info: 元件实例 SRAM_DQ[15] 已固定于 P9.
+Info: 元件实例 SRAM_DQ[14] 已固定于 R9.
+Info: 元件实例 SRAM_DQ[13] 已固定于 P8.
+Info: 元件实例 SRAM_DQ[12] 已固定于 R8.
+Info: 元件实例 SRAM_DQ[11] 已固定于 P7.
+Info: 元件实例 SRAM_DQ[10] 已固定于 R7.
+Info: 元件实例 SRAM_DQ[9] 已固定于 P6.
+Info: 元件实例 SRAM_DQ[8] 已固定于 P5.
+Info: 元件实例 SRAM_DQ[7] 已固定于 N6.
+Info: 元件实例 SRAM_DQ[6] 已固定于 L7.
+Info: 元件实例 SRAM_DQ[5] 已固定于 N7.
+Info: 元件实例 SRAM_DQ[4] 已固定于 N8.
+Info: 元件实例 SRAM_DQ[3] 已固定于 L9.
+Info: 元件实例 SRAM_DQ[2] 已固定于 L10.
+Info: 元件实例 SRAM_DQ[1] 已固定于 M10.
+Info: 元件实例 SRAM_DQ[0] 已固定于 M11.
+Info: 元件实例 SWDIO 已固定于 C1.
+Info: 元件实例 DATA_8080[15] 已固定于 G3.
+Info: 元件实例 DATA_8080[14] 已固定于 H3.
+Info: 元件实例 DATA_8080[13] 已固定于 G10.
+Info: 元件实例 DATA_8080[12] 已固定于 E6.
+Info: 元件实例 DATA_8080[11] 已固定于 E7.
+Info: 元件实例 DATA_8080[10] 已固定于 J4.
+Info: 元件实例 DATA_8080[9] 已固定于 F6.
+Info: 元件实例 DATA_8080[8] 已固定于 K3.
+Info: 元件实例 DATA_8080[7] 已固定于 J5.
+Info: 元件实例 DATA_8080[6] 已固定于 K5.
+Info: 元件实例 DATA_8080[5] 已固定于 J6.
+Info: 元件实例 DATA_8080[4] 已固定于 R11.
+Info: 元件实例 DATA_8080[3] 已固定于 N10.
+Info: 元件实例 DATA_8080[2] 已固定于 P11.
+Info: 元件实例 DATA_8080[1] 已固定于 K6.
+Info: 元件实例 DATA_8080[0] 已固定于 R12.
+Info: 元件实例 clk_25M 已固定于 H13.
+Info: 元件实例 SWCLK 已固定于 H1.
+Info: 元件实例 key_pin[0] 已固定于 D5.
+Info: 元件实例 uart_ch340_rx 已固定于 C15.
+Info: 元件实例 SRAM_ADDR[18] 已固定于 R5.
+Info: 元件实例 SRAM_ADDR[17] 已固定于 P15.
+Info: 元件实例 SRAM_ADDR[16] 已固定于 R15.
+Info: 元件实例 SRAM_ADDR[15] 已固定于 P14.
+Info: 元件实例 SRAM_ADDR[14] 已固定于 P4.
+Info: 元件实例 SRAM_ADDR[13] 已固定于 R4.
+Info: 元件实例 SRAM_ADDR[12] 已固定于 P3.
+Info: 元件实例 SRAM_ADDR[11] 已固定于 R3.
+Info: 元件实例 SRAM_ADDR[10] 已固定于 R2.
+Info: 元件实例 SRAM_ADDR[9] 已固定于 M3.
+Info: 元件实例 SRAM_ADDR[8] 已固定于 N3.
+Info: 元件实例 SRAM_ADDR[7] 已固定于 L5.
+Info: 元件实例 SRAM_ADDR[6] 已固定于 M4.
+Info: 元件实例 SRAM_ADDR[5] 已固定于 N5.
+Info: 元件实例 SRAM_ADDR[4] 已固定于 M12.
+Info: 元件实例 SRAM_ADDR[3] 已固定于 N14.
+Info: 元件实例 SRAM_ADDR[2] 已固定于 N15.
+Info: 元件实例 SRAM_ADDR[1] 已固定于 M13.
+Info: 元件实例 SRAM_ADDR[0] 已固定于 L11.
+Info: 元件实例 SRAM_nWE 已固定于 L6.
+Info: 元件实例 SRAM_nOE 已固定于 R14.
+Info: 元件实例 SRAM_nCE 已固定于 N12.
+Info: 元件实例 SRAM_nLB 已固定于 R13.
+Info: 元件实例 SRAM_nUB 已固定于 P13.
+Info: 元件实例 led_pin[3] 已固定于 E14.
+Info: 元件实例 led_pin[2] 已固定于 F14.
+Info: 元件实例 led_pin[1] 已固定于 G15.
+Info: 元件实例 led_pin[0] 已固定于 D15.
+Info: 元件实例 uart_ch340_tx 已固定于 E12.
+Info: 元件实例 w5500_sclk 已固定于 L15.
+Info: 元件实例 w5500_cs 已固定于 K9.
+Info: 元件实例 w5500_mosi 已固定于 M15.
+Info: 元件实例 seg7_SH_CP 已固定于 E4.
+Info: 元件实例 seg7_ST_CP 已固定于 G6.
+Info: 元件实例 seg7_DS 已固定于 H2.
+Info: 元件实例 CS_8080 已固定于 L12.
+Info: 元件实例 RS_8080 已固定于 L13.
+Info: 元件实例 WR_8080 已固定于 P12.
+Info: 元件实例 RD_8080 已固定于 K11.
+----
+Info: 布局第1阶段(总共3阶段) (签名=457,60,1).
+----
+Info: 进度   3%, WNS = -26115.
+Info: 进度   5%, WNS = -13944.
+Info: 进度   7%, WNS = -19583.
+Info: 进度   8%, WNS = -13126.
+Info: 进度  10%, WNS = -11062.
+Info: 进度  12%, WNS =  -9078.
+Info: 进度  13%, WNS =  -7845.
+Info: 进度  17%, WNS =  -6085.
+Info: 进度  20%, WNS =  -4082.
+Info: 进度  23%, WNS =  -4661.
+Info: 进度  27%, WNS =  -4134.
+Info: 进度  30%, WNS =  -2492.
+Info: 进度  33%, WNS =  -3318.
+Info: 进度  35%, WNS =  -2012.
+Info: 进度  37%, WNS =  -2928.
+Info: 进度  40%, WNS =  -2118.
+Info: 进度  43%, WNS =  -1012.
+Info: 进度  47%, WNS =   -408.
+Info: 进度  50%, WNS =   -558.
+Info: 进度  53%, WNS =   -356.
+Info: 进度  55%, WNS =   -132.
+Info: 进度  57%, WNS =  -3256.
+Info: 进度  60%, WNS =  -1425.
+Info: 进度  63%, WNS =  -1225.
+Info: 进度  67%, WNS =   -452.
+Info: 进度  70%, WNS =  -1128.
+Info: 进度  72%, WNS =     15.
+Info: 进度  73%, WNS =     -3.
+Info: 进度  77%, WNS =    -71.
+Info: 进度  78%, WNS =     42.
+Info: 进度  80%, WNS =   -132.
+Info: 进度  83%, WNS =   -132.
+Info: 进度  87%, WNS =   -305.
+Info: 进度  90%, WNS =   -305.
+Info: 进度  93%, WNS =   -132.
+Info: 进度  97%, WNS =   -305.
+Info: 进度  99%, WNS =   -305.
+Info: 进度 100%, WNS =     42.
+----
+Info: 布局第2阶段(总共3阶段) (签名=1,10,1).
+----
+Info: 进度  10%, WNS =   -132.
+Info: 进度  30%, WNS =  -3421.
+Info: 进度  50%, WNS =  -2025.
+Info: 进度  70%, WNS =  -3705.
+Info: 进度  90%, WNS =  -7065.
+Info: 进度 100%, WNS =     42.
+----
+Info: 布局第3阶段(总共3阶段) (签名=0,10,1).
+----
+Info: 进度  10%, WNS =   -305.
+Info: 进度  30%, WNS =   -132.
+Info: 进度  50%, WNS =   -132.
+Info: 进度  70%, WNS =   -132.
+Info: 进度  90%, WNS =   -132.
+Info: 进度 100%, WNS =     42.
+----
+Info: 布局结果最终WNS = 2031.
+----
+Info: 完成布局.
+
+Info: 开始网表校正.
+Info: 完成网表校正.
+####
+Info: 布局执行时间 : 2 秒.
+####
+Info: 输出网表报告到文件D:\fpga\AC208-SA5Z30-CM3\workspace\deskClock\fpga\sa5z30fpga\hq_run\top_place.rpt中.
+Info: 检查时序约束 ....
+Info: 已完成.
+
+#=============oOOOo================oOOOo=============
+# 布线(Routing)
+#====================================================
+Info: 布线模式 : timing.
+Info: 优化强度 : std.
+Info: 读入布线资源并检查网表 ....
+Info: 当前网表中有 520 个元件例示(instance).
+Info: 总共需要对 1396 条连线 (4922 连接点) 进行布线.
+Info: 连线 AHB_USR_CLK 指定为 PCLK (由 placer).
+Info: 连线 CLK_FPGA_SYS1 指定为 PCLK (由 placer).
+Info: 连线 seg_inst/clk_DRV 指定为 PCLK (由 placer).
+Info: 开始布线(routing).
+
+Info: set customeized options 
+
+| X1/X2 | X2H | X12D | X4/X6 |  XL |  LH |  LV | LVB | BNC | GFAN | X120 | X0-X0 | X1-X2 | X4-X6 
+|   5   |   5 |   5  |   2   |   3 |   6 |   6 |   6 |   6 |   6  |  50  |   3   |   4   |   7   
+
+| MALL | MLONG | MX0  | X12RAM | X46RAM | X12VIQ | X46VIQ | X12CLKV | PLO | CLO | X-LOCAL | CLKV+ | GFANn | GNDfo | GNDlut 
+|   1  |   1   |   1  |    2   |    2   |    3   |    2   |     5   |  10 |   5 |    0    |   1   |   2   |    0  |    0   
+
+Info: 第  0 轮 : 还需要对 1142  条连线 (4392  连接点)进行布线.
+Info: 第  1 轮 : 还需要对 122   条连线 (90    连接点)进行布线.
+Info: 第  2 轮 : 还需要对 12    条连线 (6     连接点)进行布线.
+Info: 第  3 轮 : 还需要对 0     条连线 (0     连接点)进行布线.
+
+Info: 完成布线.
+
+Info: 开始更新物理网表.
+Info:   为 197  个 SLICEL     建立了物理网表 .
+Info:   为 107  个 TIEOFF     建立了物理网表 .
+Info: 完成更新物理网表.
+####
+Info: 布线执行时间 : 6 秒.
+####
+ 
+Info: 生成最差时序余量(WNS)报告 ...
+============================================================
+Clock Name                  Req Period  Setup WNS   Hold WNS
+------------------------------------------------------------
+clkbase                          40000         --         --
+PLL_inst1/PLLInst_0/CLKOP        10000       1352        326
+PLL_inst1/PLLInst_0/CLKOS        20000      11002        399
+============================================================
+【汇总】
+Info(wns-ok): Setup WNS = 1352, 满足时序目标.
+Info(wns-ok): Hold  WNS = 326, 满足时序目标.
+====
+Info: 完成WNS报告.
+Info:   (可在文件 "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/sa5z30fpga/hq_run/top_slack.rpt" 中检查更详细信息).
+====
+Info: 自动添加约束: create_generated_clock {PLL_inst1/PLLInst_0/CLKOP} -source {PLL_inst1/PLLInst_0/CLKI} -multiply_by 32 -divide_by 8.
+Info: 自动添加约束: create_generated_clock {PLL_inst1/PLLInst_0/CLKOS} -source {PLL_inst1/PLLInst_0/CLKI} -multiply_by 32 -divide_by 16.
+Info: 输出网表报告到文件D:\fpga\AC208-SA5Z30-CM3\workspace\deskClock\fpga\sa5z30fpga\hq_run\top_route.rpt中.
+
+#########################################################################
+#
+# 最大时钟频率(FMAX)报告
+#
+#########################################################################
+#
+# 注意: FMAX 的计算仅针对在同一时钟域内的寄存器到寄存器路径，
+# 多周期路径、跨时钟域路径(包括主时钟及其生成时钟之间的路径)都将
+# 被忽略。对于一个时钟及其反向时钟之间的路径， FMAX的计算通过按
+# 频宽比(duty cycle)等比例扩展路径延迟得到。例如，假设有一
+# 条路径的起点由时钟上升沿驱动而终点由同一时钟的下降沿驱动，
+# 如果该时钟的频宽比为50，则计算FMAX时，路径延迟将乘以2(即
+# 除以50%)。
+#
+
+
+# ***********************************************************************
+# 时钟         : PLL_inst1/PLLInst_0/CLKOP
+# 最小时钟周期 : 8648.5 ps
+# ***********************************************************************
+
+********************
+* 路径 1
+********************
+起点     : inst/TARGEXP0HTRANS1   [激发时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿1]
+终点     : SRAM_nLB_MGIOL/TXDATA0 [捕获时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿2] 
+
+数据产生路径
+=====================================================================================================================================
+|              节点               |  单元   |  延迟  |         类型          |   位置   |                连线                | 扇出 |
+=====================================================================================================================================
+| CLOCK'clkbase                   |   N/A   |      0 |                       |          | N/A                                |      |
+| clk_25M                         |   top   |      0 |     clock_latency     |          | clk_25M                            | 1    |
+| clk_25M/PAD#bidir_in            |   PIO   |      0 |          net          | PT79A    | clk_25M                            | 1    |
+| clk_25M/PADDI                   |   PIO   |   1091 |       PADI_DEL        |          | clk_25M_c                          | 1    |
+| PLL_inst1/PLLInst_0/CLKI        | PLL_25K | 4826.3 |          net          | LPLL1    | clk_25M_c                          |      |
+| --                              |   --    |     -- |          --           | --       | --                                 | --   |
+| CLOCK'PLL_inst1/PLLInst_0/CLKOP |   N/A   |      0 |      CLKI2OP_DEL      |          | N/A                                |      |
+| PLL_inst1/PLLInst_0/CLKOP       | PLL_25K | 5917.3 |     clock_latency     |          | AHB_USR_CLK                        | 335  |
+| inst/CIBCLK                     |   CM3   | 1096.4 |          net          | CM3      | AHB_USR_CLK                        |      |
+| --                              |   --    |     -- |          --           | --       | --                                 | --   |
+| inst/TARGEXP0HTRANS1            |   CM3   |   1321 | Tcq_TARGEXP0HTRANS[1] |          | TARGEXP0HTRANS[1]                  | 2    |
+| ahb_sram1/reg_active/B6         | SLICEL  | 2635.9 |          net          | R30C55M  | TARGEXP0HTRANS[1]                  |      |
+| ahb_sram1/reg_active/B          | SLICEL  |   75.1 |         Tilo          |          | ahb_sram1/n_1885_CE_AND_O_CE_AND_O | 26   |
+| ahb_sram1/reg_rd_req/A1         | SLICEL  |  746.5 |          net          | R30C57M  | ahb_sram1/n_1885_CE_AND_O_CE_AND_O |      |
+| ahb_sram1/reg_rd_req/A          | SLICEL  |   75.1 |         Tilo          |          | ahb_sram1/RDREQ                    | 9    |
+| ahb_sram1/n_1758/C2             | SLICEL  |  372.7 |          net          | R30C57L  | ahb_sram1/RDREQ                    |      |
+| ahb_sram1/n_1758/C              | SLICEL  |   75.1 |         Tilo          |          | _n_8424                            | 1    |
+| ahb_sram1/n_1758/D4             | SLICEL  |  209.9 |          net          | R30C57L  | _n_8424                            |      |
+| ahb_sram1/n_1758/D              | SLICEL  |   75.1 |         Tilo          |          | ahb_sram1/nxt_ce_n                 | 3    |
+| ahb_sram1/reg_byte_mask[0]/B4   | SLICEL  | 1610.7 |          net          | R32C81M  | ahb_sram1/nxt_ce_n                 |      |
+| ahb_sram1/reg_byte_mask[0]/B    | SLICEL  |   75.1 |         Tilo          |          | ahb_sram1/nxt_bs_n[0]              | 1    |
+| SRAM_nLB_MGIOL/TXDATA0          | IOLOGIC | 1035.2 |          net          | IOL_B82C | ahb_sram1/nxt_bs_n[0]              |      |
+=====================================================================================================================================
+时钟路径延迟         = 7013.7    
+数据路径延迟         = 8307.5     (Tdatp)
+     clock-to-q 延迟 = 1321 
+        总的单元延迟 = 375.5 
+        总的连线延迟 = 6611 
+        逻辑级数     = 5 
+
+[数据捕获路径]
+======================================================================================================
+|              节点               |  单元   |  延迟  |     类型      |   位置   |    连线     | 扇出 |
+======================================================================================================
+| CLOCK'clkbase                   |   N/A   |      0 |               |          | N/A         |      |
+| clk_25M                         |   top   |      0 | clock_latency |          | clk_25M     | 1    |
+| clk_25M/PAD#bidir_in            |   PIO   |      0 |      net      | PT79A    | clk_25M     | 1    |
+| clk_25M/PADDI                   |   PIO   |   1091 |   PADI_DEL    |          | clk_25M_c   | 1    |
+| PLL_inst1/PLLInst_0/CLKI        | PLL_25K | 4669.8 |      net      | LPLL1    | clk_25M_c   |      |
+| --                              |   --    |     -- |      --       | --       | --          | --   |
+| CLOCK'PLL_inst1/PLLInst_0/CLKOP |   N/A   |      0 |  CLKI2OP_DEL  |          | N/A         |      |
+| PLL_inst1/PLLInst_0/CLKOP       | PLL_25K | 5760.8 | clock_latency |          | AHB_USR_CLK | 335  |
+| SRAM_nLB_MGIOL/CLK              | IOLOGIC | 1057.4 |      net      | IOL_B82C | AHB_USR_CLK |      |
+======================================================================================================
+
+时钟路径延迟         = 6818.2    
+    时钟偏差         = -195.5 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 8307.5     + 302        - 156.5      - -195.5     
+       = 8648.5
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+# ***********************************************************************
+# 时钟         : PLL_inst1/PLLInst_0/CLKOS
+# 最小时钟周期 : 8997.9 ps
+# ***********************************************************************
+
+********************
+* 路径 1
+********************
+起点     : led_wf_inst1/cnt[15]/AQ [激发时钟: PLL_inst1/PLLInst_0/CLKOS, 上升沿1]
+终点     : led_pin[0]_MGIOL/CE     [捕获时钟: PLL_inst1/PLLInst_0/CLKOS, 上升沿2] 
+
+数据产生路径
+=========================================================================================================================
+|               节点               |  单元   |  延迟  |     类型      |   位置   |             连线              | 扇出 |
+=========================================================================================================================
+| CLOCK'clkbase                    |   N/A   |      0 |               |          | N/A                           |      |
+| clk_25M                          |   top   |      0 | clock_latency |          | clk_25M                       | 1    |
+| clk_25M/PAD#bidir_in             |   PIO   |      0 |      net      | PT79A    | clk_25M                       | 1    |
+| clk_25M/PADDI                    |   PIO   |   1091 |   PADI_DEL    |          | clk_25M_c                     | 1    |
+| PLL_inst1/PLLInst_0/CLKI         | PLL_25K | 4826.3 |      net      | LPLL1    | clk_25M_c                     |      |
+| --                               |   --    |     -- |      --       | --       | --                            | --   |
+| CLOCK'PLL_inst1/PLLInst_0/CLKOS  |   N/A   |      0 |  CLKI2OS_DEL  |          | N/A                           |      |
+| PLL_inst1/PLLInst_0/CLKOS        | PLL_25K | 5917.3 | clock_latency |          | CLK_FPGA_SYS1                 | 10   |
+| led_wf_inst1/cnt[15]/CLK         | SLICEL  | 1096.4 |      net      | R33C88L  | CLK_FPGA_SYS1                 |      |
+| --                               |   --    |     -- |      --       | --       | --                            | --   |
+| led_wf_inst1/cnt[15]/AQ          | SLICEL  |   30.5 |     Tcko      |          | led_wf_inst1/cnt[15]          | 2    |
+| led_wf_inst1/cnt[12]/C5          | SLICEL  | 2109.3 |      net      | R19C62L  | led_wf_inst1/cnt[15]          |      |
+| led_wf_inst1/cnt[12]/C           | SLICEL  |   75.1 |     Tilo      |          | led_wf_inst1/_i_2/_i_0_rkd_16 | 1    |
+| led_wf_inst1/cnt[12]/D5          | SLICEL  |    451 |      net      | R19C62L  | led_wf_inst1/_i_2/_i_0_rkd_16 |      |
+| led_wf_inst1/cnt[12]/D           | SLICEL  |   75.1 |     Tilo      |          | led_wf_inst1/_i_2/_i_0_rkd_21 | 1    |
+| led_wf_inst1/_i_2/_i_0_rkd_14/B1 | SLICEL  | 1781.9 |      net      | R33C66L  | led_wf_inst1/_i_2/_i_0_rkd_21 |      |
+| led_wf_inst1/_i_2/_i_0_rkd_14/B  | SLICEL  |   75.1 |     Tilo      |          | _n_8448                       | 1    |
+| led_wf_inst1/_i_2/_i_0_rkd_14/D6 | SLICEL  |  176.4 |      net      | R33C66L  | _n_8448                       |      |
+| led_wf_inst1/_i_2/_i_0_rkd_14/D  | SLICEL  |   75.1 |     Tilo      |          | led_wf_inst1/n_6              | 20   |
+| led_pin[0]_MGIOL/CE              | IOLOGIC | 4088.4 |      net      | IOL_T95D | led_wf_inst1/n_6              |      |
+=========================================================================================================================
+时钟路径延迟         = 7013.7    
+数据路径延迟         = 8937.9     (Tdatp)
+     clock-to-q 延迟 = 30.5 
+        总的单元延迟 = 300.4 
+        总的连线延迟 = 8607 
+        逻辑级数     = 4 
+
+[数据捕获路径]
+========================================================================================================
+|              节点               |  单元   |  延迟  |     类型      |   位置   |     连线      | 扇出 |
+========================================================================================================
+| CLOCK'clkbase                   |   N/A   |      0 |               |          | N/A           |      |
+| clk_25M                         |   top   |      0 | clock_latency |          | clk_25M       | 1    |
+| clk_25M/PAD#bidir_in            |   PIO   |      0 |      net      | PT79A    | clk_25M       | 1    |
+| clk_25M/PADDI                   |   PIO   |   1091 |   PADI_DEL    |          | clk_25M_c     | 1    |
+| PLL_inst1/PLLInst_0/CLKI        | PLL_25K | 4669.8 |      net      | LPLL1    | clk_25M_c     |      |
+| --                              |   --    |     -- |      --       | --       | --            | --   |
+| CLOCK'PLL_inst1/PLLInst_0/CLKOS |   N/A   |      0 |  CLKI2OS_DEL  |          | N/A           |      |
+| PLL_inst1/PLLInst_0/CLKOS       | PLL_25K | 5760.8 | clock_latency |          | CLK_FPGA_SYS1 | 10   |
+| led_pin[0]_MGIOL/CLK            | IOLOGIC | 1057.4 |      net      | IOL_T95D | CLK_FPGA_SYS1 |      |
+========================================================================================================
+
+时钟路径延迟         = 6818.2    
+    时钟偏差         = -195.5 (Tcksw)
+
+[延迟计算]
+======================================================================
+总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
+       = 8937.9     + 21         - 156.5      - -195.5     
+       = 8997.9
+======================================================================
+Tdatp -- 数据路径延迟 
+Tsu   -- 库单元建立时间 
+Tckpm -- 时钟悲观补偿 
+
+
+#########################################################################
+# 时钟频率总结
+#########################################################################
+最慢时钟     : PLL_inst1/PLLInst_0/CLKOS
+最小时钟周期 : 8997.9 ps
+最大时钟频率 : 111.1 MHz
+#########################################################################
+PLL_inst1/PLLInst_0/CLKOP : 115.6 Mhz
+PLL_inst1/PLLInst_0/CLKOS : 111.1 Mhz
+
+
+
+#=============oOOOo================oOOOo=============
+# 位流生成
+#====================================================
+Info: 载入器件信息 ....
+Info: 载入设计 ....
+Info: 输出位流文件 top.bit ....
+Info: 完成.
+####
+Info: 位流生成执行时间 : 1 秒.
+####
+Info: 启动比特流下载器 ....
+D:/fpga/AC208-SA5Z30-CM3/hq_xist_2.14.4_021824_win64/build/hqdnload/hqdnload.exe -f top.bit -family seal30k -lang chs
+----

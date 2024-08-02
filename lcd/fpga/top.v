@@ -80,6 +80,10 @@ module top (
     inout wire LCDT_SCL,
     inout wire LCDT_SDA,
 
+    // iic 4 bme280.
+    inout wire bme_scl,
+    inout wire bme_sda,
+
     // iic 4 eeprom, rtc etc.
     inout wire i2c_scl,
     inout wire i2c_sda
@@ -95,6 +99,10 @@ module top (
   // iic 4 eeprom, rtc etc.
   assign i2c_scl = 1'bz;
   assign i2c_sda = 1'bz;
+
+  // iic 4 bme280.
+  assign bme_scl = GPIO[ 20 ];
+  assign bme_sda = GPIO[ 21 ];
 
   // key_pin
   assign GPIO[5: 4] = key_pin[2: 1];
@@ -181,7 +189,7 @@ module top (
   // 目前只用了20个 GPIO
   genvar i;
   generate
-    for (i = 0;i < 20;i = i + 1)
+    for (i = 0;i < 22;i = i + 1)
       begin:setb
         xsIOBB inst_xsIOBB_GPIO (
                  .I (GPIO_OUT[i]),
@@ -191,8 +199,8 @@ module top (
                );
       end
   endgenerate
-  assign GPIO_IN[31: 20] = 0;
-  assign GPIO[31: 20] = 0;
+  assign GPIO_IN[31: 22] = 0;
+  assign GPIO[31: 22] = 0;
 
   // DEBUG
   wire TMSOEN;

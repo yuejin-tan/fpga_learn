@@ -1,0 +1,11 @@
+.\objects\i2c_gpio2.o: driver\i2c_gpio2.c
+.\objects\i2c_gpio2.o: driver\i2c_gpio2.h
+.\objects\i2c_gpio2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\i2c_gpio2.o: .\CMSIS\Device\Include\CM3DS_MPS2.h
+.\objects\i2c_gpio2.o: .\CMSIS\Core\Include\core_cm3.h
+.\objects\i2c_gpio2.o: .\CMSIS\Core\Include\core_cmInstr.h
+.\objects\i2c_gpio2.o: .\CMSIS\Core\Include\core_cmFunc.h
+.\objects\i2c_gpio2.o: .\CMSIS\Device\Include\system_CM3DS.h
+.\objects\i2c_gpio2.o: .\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_conf.h
+.\objects\i2c_gpio2.o: .\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_gpio.h
+.\objects\i2c_gpio2.o: .\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_timer.h
