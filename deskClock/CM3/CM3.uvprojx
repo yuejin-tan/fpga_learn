@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\CMSIS\Core\Include;.\CMSIS\Device\Include;.\CMSIS\Device\Source;.\CMSIS\Device\StdPeriph_Driver\inc;.\CMSIS\generic;.\src;.\driver</IncludePath>
+              <IncludePath>.\CMSIS\Core\Include;.\CMSIS\Device\Include;.\CMSIS\Device\Source;.\CMSIS\Device\StdPeriph_Driver\inc;.\CMSIS\generic;.\driver;.\freertos;.\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -466,36 +466,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>src</GroupName>
-          <Files>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>delay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\delay.c</FilePath>
-            </File>
-            <File>
-              <FileName>scd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\scd.c</FilePath>
-            </File>
-            <File>
-              <FileName>scd_reg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\scd_reg.c</FilePath>
-            </File>
-            <File>
-              <FileName>int_handlers.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\int_handlers.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>driver</GroupName>
           <Files>
             <File>
@@ -522,6 +492,81 @@
               <FileName>thp_bme280_drv.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\driver\thp_bme280_drv.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>freertos</GroupName>
+          <Files>
+            <File>
+              <FileName>event_groups.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\freertos\event_groups.c</FilePath>
+            </File>
+            <File>
+              <FileName>heap_4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\freertos\heap_4.c</FilePath>
+            </File>
+            <File>
+              <FileName>list.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\freertos\list.c</FilePath>
+            </File>
+            <File>
+              <FileName>port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\freertos\port.c</FilePath>
+            </File>
+            <File>
+              <FileName>queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\freertos\queue.c</FilePath>
+            </File>
+            <File>
+              <FileName>stream_buffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\freertos\stream_buffer.c</FilePath>
+            </File>
+            <File>
+              <FileName>tasks.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\freertos\tasks.c</FilePath>
+            </File>
+            <File>
+              <FileName>timers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\freertos\timers.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>src</GroupName>
+          <Files>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>scd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\scd.c</FilePath>
+            </File>
+            <File>
+              <FileName>scd_reg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\scd_reg.c</FilePath>
+            </File>
+            <File>
+              <FileName>int_handlers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\int_handlers.c</FilePath>
             </File>
           </Files>
         </Group>

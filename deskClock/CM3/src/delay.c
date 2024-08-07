@@ -31,11 +31,14 @@ void DELAY_TICK(uint32_t ticks)
 
 void delay_ms(uint32_t delay_ms)
 {
-    for (uint32_t i = 0;i < delay_ms;i++)
-    {
-        while ((SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk) == 0)
-        {
-            // wait
-        }
-    }
+    // for (uint32_t i = 0;i < delay_ms;i++)
+    // {
+    //     while ((SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk) == 0)
+    //     {
+    //         // wait
+    //     }
+    // }
+
+    // 适配freertos，不使用systick
+    DELAY_TICK(SystemCoreClock / 1000 * delay_ms);
 }

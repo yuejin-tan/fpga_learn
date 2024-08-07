@@ -11,10 +11,13 @@
 #include "ahb_uart.h"
 
 #include "scd_inc.h"
+#include "FreeRTOS.h"
+#include "task.h"
 
 #include "lcd_9488_drv.h"
 #include "touch_GT911_drv.h"
 #include "thp_bme280_drv.h"
+#include "i2c_gpio2.h"
 
 void nvicInit(void)
 {
@@ -230,6 +233,7 @@ void BME280_Init(void)
     BME280_1.PRESS_overSamp = BME280_Over_16;
 
     /****初始化程序****/
+    swi2c_init2();
     //复位设备
     if (BME280_Reset(&BME280_1) != BME280_OK)
     {
@@ -264,11 +268,89 @@ void BME280_Init(void)
     return;
 }
 
+void touchRefreshTask(void* pvParameters)
+{
+    while (1)
+    {
+        if (GT911_Scan(&touchInfo1) == 0)
+        {
+            if (touchInfo1.nums == 2)
+            {
+                LCD_DrawLine(touchInfo1.touchPointInfos[0].x, touchInfo1.touchPointInfos[0].y,
+                    touchInfo1.touchPointInfos[1].x, touchInfo1.touchPointInfos[1].y);
+            }
+            else
+            {
+                LCD_DrawPoint_color(touchInfo1.touchPointInfos[0].x, touchInfo1.touchPointInfos[0].y, RED);
+            }
+        }
+
+        vTaskDelay(10 / portTICK_PERIOD_MS);
+    }
+}
+
+void BME280RefreshTask(void* pvParameters)
+{
+    while (1)
+    {
+        //读取温度、湿度、压力
+        float DATA1[3] = { 0 };
+        if (BME280_Get_ALL(&BME280_1, &DATA1[0], &DATA1[1], &DATA1[2]))
+        {
+            printf("bme280 read err!\r\n");
+        }
+        else
+        {
+            printf("Temp=");
+            printf("%0.2fC, ", DATA1[0]);
+            printf("Hum=");
+            printf("%0.2f%%RH, ", DATA1[1]);
+            printf("Press=");
+            printf("%dPa\r\n", (int)(DATA1[2]));
+        }
+
+        vTaskDelay(500 / portTICK_PERIOD_MS);
+    }
+}
+
+void ledRefreshTask(void* pvParameters)
+{
+    while (1)
+    {
+        while (AHB_UART->cmd.bit.TX_FIFO_FULL == 0)
+        {
+            AHB_UART->data = scd_send1Byte(&scd_1);
+        }
+        while (AHB_UART->cmd.bit.RX_FIFO_EMPTY == 0)
+        {
+            SCD_Rev1Byte(&scd_1, AHB_UART->data);
+        }
+
+        ms_cnt = xTaskGetTickCount() * portTICK_PERIOD_MS;
+        AHB_LED->seg0 = (ms_cnt >> 0) & 0xful;
+        AHB_LED->seg1 = (ms_cnt >> 4) & 0xful;
+        AHB_LED->seg2 = (ms_cnt >> 8) & 0xful;
+        AHB_LED->seg3 = (ms_cnt >> 12) & 0xful;
+        AHB_LED->seg4 = (ms_cnt >> 16) & 0xful;
+        AHB_LED->seg5 = (ms_cnt >> 20) & 0xful;
+        AHB_LED->seg6 = (ms_cnt >> 24) & 0xful;
+        AHB_LED->seg7 = (ms_cnt >> 28) & 0xful;
+
+        vTaskDelay(1 / portTICK_PERIOD_MS);
+    }
+}
+
+TaskHandle_t hTouchRefreshTask;
+TaskHandle_t hBME280RefreshTask;
+TaskHandle_t hLedRefreshTask;
+
 int main(void)
 {
     GPIO_DeInit(CM3DS_MPS2_GPIO0);
     nvicInit();
-    SysTick_Config(SystemCoreClock / 1000ul - 1ul);
+
+    // 由freertos管理
+    // SysTick_Config(SystemCoreClock / 1000ul - 1ul);
 
     uart0_init();
 
@@ -292,65 +374,33 @@ int main(void)
 
     BME280_Init();
 
-    CM3DS_MPS2_TIMER1->CTRL = 0;
-    CM3DS_MPS2_TIMER1->VALUE = 0;
-    CM3DS_MPS2_TIMER1->RELOAD = SystemCoreClock / 10;
-    CM3DS_MPS2_TIMER1->INTCLEAR = 1;
-    CM3DS_MPS2_TIMER1->CTRL = 9;
+    xTaskCreate((TaskFunction_t)touchRefreshTask, /* 任务函数 */
+        (const char*)"touchRefresh", /* 任务名称 */
+        (uint16_t)128, /* 任务堆栈大小 */
+        (void*)NULL, /* 传入给任务函数的参数 */
+        (UBaseType_t)2, /* 任务优先级 */
+        (TaskHandle_t*)&hTouchRefreshTask); /* 任务句柄 */
+
+    xTaskCreate((TaskFunction_t)BME280RefreshTask, /* 任务函数 */
+        (const char*)"BME280Refresh", /* 任务名称 */
+        (uint16_t)128, /* 任务堆栈大小 */
+        (void*)NULL, /* 传入给任务函数的参数 */
+        (UBaseType_t)5, /* 任务优先级 */
+        (TaskHandle_t*)&hBME280RefreshTask); /* 任务句柄 */
+
+    xTaskCreate((TaskFunction_t)ledRefreshTask, /* 任务函数 */
+        (const char*)"ledRefreshTask", /* 任务名称 */
+        (uint16_t)128, /* 任务堆栈大小 */
+        (void*)NULL, /* 传入给任务函数的参数 */
+        (UBaseType_t)1, /* 任务优先级 */
+        (TaskHandle_t*)&hLedRefreshTask); /* 任务句柄 */
+
+    vTaskStartScheduler();
 
     while (1)
     {
-        while (CM3DS_MPS2_TIMER1->INTSTATUS == 0)
-        {
-            while (AHB_UART->cmd.bit.TX_FIFO_FULL == 0)
-            {
-                AHB_UART->data = scd_send1Byte(&scd_1);
-            }
-            while (AHB_UART->cmd.bit.RX_FIFO_EMPTY == 0)
-            {
-                SCD_Rev1Byte(&scd_1, AHB_UART->data);
-            }
-
-            AHB_LED->seg0 = (ms_cnt >> 0) & 0xful;
-            AHB_LED->seg1 = (ms_cnt >> 4) & 0xful;
-            AHB_LED->seg2 = (ms_cnt >> 8) & 0xful;
-            AHB_LED->seg3 = (ms_cnt >> 12) & 0xful;
-            AHB_LED->seg4 = (ms_cnt >> 16) & 0xful;
-            AHB_LED->seg5 = (ms_cnt >> 20) & 0xful;
-            AHB_LED->seg6 = (ms_cnt >> 24) & 0xful;
-            AHB_LED->seg7 = (ms_cnt >> 28) & 0xful;
-        }
-
-        CM3DS_MPS2_TIMER1->INTCLEAR = 1;
-        // 100ms tick area
-        if (GT911_Scan(&touchInfo1) == 0)
-        {
-            if (touchInfo1.nums == 2)
-            {
-                LCD_DrawLine(touchInfo1.touchPointInfos[0].x, touchInfo1.touchPointInfos[0].y,
-                    touchInfo1.touchPointInfos[1].x, touchInfo1.touchPointInfos[1].y);
-            }
-            else
-            {
-                LCD_DrawPoint_color(touchInfo1.touchPointInfos[0].x, touchInfo1.touchPointInfos[0].y, RED);
-            }
-        }
-
-        //读取温度、湿度、压力
-        float DATA1[3] = { 0 };
-        if (BME280_Get_ALL(&BME280_1, &DATA1[0], &DATA1[1], &DATA1[2]))
-        {
-            printf("bme280 read err!\r\n");
-        }
-        else
-        {
-            printf("Temp=");
-            printf("%0.2fC, ", DATA1[0]);
-            printf("Hum=");
-            printf("%0.2f%%RH, ", DATA1[1]);
-            printf("Press=");
-            printf("%dPa\r\n", (int)(DATA1[2]));
-        }
+        // never reach here
+        continue;
     }
 }
 

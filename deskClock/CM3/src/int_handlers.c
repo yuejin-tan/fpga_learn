@@ -3,10 +3,11 @@
 #include "delay.h"
 #include "CM3DS_uart.h"
 
-void SysTick_Handler(void)
-{
-    ms_cnt++;
-}
+// 由freertos管理
+// void SysTick_Handler(void)
+// {
+//     ms_cnt++;
+// }
 
 //uart0 中断处理函数
 void UART0_Handler(void)

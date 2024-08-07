@@ -10,6 +10,7 @@
                 "${workspaceFolder}/CMSIS/Device/StdPeriph_Driver/inc",
                 "${workspaceFolder}/CMSIS/generic",
                 "${workspaceFolder}/driver",
+                "${workspaceFolder}/freertos",
                 "${workspaceFolder}/src",
                 "D:\\stm32\\GNU_ARM\\arm-none-eabi\\include"
             ],

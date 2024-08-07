@@ -39,7 +39,12 @@
         "ahb_led.h": "c",
         "i2c_gpio.h": "c",
         "cm3ds_timer.h": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "freertos.h": "c",
+        "portable.h": "c",
+        "projdefs.h": "c",
+        "picolibc-freertos.h": "c",
+        "i2c_gpio2.h": "c"
     },
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#1073cf2d",

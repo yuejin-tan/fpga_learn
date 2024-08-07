@@ -80,6 +80,7 @@ void swi2c_init()
     CM3DS_MPS2_GPIO0->DATAOUT &= ~(1ul << GPIO_Pin_15);
     CM3DS_MPS2_GPIO0->DATAOUT &= ~(1ul << GPIO_Pin_16);
 
+    // 不可以共用定时器
     CM3DS_MPS2_TIMER0->CTRL = 0;
     CM3DS_MPS2_TIMER0->RELOAD = SystemCoreClock / 100000 / 2;
     CM3DS_MPS2_TIMER0->VALUE = CM3DS_MPS2_TIMER0->RELOAD;
