@@ -1,15 +1,16 @@
 
-lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/ahb_lcd8080.v" 
-lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/ahb_null.v" 
-lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/ahb_seg7x8.v" 
-lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/ahb_sram.v" 
-lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/ahb_uart.v" 
-lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/AHBlite_Decoder.v" 
-lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/AHBlite_Interconnect.v" 
-lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/AHBlite_SlaveMUX.v" 
-lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/led_wf.v" 
-lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/top.v" 
-lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/lcd/fpga/sa5z30fpga/ipcore_dir/PLL_FREQ/xsIP_PLL_FREQ.v" 
+lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/ahb_epwm.v" 
+lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/ahb_lcd8080.v" 
+lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/ahb_null.v" 
+lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/ahb_seg7x8.v" 
+lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/ahb_sram.v" 
+lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/ahb_uart.v" 
+lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/AHBlite_Decoder.v" 
+lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/AHBlite_Interconnect.v" 
+lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/AHBlite_SlaveMUX.v" 
+lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/led_wf.v" 
+lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/top.v" 
+lappend argv "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/sa5z30fpga/ipcore_dir/PLL_FREQ/xsIP_PLL_FREQ.v" 
 #################################################################################
 #
 # Copyright (c) uptops, Inc.

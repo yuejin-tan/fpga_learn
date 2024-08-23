@@ -80,6 +80,10 @@ module top (
     inout wire LCDT_SCL,
     inout wire LCDT_SDA,
 
+    // iic 4 bme280.
+    inout wire bme_scl,
+    inout wire bme_sda,
+
     // iic 4 eeprom, rtc etc.
     inout wire i2c_scl,
     inout wire i2c_sda
@@ -96,14 +100,18 @@ module top (
   assign i2c_scl = 1'bz;
   assign i2c_sda = 1'bz;
 
+  // iic 4 bme280.
+  assign bme_scl = GPIO[ 20 ];
+  assign bme_sda = GPIO[ 21 ];
+
   // key_pin
   assign GPIO[5: 4] = key_pin[2: 1];
 
   // led
-  assign led_core = GPIO[ 0 ];
+  // assign led_core = GPIO[ 0 ];
 
   // BEEP
-  assign beep_pin = GPIO[ 1 ];
+  // assign beep_pin = GPIO[ 1 ];
 
   // uart
   assign uart_DAP_rx = GPIO[ 2 ];
@@ -178,10 +186,10 @@ module top (
   wire [ 31: 0 ] GPIO_IN;
   wire [ 31: 0] GPIO_OUT;
   wire [ 31: 0] GPIO_OUT_EN;
-  // 目前只用了20个 GPIO
+  // GPIO CFG
   genvar i;
   generate
-    for (i = 0;i < 20;i = i + 1)
+    for (i = 2;i < 22;i = i + 1)
       begin:setb
         xsIOBB inst_xsIOBB_GPIO (
                  .I (GPIO_OUT[i]),
@@ -191,8 +199,9 @@ module top (
                );
       end
   endgenerate
-  assign GPIO_IN[31: 20] = 0;
-  assign GPIO[31: 20] = 0;
+  assign GPIO_IN[1: 0] = 0;
+  assign GPIO_IN[31: 22] = 0;
+  assign GPIO[31: 22] = 0;
 
   // DEBUG
   wire TMSOEN;
@@ -464,7 +473,7 @@ module top (
            );
 
   // ahb_null
-  ahb_null ahb_null1(
+  ahb_epwm ahb_epwm1(
              .HCLK ( AHB_USR_CLK ),
              .HRESETn ( CM3SYS_RSTN ),
 
@@ -478,7 +487,11 @@ module top (
 
              .HREADYOUT ( HREADYOUT_P3 ),
              .HRDATA ( HRDATA_P3 ),
-             .HRESP ( HRESP_P3 )
+             .HRESP ( HRESP_P3 ),
+
+             .pwm_out1 (beep_pin),
+             .pwm_out2 (led_core),
+             .pwm_out3 ()
            );
 
   // EXT SRAM

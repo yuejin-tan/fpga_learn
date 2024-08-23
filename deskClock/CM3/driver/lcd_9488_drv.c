@@ -310,7 +310,7 @@ void LCD_Init(void)
 
     // 横屏
     // 需同步更改lcd长宽参数和触摸反馈选项!!!
-    // LCD_Scan_Dir(D2U_L2R);
+    LCD_Scan_Dir(D2U_L2R);
 
     //点亮背光
     GPIO_SetBit(CM3DS_MPS2_GPIO0, GPIO_Pin_6);
@@ -329,7 +329,6 @@ void LCD_Clear(uint32_t color)
     {
         AHB_LCD->data_reg = color;
     }
-
 }
 
 //画线
@@ -369,7 +368,8 @@ void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
         }
     }
 }
-//画矩形	  
+
+//画矩形
 //(x1,y1),(x2,y2):矩形的对角坐标
 void LCD_DrawRectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
 {
@@ -377,6 +377,19 @@ void LCD_DrawRectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
     LCD_DrawLine(x1, y1, x1, y2);
     LCD_DrawLine(x1, y2, x2, y2);
     LCD_DrawLine(x2, y1, x2, y2);
+}
+
+
+void LCD_fill(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t color)
+{
+    uint32_t index = 0;
+    uint32_t totalpoint = (x2 - x1 + 1) * (y2 - y1 + 1);
+    LCD_Set_Window(x1, y1, x2, y2);
+    LCD_WriteRAM_Prepare(); //开始写入GRAM
+    for (index = 0;index < totalpoint;index++)
+    {
+        AHB_LCD->data_reg = color;
+    }
 }
 
 //在指定位置画一个指定大小的圆
@@ -442,81 +455,11 @@ void LCD_ShowChar(uint16_t x, uint16_t y, uint8_t num, uint8_t mode)
     }
 }
 
-//m^n函数
-//返回值:m^n次方.
-static uint32_t LCD_Pow(uint8_t m, uint8_t n)
-{
-    uint32_t result = 1;
-    while (n--)result *= m;
-    return result;
-}
-
-//显示数字,高位为0,则不显示
-//x,y :起点坐标	 
-//len :数字的位数
-//size:字体大小
-//color:颜色 
-//num:数值(0~4294967295);	 
-void LCD_ShowNum(uint16_t x, uint16_t y, uint32_t num, uint8_t len)
-{
-    uint8_t t, temp;
-    uint8_t enshow = 0;
-    uint8_t size = 16;
-    for (t = 0;t < len;t++)
-    {
-        temp = (num / LCD_Pow(10, len - t - 1)) % 10;
-        if (enshow == 0 && t < (len - 1))
-        {
-            if (temp == 0)
-            {
-                LCD_ShowChar(x + (size / 2) * t, y, ' ', 0);
-                continue;
-            }
-            else enshow = 1;
-
-        }
-        LCD_ShowChar(x + (size / 2) * t, y, temp + '0', 0);
-    }
-}
-
-//显示数字,高位为0,还是显示
-//x,y:起点坐标
-//num:数值(0~999999999);	 
-//len:长度(即要显示的位数)
-//size:字体大小
-//mode:
-//[7]:0,不填充;1,填充0.
-//[6:1]:保留
-//[0]:0,非叠加显示;1,叠加显示.
-void LCD_ShowxNum(uint16_t x, uint16_t y, uint32_t num, uint8_t len, uint8_t mode)
-{
-    uint8_t t, temp;
-    uint8_t enshow = 0;
-    uint8_t size = 16;
-    for (t = 0;t < len;t++)
-    {
-        temp = (num / LCD_Pow(10, len - t - 1)) % 10;
-        if (enshow == 0 && t < (len - 1))
-        {
-            if (temp == 0)
-            {
-                if (mode & 0X80)LCD_ShowChar(x + (size / 2) * t, y, '0', mode & 0X01);
-                else LCD_ShowChar(x + (size / 2) * t, y, ' ', mode & 0X01);
-                continue;
-            }
-            else enshow = 1;
-
-        }
-        LCD_ShowChar(x + (size / 2) * t, y, temp + '0', mode & 0X01);
-    }
-}
-
 //显示字符串
 //x,y:起点坐标
 //width,height:区域大小  
-//size:字体大小
 //*p:字符串起始地址		  
-void LCD_ShowString(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint8_t* p)
+void LCD_ShowString(uint16_t x, uint16_t y, uint16_t width, uint16_t height, char* p, uint8_t mode)
 {
     uint16_t x0 = x;
     width += x;
@@ -526,7 +469,7 @@ void LCD_ShowString(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uin
     {
         if (x >= width) { x = x0;y += size; }
         if (y >= height)break;//退出
-        LCD_ShowChar(x, y, *p, 0);
+        LCD_ShowChar(x, y, *p, mode);
         x += size / 2;
         p++;
     }

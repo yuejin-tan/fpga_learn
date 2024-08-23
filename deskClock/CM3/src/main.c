@@ -9,6 +9,7 @@
 #include "delay.h"
 #include "ahb_ledseg.h"
 #include "ahb_uart.h"
+#include "ahb_epwm.h"
 
 #include "scd_inc.h"
 #include "FreeRTOS.h"
@@ -19,6 +20,11 @@
 #include "thp_bme280_drv.h"
 #include "i2c_gpio2.h"
 
+float pwmD = 0.5f;
+float temp = 0;
+float hum = 0;
+float press = 0;
+
 void nvicInit(void)
 {
     NVIC_SetPriorityGrouping(NVIC_PriorityGroup_2);
@@ -26,7 +32,7 @@ void nvicInit(void)
     // UART
     NVIC_InitTypeDef InitTypeDef_NVIC;
     InitTypeDef_NVIC.NVIC_IRQChannel = UART0_IRQn;
-    InitTypeDef_NVIC.NVIC_IRQChannelPreemptionPriority = 2;
+    InitTypeDef_NVIC.NVIC_IRQChannelPreemptionPriority = 1;
     InitTypeDef_NVIC.NVIC_IRQChannelSubPriority = 0;
     InitTypeDef_NVIC.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&InitTypeDef_NVIC);
@@ -55,6 +61,16 @@ void uart_ahb_init()
     AHB_UART->cmd.all = 0;
     AHB_UART->buad_div_2 = (SystemCoreClock / (460800ul * 2ul)) - 1;
     AHB_UART->cmd.all = 1;
+}
+
+void epwm_ahb_init()
+{
+    AHB_EPWM->mode = 0;
+    AHB_EPWM->TBPRD_shadow = (SystemCoreClock / (20000ul * 2ul)) - 1;
+    AHB_EPWM->CMPA_shadow = AHB_EPWM->TBPRD_shadow / 2;
+    AHB_EPWM->CMPB_shadow = AHB_EPWM->CMPA_shadow;
+    AHB_EPWM->CMPC_shadow = AHB_EPWM->CMPB_shadow;
+    AHB_EPWM->mode = 1;
 }
 
 uint32_t mem_addr16b_test()
@@ -190,18 +206,9 @@ uint32_t mem_addr16b_test()
 #define LED1_OFF GPIO_SetBit( CM3DS_MPS2_GPIO0, GPIO_Pin_0)
 #define LED2_OFF GPIO_SetBit( CM3DS_MPS2_GPIO0, GPIO_Pin_1)
 
-enum rwWay {
-    rw_8bit = 0,
-    rw_16bit,
-    rw_32bit,
-    uart_test,
-    uart_test2,
-    rw_clock,
-};
-
 uint32_t ms_cnt = 0;
 
-uint16_t rwWay = uart_test2;
+uint16_t rwWay = 0;
 
 uint16_t test1 = 0;
 uint16_t test2 = 0;
@@ -274,14 +281,30 @@ void touchRefreshTask(void* pvParameters)
     {
         if (GT911_Scan(&touchInfo1) == 0)
         {
-            if (touchInfo1.nums == 2)
+            if (touchInfo1.nums > 0)
             {
-                LCD_DrawLine(touchInfo1.touchPointInfos[0].x, touchInfo1.touchPointInfos[0].y,
-                    touchInfo1.touchPointInfos[1].x, touchInfo1.touchPointInfos[1].y);
-            }
-            else
-            {
-                LCD_DrawPoint_color(touchInfo1.touchPointInfos[0].x, touchInfo1.touchPointInfos[0].y, RED);
+                int x_true = LCD_W - touchInfo1.touchPointInfos[0].y;
+                int y_true = touchInfo1.touchPointInfos[1].x;
+
+                pwmD = x_true / ((float)LCD_W);
+
+                if (pwmD > 0.9f)
+                {
+                    pwmD = 1.0f;
+                }
+                else if (pwmD < 0.1f)
+                {
+                    pwmD = 0;
+                }
+                else
+                {
+                    pwmD = (pwmD - 0.1f) * 1.25f;
+                }
+
+                LCD_fill(0, 0, x_true, 19, LIGHTBLUE);
+                LCD_fill(x_true, 0, LCD_W - 1, 19, GRAYBLUE);
+
+                AHB_EPWM->CMPA_shadow = AHB_EPWM->TBPRD_shadow * pwmD;
             }
         }
 
@@ -294,19 +317,30 @@ void BME280RefreshTask(void* pvParameters)
     while (1)
     {
         //读取温度、湿度、压力
-        float DATA1[3] = { 0 };
-        if (BME280_Get_ALL(&BME280_1, &DATA1[0], &DATA1[1], &DATA1[2]))
+        char buff[16];
+        if (BME280_Get_ALL(&BME280_1, &temp, &hum, &press))
         {
             printf("bme280 read err!\r\n");
         }
         else
         {
-            printf("Temp=");
-            printf("%0.2fC, ", DATA1[0]);
-            printf("Hum=");
-            printf("%0.2f%%RH, ", DATA1[1]);
-            printf("Press=");
-            printf("%dPa\r\n", (int)(DATA1[2]));
+            POINT_COLOR = RED;
+            BACK_COLOR = DARKRED;
+            sprintf(buff, "%0.2f", temp);
+            LCD_ShowString(60, 302, 64, 16, buff, 0);
+            printf("Temp=%sC, ", buff);
+
+            POINT_COLOR = GREEN;
+            BACK_COLOR = DARKGREEN;
+            sprintf(buff, "%d", (int)(press + 0.5f));
+            LCD_ShowString(60 + 160, 302, 64, 16, buff, 0);
+            printf("Press=%sPa, ", buff);
+
+            POINT_COLOR = BLUE;
+            BACK_COLOR = DARKBLUE;
+            sprintf(buff, "%0.2f", hum);
+            LCD_ShowString(60 + 320, 302, 64, 16, buff, 0);
+            printf("Hum=%s%%RH\r\n", buff);
         }
 
         vTaskDelay(500 / portTICK_PERIOD_MS);
@@ -340,6 +374,26 @@ void ledRefreshTask(void* pvParameters)
     }
 }
 
+void img_init(void)
+{
+    LCD_Clear(WHITE);
+
+    LCD_fill(0, 300, 159, LCD_H - 1, DARKRED);
+    POINT_COLOR = WHITE;
+    LCD_ShowString(4, 302, 32, 16, "TMP", 1);
+    LCD_ShowString(160 - 16, 302, 32, 16, "C", 1);
+
+    LCD_fill(160, 300, 319, LCD_H - 1, DARKGREEN);
+    POINT_COLOR = WHITE;
+    LCD_ShowString(4 + 160, 302, 32, 16, "PRESS", 1);
+    LCD_ShowString(320 - 24, 302, 32, 16, "Pa", 1);
+
+    LCD_fill(320, 300, 479, LCD_H - 1, DARKBLUE);
+    POINT_COLOR = WHITE;
+    LCD_ShowString(4 + 320, 302, 32, 16, "R.H.", 1);
+    LCD_ShowString(480 - 16, 302, 32, 16, "%", 1);
+}
+
 TaskHandle_t hTouchRefreshTask;
 TaskHandle_t hBME280RefreshTask;
 TaskHandle_t hLedRefreshTask;
@@ -356,22 +410,19 @@ int main(void)
 
     printf("SA5Z30 CM3+FPGA TEST\r\n");
 
-    uart_ahb_init();
-    scd_init_1();
-
-    LCD_Init();
-    GT911_init();
-
-    LCD_Draw_Circle(100, 100, 20);
-    LCD_Draw_Circle(200, 100, 20);
-    LCD_Draw_Circle(100, 200, 20);
-
     volatile int ret;
     if (ret = mem_addr16b_test())
     {
         while (1);
     }
 
+    uart_ahb_init();
+    epwm_ahb_init();
+    scd_init_1();
+
+    LCD_Init();
+    img_init();
+    GT911_init();
     BME280_Init();
 
     xTaskCreate((TaskFunction_t)touchRefreshTask, /* 任务函数 */
@@ -403,5 +454,4 @@ int main(void)
         continue;
     }
 }
-
 

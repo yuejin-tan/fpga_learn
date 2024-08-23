@@ -103,6 +103,10 @@ phycst.pin.set {pll_i2c_sda} D3
 phycst.pin.set {i2c_scl} K14
 phycst.pin.set {i2c_sda} J11
 
+#----iic bme280-----------
+phycst.pin.set {bme_scl} B4
+phycst.pin.set {bme_sda} C5
+
 #----------------数码管接口-----------------
 #-------------数码管移位时钟-----------------
 phycst.pin.set {seg7_SH_CP} E4

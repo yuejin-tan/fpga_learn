@@ -20,7 +20,7 @@ module AHBlite_Decoder
 
   assign P2_HSEL = ((HADDR[31: 16] == 16'hC002) && HSEL_M) ? Port2_en : 1'd0;
 
-  assign P3_HSEL = ((!P0_HSEL) && (!P1_HSEL) && (!P2_HSEL) && HSEL_M) ? Port3_en : 1'd0;
-  // assign P3_HSEL = ((HADDR[31: 16] == 16'hC003) && HSEL_M) ? Port3_en : 1'd0;
+  // assign P3_HSEL = ((!P0_HSEL) && (!P1_HSEL) && (!P2_HSEL) && HSEL_M) ? Port3_en : 1'd0;
+  assign P3_HSEL = ((HADDR[31: 16] == 16'hC003) && HSEL_M) ? Port3_en : 1'd0;
 
 endmodule

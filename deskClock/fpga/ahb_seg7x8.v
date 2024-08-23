@@ -169,11 +169,9 @@ module ahb_seg7x8
         begin
           case ( addr_reg[ 15: 2 ] )
             14'd0:
-              // HRDATA_reg = { segx_reg[ 3 ], segx_reg[ 2 ], segx_reg[ 1 ], segx_reg[ 0 ] };
-              HRDATA_reg = 32'h12345678;
+              HRDATA_reg = { segx_reg[ 3 ], segx_reg[ 2 ], segx_reg[ 1 ], segx_reg[ 0 ] };
             14'd1:
-              // HRDATA_reg = { segx_reg[ 7 ], segx_reg[ 6 ], segx_reg[ 5 ], segx_reg[ 4 ] };
-              HRDATA_reg = 32'h9abcdef0;
+              HRDATA_reg = { segx_reg[ 7 ], segx_reg[ 6 ], segx_reg[ 5 ], segx_reg[ 4 ] };
             default:
               HRDATA_reg = 0;
           endcase
@@ -254,72 +252,75 @@ module ahb_seg7x8
 
   always @(* )
     begin
-      case ( seg_2_dec[ 4: 0 ] )
-        default:
-          seg_dec8bit = 8'b11000000;
-        1:
-          seg_dec8bit = 8'b11111001;
-        2:
-          seg_dec8bit = 8'b10100100;
-        3:
-          seg_dec8bit = 8'b10110000;
-        4:
-          seg_dec8bit = 8'b10011001;
-        5:
-          seg_dec8bit = 8'b10010010;
-        6:
-          seg_dec8bit = 8'b10000010;
-        7:
-          seg_dec8bit = 8'b11111000;
-        8:
-          seg_dec8bit = 8'b10000000;
-        9:
-          seg_dec8bit = 8'b10010000;
-        10:
-          seg_dec8bit = 8'b10001000;
-        11:
-          seg_dec8bit = 8'b10000011;
-        12:
-          seg_dec8bit = 8'b11000110;
-        13:
-          seg_dec8bit = 8'b10100001;
-        14:
-          seg_dec8bit = 8'b10000110;
-        15:
-          seg_dec8bit = 8'b10001110;
-        16:
-          seg_dec8bit = 8'b01000000;
-        17:
-          seg_dec8bit = 8'b01111001;
-        18:
-          seg_dec8bit = 8'b00100100;
-        19:
-          seg_dec8bit = 8'b00110000;
-        20:
-          seg_dec8bit = 8'b00011001;
-        21:
-          seg_dec8bit = 8'b00010010;
-        22:
-          seg_dec8bit = 8'b00000010;
-        23:
-          seg_dec8bit = 8'b01111000;
-        24:
-          seg_dec8bit = 8'b00000000;
-        25:
-          seg_dec8bit = 8'b00010000;
-        26:
-          seg_dec8bit = 8'b00001000;
-        27:
-          seg_dec8bit = 8'b00000011;
-        28:
-          seg_dec8bit = 8'b01000110;
-        29:
-          seg_dec8bit = 8'b00100001;
-        30:
-          seg_dec8bit = 8'b00000110;
-        31:
-          seg_dec8bit = 8'b00001110;
-      endcase
+      if (seg_2_dec[7])
+        seg_dec8bit = 8'b11111111;
+      else
+        case ( seg_2_dec[ 4: 0 ] )
+          default:
+            seg_dec8bit = 8'b11000000;
+          1:
+            seg_dec8bit = 8'b11111001;
+          2:
+            seg_dec8bit = 8'b10100100;
+          3:
+            seg_dec8bit = 8'b10110000;
+          4:
+            seg_dec8bit = 8'b10011001;
+          5:
+            seg_dec8bit = 8'b10010010;
+          6:
+            seg_dec8bit = 8'b10000010;
+          7:
+            seg_dec8bit = 8'b11111000;
+          8:
+            seg_dec8bit = 8'b10000000;
+          9:
+            seg_dec8bit = 8'b10010000;
+          10:
+            seg_dec8bit = 8'b10001000;
+          11:
+            seg_dec8bit = 8'b10000011;
+          12:
+            seg_dec8bit = 8'b11000110;
+          13:
+            seg_dec8bit = 8'b10100001;
+          14:
+            seg_dec8bit = 8'b10000110;
+          15:
+            seg_dec8bit = 8'b10001110;
+          16:
+            seg_dec8bit = 8'b01000000;
+          17:
+            seg_dec8bit = 8'b01111001;
+          18:
+            seg_dec8bit = 8'b00100100;
+          19:
+            seg_dec8bit = 8'b00110000;
+          20:
+            seg_dec8bit = 8'b00011001;
+          21:
+            seg_dec8bit = 8'b00010010;
+          22:
+            seg_dec8bit = 8'b00000010;
+          23:
+            seg_dec8bit = 8'b01111000;
+          24:
+            seg_dec8bit = 8'b00000000;
+          25:
+            seg_dec8bit = 8'b00010000;
+          26:
+            seg_dec8bit = 8'b00001000;
+          27:
+            seg_dec8bit = 8'b00000011;
+          28:
+            seg_dec8bit = 8'b01000110;
+          29:
+            seg_dec8bit = 8'b00100001;
+          30:
+            seg_dec8bit = 8'b00000110;
+          31:
+            seg_dec8bit = 8'b00001110;
+        endcase
     end
 
   always @(* )

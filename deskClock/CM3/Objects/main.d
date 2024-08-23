@@ -15,6 +15,7 @@
 .\objects\main.o: src\delay.h
 .\objects\main.o: .\driver\ahb_ledseg.h
 .\objects\main.o: .\driver\ahb_uart.h
+.\objects\main.o: .\driver\ahb_epwm.h
 .\objects\main.o: src\scd_inc.h
 .\objects\main.o: src\scd_cfg.h
 .\objects\main.o: .\freertos\FreeRTOS.h

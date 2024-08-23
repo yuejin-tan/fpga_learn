@@ -106,7 +106,7 @@
 /* configMAX_PRIORITIES Sets the number of available task priorities.  Tasks can
  * be assigned priorities of 0 to (configMAX_PRIORITIES - 1).  Zero is the lowest
  * priority. */
-#define configMAX_PRIORITIES                       6
+#define configMAX_PRIORITIES                       8
 
 /* configMINIMAL_STACK_SIZE defines the size of the stack used by the Idle task
  * (in words, not in bytes!).  The kernel does not use this constant for any other
@@ -316,8 +316,8 @@
  * highest interrupt priority (0).  Not supported by all FreeRTOS ports.
  * See https://www.freertos.org/RTOS-Cortex-M3-M4.html for information specific to
  * ARM Cortex-M devices. */
-// 只把7、6两级中断留给rtos
-#define configMAX_SYSCALL_INTERRUPT_PRIORITY     (6 << 5)
+// 把7-4级中断留给rtos
+#define configMAX_SYSCALL_INTERRUPT_PRIORITY     (4 << 5)
 
 /* Another name for configMAX_SYSCALL_INTERRUPT_PRIORITY - the name used depends
  * on the FreeRTOS port. */

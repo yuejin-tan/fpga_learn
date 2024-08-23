@@ -1,3 +1,4 @@
+-module ahb_epwm
 -module ahb_lcd8080
 -module ahb_null
 -module ahb_seg7x8
@@ -9,5 +10,6 @@
 -module led_wf
 -module top
 -module PLL_FREQ
--topmoduleNum 1
+-topmoduleNum 2
+-topmodule ahb_null
 -topmodule top

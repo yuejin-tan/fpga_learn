@@ -44,7 +44,8 @@
         "portable.h": "c",
         "projdefs.h": "c",
         "picolibc-freertos.h": "c",
-        "i2c_gpio2.h": "c"
+        "i2c_gpio2.h": "c",
+        "ahb_uart.h": "c"
     },
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#1073cf2d",

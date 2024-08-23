@@ -1,6 +1,6 @@
 module led_wf
   #(
-     parameter CLK_DIV = 20 * 1000 * 1000 - 1,
+     parameter CLK_DIV = 50 * 1000 * 1000 / 4 - 1,
      parameter LED_NUM = 4,
      parameter INIT_STA = 4'b1100
    )

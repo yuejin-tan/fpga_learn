@@ -14,8 +14,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 //LCD的画笔颜色和背景色
-extern uint32_t  POINT_COLOR;//默认红色
-extern uint32_t  BACK_COLOR; //背景颜色.默认为白色
+extern uint32_t  POINT_COLOR;
+extern uint32_t  BACK_COLOR;
 
 // 内部命令地址
 #define WRITE_RAM_CMD 0X2CUL
@@ -23,8 +23,8 @@ extern uint32_t  BACK_COLOR; //背景颜色.默认为白色
 #define SETY_CMD 0X2BUL
 
 // LCD 参数
-#define LCD_H 480
-#define LCD_W 320
+#define LCD_H 320
+#define LCD_W 480
 
 //写寄存器函数
 //regval:寄存器值
@@ -100,7 +100,10 @@ static inline void LCD_DisplayOff(void)
 #define GRAY  			 0X8430 //灰色
 //GUI颜色
 
-#define DARKBLUE      	 0X01CF	//深蓝色
+#define DARKRED      	 0x2000	//深红色
+#define DARKGREEN      	 0x0100	//深绿色
+#define DARKBLUE      	 0X0004	//深蓝色
+
 #define LIGHTBLUE      	 0X7D7C	//浅蓝色
 #define GRAYBLUE       	 0X5458 //灰蓝色
 //以上三色为PANEL的颜色 
@@ -121,7 +124,6 @@ void LCD_DrawPoint_color(uint16_t x, uint16_t y, uint32_t color);				//画点
 void LCD_Draw_Circle(uint16_t x0, uint16_t y0, uint8_t r);						//画圆
 void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);			//画线
 void LCD_DrawRectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);		//画矩形
+void LCD_fill(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t color);
 void LCD_ShowChar(uint16_t x, uint16_t y, uint8_t num, uint8_t mode);			//显示一个字符
-void LCD_ShowNum(uint16_t x, uint16_t y, uint32_t num, uint8_t len);  			//显示一个数字
-void LCD_ShowxNum(uint16_t x, uint16_t y, uint32_t num, uint8_t len, uint8_t mode);			//显示 数字
-void LCD_ShowString(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint8_t* p);	//显示一个字符串,12/16字体
+void LCD_ShowString(uint16_t x, uint16_t y, uint16_t width, uint16_t height, char* p, uint8_t mode); //显示一个字符串
