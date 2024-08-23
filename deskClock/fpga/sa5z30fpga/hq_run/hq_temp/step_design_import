@@ -42,8 +42,8 @@ Info: 开始逻辑优化.
 Info:     Total number of literals before LO: 11795.
 Info:   正在优化 view : top.
 Info:     逻辑优化前literals数 : 8246.
-Info:     LO 循环 1 : literal数 从 8246 到 5349.
-Info:     逻辑优化后literals数 : 5349.
+Info:     LO 循环 1 : literal数 从 8246 到 5361.
+Info:     逻辑优化后literals数 : 5361.
 Info: 将 FF ahb_uart1/TX_shift_reg_reg[10] 变换为 ONE ，原因：constant data input.
 Info: 将 FF seg_inst/refresh_segnum_reg_reg[3] 变换为 ZERO ，原因：it having AND feedback.
 Info: 将 FF ahb_sram1/reg_bstate_reg_1 变换为 ONE ，原因：it having OR feedback.
@@ -56,7 +56,7 @@ Info: Degraded fragmented SET/RESET control logic for 2 DFFs.
 Info: Degraded fragmented control logic for 17 DFFs, totally
 Info: 完成逻辑优化.
 ####
-Info: RTL综合执行时间 : 2 秒.
+Info: RTL综合执行时间 : 3 秒.
 ####
 #=============oOOOo================oOOOo=============
 # 时序驱动优化与映射

@@ -111,7 +111,7 @@ module ahb_epwm
         wr_en_reg <= 1'b0;
     end
 
-  // 读逻辑
+  // 写逻辑
   always@(posedge HCLK or negedge HRESETn)
     begin
       if (~HRESETn)
@@ -165,7 +165,7 @@ module ahb_epwm
           CMPC_shadow <= 0;
         end
       else
-        if ((addr_reg[ 15: 2 ] == 14'd1 ) & wr_en_reg)
+        if ((addr_reg[ 15: 2 ] == 14'd2 ) & wr_en_reg)
           begin
             if (size_reg[0])
               begin

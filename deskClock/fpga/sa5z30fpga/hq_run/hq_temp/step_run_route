@@ -6,8 +6,8 @@ Info: 已完成.
 Info: 布线模式 : timing.
 Info: 优化强度 : std.
 Info: 读入布线资源并检查网表 ....
-Info: 当前网表中有 617 个元件例示(instance).
-Info: 总共需要对 1729 条连线 (6243 连接点) 进行布线.
+Info: 当前网表中有 623 个元件例示(instance).
+Info: 总共需要对 1733 条连线 (6281 连接点) 进行布线.
 Info: 连线 AHB_USR_CLK 指定为 PCLK (由 placer).
 Info: 连线 CLK_FPGA_SYS1 指定为 PCLK (由 placer).
 Info: 连线 seg_inst/clk_DRV 指定为 PCLK (由 placer).
@@ -17,30 +17,30 @@ Info: set customeized options
 |   5   |   5 |   5  |   2   |   3 |   6 |   6 |   6 |   6 |   6  |  50  |   3   |   4   |   7   
 | MALL | MLONG | MX0  | X12RAM | X46RAM | X12VIQ | X46VIQ | X12CLKV | PLO | CLO | X-LOCAL | CLKV+ | GFANn | GNDfo | GNDlut 
 |   1  |   1   |   1  |    2   |    2   |    3   |    2   |     5   |  10 |   5 |    0    |   1   |   2   |    0  |    0   
-Info: 第  0 轮 : 还需要对 1381  条连线 (4754  连接点)进行布线.
-Info: 第  1 轮 : 还需要对 174   条连线 (121   连接点)进行布线.
-Info: 第  2 轮 : 还需要对 39    条连线 (27    连接点)进行布线.
-Info: 第  3 轮 : 还需要对 6     条连线 (4     连接点)进行布线.
+Info: 第  0 轮 : 还需要对 1368  条连线 (4853  连接点)进行布线.
+Info: 第  1 轮 : 还需要对 161   条连线 (127   连接点)进行布线.
+Info: 第  2 轮 : 还需要对 24    条连线 (14    连接点)进行布线.
+Info: 第  3 轮 : 还需要对 6     条连线 (3     连接点)进行布线.
 Info: 第  4 轮 : 还需要对 0     条连线 (0     连接点)进行布线.
 Info: 完成布线.
 Info: 开始更新物理网表.
-Info:   为 243  个 SLICEL     建立了物理网表 .
-Info:   为 103  个 TIEOFF     建立了物理网表 .
+Info:   为 242  个 SLICEL     建立了物理网表 .
+Info:   为 107  个 TIEOFF     建立了物理网表 .
 Info: 完成更新物理网表.
 ####
-Info: 布线执行时间 : 9 秒.
+Info: 布线执行时间 : 7 秒.
 ####
 Info: 生成最差时序余量(WNS)报告 ...
 ============================================================
 Clock Name                  Req Period  Setup WNS   Hold WNS
 ------------------------------------------------------------
 clkbase                          40000         --         --
-PLL_inst1/PLLInst_0/CLKOP        10000       1226        313
-PLL_inst1/PLLInst_0/CLKOS        20000      15034        399
+PLL_inst1/PLLInst_0/CLKOP        10000       1728        275
+PLL_inst1/PLLInst_0/CLKOS        20000      14753        399
 ============================================================
 【汇总】
-Info(wns-ok): Setup WNS = 1226, 满足时序目标.
-Info(wns-ok): Hold  WNS = 313, 满足时序目标.
+Info(wns-ok): Setup WNS = 1728, 满足时序目标.
+Info(wns-ok): Hold  WNS = 275, 满足时序目标.
 ====
 Info: 完成WNS报告.
 Info:   (可在文件 "D:/fpga/AC208-SA5Z30-CM3/workspace/deskClock/fpga/sa5z30fpga/hq_run/top_slack.rpt" 中检查更详细信息).

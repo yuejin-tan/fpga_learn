@@ -370,6 +370,10 @@ void ledRefreshTask(void* pvParameters)
         AHB_LED->seg6 = (ms_cnt >> 24) & 0xful;
         AHB_LED->seg7 = (ms_cnt >> 28) & 0xful;
 
+        // 呼吸灯
+        int tbprd = AHB_EPWM->TBPRD_shadow;
+        AHB_EPWM->CMPB_shadow = abs((ms_cnt % (2 * tbprd)) - tbprd);
+
         vTaskDelay(1 / portTICK_PERIOD_MS);
     }
 }

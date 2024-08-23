@@ -103,8 +103,8 @@ Info: SLICEL                    109.
 Info:     CARRY                  54.
 Info:     MUXF7                  39.
 Info:     MUXF8                  16.
-Info: SLICEL(LE)               1176.
-Info:     LUT                   325.
+Info: SLICEL(LE)               1180.
+Info:     LUT                   329.
 Info:     LUT REG               279.
 Info:     REG                   572.
 Info: 完成组装.
@@ -115,16 +115,16 @@ Info:   为 98   个 PIO        建立了物理网表 .
 Info:   为 68   个 IOLOGIC    建立了物理网表 .
 Info:   为 1    个 PLL_25K    建立了物理网表 .
 Info:   为 1    个 CM3        建立了物理网表 .
-Info:   为 447  个 SLICEL     建立了物理网表 .
+Info:   为 453  个 SLICEL     建立了物理网表 .
 Info: 完成建立物理网表.
 Info: CM3                         1.
 Info: IOLOGIC                    68.
 Info:     IREG_OREG              68.
 Info: PIO                        98.
 Info: PLL_25K                     1.
-Info: SLICEL                    447.
+Info: SLICEL                    453.
 Info:     CARRY                  54.
-Info:     LOGIC                 338.
+Info:     LOGIC                 344.
 Info:     MUXF7                  39.
 Info:     MUXF8                  16.
 ####

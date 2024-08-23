@@ -14,48 +14,46 @@
 #
 # ***********************************************************************
 # 时钟         : PLL_inst1/PLLInst_0/CLKOP
-# 最小时钟周期 : 8773.7 ps
+# 最小时钟周期 : 8271.7 ps
 # ***********************************************************************
 ********************
 * 路径 1
 ********************
-起点     : ahb_lcd8080_inst1/addr[8]/AQ [激发时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿1]
-终点     : DATA_8080[14]_MGIOL/CE       [捕获时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿2] 
+起点     : inst/TARGEXP0HTRANS1   [激发时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿1]
+终点     : SRAM_nLB_MGIOL/TXDATA0 [捕获时钟: PLL_inst1/PLLInst_0/CLKOP, 上升沿2] 
 数据产生路径
-=====================================================================================================================================================
-|                      节点                      |  单元   |  延迟  |     类型      |   位置   |                    连线                     | 扇出 |
-=====================================================================================================================================================
-| CLOCK'clkbase                                  |   N/A   |      0 |               |          | N/A                                         |      |
-| clk_25M                                        |   top   |      0 | clock_latency |          | clk_25M                                     | 1    |
-| clk_25M/PAD#bidir_in                           |   PIO   |      0 |      net      | PT79A    | clk_25M                                     | 1    |
-| clk_25M/PADDI                                  |   PIO   |   1091 |   PADI_DEL    |          | clk_25M_c                                   | 1    |
-| PLL_inst1/PLLInst_0/CLKI                       | PLL_25K | 4068.5 |      net      | LPLL1    | clk_25M_c                                   |      |
-| --                                             |   --    |     -- |      --       | --       | --                                          | --   |
-| CLOCK'PLL_inst1/PLLInst_0/CLKOP                |   N/A   |      0 |  CLKI2OP_DEL  |          | N/A                                         |      |
-| PLL_inst1/PLLInst_0/CLKOP                      | PLL_25K | 5159.5 | clock_latency |          | AHB_USR_CLK                                 | 434  |
-| ahb_lcd8080_inst1/addr[8]/CLK                  | SLICEL  | 1096.4 |      net      | R22C36M  | AHB_USR_CLK                                 |      |
-| --                                             |   --    |     -- |      --       | --       | --                                          | --   |
-| ahb_lcd8080_inst1/addr[8]/AQ                   | SLICEL  |   30.5 |     Tcko      |          | ahb_lcd8080_inst1/addr[8]                   | 1    |
-| net_extracted_nHQX1/B3                         | SLICEL  | 1183.6 |      net      | R22C37L  | ahb_lcd8080_inst1/addr[8]                   |      |
-| net_extracted_nHQX1/BMUX                       | SLICEL  |  114.1 |     Topbb     |          | net_extracted_nHQX1                         | 13   |
-| ahb_lcd8080_inst1/sta8080[2]/A2                | SLICEL  |  796.9 |      net      | R21C36L  | net_extracted_nHQX1                         |      |
-| ahb_lcd8080_inst1/sta8080[2]/AMUX              | SLICEL  |   88.9 |     Topaa     |          | ahb_lcd8080_inst1/n_348                     | 2    |
-| ahb_lcd8080_inst1/_i_189/_i_0_decomp_nHQX18/A3 | SLICEL  |  433.4 |      net      | R21C36M  | ahb_lcd8080_inst1/n_348                     |      |
-| ahb_lcd8080_inst1/_i_189/_i_0_decomp_nHQX18/A  | SLICEL  |   75.1 |     Tilo      |          | ahb_lcd8080_inst1/_i_189/_i_0_decomp_nHQX18 | 1    |
-| ahb_lcd8080_inst1/_i_189/_i_0_decomp_nHQX18/B4 | SLICEL  | 1631.3 |      net      | R21C36M  | ahb_lcd8080_inst1/_i_189/_i_0_decomp_nHQX18 |      |
-| ahb_lcd8080_inst1/_i_189/_i_0_decomp_nHQX18/B  | SLICEL  |   75.1 |     Tilo      |          | ahb_lcd8080_inst1/_i_189/_i_0_rkd_1         | 1    |
-| ahb_lcd8080_inst1/_i_189/_i_0_decomp_nHQX18/C6 | SLICEL  |  176.4 |      net      | R21C36M  | ahb_lcd8080_inst1/_i_189/_i_0_rkd_1         |      |
-| ahb_lcd8080_inst1/_i_189/_i_0_decomp_nHQX18/C  | SLICEL  |   75.1 |     Tilo      |          | ahb_lcd8080_inst1/sta8080_now[2]            | 19   |
-| ahb_lcd8080_inst1/n_426/A4                     | SLICEL  | 1088.2 |      net      | R20C36L  | ahb_lcd8080_inst1/sta8080_now[2]            |      |
-| ahb_lcd8080_inst1/n_426/A                      | SLICEL  |   75.1 |     Tilo      |          | ahb_lcd8080_inst1/n_426                     | 16   |
-| DATA_8080[14]_MGIOL/CE                         | IOLOGIC | 2828.2 |      net      | IOL_T19B | ahb_lcd8080_inst1/n_426                     |      |
-=====================================================================================================================================================
-时钟路径延迟         = 6255.9    
-数据路径延迟         = 8671.7     (Tdatp)
-     clock-to-q 延迟 = 30.5 
-        总的单元延迟 = 503.4 
-        总的连线延迟 = 8137.8 
-        逻辑级数     = 6 
+=====================================================================================================================================
+|              节点               |  单元   |  延迟  |         类型          |   位置   |                连线                | 扇出 |
+=====================================================================================================================================
+| CLOCK'clkbase                   |   N/A   |      0 |                       |          | N/A                                |      |
+| clk_25M                         |   top   |      0 |     clock_latency     |          | clk_25M                            | 1    |
+| clk_25M/PAD#bidir_in            |   PIO   |      0 |          net          | PT79A    | clk_25M                            | 1    |
+| clk_25M/PADDI                   |   PIO   |   1091 |       PADI_DEL        |          | clk_25M_c                          | 1    |
+| PLL_inst1/PLLInst_0/CLKI        | PLL_25K | 4135.3 |          net          | LPLL1    | clk_25M_c                          |      |
+| --                              |   --    |     -- |          --           | --       | --                                 | --   |
+| CLOCK'PLL_inst1/PLLInst_0/CLKOP |   N/A   |      0 |      CLKI2OP_DEL      |          | N/A                                |      |
+| PLL_inst1/PLLInst_0/CLKOP       | PLL_25K | 5226.3 |     clock_latency     |          | AHB_USR_CLK                        | 441  |
+| inst/CIBCLK                     |   CM3   | 1096.4 |          net          | CM3      | AHB_USR_CLK                        |      |
+| --                              |   --    |     -- |          --           | --       | --                                 | --   |
+| inst/TARGEXP0HTRANS1            |   CM3   |   1321 | Tcq_TARGEXP0HTRANS[1] |          | TARGEXP0HTRANS[1]                  | 2    |
+| ahb_sram1/reg_active/B6         | SLICEL  | 3008.7 |          net          | R30C67M  | TARGEXP0HTRANS[1]                  |      |
+| ahb_sram1/reg_active/B          | SLICEL  |   75.1 |         Tilo          |          | ahb_sram1/n_2115_CE_AND_O_CE_AND_O | 25   |
+| ahb_sram1/n_1953/C6             | SLICEL  |  548.1 |          net          | R32C67M  | ahb_sram1/n_2115_CE_AND_O_CE_AND_O |      |
+| ahb_sram1/n_1953/C              | SLICEL  |   75.1 |         Tilo          |          | ahb_sram1/RDREQ                    | 9    |
+| ahb_sram1/n_1988/C6             | SLICEL  |  489.7 |          net          | R33C67M  | ahb_sram1/RDREQ                    |      |
+| ahb_sram1/n_1988/C              | SLICEL  |   75.1 |         Tilo          |          | _n_10935                           | 1    |
+| ahb_sram1/n_1988/D4             | SLICEL  |  209.9 |          net          | R33C67M  | _n_10935                           |      |
+| ahb_sram1/n_1988/D              | SLICEL  |   75.1 |         Tilo          |          | ahb_sram1/nxt_ce_n                 | 3    |
+| ahb_sram1/reg_byte_mask[0]/B4   | SLICEL  |  650.1 |          net          | R33C68L  | ahb_sram1/nxt_ce_n                 |      |
+| ahb_sram1/reg_byte_mask[0]/B    | SLICEL  |   75.1 |         Tilo          |          | ahb_sram1/nxt_bs_n[0]              | 1    |
+| SRAM_nLB_MGIOL/TXDATA0          | IOLOGIC | 1345.8 |          net          | IOL_B82C | ahb_sram1/nxt_bs_n[0]              |      |
+=====================================================================================================================================
+时钟路径延迟         = 6322.7    
+数据路径延迟         = 7948.7     (Tdatp)
+     clock-to-q 延迟 = 1321 
+        总的单元延迟 = 375.5 
+        总的连线延迟 = 6252.2 
+        逻辑级数     = 5 
 [数据捕获路径]
 ======================================================================================================
 |              节点               |  单元   |  延迟  |     类型      |   位置   |    连线     | 扇出 |
@@ -64,32 +62,32 @@
 | clk_25M                         |   top   |      0 | clock_latency |          | clk_25M     | 1    |
 | clk_25M/PAD#bidir_in            |   PIO   |      0 |      net      | PT79A    | clk_25M     | 1    |
 | clk_25M/PADDI                   |   PIO   |   1091 |   PADI_DEL    |          | clk_25M_c   | 1    |
-| PLL_inst1/PLLInst_0/CLKI        | PLL_25K | 3914.3 |      net      | LPLL1    | clk_25M_c   |      |
+| PLL_inst1/PLLInst_0/CLKI        | PLL_25K | 3973.2 |      net      | LPLL1    | clk_25M_c   |      |
 | --                              |   --    |     -- |      --       | --       | --          | --   |
 | CLOCK'PLL_inst1/PLLInst_0/CLKOP |   N/A   |      0 |  CLKI2OP_DEL  |          | N/A         |      |
-| PLL_inst1/PLLInst_0/CLKOP       | PLL_25K | 5005.3 | clock_latency |          | AHB_USR_CLK | 434  |
-| DATA_8080[14]_MGIOL/CLK         | IOLOGIC | 1057.4 |      net      | IOL_T19B | AHB_USR_CLK |      |
+| PLL_inst1/PLLInst_0/CLKOP       | PLL_25K | 5064.2 | clock_latency |          | AHB_USR_CLK | 441  |
+| SRAM_nLB_MGIOL/CLK              | IOLOGIC | 1057.4 |      net      | IOL_B82C | AHB_USR_CLK |      |
 ======================================================================================================
-时钟路径延迟         = 6062.7    
-    时钟偏差         = -193.1 (Tcksw)
+时钟路径延迟         = 6121.6    
+    时钟偏差         = -201 (Tcksw)
 [延迟计算]
 ======================================================================
 总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
-       = 8671.7     + 63         - 154.1      - -193.1     
-       = 8773.7
+       = 7948.7     + 284        - 162        - -201       
+       = 8271.7
 ======================================================================
 Tdatp -- 数据路径延迟 
 Tsu   -- 库单元建立时间 
 Tckpm -- 时钟悲观补偿 
 # ***********************************************************************
 # 时钟         : PLL_inst1/PLLInst_0/CLKOS
-# 最小时钟周期 : 4966.2 ps
+# 最小时钟周期 : 5247.1 ps
 # ***********************************************************************
 ********************
 * 路径 1
 ********************
-起点     : led_wf_inst1/cnt[15]/CQ [激发时钟: PLL_inst1/PLLInst_0/CLKOS, 上升沿1]
-终点     : led_pin[0]_MGIOL/CE     [捕获时钟: PLL_inst1/PLLInst_0/CLKOS, 上升沿2] 
+起点     : led_wf_inst1/cnt[16]/DMUX [激发时钟: PLL_inst1/PLLInst_0/CLKOS, 上升沿1]
+终点     : led_pin[2]_MGIOL/CE       [捕获时钟: PLL_inst1/PLLInst_0/CLKOS, 上升沿2] 
 数据产生路径
 =========================================================================================================================
 |               节点               |  单元   |  延迟  |     类型      |   位置   |             连线              | 扇出 |
@@ -98,28 +96,28 @@ Tckpm -- 时钟悲观补偿
 | clk_25M                          |   top   |      0 | clock_latency |          | clk_25M                       | 1    |
 | clk_25M/PAD#bidir_in             |   PIO   |      0 |      net      | PT79A    | clk_25M                       | 1    |
 | clk_25M/PADDI                    |   PIO   |   1091 |   PADI_DEL    |          | clk_25M_c                     | 1    |
-| PLL_inst1/PLLInst_0/CLKI         | PLL_25K | 4068.5 |      net      | LPLL1    | clk_25M_c                     |      |
+| PLL_inst1/PLLInst_0/CLKI         | PLL_25K | 4135.3 |      net      | LPLL1    | clk_25M_c                     |      |
 | --                               |   --    |     -- |      --       | --       | --                            | --   |
 | CLOCK'PLL_inst1/PLLInst_0/CLKOS  |   N/A   |      0 |  CLKI2OS_DEL  |          | N/A                           |      |
-| PLL_inst1/PLLInst_0/CLKOS        | PLL_25K | 5159.5 | clock_latency |          | CLK_FPGA_SYS1                 | 10   |
-| led_wf_inst1/cnt[15]/CLK         | SLICEL  | 1096.4 |      net      | R12C57L  | CLK_FPGA_SYS1                 |      |
+| PLL_inst1/PLLInst_0/CLKOS        | PLL_25K | 5226.3 | clock_latency |          | CLK_FPGA_SYS1                 | 10   |
+| led_wf_inst1/cnt[16]/CLK         | SLICEL  | 1096.4 |      net      | R12C49L  | CLK_FPGA_SYS1                 |      |
 | --                               |   --    |     -- |      --       | --       | --                            | --   |
-| led_wf_inst1/cnt[15]/CQ          | SLICEL  |   30.5 |     Tcko      |          | led_wf_inst1/cnt[12]          | 2    |
-| led_wf_inst1/cnt[10]/C3          | SLICEL  |    564 |      net      | R12C56L  | led_wf_inst1/cnt[12]          |      |
+| led_wf_inst1/cnt[16]/DMUX        | SLICEL  |   47.7 |    Tshcko     |          | led_wf_inst1/cnt[13]          | 2    |
+| led_wf_inst1/cnt[10]/C1          | SLICEL  |  515.7 |      net      | R11C49L  | led_wf_inst1/cnt[13]          |      |
 | led_wf_inst1/cnt[10]/C           | SLICEL  |   75.1 |     Tilo      |          | led_wf_inst1/_i_2/_i_0_rkd_15 | 1    |
-| led_wf_inst1/cnt[10]/D4          | SLICEL  |  209.9 |      net      | R12C56L  | led_wf_inst1/_i_2/_i_0_rkd_15 |      |
+| led_wf_inst1/cnt[10]/D3          | SLICEL  |  423.1 |      net      | R11C49L  | led_wf_inst1/_i_2/_i_0_rkd_15 |      |
 | led_wf_inst1/cnt[10]/D           | SLICEL  |   75.1 |     Tilo      |          | led_wf_inst1/_i_2/_i_0_rkd_20 | 1    |
-| led_wf_inst1/_i_2/_i_0_rkd_13/B3 | SLICEL  |  493.4 |      net      | R11C57M  | led_wf_inst1/_i_2/_i_0_rkd_20 |      |
+| led_wf_inst1/_i_2/_i_0_rkd_13/B1 | SLICEL  |  661.4 |      net      | R12C48L  | led_wf_inst1/_i_2/_i_0_rkd_20 |      |
 | led_wf_inst1/_i_2/_i_0_rkd_13/B  | SLICEL  |   75.1 |     Tilo      |          | _n_10845                      | 1    |
-| led_wf_inst1/_i_2/_i_0_rkd_13/D2 | SLICEL  |  410.2 |      net      | R11C57M  | _n_10845                      |      |
+| led_wf_inst1/_i_2/_i_0_rkd_13/D6 | SLICEL  |  176.4 |      net      | R12C48L  | _n_10845                      |      |
 | led_wf_inst1/_i_2/_i_0_rkd_13/D  | SLICEL  |   75.1 |     Tilo      |          | _n_10844                      | 20   |
-| led_pin[0]_MGIOL/CE              | IOLOGIC | 2897.8 |      net      | IOL_T95D | _n_10844                      |      |
+| led_pin[2]_MGIOL/CE              | IOLOGIC | 3062.5 |      net      | IOL_T92A | _n_10844                      |      |
 =========================================================================================================================
-时钟路径延迟         = 6255.9    
-数据路径延迟         = 4906.2     (Tdatp)
-     clock-to-q 延迟 = 30.5 
+时钟路径延迟         = 6322.7    
+数据路径延迟         = 5187.1     (Tdatp)
+     clock-to-q 延迟 = 47.7 
         总的单元延迟 = 300.4 
-        总的连线延迟 = 4575.3 
+        总的连线延迟 = 4839 
         逻辑级数     = 4 
 [数据捕获路径]
 ========================================================================================================
@@ -129,19 +127,19 @@ Tckpm -- 时钟悲观补偿
 | clk_25M                         |   top   |      0 | clock_latency |          | clk_25M       | 1    |
 | clk_25M/PAD#bidir_in            |   PIO   |      0 |      net      | PT79A    | clk_25M       | 1    |
 | clk_25M/PADDI                   |   PIO   |   1091 |   PADI_DEL    |          | clk_25M_c     | 1    |
-| PLL_inst1/PLLInst_0/CLKI        | PLL_25K | 3914.3 |      net      | LPLL1    | clk_25M_c     |      |
+| PLL_inst1/PLLInst_0/CLKI        | PLL_25K | 3973.2 |      net      | LPLL1    | clk_25M_c     |      |
 | --                              |   --    |     -- |      --       | --       | --            | --   |
 | CLOCK'PLL_inst1/PLLInst_0/CLKOS |   N/A   |      0 |  CLKI2OS_DEL  |          | N/A           |      |
-| PLL_inst1/PLLInst_0/CLKOS       | PLL_25K | 5005.3 | clock_latency |          | CLK_FPGA_SYS1 | 10   |
-| led_pin[0]_MGIOL/CLK            | IOLOGIC | 1057.4 |      net      | IOL_T95D | CLK_FPGA_SYS1 |      |
+| PLL_inst1/PLLInst_0/CLKOS       | PLL_25K | 5064.2 | clock_latency |          | CLK_FPGA_SYS1 | 10   |
+| led_pin[2]_MGIOL/CLK            | IOLOGIC | 1057.4 |      net      | IOL_T92A | CLK_FPGA_SYS1 |      |
 ========================================================================================================
-时钟路径延迟         = 6062.7    
-    时钟偏差         = -193.1 (Tcksw)
+时钟路径延迟         = 6121.6    
+    时钟偏差         = -201 (Tcksw)
 [延迟计算]
 ======================================================================
 总延迟 = Tdatap     + Tsu        - Tckpm      - Tcksw
-       = 4906.2     + 21         - 154.1      - -193.1     
-       = 4966.2
+       = 5187.1     + 21         - 162        - -201       
+       = 5247.1
 ======================================================================
 Tdatp -- 数据路径延迟 
 Tsu   -- 库单元建立时间 
@@ -150,8 +148,8 @@ Tckpm -- 时钟悲观补偿
 # 时钟频率总结
 #########################################################################
 最慢时钟     : PLL_inst1/PLLInst_0/CLKOP
-最小时钟周期 : 8773.7 ps
-最大时钟频率 : 114 MHz
+最小时钟周期 : 8271.7 ps
+最大时钟频率 : 120.9 MHz
 #########################################################################
-PLL_inst1/PLLInst_0/CLKOP : 114.0 Mhz
-PLL_inst1/PLLInst_0/CLKOS : 201.4 Mhz
+PLL_inst1/PLLInst_0/CLKOP : 120.9 Mhz
+PLL_inst1/PLLInst_0/CLKOS : 190.6 Mhz

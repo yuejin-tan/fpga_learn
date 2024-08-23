@@ -125,21 +125,21 @@ Tckpm --  ±÷”±Øπ€≤π≥•
 | ahb_epwm1/_i_53/bitAdd_13/muxcy/O                |    xsMUXCY     |  168 |      cell      |      | ahb_epwm1/_i_53/_n_25                          | 2    |
 | ahb_epwm1/_i_53/bitAdd_14/xorcy/CI               |    xsXORCY     |    0 |      net       |      | ahb_epwm1/_i_53/_n_25                          |      |
 | ahb_epwm1/_i_53/bitAdd_14/xorcy/O                |    xsXORCY     |  263 |      cell      |      | ahb_epwm1/TBCNT_a1[14]                         | 2    |
-| _i_170/I3                                        |    xsLUTSA4    |    0 |      net       |      | ahb_epwm1/TBCNT_a1[14]                         |      |
-| _i_170/O                                         |    xsLUTSA4    |   81 |      cell      |      | _n_11380                                       | 1    |
-| _i_171/S                                         |    xsMUXCY     |    0 |      net       |      | _n_11380                                       |      |
-| _i_171/O                                         |    xsMUXCY     |  261 |      cell      |      | _n_11386                                       | 1    |
-| _i_173/CI                                        |    xsMUXCY     |    0 |      net       |      | _n_11386                                       |      |
-| _i_173/O                                         |    xsMUXCY     |  168 |      cell      |      | _n_11387                                       | 1    |
-| _i_175/CI                                        |    xsMUXCY     |    0 |      net       |      | _n_11387                                       |      |
-| _i_175/O                                         |    xsMUXCY     |  168 |      cell      |      | _n_11388                                       | 1    |
-| _i_177/CI                                        |    xsMUXCY     |    0 |      net       |      | _n_11388                                       |      |
-| _i_177/O                                         |    xsMUXCY     |  168 |      cell      |      | _n_11389                                       | 1    |
-| _i_179/CI                                        |    xsMUXCY     |    0 |      net       |      | _n_11389                                       |      |
-| _i_179/O                                         |    xsMUXCY     |  168 |      cell      |      | _n_11390                                       | 1    |
-| _i_181/CI                                        |    xsMUXCY     |    0 |      net       |      | _n_11390                                       |      |
-| _i_181/O                                         |    xsMUXCY     |  168 |      cell      |      | ahb_epwm1/n_1782                               | 1    |
-| ahb_epwm1/CTRDOWN_reg0/Q_reg[0]_ctrlmux_iHQX0/I5 |    xsLUTSA6    |    0 |      net       |      | ahb_epwm1/n_1782                               |      |
+| _i_172/I3                                        |    xsLUTSA4    |    0 |      net       |      | ahb_epwm1/TBCNT_a1[14]                         |      |
+| _i_172/O                                         |    xsLUTSA4    |   81 |      cell      |      | _n_11384                                       | 1    |
+| _i_173/S                                         |    xsMUXCY     |    0 |      net       |      | _n_11384                                       |      |
+| _i_173/O                                         |    xsMUXCY     |  261 |      cell      |      | _n_11390                                       | 1    |
+| _i_175/CI                                        |    xsMUXCY     |    0 |      net       |      | _n_11390                                       |      |
+| _i_175/O                                         |    xsMUXCY     |  168 |      cell      |      | _n_11391                                       | 1    |
+| _i_177/CI                                        |    xsMUXCY     |    0 |      net       |      | _n_11391                                       |      |
+| _i_177/O                                         |    xsMUXCY     |  168 |      cell      |      | _n_11392                                       | 1    |
+| _i_179/CI                                        |    xsMUXCY     |    0 |      net       |      | _n_11392                                       |      |
+| _i_179/O                                         |    xsMUXCY     |  168 |      cell      |      | _n_11393                                       | 1    |
+| _i_181/CI                                        |    xsMUXCY     |    0 |      net       |      | _n_11393                                       |      |
+| _i_181/O                                         |    xsMUXCY     |  168 |      cell      |      | _n_11394                                       | 1    |
+| _i_183/CI                                        |    xsMUXCY     |    0 |      net       |      | _n_11394                                       |      |
+| _i_183/O                                         |    xsMUXCY     |  168 |      cell      |      | ahb_epwm1/n_1783                               | 1    |
+| ahb_epwm1/CTRDOWN_reg0/Q_reg[0]_ctrlmux_iHQX0/I5 |    xsLUTSA6    |    0 |      net       |      | ahb_epwm1/n_1783                               |      |
 | ahb_epwm1/CTRDOWN_reg0/Q_reg[0]_ctrlmux_iHQX0/O  |    xsLUTSA6    |   81 |      cell      |      | ahb_epwm1/CTRDOWN_reg0/Q_reg[0]_ctrl_din_nHQX0 | 1    |
 | ahb_epwm1/CTRDOWN_reg0/Q_reg[0]/D                |   xsDFFSA_K1   |    0 |      net       |      | ahb_epwm1/CTRDOWN_reg0/Q_reg[0]_ctrl_din_nHQX0 |      |
 ============================================================================================================================================================
