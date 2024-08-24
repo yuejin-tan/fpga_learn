@@ -104,6 +104,9 @@ static inline void LCD_DisplayOff(void)
 #define DARKGREEN      	 0x0100	//深绿色
 #define DARKBLUE      	 0X0004	//深蓝色
 
+#define ORANGE           0XFC00
+#define DARKORANGE       0X8100
+
 #define LIGHTBLUE      	 0X7D7C	//浅蓝色
 #define GRAYBLUE       	 0X5458 //灰蓝色
 //以上三色为PANEL的颜色 

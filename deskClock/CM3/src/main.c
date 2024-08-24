@@ -14,16 +14,42 @@
 #include "scd_inc.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "semphr.h"
+
 
 #include "lcd_9488_drv.h"
 #include "touch_GT911_drv.h"
 #include "thp_bme280_drv.h"
 #include "i2c_gpio2.h"
 
+uint32_t ms_cnt = 0;
+
+uint16_t rwWay = 0;
+
+uint16_t test1 = 0;
+uint16_t test2 = 0;
+uint16_t test3 = 0;
+uint16_t test4 = 0;
+
+uint16_t test1r = 0;
+uint16_t test2r = 0;
+uint16_t test3r = 0;
+uint16_t test4r = 0;
+
+static GT911info_struct touchInfo1;
+
+Sensor_BME280 BME280_1;
+
 float pwmD = 0.5f;
 float temp = 0;
 float hum = 0;
 float press = 0;
+
+TaskHandle_t TouchRefreshTask;
+TaskHandle_t BME280RefreshTask;
+TaskHandle_t LedRefreshTask;
+
+SemaphoreHandle_t MuxSemLcd;
 
 void nvicInit(void)
 {
@@ -200,29 +226,6 @@ uint32_t mem_addr16b_test()
     return retval;
 }
 
-#define LED1_ON GPIO_ResetBit( CM3DS_MPS2_GPIO0, GPIO_Pin_0)
-#define LED2_ON GPIO_ResetBit( CM3DS_MPS2_GPIO0, GPIO_Pin_1)
-
-#define LED1_OFF GPIO_SetBit( CM3DS_MPS2_GPIO0, GPIO_Pin_0)
-#define LED2_OFF GPIO_SetBit( CM3DS_MPS2_GPIO0, GPIO_Pin_1)
-
-uint32_t ms_cnt = 0;
-
-uint16_t rwWay = 0;
-
-uint16_t test1 = 0;
-uint16_t test2 = 0;
-uint16_t test3 = 0;
-uint16_t test4 = 0;
-
-uint16_t test1r = 0;
-uint16_t test2r = 0;
-uint16_t test3r = 0;
-uint16_t test4r = 0;
-
-static GT911info_struct touchInfo1;
-
-Sensor_BME280 BME280_1;
 
 void BME280_Init(void)
 {
@@ -301,8 +304,17 @@ void touchRefreshTask(void* pvParameters)
                     pwmD = (pwmD - 0.1f) * 1.25f;
                 }
 
-                LCD_fill(0, 0, x_true, 19, LIGHTBLUE);
-                LCD_fill(x_true, 0, LCD_W - 1, 19, GRAYBLUE);
+                if (xSemaphoreTake(MuxSemLcd, portMAX_DELAY))
+                {
+                    LCD_fill(0, 0, x_true, 79, ORANGE);
+                    LCD_fill(x_true, 0, LCD_W - 1, 79, DARKORANGE);
+
+                    xSemaphoreGive(MuxSemLcd);
+                }
+                else
+                {
+                    printf("MuxSemLcd take err!\r\n");
+                }
 
                 AHB_EPWM->CMPA_shadow = AHB_EPWM->TBPRD_shadow * pwmD;
             }
@@ -312,7 +324,7 @@ void touchRefreshTask(void* pvParameters)
     }
 }
 
-void BME280RefreshTask(void* pvParameters)
+void bme280RefreshTask(void* pvParameters)
 {
     while (1)
     {
@@ -322,25 +334,32 @@ void BME280RefreshTask(void* pvParameters)
         {
             printf("bme280 read err!\r\n");
         }
-        else
+        else if (xSemaphoreTake(MuxSemLcd, portMAX_DELAY))
         {
+
             POINT_COLOR = RED;
             BACK_COLOR = DARKRED;
             sprintf(buff, "%0.2f", temp);
-            LCD_ShowString(60, 302, 64, 16, buff, 0);
+            LCD_ShowString(32, 16, 48, 16, buff, 0x51);
             printf("Temp=%sC, ", buff);
 
             POINT_COLOR = GREEN;
             BACK_COLOR = DARKGREEN;
-            sprintf(buff, "%d", (int)(press + 0.5f));
-            LCD_ShowString(60 + 160, 302, 64, 16, buff, 0);
+            sprintf(buff, "%6d", (int)(press + 0.5f));
+            LCD_ShowString(28, 32, 48, 16, buff, 0x51);
             printf("Press=%sPa, ", buff);
 
             POINT_COLOR = BLUE;
             BACK_COLOR = DARKBLUE;
             sprintf(buff, "%0.2f", hum);
-            LCD_ShowString(60 + 320, 302, 64, 16, buff, 0);
+            LCD_ShowString(32, 48, 48, 16, buff, 0x51);
             printf("Hum=%s%%RH\r\n", buff);
+
+            xSemaphoreGive(MuxSemLcd);
+        }
+        else
+        {
+            printf("MuxSemLcd take err!\r\n");
         }
 
         vTaskDelay(500 / portTICK_PERIOD_MS);
@@ -349,6 +368,11 @@ void BME280RefreshTask(void* pvParameters)
 
 void ledRefreshTask(void* pvParameters)
 {
+    int isRun = 1;
+    uint32_t cnt0 = 0;
+    uint16_t btnRaw = 0xffffu;
+    int btnSta = 1;
+
     while (1)
     {
         while (AHB_UART->cmd.bit.TX_FIFO_FULL == 0)
@@ -360,19 +384,59 @@ void ledRefreshTask(void* pvParameters)
             SCD_Rev1Byte(&scd_1, AHB_UART->data);
         }
 
-        ms_cnt = xTaskGetTickCount() * portTICK_PERIOD_MS;
-        AHB_LED->seg0 = (ms_cnt >> 0) & 0xful;
-        AHB_LED->seg1 = (ms_cnt >> 4) & 0xful;
-        AHB_LED->seg2 = (ms_cnt >> 8) & 0xful;
-        AHB_LED->seg3 = (ms_cnt >> 12) & 0xful;
-        AHB_LED->seg4 = (ms_cnt >> 16) & 0xful;
-        AHB_LED->seg5 = (ms_cnt >> 20) & 0xful;
-        AHB_LED->seg6 = (ms_cnt >> 24) & 0xful;
-        AHB_LED->seg7 = (ms_cnt >> 28) & 0xful;
+        {
+            uint32_t cntRaw = xTaskGetTickCount() * portTICK_PERIOD_MS;
 
-        // 呼吸灯
-        int tbprd = AHB_EPWM->TBPRD_shadow;
-        AHB_EPWM->CMPB_shadow = abs((ms_cnt % (2 * tbprd)) - tbprd);
+            // gpio4 clear
+            if (GPIO_ReadInputData(CM3DS_MPS2_GPIO0, GPIO_Pin_4) == 0)
+            {
+                cnt0 = cntRaw;
+            }
+
+            // gpio5 stop
+            btnRaw = (btnRaw << 1) | GPIO_ReadInputData(CM3DS_MPS2_GPIO0, GPIO_Pin_5);
+            if (btnRaw == 0)
+            {
+                if (btnSta == 1)
+                {
+                    isRun = !isRun;
+                }
+
+                btnSta = 0;
+            }
+            else if (btnRaw == 0xffffu)
+            {
+                btnSta = 1;
+            }
+
+            if (isRun)
+            {
+                ms_cnt = cntRaw - cnt0;
+            }
+
+            // 毫秒计时
+            // ms
+            AHB_LED->seg0 = ms_cnt % 10;
+            AHB_LED->seg1 = (ms_cnt / 10) % 10;
+            AHB_LED->seg2 = (ms_cnt / 100) % 10;
+
+            // s
+            AHB_LED->seg3 = ((ms_cnt / 1000) % 10) | 0x10;
+            AHB_LED->seg4 = ((ms_cnt / 10000) % 6);
+
+            // min
+            AHB_LED->seg5 = ((ms_cnt / 60000) % 10) | 0x10;
+            AHB_LED->seg6 = ((ms_cnt / 600000) % 6);
+
+            // h
+            AHB_LED->seg7 = ((ms_cnt / 3600000) % 10) | 0x10;
+        }
+
+        {
+            // 呼吸灯
+            int tbprd = AHB_EPWM->TBPRD_shadow;
+            AHB_EPWM->CMPB_shadow = abs((ms_cnt % (2 * tbprd)) - tbprd);
+        }
 
         vTaskDelay(1 / portTICK_PERIOD_MS);
     }
@@ -380,27 +444,22 @@ void ledRefreshTask(void* pvParameters)
 
 void img_init(void)
 {
-    LCD_Clear(WHITE);
-
-    LCD_fill(0, 300, 159, LCD_H - 1, DARKRED);
+    LCD_fill(0, 0, LCD_W / 2, 79, ORANGE);
+    LCD_fill(LCD_W / 2, 0, LCD_W - 1, 79, DARKORANGE);
     POINT_COLOR = WHITE;
-    LCD_ShowString(4, 302, 32, 16, "TMP", 1);
-    LCD_ShowString(160 - 16, 302, 32, 16, "C", 1);
 
-    LCD_fill(160, 300, 319, LCD_H - 1, DARKGREEN);
-    POINT_COLOR = WHITE;
-    LCD_ShowString(4 + 160, 302, 32, 16, "PRESS", 1);
-    LCD_ShowString(320 - 24, 302, 32, 16, "Pa", 1);
+    LCD_fill(0, 80, LCD_W - 1, 160 - 1, DARKRED);
+    LCD_ShowString(0, 16, 32, 16, "TMP", 0x50);
+    LCD_ShowString(80, 16, 32, 16, "C", 0x50);
 
-    LCD_fill(320, 300, 479, LCD_H - 1, DARKBLUE);
-    POINT_COLOR = WHITE;
-    LCD_ShowString(4 + 320, 302, 32, 16, "R.H.", 1);
-    LCD_ShowString(480 - 16, 302, 32, 16, "%", 1);
+    LCD_fill(0, 160, LCD_W - 1, 240 - 1, DARKGREEN);
+    LCD_ShowString(0, 32, 32, 16, "PRE", 0x50);
+    LCD_ShowString(80, 32, 32, 16, "Pa", 0x50);
+
+    LCD_fill(0, 240, LCD_W - 1, LCD_H - 1, DARKBLUE);
+    LCD_ShowString(0, 48, 32, 16, "R.H", 0x50);
+    LCD_ShowString(80, 48, 32, 16, "%", 0x50);
 }
-
-TaskHandle_t hTouchRefreshTask;
-TaskHandle_t hBME280RefreshTask;
-TaskHandle_t hLedRefreshTask;
 
 int main(void)
 {
@@ -434,21 +493,23 @@ int main(void)
         (uint16_t)128, /* 任务堆栈大小 */
         (void*)NULL, /* 传入给任务函数的参数 */
         (UBaseType_t)2, /* 任务优先级 */
-        (TaskHandle_t*)&hTouchRefreshTask); /* 任务句柄 */
+        (TaskHandle_t*)&TouchRefreshTask); /* 任务句柄 */
 
-    xTaskCreate((TaskFunction_t)BME280RefreshTask, /* 任务函数 */
+    xTaskCreate((TaskFunction_t)bme280RefreshTask, /* 任务函数 */
         (const char*)"BME280Refresh", /* 任务名称 */
         (uint16_t)128, /* 任务堆栈大小 */
         (void*)NULL, /* 传入给任务函数的参数 */
         (UBaseType_t)5, /* 任务优先级 */
-        (TaskHandle_t*)&hBME280RefreshTask); /* 任务句柄 */
+        (TaskHandle_t*)&BME280RefreshTask); /* 任务句柄 */
 
     xTaskCreate((TaskFunction_t)ledRefreshTask, /* 任务函数 */
         (const char*)"ledRefreshTask", /* 任务名称 */
         (uint16_t)128, /* 任务堆栈大小 */
         (void*)NULL, /* 传入给任务函数的参数 */
         (UBaseType_t)1, /* 任务优先级 */
-        (TaskHandle_t*)&hLedRefreshTask); /* 任务句柄 */
+        (TaskHandle_t*)&LedRefreshTask); /* 任务句柄 */
+
+    MuxSemLcd = xSemaphoreCreateMutex();
 
     vTaskStartScheduler();
 

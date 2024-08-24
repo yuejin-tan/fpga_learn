@@ -154,8 +154,8 @@ I (.\CMSIS\Device\Include\system_CM3DS.h)(0x65D85DE4)
 I (.\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_conf.h)(0x65D85DF7)
 I (.\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_gpio.h)(0x65D8C701)
 I (.\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_timer.h)(0x65D8600A)
-F (.\driver\lcd_9488_drv.c)(0x66C89DCE)(--c99 --gnu -c --cpu Cortex-M3 --li -g -O2 --apcs=interwork --split_sections -I .\CMSIS\Core\Include -I .\CMSIS\Device\Include -I .\CMSIS\Device\Source -I .\CMSIS\Device\StdPeriph_Driver\inc -I .\CMSIS\generic -I .\driver -I .\freertos -I .\src-IC:\Users\t\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="536" -DARMCM3-o .\objects\lcd_9488_drv.o --omf_browse .\objects\lcd_9488_drv.crf --depend .\objects\lcd_9488_drv.d)
-I (driver\lcd_9488_drv.h)(0x66C8AA91)
+F (.\driver\lcd_9488_drv.c)(0x66C95653)(--c99 --gnu -c --cpu Cortex-M3 --li -g -O2 --apcs=interwork --split_sections -I .\CMSIS\Core\Include -I .\CMSIS\Device\Include -I .\CMSIS\Device\Source -I .\CMSIS\Device\StdPeriph_Driver\inc -I .\CMSIS\generic -I .\driver -I .\freertos -I .\src-IC:\Users\t\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="536" -DARMCM3-o .\objects\lcd_9488_drv.o --omf_browse .\objects\lcd_9488_drv.crf --depend .\objects\lcd_9488_drv.d)
+I (driver\lcd_9488_drv.h)(0x66C952F9)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
 I (.\CMSIS\Device\Include\CM3DS_MPS2.h)(0x65D8CA59)
@@ -310,7 +310,7 @@ I (freertos\task.h)(0x66962B64)
 I (freertos\list.h)(0x66962B64)
 I (freertos\queue.h)(0x66962B64)
 I (freertos\timers.h)(0x66962B64)
-F (.\src\main.c)(0x66C8B18D)(--c99 --gnu -c --cpu Cortex-M3 --li -g -O2 --apcs=interwork --split_sections -I .\CMSIS\Core\Include -I .\CMSIS\Device\Include -I .\CMSIS\Device\Source -I .\CMSIS\Device\StdPeriph_Driver\inc -I .\CMSIS\generic -I .\driver -I .\freertos -I .\src-IC:\Users\t\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="536" -DARMCM3-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\src\main.c)(0x66C9ABA2)(--c99 --gnu -c --cpu Cortex-M3 --li -g -O2 --apcs=interwork --split_sections -I .\CMSIS\Core\Include -I .\CMSIS\Device\Include -I .\CMSIS\Device\Source -I .\CMSIS\Device\StdPeriph_Driver\inc -I .\CMSIS\generic -I .\driver -I .\freertos -I .\src-IC:\Users\t\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\Device\ARM\ARMCM3\Include-D__UVISION_VERSION="536" -DARMCM3-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (.\CMSIS\Device\StdPeriph_Driver\inc\CM3DS_gpio.h)(0x65D8C701)
@@ -340,7 +340,9 @@ I (.\freertos\portmacro.h)(0x66962B64)
 I (.\freertos\mpu_wrappers.h)(0x66962B64)
 I (.\freertos\task.h)(0x66962B64)
 I (.\freertos\list.h)(0x66962B64)
-I (.\driver\lcd_9488_drv.h)(0x66C8AA91)
+I (.\freertos\semphr.h)(0x66962B64)
+I (.\freertos\queue.h)(0x66962B64)
+I (.\driver\lcd_9488_drv.h)(0x66C952F9)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (.\driver\ahb_lcd8080.h)(0x66A799D8)
 I (.\driver\touch_GT911_drv.h)(0x66A117DE)

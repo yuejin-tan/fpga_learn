@@ -28,6 +28,8 @@
 .\objects\main.o: .\freertos\mpu_wrappers.h
 .\objects\main.o: .\freertos\task.h
 .\objects\main.o: .\freertos\list.h
+.\objects\main.o: .\freertos\semphr.h
+.\objects\main.o: .\freertos\queue.h
 .\objects\main.o: .\driver\lcd_9488_drv.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\main.o: .\driver\ahb_lcd8080.h

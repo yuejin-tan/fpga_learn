@@ -431,24 +431,39 @@ void LCD_ShowChar(uint16_t x, uint16_t y, uint8_t num, uint8_t mode)
 {
     uint8_t temp, t1, t;
     uint16_t y0 = y;
-    uint8_t size = 16;
-    uint8_t csize = (size / 8 + ((size % 8) ? 1 : 0)) * (size / 2);		//得到字体一个字符对应点阵集所占的字节数	
     num = num - ' ';//得到偏移后的值（ASCII字库是从空格开始取模，所以-' '就是对应字符的字库）
-    for (t = 0;t < csize;t++)
+    for (t = 0;t < 16;t++)
     {
         temp = asc2_1608[num][t];	//调用1608字体
         for (t1 = 0;t1 < 8;t1++)
         {
-            if (temp & 0x80)LCD_DrawPoint_color(x, y, POINT_COLOR);
-            else if (mode == 0)LCD_DrawPoint_color(x, y, BACK_COLOR);
+            if (temp & 0x80)
+            {
+                if (mode & 0xF0)
+                {
+                    int scale = (mode & 0xF0) >> 4;
+                    LCD_fill(x * scale, y * scale, x * scale + scale - 1, y * scale + scale - 1, POINT_COLOR);
+                }
+                else
+                    LCD_DrawPoint_color(x, y, POINT_COLOR);
+            }
+            else if (mode & 0x1)
+            {
+                if (mode & 0xF0)
+                {
+                    int scale = (mode & 0xF0) >> 4;
+                    LCD_fill(x * scale, y * scale, x * scale + scale - 1, y * scale + scale - 1, BACK_COLOR);
+                }
+                else
+                    LCD_DrawPoint_color(x, y, BACK_COLOR);
+            }
+
             temp <<= 1;
             y++;
-            if (y >= LCD_H)return;		//超区域了
-            if ((y - y0) == size)
+            if ((y - y0) == 16)
             {
                 y = y0;
                 x++;
-                if (x >= LCD_W)return;	//超区域了
                 break;
             }
         }
@@ -457,8 +472,8 @@ void LCD_ShowChar(uint16_t x, uint16_t y, uint8_t num, uint8_t mode)
 
 //显示字符串
 //x,y:起点坐标
-//width,height:区域大小  
-//*p:字符串起始地址		  
+//width,height:区域大小
+//*p:字符串起始地址
 void LCD_ShowString(uint16_t x, uint16_t y, uint16_t width, uint16_t height, char* p, uint8_t mode)
 {
     uint16_t x0 = x;
